@@ -81,7 +81,7 @@ public abstract class FormUtils {
    * Stub interface for API added to FormToolikt in Eclipse 3.3
    */
   private interface FormTooliktStub {
-    public void decorateFormHeading(Form form);
+    void decorateFormHeading(Form form);
   }
 
   /**
