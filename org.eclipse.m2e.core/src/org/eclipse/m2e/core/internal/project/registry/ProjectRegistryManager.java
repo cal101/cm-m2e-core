@@ -879,7 +879,7 @@ public class ProjectRegistryManager {
       return pomFiles.stream().filter(IResource::isAccessible).map(ProjectRegistryManager::toJavaIoFile)
           .filter(Objects::nonNull)
           .collect(HashMap::new, (map, pomFile) -> map.put(pomFile, result),
-              (container, toFold) -> container.putAll(toFold));
+              HashMap::putAll);
     }
   }
 

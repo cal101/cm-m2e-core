@@ -1158,7 +1158,7 @@ public class DependencyTreePage extends FormPage implements IMavenProjectChanged
     public void propertyChange(PropertyChangeEvent event) {
       String property = event.getProperty();
       if(HIGHLIGHT_BG_COLOR_NAME.equals(property)) {
-        Display.getDefault().asyncExec(() -> setColors());
+        Display.getDefault().asyncExec(this::setColors);
       }
     }
 

@@ -686,7 +686,7 @@ public enum PomTemplateContext {
 
     List<File> files = Arrays.asList(pctx.parentDir.listFiles());
     Collections.sort(files, Comparator.<File, Integer> comparing(r -> r.isDirectory() ? 0 : 1)
-        .thenComparing(Comparator.comparing(r -> r.getName())));
+        .thenComparing(Comparator.comparing(File::getName)));
 
     int rel = 4000;
     for(File f : files) {

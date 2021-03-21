@@ -185,7 +185,7 @@ public class PomTextHover implements ITextHover, ITextHoverExtension, ITextHover
   }
 
   public IInformationControlCreator getHoverControlCreator() {
-    return parent -> new MarkerHoverControl(parent);
+    return MarkerHoverControl::new;
   }
 
   public static class CompoundRegion implements IRegion {

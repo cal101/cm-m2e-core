@@ -859,7 +859,7 @@ public class MavenPomEditor extends FormEditor implements IResourceChangeListene
          * http://dev.eclipse.org/bugs/show_bug.cgi?id=11731
          * Will be removed when SWT has solved the problem.
          */
-        window.getShell().getDisplay().asyncExec(() -> handleActivation());
+        window.getShell().getDisplay().asyncExec(this::handleActivation);
       }
     }
 

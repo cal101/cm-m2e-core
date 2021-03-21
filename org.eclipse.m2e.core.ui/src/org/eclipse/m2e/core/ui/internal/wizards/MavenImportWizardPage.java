@@ -360,7 +360,7 @@ public class MavenImportWizardPage extends AbstractMavenWizardPage {
     workingSetName.setLayoutData(gd_workingSet);
 
     createAdvancedSettings(composite, new GridData(SWT.FILL, SWT.TOP, false, false, 3, 1));
-    resolverConfigurationComponent.template.addModifyListener(arg0 -> Display.getDefault().asyncExec(() -> validate()));
+    resolverConfigurationComponent.template.addModifyListener(arg0 -> Display.getDefault().asyncExec(this::validate));
 
     if(locations != null && !locations.isEmpty()) {
       scanProjects();

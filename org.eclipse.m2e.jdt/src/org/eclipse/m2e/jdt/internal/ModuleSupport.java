@@ -167,7 +167,7 @@ public class ModuleSupport {
         providersByServiceName.computeIfAbsent(serviceName, k -> new LinkedHashSet<>()).add(classpathModule.name);
       }
     }
-    return (module) -> {
+    return module -> {
       if(module != null) {
         Set<String> result = new LinkedHashSet<>();
         result.addAll(module.requiredModuleNames);

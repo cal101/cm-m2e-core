@@ -252,7 +252,7 @@ public class MavenArchetypesPreferencePage extends FieldEditorPreferencePage imp
       }
     });
 
-    archetypesViewer.addCheckStateListener((event) -> {
+    archetypesViewer.addCheckStateListener(event -> {
       archetypesViewer.refresh(event.getElement(), true);
     });
 
