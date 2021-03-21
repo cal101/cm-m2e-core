@@ -93,11 +93,11 @@ class PomTemplateContextUtil {
 
     } catch(CoreException ex) {
       IStatus status = ex.getStatus();
-      String msg = status.getMessage();
+      StringBuilder msg = new StringBuilder(status.getMessage());
       if(status.getException() != null) {
-        msg += "; " + status.getException().getMessage();
+        msg.append("; ").append(status.getException().getMessage());
       }
-      log.error(msg, ex);
+      log.error(msg.toString(), ex);
     }
     return null;
   }

@@ -112,9 +112,9 @@ public class MavenInstallFileWizard extends Wizard implements IImportWizard {
           List<Throwable> exceptions = executionResult.getExceptions();
           if(!exceptions.isEmpty()) {
             for(Throwable exception : exceptions) {
-              String msg = Messages.MavenInstallFileWizard_error;
-              msg += "; " + exception.toString(); //$NON-NLS-1$
-              log.error(msg, exception);
+              StringBuilder msg = new StringBuilder(Messages.MavenInstallFileWizard_error);
+              msg.append("; ").append(exception.toString()); //$NON-NLS-1$
+              log.error(msg.toString(), exception);
             }
           }
 

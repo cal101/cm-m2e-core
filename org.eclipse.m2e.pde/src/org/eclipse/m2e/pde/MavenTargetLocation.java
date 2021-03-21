@@ -231,13 +231,13 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 		if (artifact == null) {
 			return "";
 		}
-		String key = artifact.getGroupId() + ":" + artifact.getArtifactId();
+		StringBuilder key = new StringBuilder(artifact.getGroupId()).append(":").append(artifact.getArtifactId());
 		String classifier = artifact.getClassifier();
 		if (classifier != null) {
-			key += ":" + classifier;
+			key.append(":").append(classifier);
 		}
-		key += ":" + artifact.getBaseVersion();
-		return key;
+		key.append(":").append(artifact.getBaseVersion());
+		return key.toString();
 	}
 
 	public int getDependencyCount() {

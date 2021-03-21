@@ -251,25 +251,25 @@ public enum PomTemplateContext {
           String name = parameter.getName();
           if(name.startsWith(prefix)) {
 
-            String text = NLS.bind(Messages.PomTemplateContext_param, parameter.isRequired(), parameter.getType());
+            StringBuilder text = new StringBuilder(NLS.bind(Messages.PomTemplateContext_param, parameter.isRequired(), parameter.getType()));
 
             String expression = parameter.getExpression();
             if(expression != null) {
-              text += NLS.bind(Messages.PomTemplateContext_param_expr, expression);
+              text.append(NLS.bind(Messages.PomTemplateContext_param_expr, expression));
             }
 
             String defaultValue = parameter.getDefaultValue();
             if(defaultValue != null) {
-              text += NLS.bind(Messages.PomTemplateContext_param_def, defaultValue);
+              text.append(NLS.bind(Messages.PomTemplateContext_param_def, defaultValue));
             }
 
             String description = parameter.getDescription();
             if(description != null) {
               String desc = description.trim();
-              text += desc.startsWith("<p>") ? desc : "<br>" + desc; //$NON-NLS-1$ //$NON-NLS-2$
+              text.append(desc.startsWith("<p>") ? desc : "<br>" + desc); //$NON-NLS-1$ //$NON-NLS-2$
             }
 
-            proposals.add(new PomTemplate(name, text, getContextTypeId(), //
+            proposals.add(new PomTemplate(name, text.toString(), getContextTypeId(), //
                 "<" + name + ">${cursor}</" + name + ">", false) //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
                     .image(MavenEditorImages.IMG_PARAMETER).relevance(1900));
           }

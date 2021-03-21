@@ -147,14 +147,14 @@ public class MavenMarkerManager implements IMavenMarkerManager {
   }
 
   private String getArtifactId(AbstractArtifactResolutionException rex) {
-    String id = rex.getGroupId() + ":" + rex.getArtifactId() + ":" + rex.getVersion(); //$NON-NLS-1$ //$NON-NLS-2$
+    StringBuilder id = new StringBuilder(rex.getGroupId()).append(":").append(rex.getArtifactId()).append(":").append(rex.getVersion()); //$NON-NLS-1$ //$NON-NLS-2$
     if(rex.getClassifier() != null) {
-      id += ":" + rex.getClassifier(); //$NON-NLS-1$
+      id.append(":").append(rex.getClassifier()); //$NON-NLS-1$
     }
     if(rex.getType() != null) {
-      id += ":" + rex.getType(); //$NON-NLS-1$
+      id.append(":").append(rex.getType()); //$NON-NLS-1$
     }
-    return id;
+    return id.toString();
   }
 
   private String getRootErrorMessage(Throwable ex) {

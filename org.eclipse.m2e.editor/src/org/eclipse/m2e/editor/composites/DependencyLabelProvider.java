@@ -145,11 +145,11 @@ public class DependencyLabelProvider extends LabelProvider implements IColorProv
       DependenciesComposite.Dependency dep = (DependenciesComposite.Dependency) element;
       String[] managed = findManaged(dep);
       if(managed != null && managed[0] != null) {
-        String man = managed[0];
+        StringBuilder man = new StringBuilder(managed[0]);
         if(managed[1] != null && !Artifact.SCOPE_COMPILE.equals(managed[1])) {
-          man = man + "," + managed[1];
+          man.append(",").append(managed[1]);
         }
-        ss.append(NLS.bind(Messages.DependencyLabelProvider_0, man), StyledString.DECORATIONS_STYLER);
+        ss.append(NLS.bind(Messages.DependencyLabelProvider_0, man.toString()), StyledString.DECORATIONS_STYLER);
       }
       return ss;
     }

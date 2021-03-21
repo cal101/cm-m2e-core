@@ -726,17 +726,18 @@ public class NexusIndexManager implements IndexManager, IMavenProjectChangedList
       version = Messages.NexusIndexManager_inherited;
     }
 
-    String key = groupId.replace('.', '/') + '/' + artifactId + '/' + version + '/' + artifactId + "-" + version; //$NON-NLS-1$
+    StringBuilder key = new StringBuilder(groupId.replace('.', '/')).append('/').append(artifactId).append('/').append(version).append('/').append(artifactId)
+        .append("-").append(version); //$NON-NLS-1$
 
     String classifier = artifact.getClassifier();
     if(classifier != null) {
-      key += "-" + classifier; //$NON-NLS-1$
+      key.append("-").append(classifier); //$NON-NLS-1$
     }
 
     // TODO use artifact handler to retrieve extension
     // cstamas: will not work since ArtifactKey misses type
     // either get packaging from POM or store/honor extension
-    return key + ".pom"; //$NON-NLS-1$
+    return key.append(".pom").toString(); //$NON-NLS-1$
   }
 
   public void mavenProjectChanged(MavenProjectChangedEvent[] events, IProgressMonitor monitor) {

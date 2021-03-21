@@ -88,10 +88,10 @@ public class SourceLocation {
 
   @Override
   public String toString() {
-    String s = lineNumber + "," + columnStart + "-" + columnEnd + ":" + resourcePath;
+    StringBuilder s = new StringBuilder().append(lineNumber).append(",").append(columnStart).append("-").append(columnEnd).append(":").append(resourcePath);
     if(linkedLocation != null) {
-      s += "->" + linkedLocation.toString();
+      s.append("->").append(linkedLocation.toString());
     }
-    return s;
+    return s.toString();
   }
 }

@@ -91,18 +91,18 @@ public class MavenProperties {
     String rev = reduce(buildProperties.getProperty("buildNumber"));
     String distributionName = reduce(buildProperties.getProperty("distributionName"));
 
-    String msg = distributionName + " ";
-    msg += (version != null ? version : BUILD_VERSION_UNKNOWN_PROPERTY);
+    StringBuilder msg = new StringBuilder(distributionName).append(" ");
+    msg.append(version != null ? version : BUILD_VERSION_UNKNOWN_PROPERTY);
     if(rev != null || timestamp != null) {
-      msg += " (";
-      msg += (rev != null ? rev : "");
+      msg.append(" (");
+      msg.append(rev != null ? rev : "");
       if(StringUtils.isNotBlank(timestamp)) {
         String ts = formatTimestamp(Long.valueOf(timestamp));
-        msg += (rev != null ? "; " : "") + ts;
+        msg.append(rev != null ? "; " : "").append(ts);
       }
-      msg += ")";
+      msg.append(")");
     }
-    return msg;
+    return msg.toString();
   }
 
   private static String reduce(String s) {

@@ -48,14 +48,14 @@ public class IndexedArtifactFileNode extends PlatformObject implements IMavenRep
   }
 
   public String getName() {
-    String label = artifactFile.artifact;
+    StringBuilder label = new StringBuilder(artifactFile.artifact);
     if(artifactFile.classifier != null) {
-      label += " : " + artifactFile.classifier; //$NON-NLS-1$
+      label.append(" : ").append(artifactFile.classifier); //$NON-NLS-1$
     }
     if(artifactFile.version != null) {
-      label += " : " + artifactFile.version; //$NON-NLS-1$
+      label.append(" : ").append(artifactFile.version); //$NON-NLS-1$
     }
-    return label;
+    return label.toString();
   }
 
   public boolean hasChildren() {

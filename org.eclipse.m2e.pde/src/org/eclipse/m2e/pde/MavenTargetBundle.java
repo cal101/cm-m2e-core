@@ -96,11 +96,11 @@ public class MavenTargetBundle extends TargetBundle {
 					isWrapped = true;
 				} catch (Exception e) {
 					// not possible then
-					String message = artifact + " is not a bundle and cannot be automatically bundled as such ";
+					StringBuilder message = new StringBuilder().append(artifact).append(" is not a bundle and cannot be automatically bundled as such ");
 					if (e.getMessage() != null) {
-						message += " (" + e.getMessage() + ")";
+						message.append(" (").append(e.getMessage()).append(")");
 					}
-					status = new Status(Status.ERROR, MavenTargetBundle.class.getPackage().getName(), message, e);
+					status = new Status(Status.ERROR, MavenTargetBundle.class.getPackage().getName(), message.toString(), e);
 				}
 			} else {
 				status = Status.CANCEL_STATUS;
