@@ -72,7 +72,7 @@ public class MavenConsoleImpl extends IOConsole implements MavenConsole, IProper
 
   public MavenConsoleImpl(ImageDescriptor imageDescriptor) {
     super(TITLE, imageDescriptor);
-    this.setConsoleDocument(new ConsoleDocument());
+    setConsoleDocument(new ConsoleDocument());
   }
 
   protected void init() {
@@ -205,7 +205,7 @@ public class MavenConsoleImpl extends IOConsole implements MavenConsole, IProper
   public void closeConsole() {
     IConsoleManager manager = ConsolePlugin.getDefault().getConsoleManager();
     manager.removeConsoles(new IConsole[] {this});
-    ConsolePlugin.getDefault().getConsoleManager().addConsoleListener(this.newLifecycle());
+    ConsolePlugin.getDefault().getConsoleManager().addConsoleListener(newLifecycle());
   }
 
   public void propertyChange(PropertyChangeEvent event) {

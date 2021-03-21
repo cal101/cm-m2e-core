@@ -509,7 +509,7 @@ public class MavenRepositoryView extends ViewPart {
       try {
         node.getIndex().setIndexDetails(details);
       } catch(CoreException ex) {
-        M2EUIUtils.showErrorDialog(this.getViewSite().getShell(), Messages.MavenRepositoryView_error_title,
+        M2EUIUtils.showErrorDialog(getViewSite().getShell(), Messages.MavenRepositoryView_error_title,
             Messages.MavenRepositoryView_error_message, ex);
       }
     }
@@ -582,7 +582,7 @@ public class MavenRepositoryView extends ViewPart {
       updateIndexDetails(node);
       setText(getActionText());
       boolean enabled = (node instanceof RepositoryNode);
-      this.setEnabled(enabled);
+      setEnabled(enabled);
     }
 
     protected void updateIndexDetails(AbstractIndexedRepositoryNode node) {

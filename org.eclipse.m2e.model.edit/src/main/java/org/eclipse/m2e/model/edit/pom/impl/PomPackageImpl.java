@@ -2878,7 +2878,7 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    buildEClass.getESuperTypes().add(this.getBuildBase());
+    buildEClass.getESuperTypes().add(getBuildBase());
 
     // Initialize classes and features; add operations and parameters
     initEClass(activationEClass, Activation.class, "Activation", !IS_ABSTRACT, !IS_INTERFACE,
@@ -2888,13 +2888,13 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
         IS_ORDERED);
     initEAttribute(getActivation_Jdk(), theXMLTypePackage.getString(), "jdk", null, 0, 1, Activation.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActivation_Os(), this.getActivationOS(), null, "os", null, 0, 1, Activation.class, !IS_TRANSIENT,
+    initEReference(getActivation_Os(), getActivationOS(), null, "os", null, 0, 1, Activation.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getActivation_Property(), this.getActivationProperty(), null, "property", null, 0, 1,
+    initEReference(getActivation_Property(), getActivationProperty(), null, "property", null, 0, 1,
         Activation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActivation_File(), this.getActivationFile(), null, "file", null, 0, 1, Activation.class,
+    initEReference(getActivation_File(), getActivationFile(), null, "file", null, 0, 1, Activation.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
@@ -2943,7 +2943,7 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
     initEAttribute(getBuild_TestOutputDirectory(), theXMLTypePackage.getString(), "testOutputDirectory", null, 0, 1,
         Build.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getBuild_Extensions(), this.getExtension(), null, "extensions", null, 0, -1, Build.class,
+    initEReference(getBuild_Extensions(), getExtension(), null, "extensions", null, 0, -1, Build.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
@@ -2951,20 +2951,20 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
     initEAttribute(getBuildBase_DefaultGoal(), theXMLTypePackage.getString(), "defaultGoal", null, 0, 1,
         BuildBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getBuildBase_Resources(), this.getResource(), null, "resources", null, 0, -1, BuildBase.class,
+    initEReference(getBuildBase_Resources(), getResource(), null, "resources", null, 0, -1, BuildBase.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getBuildBase_TestResources(), this.getResource(), null, "testResources", null, 0, -1,
+    initEReference(getBuildBase_TestResources(), getResource(), null, "testResources", null, 0, -1,
         BuildBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBuildBase_Directory(), theXMLTypePackage.getString(), "directory", null, 0, 1, BuildBase.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBuildBase_FinalName(), theXMLTypePackage.getString(), "finalName", null, 0, 1, BuildBase.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBuildBase_PluginManagement(), this.getPluginManagement(), null, "pluginManagement", null, 0, 1,
+    initEReference(getBuildBase_PluginManagement(), getPluginManagement(), null, "pluginManagement", null, 0, 1,
         BuildBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBuildBase_Plugins(), this.getPlugin(), null, "plugins", null, 0, -1, BuildBase.class,
+    initEReference(getBuildBase_Plugins(), getPlugin(), null, "plugins", null, 0, -1, BuildBase.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
     initEAttribute(getBuildBase_Filters(), theXMLTypePackage.getString(), "filters", null, 0, -1, BuildBase.class,
@@ -2976,7 +2976,7 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getCiManagement_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, CiManagement.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCiManagement_Notifiers(), this.getNotifier(), null, "notifiers", null, 0, -1, CiManagement.class,
+    initEReference(getCiManagement_Notifiers(), getNotifier(), null, "notifiers", null, 0, -1, CiManagement.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
@@ -2996,7 +2996,7 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
         IS_ORDERED);
     initEAttribute(getContributor_Timezone(), theXMLTypePackage.getString(), "timezone", null, 0, 1, Contributor.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getContributor_Properties(), this.getPropertyElement(), null, "properties", null, 0, -1,
+    initEReference(getContributor_Properties(), getPropertyElement(), null, "properties", null, 0, -1,
         Contributor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getContributor_Roles(), theXMLTypePackage.getString(), "roles", null, 0, -1, Contributor.class,
@@ -3021,7 +3021,7 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
     initEAttribute(getDependency_SystemPath(), theXMLTypePackage.getString(), "systemPath", null, 0, 1,
         Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getDependency_Exclusions(), this.getExclusion(), null, "exclusions", null, 0, -1, Dependency.class,
+    initEReference(getDependency_Exclusions(), getExclusion(), null, "exclusions", null, 0, -1, Dependency.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDependency_Optional(), theXMLTypePackage.getString(), "optional", "false", 0, 1,
@@ -3030,7 +3030,7 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
 
     initEClass(dependencyManagementEClass, DependencyManagement.class, "DependencyManagement", !IS_ABSTRACT,
         !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDependencyManagement_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1,
+    initEReference(getDependencyManagement_Dependencies(), getDependency(), null, "dependencies", null, 0, -1,
         DependencyManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3069,7 +3069,7 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
         IS_ORDERED);
     initEAttribute(getDeveloper_Timezone(), theXMLTypePackage.getString(), "timezone", null, 0, 1, Developer.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeveloper_Properties(), this.getPropertyElement(), null, "properties", null, 0, -1,
+    initEReference(getDeveloper_Properties(), getPropertyElement(), null, "properties", null, 0, -1,
         Developer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDeveloper_Roles(), theXMLTypePackage.getString(), "roles", null, 0, -1, Developer.class,
@@ -3077,19 +3077,19 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
 
     initEClass(distributionManagementEClass, DistributionManagement.class, "DistributionManagement", !IS_ABSTRACT,
         !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDistributionManagement_Repository(), this.getDeploymentRepository(), null, "repository", null, 0,
+    initEReference(getDistributionManagement_Repository(), getDeploymentRepository(), null, "repository", null, 0,
         1, DistributionManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDistributionManagement_SnapshotRepository(), this.getDeploymentRepository(), null,
+    initEReference(getDistributionManagement_SnapshotRepository(), getDeploymentRepository(), null,
         "snapshotRepository", null, 0, 1, DistributionManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
         IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDistributionManagement_Site(), this.getSite(), null, "site", null, 0, 1,
+    initEReference(getDistributionManagement_Site(), getSite(), null, "site", null, 0, 1,
         DistributionManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDistributionManagement_DownloadUrl(), theXMLTypePackage.getString(), "downloadUrl", null, 0, 1,
         DistributionManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getDistributionManagement_Relocation(), this.getRelocation(), null, "relocation", null, 0, 1,
+    initEReference(getDistributionManagement_Relocation(), getRelocation(), null, "relocation", null, 0, 1,
         DistributionManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getDistributionManagement_Status(), theXMLTypePackage.getString(), "status", null, 0, 1,
@@ -3106,7 +3106,7 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
     initEReference(getDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null,
         "xSISchemaLocation", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
         !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDocumentRoot_Project(), this.getModel(), null, "project", null, 0, -2, null, IS_TRANSIENT,
+    initEReference(getDocumentRoot_Project(), getModel(), null, "project", null, 0, -2, null, IS_TRANSIENT,
         IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
         IS_ORDERED);
 
@@ -3161,7 +3161,7 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
         IS_ORDERED);
 
     initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Parent(), this.getParent(), null, "parent", null, 0, 1, Model.class, !IS_TRANSIENT,
+    initEReference(getModel_Parent(), getParent(), null, "parent", null, 0, 1, Model.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
     initEAttribute(getModel_ModelVersion(), theXMLTypePackage.getString(), "modelVersion", null, 0, 1, Model.class,
@@ -3180,59 +3180,59 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getModel_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Model.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Prerequisites(), this.getPrerequisites(), null, "prerequisites", null, 0, 1, Model.class,
+    initEReference(getModel_Prerequisites(), getPrerequisites(), null, "prerequisites", null, 0, 1, Model.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_IssueManagement(), this.getIssueManagement(), null, "issueManagement", null, 0, 1,
+    initEReference(getModel_IssueManagement(), getIssueManagement(), null, "issueManagement", null, 0, 1,
         Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_CiManagement(), this.getCiManagement(), null, "ciManagement", null, 0, 1, Model.class,
+    initEReference(getModel_CiManagement(), getCiManagement(), null, "ciManagement", null, 0, 1, Model.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
     initEAttribute(getModel_InceptionYear(), theXMLTypePackage.getString(), "inceptionYear", null, 0, 1, Model.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_MailingLists(), this.getMailingList(), null, "mailingLists", null, 0, -1, Model.class,
+    initEReference(getModel_MailingLists(), getMailingList(), null, "mailingLists", null, 0, -1, Model.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Developers(), this.getDeveloper(), null, "developers", null, 0, -1, Model.class,
+    initEReference(getModel_Developers(), getDeveloper(), null, "developers", null, 0, -1, Model.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Contributors(), this.getContributor(), null, "contributors", null, 0, -1, Model.class,
+    initEReference(getModel_Contributors(), getContributor(), null, "contributors", null, 0, -1, Model.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Licenses(), this.getLicense(), null, "licenses", null, 0, -1, Model.class, !IS_TRANSIENT,
+    initEReference(getModel_Licenses(), getLicense(), null, "licenses", null, 0, -1, Model.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getModel_Scm(), this.getScm(), null, "scm", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE,
+    initEReference(getModel_Scm(), getScm(), null, "scm", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Organization(), this.getOrganization(), null, "organization", null, 0, 1, Model.class,
+    initEReference(getModel_Organization(), getOrganization(), null, "organization", null, 0, 1, Model.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Build(), this.getBuild(), null, "build", null, 0, 1, Model.class, !IS_TRANSIENT,
+    initEReference(getModel_Build(), getBuild(), null, "build", null, 0, 1, Model.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getModel_Profiles(), this.getProfile(), null, "profiles", null, 0, -1, Model.class, !IS_TRANSIENT,
+    initEReference(getModel_Profiles(), getProfile(), null, "profiles", null, 0, -1, Model.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getModel_Repositories(), this.getRepository(), null, "repositories", null, 0, -1, Model.class,
+    initEReference(getModel_Repositories(), getRepository(), null, "repositories", null, 0, -1, Model.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_PluginRepositories(), this.getRepository(), null, "pluginRepositories", null, 0, -1,
+    initEReference(getModel_PluginRepositories(), getRepository(), null, "pluginRepositories", null, 0, -1,
         Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1, Model.class,
+    initEReference(getModel_Dependencies(), getDependency(), null, "dependencies", null, 0, -1, Model.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Reporting(), this.getReporting(), null, "reporting", null, 0, 1, Model.class,
+    initEReference(getModel_Reporting(), getReporting(), null, "reporting", null, 0, 1, Model.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_DependencyManagement(), this.getDependencyManagement(), null, "dependencyManagement", null,
+    initEReference(getModel_DependencyManagement(), getDependencyManagement(), null, "dependencyManagement", null,
         0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_DistributionManagement(), this.getDistributionManagement(), null, "distributionManagement",
+    initEReference(getModel_DistributionManagement(), getDistributionManagement(), null, "distributionManagement",
         null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Properties(), this.getPropertyElement(), null, "properties", null, 0, -1, Model.class,
+    initEReference(getModel_Properties(), getPropertyElement(), null, "properties", null, 0, -1, Model.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
     initEAttribute(getModel_Modules(), theXMLTypePackage.getString(), "modules", null, 0, -1, Model.class,
@@ -3255,7 +3255,7 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
         IS_ORDERED);
     initEAttribute(getNotifier_Address(), theXMLTypePackage.getString(), "address", null, 0, 1, Notifier.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNotifier_Configuration(), this.getPropertyElement(), null, "configuration", null, 0, -1,
+    initEReference(getNotifier_Configuration(), getPropertyElement(), null, "configuration", null, 0, -1,
         Notifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3285,15 +3285,15 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPlugin_Extensions(), theXMLTypePackage.getString(), "extensions", "false", 0, 1, Plugin.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPlugin_Executions(), this.getPluginExecution(), null, "executions", null, 0, -1, Plugin.class,
+    initEReference(getPlugin_Executions(), getPluginExecution(), null, "executions", null, 0, -1, Plugin.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getPlugin_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1, Plugin.class,
+    initEReference(getPlugin_Dependencies(), getDependency(), null, "dependencies", null, 0, -1, Plugin.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
     initEAttribute(getPlugin_Inherited(), theXMLTypePackage.getString(), "inherited", null, 0, 1, Plugin.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPlugin_Configuration(), this.getConfiguration(), null, "configuration", null, 0, 1, Plugin.class,
+    initEReference(getPlugin_Configuration(), getConfiguration(), null, "configuration", null, 0, 1, Plugin.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
@@ -3310,13 +3310,13 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
     initEAttribute(getPluginExecution_Goals(), theXMLTypePackage.getString(), "goals", null, 0, -1,
         PluginExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getPluginExecution_Configuration(), this.getConfiguration(), null, "configuration", null, 0, 1,
+    initEReference(getPluginExecution_Configuration(), getConfiguration(), null, "configuration", null, 0, 1,
         PluginExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(pluginManagementEClass, PluginManagement.class, "PluginManagement", !IS_ABSTRACT, !IS_INTERFACE,
         IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPluginManagement_Plugins(), this.getPlugin(), null, "plugins", null, 0, -1,
+    initEReference(getPluginManagement_Plugins(), getPlugin(), null, "plugins", null, 0, -1,
         PluginManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3328,36 +3328,36 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
     initEClass(profileEClass, Profile.class, "Profile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getProfile_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, Profile.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_Activation(), this.getActivation(), null, "activation", null, 0, 1, Profile.class,
+    initEReference(getProfile_Activation(), getActivation(), null, "activation", null, 0, 1, Profile.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_Build(), this.getBuildBase(), null, "build", null, 0, 1, Profile.class, !IS_TRANSIENT,
+    initEReference(getProfile_Build(), getBuildBase(), null, "build", null, 0, 1, Profile.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getProfile_Repositories(), this.getRepository(), null, "repositories", null, 0, -1, Profile.class,
+    initEReference(getProfile_Repositories(), getRepository(), null, "repositories", null, 0, -1, Profile.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_PluginRepositories(), this.getRepository(), null, "pluginRepositories", null, 0, -1,
+    initEReference(getProfile_PluginRepositories(), getRepository(), null, "pluginRepositories", null, 0, -1,
         Profile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1, Profile.class,
+    initEReference(getProfile_Dependencies(), getDependency(), null, "dependencies", null, 0, -1, Profile.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_Reports(), this.getReportPlugin(), null, "reports", null, 0, -1, Profile.class,
+    initEReference(getProfile_Reports(), getReportPlugin(), null, "reports", null, 0, -1, Profile.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_DependencyManagement(), this.getDependencyManagement(), null, "dependencyManagement",
+    initEReference(getProfile_DependencyManagement(), getDependencyManagement(), null, "dependencyManagement",
         null, 0, 1, Profile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_DistributionManagement(), this.getDistributionManagement(), null,
+    initEReference(getProfile_DistributionManagement(), getDistributionManagement(), null,
         "distributionManagement", null, 0, 1, Profile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
         !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_Properties(), this.getPropertyElement(), null, "properties", null, 0, -1, Profile.class,
+    initEReference(getProfile_Properties(), getPropertyElement(), null, "properties", null, 0, -1, Profile.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProfile_Modules(), theXMLTypePackage.getString(), "modules", null, 0, -1, Profile.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_Reporting(), this.getReporting(), null, "reporting", null, 0, 1, Profile.class,
+    initEReference(getProfile_Reporting(), getReporting(), null, "reporting", null, 0, 1, Profile.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
@@ -3380,7 +3380,7 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
     initEAttribute(getReporting_OutputDirectory(), theXMLTypePackage.getString(), "outputDirectory", null, 0, 1,
         Reporting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getReporting_Plugins(), this.getReportPlugin(), null, "plugins", null, 0, -1, Reporting.class,
+    initEReference(getReporting_Plugins(), getReportPlugin(), null, "plugins", null, 0, -1, Reporting.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
@@ -3396,10 +3396,10 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
     initEAttribute(getReportPlugin_Inherited(), theXMLTypePackage.getString(), "inherited", null, 0, 1,
         ReportPlugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getReportPlugin_ReportSets(), this.getReportSet(), null, "reportSets", null, 0, -1,
+    initEReference(getReportPlugin_ReportSets(), getReportSet(), null, "reportSets", null, 0, -1,
         ReportPlugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReportPlugin_Configuration(), this.getConfiguration(), null, "configuration", null, 0, 1,
+    initEReference(getReportPlugin_Configuration(), getConfiguration(), null, "configuration", null, 0, 1,
         ReportPlugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -3410,16 +3410,16 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getReportSet_Reports(), theXMLTypePackage.getString(), "reports", null, 0, -1, ReportSet.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReportSet_Configuration(), this.getConfiguration(), null, "configuration", null, 0, 1,
+    initEReference(getReportSet_Configuration(), getConfiguration(), null, "configuration", null, 0, 1,
         ReportSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(repositoryEClass, Repository.class, "Repository", !IS_ABSTRACT, !IS_INTERFACE,
         IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRepository_Releases(), this.getRepositoryPolicy(), null, "releases", null, 0, 1,
+    initEReference(getRepository_Releases(), getRepositoryPolicy(), null, "releases", null, 0, 1,
         Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRepository_Snapshots(), this.getRepositoryPolicy(), null, "snapshots", null, 0, 1,
+    initEReference(getRepository_Snapshots(), getRepositoryPolicy(), null, "snapshots", null, 0, 1,
         Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRepository_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, Repository.class,

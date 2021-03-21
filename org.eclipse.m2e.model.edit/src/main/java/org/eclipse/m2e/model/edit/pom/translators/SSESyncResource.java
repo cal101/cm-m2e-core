@@ -80,8 +80,8 @@ public class SSESyncResource extends ResourceImpl {
         pomModel.eAdapters().add(da);
       }
       ((IDOMNode) doc).addAdapter(da);
-      this.getContents().add(pomModel);
-      this.setLoaded(true);
+      getContents().add(pomModel);
+      setLoaded(true);
     } finally {
       setProcessEvents(true);
     }

@@ -361,7 +361,7 @@ public class MavenPomEditor extends FormEditor implements IResourceChangeListene
 
   private void setModel() {
     if(sourceDocument == null) {
-      sourceDocument = sourcePage.getDocumentProvider().getDocument(this.getEditorInput());
+      sourceDocument = sourcePage.getDocumentProvider().getDocument(getEditorInput());
     }
     this.structuredModel = (IDOMModel) this.modelManager.getModelForEdit((IStructuredDocument) sourceDocument);
   }
@@ -386,7 +386,7 @@ public class MavenPomEditor extends FormEditor implements IResourceChangeListene
       super.pageChange(newPageIndex);
     } catch(NullPointerException e) {
       MavenEditorPlugin.getDefault().getLog().log(new Status(IStatus.ERROR, MavenEditorPlugin.PLUGIN_ID, "", e)); //$NON-NLS-1$
-      this.close(false);
+      close(false);
     }
     // a workaround for editor pages not returned 
     IEditorActionBarContributor contributor = getEditorSite().getActionBarContributor();

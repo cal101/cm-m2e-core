@@ -134,11 +134,11 @@ public class IndexedArtifact implements Comparable<IndexedArtifact> {
       return false;
     } else {
       IndexedArtifact other = (IndexedArtifact) artifact;
-      return fieldsEqual(this.getGroupId(), other.getGroupId())
-          && fieldsEqual(this.getArtifactId(), other.getArtifactId())
-          && fieldsEqual(this.getPackageName(), other.getPackageName())
-          && fieldsEqual(this.getPackaging(), other.getPackaging())
-          && fieldsEqual(this.getClassname(), other.getClassname());
+      return fieldsEqual(getGroupId(), other.getGroupId())
+          && fieldsEqual(getArtifactId(), other.getArtifactId())
+          && fieldsEqual(getPackageName(), other.getPackageName())
+          && fieldsEqual(getPackaging(), other.getPackaging())
+          && fieldsEqual(getClassname(), other.getClassname());
     }
   }
 
@@ -147,7 +147,7 @@ public class IndexedArtifact implements Comparable<IndexedArtifact> {
   }
 
   public int compareTo(IndexedArtifact o) {
-    if(this.equals(o))
+    if(equals(o))
       return 0;
     int comparison = 0;
     if(group != null && (comparison = group.compareTo(o.getGroupId())) != 0)

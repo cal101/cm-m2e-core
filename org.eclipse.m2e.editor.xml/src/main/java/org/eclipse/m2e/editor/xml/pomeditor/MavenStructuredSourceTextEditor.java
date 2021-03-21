@@ -116,7 +116,7 @@ class MavenStructuredSourceTextEditor extends StructuredTextEditor {
 			}
 		}
 
-		updateState(this.getEditorInput());
+		updateState(getEditorInput());
 		updateStatusField(ITextEditorActionConstants.STATUS_CATEGORY_ELEMENT_STATE);
 	}
 

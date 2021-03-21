@@ -344,7 +344,7 @@ public class MavenProjectWizardArtifactPage extends AbstractMavenWizardPage {
      * Returns true for source folder
      */
     boolean isSourceEntry() {
-      return this.getOutputPath() != null;
+      return getOutputPath() != null;
     }
 
   }

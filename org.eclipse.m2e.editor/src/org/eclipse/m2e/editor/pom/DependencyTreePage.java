@@ -1085,7 +1085,7 @@ public class DependencyTreePage extends FormPage implements IMavenProjectChanged
     public void run() {
       if(isChecked()) {
         currentClasspath = classpath;
-        IManagedForm managedForm = DependencyTreePage.this.getManagedForm();
+        IManagedForm managedForm = getManagedForm();
         managedForm.getForm().setText(formatFormTitle());
         loadData(false);
       }

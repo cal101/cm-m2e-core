@@ -133,7 +133,7 @@ public class MavenProjectConfigurator implements ProjectConfigurator {
         private UpdateMavenConfigurationJob() {
             super(UPDATE_MAVEN_CONFIGURATION_JOB_NAME);
             this.toProcess = Collections.synchronizedSet(new HashSet<IProject>());
-            this.setUser(true);
+            setUser(true);
         }
 
         /**

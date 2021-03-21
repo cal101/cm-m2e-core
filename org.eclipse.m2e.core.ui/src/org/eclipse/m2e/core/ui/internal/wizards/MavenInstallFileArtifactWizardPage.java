@@ -77,8 +77,8 @@ public class MavenInstallFileArtifactWizardPage extends WizardPage {
   public MavenInstallFileArtifactWizardPage(IFile file) {
     super("mavenInstallFileWizardPage");
     this.file = file;
-    this.setTitle(Messages.MavenInstallFileArtifactWizardPage_title);
-    this.setDescription(Messages.MavenInstallFileArtifactWizardPage_desc);
+    setTitle(Messages.MavenInstallFileArtifactWizardPage_title);
+    setDescription(Messages.MavenInstallFileArtifactWizardPage_desc);
   }
 
   public void createControl(Composite parent) {
