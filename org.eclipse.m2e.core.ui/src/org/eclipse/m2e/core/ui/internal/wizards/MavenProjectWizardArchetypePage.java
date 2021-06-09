@@ -184,6 +184,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
   }
 
   /** Creates the page controls. */
+  @Override
   public void createControl(Composite parent) {
     archetypesCache.clear();
 
@@ -219,7 +220,8 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
     catalogsComboViewer.getControl().setData("name", "catalogsCombo"); //$NON-NLS-1$ //$NON-NLS-2$
     catalogsComboViewer.getCombo().setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
     catalogsComboViewer.setContentProvider(new IStructuredContentProvider() {
-      public Object[] getElements(Object input) {
+        @Override
+        public Object[] getElements(Object input) {
 
         if(input instanceof Collection) {
           return ((Collection<?>) input).toArray();
@@ -227,15 +229,18 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
         return new Object[0];
       }
 
-      public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+        @Override
+        public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
       }
 
-      public void dispose() {
+        @Override
+        public void dispose() {
       }
     });
 
     catalogsComboViewer.setLabelProvider(new LabelProvider() {
-      public String getText(Object element) {
+        @Override
+        public String getText(Object element) {
         if(element instanceof ArchetypeCatalogFactory) {
           return ((ArchetypeCatalogFactory) element).getDescription();
         } else if(element instanceof String) {
@@ -330,7 +335,8 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
     filterText.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false));
     filterText.addModifyListener(quickViewerFilter);
     filterText.addKeyListener(new KeyAdapter() {
-      public void keyPressed(KeyEvent e) {
+        @Override
+        public void keyPressed(KeyEvent e) {
         if(e.keyCode == SWT.ARROW_DOWN) {
           viewer.getTable().setFocus();
           viewer.getTable().setSelection(0);
@@ -393,20 +399,23 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
     viewer.setLabelProvider(new ArchetypeLabelProvider());
 
     viewer.setComparator(new ViewerComparator() {
-      public int compare(Viewer viewer, Object e1, Object e2) {
+        @Override
+        public int compare(Viewer viewer, Object e1, Object e2) {
         return ARCHETYPE_COMPARATOR.compare((Archetype) e1, (Archetype) e2);
       }
     });
 
     viewer.setComparer(new IElementComparer() {
-      public int hashCode(Object obj) {
+        @Override
+        public int hashCode(Object obj) {
         if(obj instanceof Archetype) {
           return ArchetypeUtil.getHashCode((Archetype) obj);
         }
         return obj.hashCode();
       }
 
-      public boolean equals(Object one, Object another) {
+        @Override
+        public boolean equals(Object one, Object another) {
         if(one instanceof Archetype && another instanceof Archetype) {
           return ArchetypeUtil.areEqual((Archetype) one, (Archetype) another);
         }
@@ -417,17 +426,20 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
     viewer.setFilters(versionFilter, quickViewerFilter);
 
     viewer.setContentProvider(new IStructuredContentProvider() {
-      public Object[] getElements(Object inputElement) {
+        @Override
+        public Object[] getElements(Object inputElement) {
         if(inputElement instanceof Collection) {
           return ((Collection<?>) inputElement).toArray();
         }
         return new Object[0];
       }
 
-      public void dispose() {
+        @Override
+        public void dispose() {
       }
 
-      public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+        @Override
+        public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
       }
     });
 
@@ -518,6 +530,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
     }));
   }
 
+  @Override
   protected IWizardContainer getContainer() {
     return super.getContainer();
   }
@@ -526,6 +539,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
     viewer.addSelectionChangedListener(listener);
   }
 
+  @Override
   public void dispose() {
     if(job != null) {
       job.cancel();
@@ -602,7 +616,8 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
     }
     job = new RetrievingArchetypesJob(catalogFactory);
     job.addJobChangeListener(new JobChangeAdapter() {
-      public void done(IJobChangeEvent event) {
+        @Override
+        public void done(IJobChangeEvent event) {
 
         final RetrievingArchetypesJob thisJob = (RetrievingArchetypesJob) event.getJob();
         if(IStatus.CANCEL == event.getResult().getSeverity() || !isCurrentPage()) {
@@ -654,11 +669,13 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
   }
 
   /** Overrides the default to return "true" if the page is not used. */
+  @Override
   public boolean isPageComplete() {
     return !isUsed || super.isPageComplete();
   }
 
   /** Sets the focus to the table component. */
+  @Override
   public void setVisible(boolean visible) {
     super.setVisible(visible);
 
@@ -894,6 +911,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
    */
   protected static class ArchetypeLabelProvider extends LabelProvider implements ITableLabelProvider {
     /** Returns the element text */
+    @Override
     public String getColumnText(Object element, int columnIndex) {
       if(element instanceof Archetype) {
         Archetype archetype = (Archetype) element;
@@ -910,6 +928,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
     }
 
     /** Returns the element text */
+    @Override
     public Image getColumnImage(Object element, int columnIndex) {
       return null;
     }
@@ -922,6 +941,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
 
     private String currentFilter;
 
+    @Override
     public boolean select(Viewer viewer, Object parentElement, Object element) {
       if(currentFilter == null || currentFilter.length() == 0) {
         return true;
@@ -931,6 +951,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
           || archetype.getArtifactId().toLowerCase().indexOf(currentFilter) > -1;
     }
 
+    @Override
     public void modifyText(ModifyEvent e) {
       this.currentFilter = filterText.getText().trim().toLowerCase();
       viewer.refresh();
@@ -948,6 +969,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
       this.includeSnapshots = includeSnapshots;
     }
 
+    @Override
     public boolean select(Viewer viewer, Object parentElement, Object element) {
       if(!(element instanceof Archetype)) {
         return false;
@@ -989,6 +1011,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
       return !M2EUIUtils.nullOrEmpty(version) && version.endsWith("SNAPSHOT"); //$NON-NLS-1$
     }
 
+    @Override
     public void widgetSelected(SelectionEvent e) {
       this.showLastVersion = showLastVersionButton.getSelection();
       this.includeSnapshots = includeShapshotsButton.getSelection();
@@ -1002,6 +1025,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
       viewer.getTable().setFocus();
     }
 
+    @Override
     public void widgetDefaultSelected(SelectionEvent e) {
     }
   }
@@ -1009,6 +1033,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
   /* (non-Javadoc)
    * @see org.eclipse.m2e.index.IndexListener#indexAdded(org.eclipse.m2e.repository.IRepository)
    */
+  @Override
   public void indexAdded(IRepository repository) {
 
   }
@@ -1035,6 +1060,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
   /* (non-Javadoc)
    * @see org.eclipse.m2e.index.IndexListener#indexChanged(org.eclipse.m2e.repository.IRepository)
    */
+  @Override
   public void indexChanged(IRepository repository) {
     reloadViewer();
   }
@@ -1042,12 +1068,14 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
   /* (non-Javadoc)
    * @see org.eclipse.m2e.index.IndexListener#indexRemoved(org.eclipse.m2e.repository.IRepository)
    */
+  @Override
   public void indexRemoved(IRepository repository) {
   }
 
   /* (non-Javadoc)
    * @see org.eclipse.m2e.index.IndexListener#indexUpdating(org.eclipse.m2e.repository.IRepository)
    */
+  @Override
   public void indexUpdating(IRepository repository) {
   }
 
@@ -1062,6 +1090,7 @@ public class MavenProjectWizardArchetypePage extends AbstractMavenWizardPage imp
       this.archetypeCatalogFactory = catalogFactory;
     }
 
+    @Override
     protected IStatus run(IProgressMonitor monitor) {
       try {
         catalogArchetypes = getArchetypesForCatalog(archetypeCatalogFactory, monitor);

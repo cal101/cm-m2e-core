@@ -35,10 +35,12 @@ public class EclipseRepositoryListener extends AbstractRepositoryListener implem
 
   public static final String ROLE_HINT = "EclipseRepositoryListener";
 
+  @Override
   public void artifactInstalled(RepositoryEvent event) {
     notifyListeners(event);
   }
 
+  @Override
   public void artifactDownloaded(RepositoryEvent event) {
     notifyListeners(event);
   }

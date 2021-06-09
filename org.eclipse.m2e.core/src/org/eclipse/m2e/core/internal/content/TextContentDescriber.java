@@ -40,6 +40,7 @@ class TextContentDescriber implements ITextContentDescriber {
    *  (non-Javadoc)
    * @see org.eclipse.core.runtime.content.ITextContentDescriber#describe(java.io.Reader, org.eclipse.core.runtime.content.IContentDescription)
    */
+  @Override
   @SuppressWarnings("unused")
   public int describe(Reader contents, IContentDescription description) throws IOException {
     // we want to be pretty loose on detecting the text content type
@@ -50,6 +51,7 @@ class TextContentDescriber implements ITextContentDescriber {
    *  (non-Javadoc)
    * @see org.eclipse.core.runtime.content.IContentDescriber#describe(java.io.InputStream, org.eclipse.core.runtime.content.IContentDescription)
    */
+  @Override
   public int describe(InputStream contents, IContentDescription description) throws IOException {
     if(description == null || !description.isRequested(IContentDescription.BYTE_ORDER_MARK))
       return INDETERMINATE;
@@ -64,6 +66,7 @@ class TextContentDescriber implements ITextContentDescriber {
    *  (non-Javadoc)
    * @see org.eclipse.core.runtime.content.IContentDescriber#getSupportedOptions()
    */
+  @Override
   public QualifiedName[] getSupportedOptions() {
     return SUPPORTED_OPTIONS;
   }

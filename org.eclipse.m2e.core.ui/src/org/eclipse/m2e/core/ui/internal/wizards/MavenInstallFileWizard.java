@@ -65,6 +65,7 @@ public class MavenInstallFileWizard extends Wizard implements IImportWizard {
     setWindowTitle(Messages.MavenInstallFileWizard_title);
   }
 
+  @Override
   public void addPages() {
     artifactPage = new MavenInstallFileArtifactWizardPage(selectedFile);
     addPage(artifactPage);
@@ -73,6 +74,7 @@ public class MavenInstallFileWizard extends Wizard implements IImportWizard {
     // addPage(repositoryPage);
   }
 
+  @Override
   public boolean performFinish() {
     final Properties properties = new Properties();
 
@@ -99,7 +101,8 @@ public class MavenInstallFileWizard extends Wizard implements IImportWizard {
     }
 
     new Job(Messages.MavenInstallFileWizard_job) {
-      protected IStatus run(IProgressMonitor monitor) {
+        @Override
+        protected IStatus run(IProgressMonitor monitor) {
         setProperty(IProgressConstants.ACTION_PROPERTY, new OpenMavenConsoleAction());
         try {
           // Run the install:install-file goal
@@ -129,6 +132,7 @@ public class MavenInstallFileWizard extends Wizard implements IImportWizard {
     return true;
   }
 
+  @Override
   public void init(IWorkbench workbench, IStructuredSelection selection) {
     Object element = selection.getFirstElement();
     if(element instanceof IFile) {

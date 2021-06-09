@@ -52,14 +52,17 @@ public class ChangedFileOutputStream extends OutputStream {
     this.os = new BufferedOutputStream(new FileOutputStream(file));
   }
 
+  @Override
   public void write(int b) {
     buffer.write(b);
   }
 
+  @Override
   public void write(byte[] b, int off, int len) {
     buffer.write(b, off, len);
   }
 
+  @Override
   public void close() throws IOException {
     try {
       writeIfNewOrChanged();

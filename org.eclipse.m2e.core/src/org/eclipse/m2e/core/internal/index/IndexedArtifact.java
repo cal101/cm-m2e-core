@@ -78,7 +78,8 @@ public class IndexedArtifact implements Comparable<IndexedArtifact> {
     return packageName;
   }
 
-  public String toString() {
+	@Override
+	  public String toString() {
 	  StringBuilder sb = new StringBuilder(
         "\n" + getClassname() + "  " + packageName + "  " + getGroupId() + " : " + getArtifactId()); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
     return sb.toString();
@@ -107,7 +108,8 @@ public class IndexedArtifact implements Comparable<IndexedArtifact> {
   /* (non-Javadoc)
    * @see java.lang.Object#hashCode()
    */
-  public int hashCode() {
+	@Override
+	  public int hashCode() {
     int result = SEED;
     result *= fieldHash(getGroupId());
     result *= fieldHash(getArtifactId());
@@ -127,7 +129,8 @@ public class IndexedArtifact implements Comparable<IndexedArtifact> {
   /**
    * Assumes all the fields are important for equals.
    */
-  public boolean equals(Object artifact) {
+	@Override
+	  public boolean equals(Object artifact) {
     if(this == artifact) {
       return true;
     } else if(!(artifact instanceof IndexedArtifact)) {
@@ -146,7 +149,8 @@ public class IndexedArtifact implements Comparable<IndexedArtifact> {
     return field1 == null ? field2 == null : field1.equals(field2);
   }
 
-  public int compareTo(IndexedArtifact o) {
+	@Override
+	  public int compareTo(IndexedArtifact o) {
     if(this.equals(o))
       return 0;
     int comparison = 0;

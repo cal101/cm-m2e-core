@@ -87,6 +87,7 @@ public abstract class ArchetypeCatalogFactory {
 
   public abstract ArchetypeCatalog getArchetypeCatalog() throws CoreException;
 
+  @Override
   public String toString() {
     return getId();
   }
@@ -105,6 +106,7 @@ public abstract class ArchetypeCatalogFactory {
       super(ID, Messages.ArchetypeCatalogFactory_indexer_catalog, false);
     }
 
+    @Override
     public ArchetypeCatalog getArchetypeCatalog() throws CoreException {
       try {
         ArchetypeDataSource source = MavenPluginActivator.getDefault().getIndexManager().getArchetypeCatalog();
@@ -128,6 +130,7 @@ public abstract class ArchetypeCatalogFactory {
       super(ID, Messages.ArchetypeCatalogFactory_internal, false);
     }
 
+    @Override
     public ArchetypeCatalog getArchetypeCatalog() {
       return getArchetyper().getInternalCatalog();
     }
@@ -143,6 +146,7 @@ public abstract class ArchetypeCatalogFactory {
       super(ID, Messages.ArchetypeCatalogFactory_default_local, false);
     }
 
+    @Override
     public ArchetypeCatalog getArchetypeCatalog() {
       return getArchetyper().getDefaultLocalCatalog();
     }
@@ -163,6 +167,7 @@ public abstract class ArchetypeCatalogFactory {
           : description, editable, enabled);
     }
 
+    @Override
     public ArchetypeCatalog getArchetypeCatalog() throws CoreException {
       ArchetypeCatalog catalog = getEmbeddedCatalog();
       if(catalog == null) {
@@ -240,6 +245,7 @@ public abstract class ArchetypeCatalogFactory {
       return url;
     }
 
+    @Override
     public ArchetypeCatalog getArchetypeCatalog() {
       String url = getId();
       int idx = url.lastIndexOf("/archetype-catalog.xml");
@@ -250,11 +256,13 @@ public abstract class ArchetypeCatalogFactory {
       final String remoteUrl = url;
       @SuppressWarnings("serial")
       ArchetypeCatalog catalogWrapper = new ArchetypeCatalog() {
-        public void addArchetype(Archetype archetype) {
+          @Override
+          public void addArchetype(Archetype archetype) {
           catalog.addArchetype(archetype);
         }
 
-        public List<Archetype> getArchetypes() {
+          @Override
+          public List<Archetype> getArchetypes() {
           List<Archetype> archetypes = new ArrayList<>(catalog.getArchetypes());
           for(Archetype arch : archetypes) {
             if(arch.getRepository() == null || arch.getRepository().trim().isEmpty()) {
@@ -264,23 +272,28 @@ public abstract class ArchetypeCatalogFactory {
           return archetypes;
         }
 
-        public String getModelEncoding() {
+          @Override
+          public String getModelEncoding() {
           return catalog.getModelEncoding();
         }
 
-        public void removeArchetype(Archetype archetype) {
+          @Override
+          public void removeArchetype(Archetype archetype) {
           catalog.removeArchetype(archetype);
         }
 
-        public void setModelEncoding(String modelEncoding) {
+          @Override
+          public void setModelEncoding(String modelEncoding) {
           catalog.setModelEncoding(modelEncoding);
         }
 
-        public void setArchetypes(List<Archetype> archetypes) {
+          @Override
+          public void setArchetypes(List<Archetype> archetypes) {
           catalog.setArchetypes(archetypes);
         }
 
-        public String toString() {
+          @Override
+          public String toString() {
           return catalog.toString();
         }
       };

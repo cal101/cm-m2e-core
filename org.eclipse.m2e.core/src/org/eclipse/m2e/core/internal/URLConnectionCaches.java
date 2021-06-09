@@ -31,7 +31,8 @@ public final class URLConnectionCaches {
   private static final Logger log = LoggerFactory.getLogger(URLConnectionCaches.class);
 
   private static final URLConnection conn = new URLConnection(null) {
-    public void connect() {
+      @Override
+      public void connect() {
     }
   };
 

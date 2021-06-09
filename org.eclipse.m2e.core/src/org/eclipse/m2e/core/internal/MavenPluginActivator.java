@@ -266,7 +266,8 @@ public class MavenPluginActivator extends Plugin {
 
   private DefaultPlexusContainer newPlexusContainer(ClassLoader cl) throws PlexusContainerException {
     final Module logginModule = new AbstractModule() {
-      protected void configure() {
+        @Override
+        protected void configure() {
         bind(ILoggerFactory.class).toInstance(LoggerFactory.getILoggerFactory());
       }
     };

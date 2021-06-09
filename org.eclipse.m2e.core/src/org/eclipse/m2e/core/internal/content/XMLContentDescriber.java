@@ -43,6 +43,7 @@ class XMLContentDescriber extends TextContentDescriber implements ITextContentDe
 
   private static final String XML_PREFIX = "<?xml "; //$NON-NLS-1$
 
+  @Override
   public int describe(InputStream input, IContentDescription description) throws IOException {
     byte[] bom = getByteOrderMark(input);
     Charset xmlDeclEncoding = StandardCharsets.UTF_8;
@@ -92,6 +93,7 @@ class XMLContentDescriber extends TextContentDescriber implements ITextContentDe
     return c == '?' ? new String(xmlDecl, 0, read, unicodeEncoding) : null;
   }
 
+  @Override
   public int describe(Reader input, IContentDescription description) throws IOException {
     BufferedReader reader = new BufferedReader(input);
     String line = reader.readLine();
@@ -127,6 +129,7 @@ class XMLContentDescriber extends TextContentDescriber implements ITextContentDe
     return firstLine.substring(firstQuote + 1, secondQuote);
   }
 
+  @Override
   public QualifiedName[] getSupportedOptions() {
     return SUPPORTED_OPTIONS;
   }

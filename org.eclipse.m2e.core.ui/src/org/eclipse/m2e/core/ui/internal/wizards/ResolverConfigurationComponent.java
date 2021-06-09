@@ -71,7 +71,8 @@ public class ResolverConfigurationComponent extends ExpandableComposite {
     final Composite advancedComposite = new Composite(this, SWT.NONE);
     setClient(advancedComposite);
     addExpansionListener(new ExpansionAdapter() {
-      public void expansionStateChanged(ExpansionEvent e) {
+        @Override
+        public void expansionStateChanged(ExpansionEvent e) {
         Shell shell = parent.getShell();
         Point minSize = shell.getMinimumSize();
         shell.setMinimumSize(shell.getSize().x, minSize.y);
@@ -135,6 +136,7 @@ public class ResolverConfigurationComponent extends ExpandableComposite {
     }
   }
 
+  @Override
   public void dispose() {
     super.dispose();
 
