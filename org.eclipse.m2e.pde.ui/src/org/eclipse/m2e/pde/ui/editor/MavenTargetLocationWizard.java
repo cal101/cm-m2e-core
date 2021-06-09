@@ -37,8 +37,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.CCombo;
 import org.eclipse.swt.dnd.Clipboard;
 import org.eclipse.swt.dnd.TextTransfer;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
@@ -146,13 +144,7 @@ public class MavenTargetLocationWizard extends Wizard implements ITargetLocation
 				scope.add("compile"); //$NON-NLS-1$
 				scope.add("test"); //$NON-NLS-1$
 				scope.add("provided"); //$NON-NLS-1$
-				scope.addModifyListener(new ModifyListener() {
-
-					@Override
-					public void modifyText(ModifyEvent e) {
-						updateUI();
-					}
-				});
+				scope.addModifyListener(e -> updateUI());
 			}
 
 			private void createMetadataCombo(Composite parent) {

@@ -154,15 +154,11 @@ public class MavenArchetypesPreferencePage extends FieldEditorPreferencePage imp
 
     archetypesViewer.setLabelProvider(new CatalogsLabelProvider());
 
-    archetypesViewer.setContentProvider(new IStructuredContentProvider() {
-
-      @Override
-      public Object[] getElements(Object input) {
-        if(input instanceof Collection) {
-          return ((Collection<?>) input).toArray();
+    archetypesViewer.setContentProvider((IStructuredContentProvider) input -> {
+        if (input instanceof Collection) {
+            return ((Collection<?>) input).toArray();
         }
         return new Object[0];
-      }
     });
 
     Table table = archetypesViewer.getTable();

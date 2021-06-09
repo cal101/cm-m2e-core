@@ -26,8 +26,6 @@ import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.m2e.pde.BNDInstructions;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
-import org.eclipse.swt.events.ModifyEvent;
-import org.eclipse.swt.events.ModifyListener;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;
 import org.eclipse.swt.layout.GridData;
@@ -101,13 +99,7 @@ public class MavenArtifactInstructionsWizard extends Wizard {
 
 					}
 				});
-				textField.addModifyListener(new ModifyListener() {
-
-					@Override
-					public void modifyText(ModifyEvent e) {
-						instructions = textField.getText();
-					}
-				});
+				textField.addModifyListener(e -> instructions = textField.getText());
 				buttonInherit.setSelection(usedefaults);
 				textField.setEnabled(!buttonInherit.getSelection());
 				link.setEnabled(!buttonInherit.getSelection());

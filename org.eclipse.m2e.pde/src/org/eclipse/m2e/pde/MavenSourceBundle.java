@@ -27,7 +27,6 @@ import java.util.zip.ZipEntry;
 
 import org.eclipse.aether.artifact.Artifact;
 import org.eclipse.equinox.frameworkadmin.BundleInfo;
-import org.eclipse.m2e.pde.CacheManager.CacheConsumer;
 import org.eclipse.pde.core.target.TargetBundle;
 import org.osgi.framework.Constants;
 
@@ -48,41 +47,37 @@ public class MavenSourceBundle extends TargetBundle {
 		if (isValidSourceManifest(manifest)) {
 			fInfo.setLocation(sourceFile.toURI());
 		} else {
-			File generatedSourceBundle = cacheManager.accessArtifactFile(artifact, new CacheConsumer<File>() {
-
-				@Override
-				public File consume(File file) throws Exception {
-					if (CacheManager.isOutdated(file, sourceFile)) {
-						Attributes attr = manifest.getMainAttributes();
-						if (attr.isEmpty()) {
-							attr.put(Name.MANIFEST_VERSION, "1.0");
-						}
-						attr.putValue(ECLIPSE_SOURCE_BUNDLE_HEADER, sourceTarget.getSymbolicName() + ";version=\""
-								+ sourceTarget.getVersion() + "\";roots:=\".\"");
-						attr.putValue(Constants.BUNDLE_MANIFESTVERSION, "2");
-						attr.putValue(Constants.BUNDLE_NAME, "Source Bundle for " + sourceTarget.getSymbolicName()
-								+ ":" + sourceTarget.getVersion());
-						attr.putValue(Constants.BUNDLE_SYMBOLICNAME, fInfo.getSymbolicName());
-						attr.putValue(Constants.BUNDLE_VERSION, fInfo.getVersion());
-						try (JarOutputStream stream = new JarOutputStream(new FileOutputStream(file), manifest)) {
-							try (JarFile jar = new JarFile(sourceFile)) {
-								Enumeration<JarEntry> entries = jar.entries();
-								while (entries.hasMoreElements()) {
-									JarEntry jarEntry = entries.nextElement();
-									if (JarFile.MANIFEST_NAME.equals(jarEntry.getName())) {
-										continue;
-									}
-									try (InputStream is = jar.getInputStream(jarEntry)) {
-										stream.putNextEntry(new ZipEntry(jarEntry.getName()));
-										is.transferTo(stream);
-										stream.closeEntry();
-									}
+			File generatedSourceBundle = cacheManager.accessArtifactFile(artifact, file -> {
+				if (CacheManager.isOutdated(file, sourceFile)) {
+					Attributes attr = manifest.getMainAttributes();
+					if (attr.isEmpty()) {
+						attr.put(Name.MANIFEST_VERSION, "1.0");
+					}
+					attr.putValue(ECLIPSE_SOURCE_BUNDLE_HEADER, sourceTarget.getSymbolicName() + ";version=\""
+							+ sourceTarget.getVersion() + "\";roots:=\".\"");
+					attr.putValue(Constants.BUNDLE_MANIFESTVERSION, "2");
+					attr.putValue(Constants.BUNDLE_NAME,
+							"Source Bundle for " + sourceTarget.getSymbolicName() + ":" + sourceTarget.getVersion());
+					attr.putValue(Constants.BUNDLE_SYMBOLICNAME, fInfo.getSymbolicName());
+					attr.putValue(Constants.BUNDLE_VERSION, fInfo.getVersion());
+					try (JarOutputStream stream = new JarOutputStream(new FileOutputStream(file), manifest)) {
+						try (JarFile jar = new JarFile(sourceFile)) {
+							Enumeration<JarEntry> entries = jar.entries();
+							while (entries.hasMoreElements()) {
+								JarEntry jarEntry = entries.nextElement();
+								if (JarFile.MANIFEST_NAME.equals(jarEntry.getName())) {
+									continue;
+								}
+								try (InputStream is = jar.getInputStream(jarEntry)) {
+									stream.putNextEntry(new ZipEntry(jarEntry.getName()));
+									is.transferTo(stream);
+									stream.closeEntry();
 								}
 							}
 						}
 					}
-					return file;
 				}
+				return file;
 			});
 			fInfo.setLocation(generatedSourceBundle.toURI());
 		}

@@ -48,7 +48,6 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.m2e.core.MavenPlugin;
-import org.eclipse.m2e.core.embedder.ICallable;
 import org.eclipse.m2e.core.embedder.IMaven;
 import org.eclipse.m2e.core.embedder.IMavenExecutionContext;
 import org.eclipse.m2e.core.internal.MavenPluginActivator;
@@ -124,35 +123,30 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 			if (artifact != null) {
 				if (dependencyScope != null && !dependencyScope.isBlank()) {
 					IMavenExecutionContext context = maven.createExecutionContext();
-					PreorderNodeListGenerator dependecies = context.execute(new ICallable<PreorderNodeListGenerator>() {
+					PreorderNodeListGenerator dependecies = context.execute((context1, monitor1) -> {
+						try {
+							CollectRequest collectRequest = new CollectRequest();
+							collectRequest.setRoot(new Dependency(artifact, dependencyScope));
+							collectRequest.setRepositories(RepositoryUtils.toRepos(repositories));
 
-						@Override
-						public PreorderNodeListGenerator call(IMavenExecutionContext context, IProgressMonitor monitor)
-								throws CoreException {
-							try {
-								CollectRequest collectRequest = new CollectRequest();
-								collectRequest.setRoot(new Dependency(artifact, dependencyScope));
-								collectRequest.setRepositories(RepositoryUtils.toRepos(repositories));
-
-								RepositorySystem repoSystem = MavenPluginActivator.getDefault().getRepositorySystem();
-								DependencyNode node = repoSystem
-										.collectDependencies(context.getRepositorySession(), collectRequest).getRoot();
-								node.setData(DEPENDENCYNODE_IS_ROOT, true);
-								node.setData(DEPENDENCYNODE_PARENT, MavenTargetLocation.this);
-								DependencyRequest dependencyRequest = new DependencyRequest();
-								dependencyRequest.setRoot(node);
-								repoSystem.resolveDependencies(context.getRepositorySession(), dependencyRequest);
-								PreorderNodeListGenerator nlg = new PreorderNodeListGenerator();
-								node.accept(nlg);
-								return nlg;
-							} catch (RepositoryException e) {
-								throw new CoreException(
-										new Status(IStatus.ERROR, MavenTargetLocation.class.getPackage().getName(),
-												"Resolving dependencies failed", e));
-							} catch (RuntimeException e) {
-								throw new CoreException(new Status(IStatus.ERROR,
-										MavenTargetLocation.class.getPackage().getName(), "Internal error", e));
-							}
+							RepositorySystem repoSystem = MavenPluginActivator.getDefault().getRepositorySystem();
+							DependencyNode node = repoSystem
+									.collectDependencies(context1.getRepositorySession(), collectRequest).getRoot();
+							node.setData(DEPENDENCYNODE_IS_ROOT, true);
+							node.setData(DEPENDENCYNODE_PARENT, MavenTargetLocation.this);
+							DependencyRequest dependencyRequest = new DependencyRequest();
+							dependencyRequest.setRoot(node);
+							repoSystem.resolveDependencies(context1.getRepositorySession(), dependencyRequest);
+							PreorderNodeListGenerator nlg = new PreorderNodeListGenerator();
+							node.accept(nlg);
+							return nlg;
+						} catch (RepositoryException e1) {
+							throw new CoreException(
+									new Status(IStatus.ERROR, MavenTargetLocation.class.getPackage().getName(),
+											"Resolving dependencies failed", e1));
+						} catch (RuntimeException e2) {
+							throw new CoreException(new Status(IStatus.ERROR,
+									MavenTargetLocation.class.getPackage().getName(), "Internal error", e2));
 						}
 					}, monitor);
 
@@ -209,18 +203,13 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 		List<ArtifactRepository> artifactRepositories = maven.getArtifactRepositories();
 		List<RemoteRepository> remoteRepositories = RepositoryUtils.toRepos(artifactRepositories);
 		VersionRangeRequest request = new VersionRangeRequest(artifact, remoteRepositories, null);
-		VersionRangeResult result = context.execute(new ICallable<VersionRangeResult>() {
-
-			@Override
-			public VersionRangeResult call(IMavenExecutionContext context, IProgressMonitor monitor)
-					throws CoreException {
-				RepositorySystemSession session = context.getRepositorySession();
-				try {
-					return repoSystem.resolveVersionRange(session, request);
-				} catch (VersionRangeResolutionException e) {
-					throw new CoreException(new Status(IStatus.ERROR, MavenTargetLocation.class.getPackage().getName(),
-							"Resolving latest version failed", e));
-				}
+		VersionRangeResult result = context.execute((context1, monitor1) -> {
+			RepositorySystemSession session = context1.getRepositorySession();
+			try {
+				return repoSystem.resolveVersionRange(session, request);
+			} catch (VersionRangeResolutionException e) {
+				throw new CoreException(new Status(IStatus.ERROR, MavenTargetLocation.class.getPackage().getName(),
+						"Resolving latest version failed", e));
 			}
 		}, monitor);
 		Version highestVersion = result.getHighestVersion();

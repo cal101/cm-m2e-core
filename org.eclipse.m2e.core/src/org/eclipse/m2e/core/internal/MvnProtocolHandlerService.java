@@ -33,7 +33,6 @@ import org.eclipse.aether.resolution.ArtifactRequest;
 import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.eclipse.aether.resolution.ArtifactResult;
 import org.eclipse.core.runtime.CoreException;
-import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.core.runtime.Status;
@@ -42,7 +41,6 @@ import org.apache.maven.RepositoryUtils;
 import org.apache.maven.artifact.repository.ArtifactRepository;
 
 import org.eclipse.m2e.core.MavenPlugin;
-import org.eclipse.m2e.core.embedder.ICallable;
 import org.eclipse.m2e.core.embedder.IMaven;
 import org.eclipse.m2e.core.embedder.IMavenExecutionContext;
 
@@ -98,19 +96,15 @@ public class MvnProtocolHandlerService extends AbstractURLStreamHandlerService {
         IMavenExecutionContext context = maven.createExecutionContext();
         List<ArtifactRepository> artifactRepositories = maven.getArtifactRepositories();
         List<RemoteRepository> remoteRepositories = RepositoryUtils.toRepos(artifactRepositories);
-        artifactResult = context.execute(new ICallable<ArtifactResult>() {
-
-          @Override
-          public ArtifactResult call(IMavenExecutionContext context, IProgressMonitor monitor) throws CoreException {
+        artifactResult = context.execute((context1, monitor) -> {
             ArtifactRequest artifactRequest = new ArtifactRequest(artifact, remoteRepositories, null);
-            RepositorySystemSession session = context.getRepositorySession();
+            RepositorySystemSession session = context1.getRepositorySession();
             try {
-              return repoSystem.resolveArtifact(session, artifactRequest);
-            } catch(ArtifactResolutionException e) {
-              throw new CoreException(new Status(IStatus.ERROR, MvnProtocolHandlerService.class.getPackage().getName(),
-                  "Resolving artifact failed", e));
+                return repoSystem.resolveArtifact(session, artifactRequest);
+            } catch (ArtifactResolutionException e) {
+                throw new CoreException(new Status(IStatus.ERROR,
+                        MvnProtocolHandlerService.class.getPackage().getName(), "Resolving artifact failed", e));
             }
-          }
         }, new NullProgressMonitor());
       } catch(CoreException e) {
         throw new IOException("resolving artifact " + artifact + " failed", e);
