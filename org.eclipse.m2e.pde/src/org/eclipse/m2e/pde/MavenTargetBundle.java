@@ -37,7 +37,7 @@ public class MavenTargetBundle extends TargetBundle {
 	private IStatus status;
 	private final BundleInfo bundleInfo;
 	private boolean isWrapped;
-	private Artifact artifact;
+	private final Artifact artifact;
 
 	@Override
 	public BundleInfo getBundleInfo() {

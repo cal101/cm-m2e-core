@@ -47,7 +47,7 @@ public class MavenArtifactInstructionsWizard extends Wizard {
 	private static final String BND_PAGE = Messages.MavenArtifactInstructionsWizard_0;
 	private String instructions;
 	private boolean usedefaults;
-	private BNDInstructions bndInstructions;
+	private final BNDInstructions bndInstructions;
 
 	public MavenArtifactInstructionsWizard(BNDInstructions bndInstructions) {
 		this.bndInstructions = bndInstructions;

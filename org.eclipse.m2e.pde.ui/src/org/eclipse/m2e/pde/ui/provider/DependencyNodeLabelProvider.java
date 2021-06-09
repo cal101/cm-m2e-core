@@ -27,18 +27,18 @@ import org.eclipse.swt.graphics.Image;
 
 public class DependencyNodeLabelProvider implements ILabelProvider {
 
-	private ResourceManager resourceManager = new LocalResourceManager(JFaceResources.getResources());
-	private ImageDescriptor jarDescriptor = ImageDescriptor.createFromURLSupplier(true,
+	private final ResourceManager resourceManager = new LocalResourceManager(JFaceResources.getResources());
+	private final ImageDescriptor jarDescriptor = ImageDescriptor.createFromURLSupplier(true,
 			() -> DependencyNodeLabelProvider.class.getResource("/icons/jar_obj.gif"));
-	private ImageDescriptor inheritedDescriptor = ImageDescriptor.createFromURLSupplier(true,
+	private final ImageDescriptor inheritedDescriptor = ImageDescriptor.createFromURLSupplier(true,
 			() -> DependencyNodeLabelProvider.class.getResource("/icons/show_inherited_dependencies.gif"));
-	private ImageDescriptor inheritedJarDescriptor = ImageDescriptor.createFromURLSupplier(true,
+	private final ImageDescriptor inheritedJarDescriptor = ImageDescriptor.createFromURLSupplier(true,
 			() -> DependencyNodeLabelProvider.class.getResource("/icons/jar_dep.png"));
-	private ImageDescriptor inheritedJarDefaultDescriptor = ImageDescriptor.createFromURLSupplier(true,
+	private final ImageDescriptor inheritedJarDefaultDescriptor = ImageDescriptor.createFromURLSupplier(true,
 			() -> DependencyNodeLabelProvider.class.getResource("/icons/jar_dep_default.png"));
-	private ImageDescriptor errorDescriptor = ImageDescriptor.createFromURLSupplier(true,
+	private final ImageDescriptor errorDescriptor = ImageDescriptor.createFromURLSupplier(true,
 			() -> DependencyNodeLabelProvider.class.getResource("/icons/error_st_obj.gif"));
-	private ImageDescriptor disabledDescriptor = ImageDescriptor.createFromURLSupplier(true,
+	private final ImageDescriptor disabledDescriptor = ImageDescriptor.createFromURLSupplier(true,
 			() -> DependencyNodeLabelProvider.class.getResource("/icons/clear.gif"));
 
 	@Override
