@@ -28,6 +28,6 @@ public class InitializationOptionsProvider implements org.eclipse.wildwebdevelop
 		Map<String, Object> mavenSettings = new HashMap<>(2, 1.f);
 		Optional.ofNullable(config.getGlobalSettingsFile()).ifPresent(globalSettings -> mavenSettings.put("globalSettings", globalSettings));
 		Optional.ofNullable(config.getUserSettingsFile()).ifPresent(userSettings -> mavenSettings.put("userSettings", userSettings));
-		return Map.of("maven", mavenSettings);		
+		return Map.of("maven", mavenSettings);
 	}
 }
