@@ -63,7 +63,7 @@ public class MavenImporterTest extends AbstractMavenProjectTestCase {
 
   @Test
   public void test() throws Exception {
-    Set<IProject> newProjects = null;
+    Set<IProject> newProjects;
     SmartImportJob job = new SmartImportJob(projectDirectory, Collections.emptySet(), true, true);
 
     Map<File, List<ProjectConfigurator>> proposals = job.getImportProposals(monitor);
@@ -98,7 +98,7 @@ public class MavenImporterTest extends AbstractMavenProjectTestCase {
 
   @Test
   public void testRootWithoutPom() throws Exception {
-    Set<IProject> newProjects = null;
+    Set<IProject> newProjects;
     // important part here is the "getParentFile()"
     SmartImportJob job = new SmartImportJob(projectDirectory.getParentFile(), Collections.emptySet(), true, true);
 

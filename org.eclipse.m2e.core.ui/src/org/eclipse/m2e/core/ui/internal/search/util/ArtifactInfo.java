@@ -65,7 +65,7 @@ public class ArtifactInfo {
   public String toString() {
     final String TAB = "    "; //$NON-NLS-1$
 
-    String retValue = ""; //$NON-NLS-1$
+    String retValue; //$NON-NLS-1$
 
     retValue = "ArtifactInfo ( " //$NON-NLS-1$
         + "groupId = " + this.groupId + TAB //$NON-NLS-1$

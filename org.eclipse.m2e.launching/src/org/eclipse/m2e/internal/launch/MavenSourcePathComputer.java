@@ -162,7 +162,7 @@ public class MavenSourcePathComputer implements ISourcePathComputer {
 
     File sourcesJar = getSourcesJar(groupId, artifactId, version);
     if(sourcesJar != null) {
-      IRuntimeClasspathEntry entry = null;
+      IRuntimeClasspathEntry entry;
       entry = JavaRuntime.newArchiveRuntimeClasspathEntry(Path.fromOSString(entryPath));
       entry.setSourceAttachmentPath(Path.fromOSString(sourcesJar.getAbsolutePath()));
       entries.add(entry);

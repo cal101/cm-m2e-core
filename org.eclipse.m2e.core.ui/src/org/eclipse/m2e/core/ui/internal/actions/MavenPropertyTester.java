@@ -78,7 +78,7 @@ public class MavenPropertyTester extends PropertyTester {
       ArtifactKey key = SelectionUtil.getType(receiver, ArtifactKey.class);
       if(key != null) {
         IMavenProjectRegistry projectManager = MavenPlugin.getMavenProjectRegistry();
-        IMavenProjectFacade mavenProject = null;
+        IMavenProjectFacade mavenProject;
         mavenProject = projectManager.getMavenProject( //
             key.getGroupId(), key.getArtifactId(), key.getVersion());
         return mavenProject != null;
