@@ -24,6 +24,7 @@ public class MavenDiscoveryLauncher implements IMavenDiscovery {
   /* (non-Javadoc)
    * @see org.eclipse.m2e.core.ui.internal.IMavenDiscovery#launch(org.eclipse.swt.widgets.Shell)
    */
+  @Override
   public void launch(Shell shell) {
     MavenDiscovery.launchWizard(shell);
   }

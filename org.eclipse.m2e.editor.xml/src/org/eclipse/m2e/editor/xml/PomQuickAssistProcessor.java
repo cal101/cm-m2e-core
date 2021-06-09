@@ -41,10 +41,12 @@ import org.eclipse.m2e.editor.internal.markers.MarkerResolutionWrapper;
 public class PomQuickAssistProcessor implements IQuickAssistProcessor {
   static final Logger log = LoggerFactory.getLogger(PomQuickAssistProcessor.class);
 
+  @Override
   public boolean canAssist(IQuickAssistInvocationContext arg0) {
     return true;
   }
 
+  @Override
   public boolean canFix(Annotation an) {
     if(an instanceof MarkerAnnotation) {
       MarkerAnnotation mark = (MarkerAnnotation) an;
@@ -56,6 +58,7 @@ public class PomQuickAssistProcessor implements IQuickAssistProcessor {
     return false;
   }
 
+  @Override
   public ICompletionProposal[] computeQuickAssistProposals(IQuickAssistInvocationContext context) {
     List<ICompletionProposal> proposals = new ArrayList<>();
     Iterator<Annotation> annotationIterator = context.getSourceViewer().getAnnotationModel().getAnnotationIterator();
@@ -113,6 +116,7 @@ public class PomQuickAssistProcessor implements IQuickAssistProcessor {
     }
   }
 
+  @Override
   public String getErrorMessage() {
     return null;
   }

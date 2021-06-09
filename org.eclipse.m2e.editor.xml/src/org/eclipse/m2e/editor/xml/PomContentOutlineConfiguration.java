@@ -33,7 +33,8 @@ import org.eclipse.m2e.core.ui.internal.util.XmlUtils;
  */
 public class PomContentOutlineConfiguration extends XMLContentOutlineConfiguration {
 
-  public ILabelProvider getLabelProvider(TreeViewer viewer) {
+    @Override
+    public ILabelProvider getLabelProvider(TreeViewer viewer) {
     return new PomLabelProvider(super.getLabelProvider(viewer));
   }
 
@@ -138,6 +139,7 @@ public class PomContentOutlineConfiguration extends XMLContentOutlineConfigurati
       this.labelProvider = labelProvider;
     }
 
+    @Override
     public Image getImage(Object element) {
       Node node = (Node) element;
       String namespace = node.getNamespaceURI();
@@ -229,6 +231,7 @@ public class PomContentOutlineConfiguration extends XMLContentOutlineConfigurati
       return labelProvider.getImage(element);
     }
 
+    @Override
     public String getText(Object element) {
       String text = labelProvider.getText(element);
 
@@ -297,18 +300,22 @@ public class PomContentOutlineConfiguration extends XMLContentOutlineConfigurati
       return text;
     }
 
+    @Override
     public boolean isLabelProperty(Object element, String name) {
       return labelProvider.isLabelProperty(element, name);
     }
 
+    @Override
     public void addListener(ILabelProviderListener listener) {
       labelProvider.addListener(listener);
     }
 
+    @Override
     public void removeListener(ILabelProviderListener listener) {
       labelProvider.removeListener(listener);
     }
 
+    @Override
     public void dispose() {
       labelProvider.dispose();
     }

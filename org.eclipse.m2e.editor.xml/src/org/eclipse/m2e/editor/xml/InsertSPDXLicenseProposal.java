@@ -58,6 +58,7 @@ public class InsertSPDXLicenseProposal implements ICompletionProposal {
     this.region = region;
   }
 
+  @Override
   public void apply(IDocument document) {
     IProject project = XmlUtils.extractProject(sourceViewer);
     IMavenProjectFacade facade = MavenPlugin.getMavenProjectRegistry().getProject(project);
@@ -86,22 +87,27 @@ public class InsertSPDXLicenseProposal implements ICompletionProposal {
     }
   }
 
+  @Override
   public Point getSelection(IDocument document) {
     return selection;
   }
 
+  @Override
   public String getAdditionalProposalInfo() {
     return null;
   }
 
+  @Override
   public String getDisplayString() {
     return Messages.InsertSPDXLicenseProposal_0;
   }
 
+  @Override
   public Image getImage() {
     return MvnImages.IMG_LICENSE;
   }
 
+  @Override
   public IContextInformation getContextInformation() {
     return null;
   }

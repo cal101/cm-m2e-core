@@ -23,7 +23,8 @@ import org.eclipse.m2e.internal.discovery.MavenDiscovery;
 
 public class MavenDiscoveryHandler extends AbstractHandler {
 
-  public Object execute(ExecutionEvent event) throws ExecutionException {
+    @Override
+    public Object execute(ExecutionEvent event) throws ExecutionException {
     MavenDiscovery.launchWizard(HandlerUtil.getActiveWorkbenchWindowChecked(event).getShell());
     return null;
   }

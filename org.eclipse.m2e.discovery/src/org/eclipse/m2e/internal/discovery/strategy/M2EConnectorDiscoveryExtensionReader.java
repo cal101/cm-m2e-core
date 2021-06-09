@@ -42,6 +42,7 @@ public class M2EConnectorDiscoveryExtensionReader extends ConnectorDiscoveryExte
 
   private final Map<String, Tag> tagById = new HashMap<>();
 
+  @Override
   public Set<Tag> getTags() {
     return new HashSet<>(tagById.values());
   }
@@ -68,6 +69,7 @@ public class M2EConnectorDiscoveryExtensionReader extends ConnectorDiscoveryExte
     return result;
   }
 
+  @Override
   public <T extends CatalogItem> T readConnectorDescriptor(IConfigurationElement element, Class<T> clazz)
       throws ValidationException {
     T connectorDescriptor;

@@ -105,13 +105,16 @@ public class SelectSPDXLicenseDialog extends AbstractMavenDialog {
     gd_licensesTable.heightHint = 400;
     licensesTable.setLayoutData(gd_licensesTable);
     licensesViewer.setContentProvider(new IStructuredContentProvider() {
-      public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+        @Override
+        public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
       }
 
-      public void dispose() {
+        @Override
+        public void dispose() {
       }
 
-      public Object[] getElements(Object inputElement) {
+        @Override
+        public Object[] getElements(Object inputElement) {
         if(inputElement instanceof Collection<?>) {
           return ((Collection<?>) inputElement).toArray();
         }
@@ -119,27 +122,33 @@ public class SelectSPDXLicenseDialog extends AbstractMavenDialog {
       }
     });
     licensesViewer.setLabelProvider(new ILabelProvider() {
-      public void removeListener(ILabelProviderListener listener) {
+        @Override
+        public void removeListener(ILabelProviderListener listener) {
       }
 
-      public boolean isLabelProperty(Object element, String property) {
+        @Override
+        public boolean isLabelProperty(Object element, String property) {
         return false;
       }
 
-      public void dispose() {
+        @Override
+        public void dispose() {
       }
 
-      public void addListener(ILabelProviderListener listener) {
+        @Override
+        public void addListener(ILabelProviderListener listener) {
       }
 
-      public String getText(Object element) {
+        @Override
+        public String getText(Object element) {
         if(element instanceof SPDXLicense) {
           return ((SPDXLicense) element).getName();
         }
         return null;
       }
 
-      public Image getImage(Object element) {
+        @Override
+        public Image getImage(Object element) {
         return null;
       }
     });
@@ -189,6 +198,7 @@ public class SelectSPDXLicenseDialog extends AbstractMavenDialog {
     return targetProject;
   }
 
+  @Override
   protected void computeResult() {
     // TODO Auto-generated method computeResult
 
@@ -202,6 +212,7 @@ public class SelectSPDXLicenseDialog extends AbstractMavenDialog {
       this.text = text.toLowerCase();
     }
 
+    @Override
     public boolean select(Viewer viewer, Object parentElement, Object element) {
       if(element instanceof SPDXLicense) {
         return ((SPDXLicense) element).getName().toLowerCase().contains(text);

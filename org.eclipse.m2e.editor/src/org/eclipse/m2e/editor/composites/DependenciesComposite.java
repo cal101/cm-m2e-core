@@ -335,11 +335,13 @@ public class DependenciesComposite extends Composite {
             dependenciesComparator.setSortByGroups(false);
           }
 
-          public int getStyle() {
+                @Override
+                public int getStyle() {
             return AS_CHECK_BOX;
           }
 
-          public void run() {
+                @Override
+                public void run() {
             dependencyLabelProvider.setShowGroupId(isChecked());
             dependenciesComparator.setSortByGroups(isChecked());
             dependenciesEditor.getViewer().refresh();
@@ -351,11 +353,13 @@ public class DependenciesComposite extends Composite {
         setChecked(true);
       }
 
-      public int getStyle() {
+        @Override
+        public int getStyle() {
         return AS_CHECK_BOX;
       }
 
-      public void run() {
+        @Override
+        public void run() {
         TableViewer viewer = dependenciesEditor.getViewer();
         if(isChecked()) {
           viewer.addFilter(searchFilter);
@@ -497,11 +501,13 @@ public class DependenciesComposite extends Composite {
             dependencyManagementComparator.setSortByGroups(false);
           }
 
-          public int getStyle() {
+                @Override
+                public int getStyle() {
             return AS_CHECK_BOX;
           }
 
-          public void run() {
+                @Override
+                public void run() {
             dependencyManagementLabelProvider.setShowGroupId(isChecked());
             dependencyManagementComparator.setSortByGroups(isChecked());
             dependencyManagementEditor.getViewer().refresh();
@@ -513,11 +519,13 @@ public class DependenciesComposite extends Composite {
         setChecked(true);
       }
 
-      public int getStyle() {
+        @Override
+        public int getStyle() {
         return AS_CHECK_BOX;
       }
 
-      public void run() {
+        @Override
+        public void run() {
         TableViewer viewer = dependencyManagementEditor.getViewer();
         if(isChecked()) {
           viewer.addFilter(searchFilter);
@@ -589,7 +597,8 @@ public class DependenciesComposite extends Composite {
     // filter text is modified. Using a job is in this way lets us
     // defer updating the field while the user is typing.
     final Job updateJob = new WorkbenchJob("Update Maven Dependency Viewers") {
-      public IStatus runInUIThread(IProgressMonitor monitor) {
+        @Override
+        public IStatus runInUIThread(IProgressMonitor monitor) {
         dependenciesViewer.refresh();
         dependencyManagementViewer.refresh();
 
@@ -613,6 +622,7 @@ public class DependenciesComposite extends Composite {
       this.searchMatcher = searchMatcher;
     }
 
+    @Override
     public boolean select(Viewer viewer, Object parentElement, Object element) {
       if(element instanceof Dependency) {
         Dependency d = (Dependency) element;
@@ -975,6 +985,7 @@ public class DependenciesComposite extends Composite {
     public Dependency() {
     }
 
+    @Override
     public <T> T getAdapter(Class<T> adapter) {
       if(ArtifactKey.class.equals(adapter)) {
         return adapter.cast(new ArtifactKey(groupId, artifactId, version, classifier));

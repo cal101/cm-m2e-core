@@ -60,6 +60,7 @@ public class AddLicensePomOperation implements Operation {
     this.region = region;
   }
 
+  @Override
   public void process(Document doc) {
     Element element;
     if(context == PomTemplateContext.PROJECT) {

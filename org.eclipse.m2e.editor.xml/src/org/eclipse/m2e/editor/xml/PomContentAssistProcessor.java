@@ -92,6 +92,7 @@ public class PomContentAssistProcessor extends DefaultXMLCompletionProposalCompu
       "project.version", "project.groupId", "project.artifactId", "project.version", "project.name", //
       "project.build.directory", "project.build.outputDirectory"));
 
+  @Override
   protected void addTagNameProposals(ContentAssistRequest contentAssistRequest, int childPosition,
       CompletionProposalInvocationContext ctx) {
     PomTemplateContext context = PomTemplateContext.fromNode(contentAssistRequest.getParent());
@@ -101,6 +102,7 @@ public class PomContentAssistProcessor extends DefaultXMLCompletionProposalCompu
     }
   }
 
+  @Override
   protected void addTagInsertionProposals(ContentAssistRequest contentAssistRequest, int childPosition,
       CompletionProposalInvocationContext ctx) {
     PomTemplateContext context = PomTemplateContext.fromNode(contentAssistRequest.getParent());
@@ -389,17 +391,20 @@ public class PomContentAssistProcessor extends DefaultXMLCompletionProposalCompu
         if(isUserTemplate) {
           //for templates defined by users, preserve the default behaviour..
           return new PomTemplateProposal(template, context, region, image, getRelevance(template, prefix)) {
-            public String getAdditionalProposalInfo() {
+              @Override
+              public String getAdditionalProposalInfo() {
               return StringUtils.convertToHTMLContent(super.getAdditionalProposalInfo());
             }
           };
         }
         return new PomTemplateProposal(template, context, region, image, getRelevance(template, prefix)) {
-          public String getAdditionalProposalInfo() {
+            @Override
+            public String getAdditionalProposalInfo() {
             return getTemplate().getDescription();
           }
 
-          public String getDisplayString() {
+            @Override
+            public String getDisplayString() {
             return template.getName();
           }
         };

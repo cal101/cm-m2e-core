@@ -30,6 +30,7 @@ public class MavenCatalogPage extends CatalogPage {
     setDescription(Messages.MavenCatalogPage_Descripton);
   }
 
+  @Override
   protected CatalogViewer doCreateViewer(Composite parent) {
     MavenCatalogViewer viewer = new MavenCatalogViewer(getCatalog(), this, getContainer(), getWizard()
         .getConfiguration());

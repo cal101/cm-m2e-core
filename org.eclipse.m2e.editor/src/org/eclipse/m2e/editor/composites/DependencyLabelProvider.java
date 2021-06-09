@@ -80,6 +80,7 @@ public class DependencyLabelProvider extends LabelProvider implements IColorProv
 
   // IColorProvider
 
+  @Override
   public Color getForeground(Object element) {
     //a workaround to handle display in ManagedDependenciesDialog
     //TODO shall have a switch of it's own.. the curse of blind code reuse
@@ -90,6 +91,7 @@ public class DependencyLabelProvider extends LabelProvider implements IColorProv
     return null;
   }
 
+  @Override
   public Color getBackground(Object element) {
     return null;
   }
@@ -138,6 +140,7 @@ public class DependencyLabelProvider extends LabelProvider implements IColorProv
     return null;
   }
 
+  @Override
   public StyledString getStyledText(Object element) {
     if(element instanceof DependenciesComposite.Dependency) {
       StyledString ss = new StyledString(getText(element));

@@ -36,7 +36,8 @@ import org.eclipse.m2e.internal.discovery.Messages;
 @SuppressWarnings("restriction")
 public class M2ERemoteBundleDiscoveryStrategy extends RemoteBundleDiscoveryStrategy {
 
-  protected void processExtensions(IProgressMonitor monitor, IExtension[] extensions) {
+    @Override
+    protected void processExtensions(IProgressMonitor monitor, IExtension[] extensions) {
     monitor.beginTask(Messages.BundleDiscoveryStrategy_task_processing_extensions, extensions.length == 0 ? 1
         : extensions.length);
     try {

@@ -110,6 +110,7 @@ public abstract class MavenDiscoveryUi {
       this.blockOnOpen = blockOnOpen;
     }
 
+    @Override
     public void run(IProgressMonitor arg0) {
       MavenDiscoveryInstallWizard wizard = new MavenDiscoveryInstallWizard(ProvisioningUI.getDefaultUI(), operation,
           operation.getIUs(), null);

@@ -90,6 +90,7 @@ public class MavenDiscoveryInstallOperation implements IRunnableWithProgress {
     this.projectsToConfigure = projectsToConfigure;
   }
 
+  @Override
   public void run(IProgressMonitor progressMonitor) throws InvocationTargetException, InterruptedException {
     try {
       SubMonitor monitor = SubMonitor

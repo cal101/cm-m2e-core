@@ -54,6 +54,7 @@ public class PomTemplateProposal extends TemplateProposal implements IRelevanceC
     return false;
   }
 
+  @Override
   public void apply(ITextViewer viewer, char trigger, int stateMask, int offset) {
     super.apply(viewer, trigger, stateMask, offset);
     if(retriggerOnApply()) {

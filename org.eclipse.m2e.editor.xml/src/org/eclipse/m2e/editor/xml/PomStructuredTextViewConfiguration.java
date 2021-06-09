@@ -41,7 +41,8 @@ public class PomStructuredTextViewConfiguration extends StructuredTextViewerConf
   protected IContentAssistProcessor[] getContentAssistProcessors(ISourceViewer sourceViewer, String partitionType) {
     IContentAssistProcessor processor = new XMLStructuredContentAssistProcessor(this.getContentAssistant(),
         partitionType, sourceViewer) {
-      @SuppressWarnings({"unchecked", "rawtypes"})
+        @Override
+        @SuppressWarnings({"unchecked", "rawtypes"})
       protected List filterAndSortProposals(List proposals, IProgressMonitor monitor,
           CompletionProposalInvocationContext context) {
         Collections.sort(proposals, new ProposalComparator());
@@ -70,6 +71,7 @@ public class PomStructuredTextViewConfiguration extends StructuredTextViewerConf
     return pomDetectors;
   }
 
+  @Override
   public IQuickAssistAssistant getQuickAssistAssistant(ISourceViewer sourceViewer) {
     //not explicitly setting processor results in having a bunch of generic quick fixes around..
     //also see org.eclipse.wst.sse.ui.quickFixProcessor extension point regarding the way to declaratively

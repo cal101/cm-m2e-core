@@ -41,6 +41,7 @@ class MavenStructuredSourceTextEditor extends StructuredTextEditor {
 			return MavenStructuredSourceTextEditor.this.mavenPomEditor.getMavenProject();
 		}
 
+		@Override
 		public <T> T getAdapter(Class<T> adapter) {
 			if (MavenProject.class.equals(adapter)) {
 				return adapter.cast(getMavenProject());
@@ -80,12 +81,14 @@ class MavenStructuredSourceTextEditor extends StructuredTextEditor {
 	 * created that drags along an instance of resolved MavenProject via
 	 * implementing IMavenProjectCache
 	 */
+	@Override
 	protected StructuredTextViewer createStructedTextViewer(Composite parent, IVerticalRuler verticalRuler,
 			int styles) {
 		return new MavenStructuredTextViewer(parent, verticalRuler, getOverviewRuler(), isOverviewRulerVisible(),
 				styles);
 	}
 
+	@Override
 	protected void sanityCheckState(IEditorInput input) {
 
 		IDocumentProvider p = this instanceof ITextEditor ? ((ITextEditor) this).getDocumentProvider() : null;
@@ -122,6 +125,7 @@ class MavenStructuredSourceTextEditor extends StructuredTextEditor {
 
 	private boolean oldDirty;
 
+	@Override
 	public boolean isDirty() {
 		boolean dirty = super.isDirty();
 		if (oldDirty != dirty) {

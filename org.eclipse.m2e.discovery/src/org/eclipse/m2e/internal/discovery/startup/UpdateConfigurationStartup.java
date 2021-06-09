@@ -43,7 +43,8 @@ public class UpdateConfigurationStartup implements IStartup {
 
   private static final String PROJECT_PREF = DiscoveryActivator.PLUGIN_ID + ".pref.projects"; //$NON-NLS-1$
 
-  public void earlyStartup() {
+	@Override
+	  public void earlyStartup() {
     IProject[] projects = getSavedProjects();
     if(projects != null && projects.length > 0) {
       updateConfiguration(projects);

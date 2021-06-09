@@ -26,10 +26,12 @@ import org.eclipse.m2e.core.internal.IMavenConstants;
 public class MavenDiscoveryMarkerResolutionGenerator
     implements IMarkerResolutionGenerator, IMarkerResolutionGenerator2 {
 
-  public boolean hasResolutions(IMarker marker) {
+    @Override
+    public boolean hasResolutions(IMarker marker) {
     return canResolve(marker);
   }
 
+  @Override
   public IMarkerResolution[] getResolutions(IMarker marker) {
     if(canResolve(marker)) {
       return new IMarkerResolution[] {new DiscoveryWizardResolution(marker)};

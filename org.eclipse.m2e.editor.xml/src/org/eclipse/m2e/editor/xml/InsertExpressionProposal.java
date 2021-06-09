@@ -61,6 +61,7 @@ public class InsertExpressionProposal
     this.project = mvnproject;
   }
 
+  @Override
   public Object getAdditionalProposalInfo(IProgressMonitor monitor) {
     if(project == null) {
       return null;
@@ -96,6 +97,7 @@ public class InsertExpressionProposal
     return buff.toString();
   }
 
+  @Override
   public void apply(IDocument document) {
     int offset = region.getOffset();
     String replace = "${" + key + "}"; //$NON-NLS-1$ //$NON-NLS-2$
@@ -107,28 +109,34 @@ public class InsertExpressionProposal
     }
   }
 
+  @Override
   public Point getSelection(IDocument document) {
     return new Point(region.getOffset() + len, 0);
   }
 
+  @Override
   public String getAdditionalProposalInfo() {
     //not used anymore
     return null;
   }
 
+  @Override
   public String getDisplayString() {
     return "${" + key + "}"; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
+  @Override
   public Image getImage() {
     // TODO  what kind of icon to use?
     return null;
   }
 
+  @Override
   public IContextInformation getContextInformation() {
     return null;
   }
 
+  @Override
   public int getRelevance() {
     return 2000;
   }

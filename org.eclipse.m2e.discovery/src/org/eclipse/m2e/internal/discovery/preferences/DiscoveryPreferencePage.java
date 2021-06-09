@@ -39,6 +39,7 @@ public class DiscoveryPreferencePage extends PreferencePage implements IWorkbenc
     noDefaultAndApplyButton();
   }
 
+  @Override
   public void init(IWorkbench workbench) {
     this.workbench = workbench;
   }

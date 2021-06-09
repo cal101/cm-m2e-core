@@ -94,6 +94,7 @@ public class InsertArtifactProposal implements ICompletionProposal, ICompletionP
     assert config.getType() != null;
   }
 
+  @Override
   public void apply(IDocument document) {
     MavenProject prj = XmlUtils.extractMavenProject(sourceViewer);
     IProject eclPrj = XmlUtils.extractProject(sourceViewer);
@@ -257,31 +258,38 @@ public class InsertArtifactProposal implements ICompletionProposal, ICompletionP
     }
   }
 
+  @Override
   public Point getSelection(IDocument document) {
     return new Point(generatedOffset, generatedLength);
   }
 
+  @Override
   public String getAdditionalProposalInfo() {
     return null; //not to be used anymore
   }
 
+  @Override
   public String getDisplayString() {
     return config.getType().getDisplayName();
   }
 
+  @Override
   public Image getImage() {
     return config.getType().getImage();
   }
 
+  @Override
   public IContextInformation getContextInformation() {
     // TODO Auto-generated method stub
     return null;
   }
 
+  @Override
   public boolean isAutoInsertable() {
     return false;
   }
 
+  @Override
   public Object getAdditionalProposalInfo(IProgressMonitor monitor) {
     return config.getType().getAdditionalInfo();
   }

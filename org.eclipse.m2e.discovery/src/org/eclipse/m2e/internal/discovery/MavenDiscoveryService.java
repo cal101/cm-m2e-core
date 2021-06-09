@@ -131,6 +131,7 @@ public class MavenDiscoveryService implements IMavenDiscoveryUI, IMavenDiscovery
   public MavenDiscoveryService(boolean factory) {
   }
 
+  @Override
   public Map<ILifecycleMappingRequirement, List<IMavenDiscoveryProposal>> discover(final MavenProject mavenProject,
       final List<MojoExecution> mojoExecutions, final List<IMavenDiscoveryProposal> preselected,
       final IProgressMonitor monitor) throws CoreException {
@@ -336,6 +337,7 @@ public class MavenDiscoveryService implements IMavenDiscoveryUI, IMavenDiscovery
     }
   }
 
+  @Override
   public boolean implement(List<IMavenDiscoveryProposal> proposals, IRunnableWithProgress postInstallHook,
       IRunnableContext context, Collection<String> projectsToConfigure) {
     try {
@@ -369,13 +371,16 @@ public class MavenDiscoveryService implements IMavenDiscoveryUI, IMavenDiscovery
     return items;
   }
 
+  @Override
   public Object getService(Bundle bundle, ServiceRegistration registration) {
     return new MavenDiscoveryService(false); // not a factory instance
   }
 
+  @Override
   public void ungetService(Bundle bundle, ServiceRegistration registration, Object service) {
   }
 
+  @Override
   public Map<ILifecycleMappingRequirement, List<IMavenDiscoveryProposal>> discover(
       Collection<ILifecycleMappingRequirement> requirements, List<IMavenDiscoveryProposal> preselected,
       IProgressMonitor monitor) {

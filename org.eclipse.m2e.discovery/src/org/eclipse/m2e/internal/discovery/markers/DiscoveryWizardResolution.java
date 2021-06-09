@@ -38,18 +38,22 @@ public class DiscoveryWizardResolution extends MavenProblemResolution {
     super(marker);
   }
 
+  @Override
   public int getOrder() {
     return 10;
   }
 
+  @Override
   public String getDescription() {
     return Messages.DiscoveryWizardProposal_description;
   }
 
+  @Override
   public String getLabel() {
     return Messages.DiscoveryWizardProposal_Label;
   }
 
+  @Override
   public Image getImage() {
     return MavenDiscoveryIcons.getImage(MavenDiscoveryIcons.QUICK_FIX_ICON);
   }
