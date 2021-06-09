@@ -729,7 +729,7 @@ public class DependencyTreePage extends FormPage implements IMavenProjectChanged
     }
   }
 
-  final class DependencyTreeContentProvider implements ITreeContentProvider {
+  static final class DependencyTreeContentProvider implements ITreeContentProvider {
 
     public Object[] getElements(Object input) {
       return getChildren(input);

@@ -210,7 +210,7 @@ public class MavenConsoleLineTracker implements IConsoleLineTracker {
   /**
    * Opens a text editor for Maven test report
    */
-  public class MavenConsoleHyperLink implements IHyperlink {
+  public static class MavenConsoleHyperLink implements IHyperlink {
 
     private final String baseDir;
 
@@ -259,7 +259,7 @@ public class MavenConsoleLineTracker implements IConsoleLineTracker {
    * property can be specified: -Dmaven.surefire.debug=
    * "-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=8000 -Xnoagent -Djava.compiler=NONE"
    */
-  public class MavenDebugHyperLink implements IHyperlink {
+  public static class MavenDebugHyperLink implements IHyperlink {
 
     private final String baseDir;
 

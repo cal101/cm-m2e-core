@@ -40,7 +40,7 @@ public class PomContentOutlineConfiguration extends XMLContentOutlineConfigurati
   /**
    * POM label provider
    */
-  private final class PomLabelProvider implements ILabelProvider {
+  private static final class PomLabelProvider implements ILabelProvider {
 
     private static final String TARGET_PATH = "targetPath"; //$NON-NLS-1$
 

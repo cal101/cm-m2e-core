@@ -83,7 +83,7 @@ public class MavenInstallationWizardPage extends WizardPage {
 
   private final Set<String> usedNames;
 
-  class TreeContentProvider implements ITreeContentProvider {
+  static class TreeContentProvider implements ITreeContentProvider {
 
     public void dispose() {
     }
@@ -109,7 +109,7 @@ public class MavenInstallationWizardPage extends WizardPage {
 
   }
 
-  class TreeLabelProvider implements ILabelProvider {
+  static class TreeLabelProvider implements ILabelProvider {
 
     public void addListener(ILabelProviderListener listener) {
     }

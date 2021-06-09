@@ -955,7 +955,7 @@ public class DependenciesComposite extends Composite {
     return false;
   }
 
-  class Dependency implements IAdaptable {
+  static class Dependency implements IAdaptable {
     String artifactId;
 
     String groupId;

@@ -168,7 +168,7 @@ public class ProfileSelectionHandler extends AbstractHandler {
     return facades;
   }
 
-  class GetProfilesJob extends Job {
+  static class GetProfilesJob extends Job {
 
     private final IProfileManager profileManager;
 
@@ -287,7 +287,7 @@ public class ProfileSelectionHandler extends AbstractHandler {
     }
   }
 
-  class UpdateProfilesJob extends WorkspaceJob {
+  static class UpdateProfilesJob extends WorkspaceJob {
 
     private final Map<IMavenProjectFacade, List<ProfileData>> allProfiles;
 

@@ -132,7 +132,7 @@ public class InputHistory {
     }
   }
 
-  abstract private class ControlWrapper {
+  abstract private static class ControlWrapper {
     protected Control control;
 
     protected String text;

@@ -423,7 +423,7 @@ public class SelectProfilesDialog extends TitleAreaDialog implements IMenuListen
     }
   }
 
-  private class ProfileLabelProvider extends LabelProvider
+  private static class ProfileLabelProvider extends LabelProvider
       implements ITableLabelProvider, ITableFontProvider, ITableColorProvider {
 
     private final Font implicitActivationFont;

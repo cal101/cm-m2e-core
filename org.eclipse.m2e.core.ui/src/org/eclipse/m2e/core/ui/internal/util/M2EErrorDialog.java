@@ -148,7 +148,7 @@ public class M2EErrorDialog extends MessageDialog {
    *
    * @author dyocum
    */
-  class ErrorTableContentProvider implements IStructuredContentProvider {
+  static class ErrorTableContentProvider implements IStructuredContentProvider {
 
     /* (non-Javadoc)
      * @see org.eclipse.jface.viewers.IStructuredContentProvider#getElements(java.lang.Object)
