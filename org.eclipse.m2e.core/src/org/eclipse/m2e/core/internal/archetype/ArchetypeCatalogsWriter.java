@@ -84,11 +84,7 @@ public class ArchetypeCatalogsWriter {
       SAXParserFactory parserFactory = SAXParserFactory.newInstance();
       SAXParser parser = parserFactory.newSAXParser();
       parser.parse(is, new ArchetypeCatalogsContentHandler(catalogs, existingCatalogs));
-    } catch(SAXException ex) {
-      String msg = Messages.ArchetypeCatalogsWriter_error_parse;
-      log.error(msg, ex);
-      throw new IOException(NLS.bind(msg, ex.getMessage()));
-    } catch(ParserConfigurationException ex) {
+    } catch(SAXException | ParserConfigurationException ex) {
       String msg = Messages.ArchetypeCatalogsWriter_error_parse;
       log.error(msg, ex);
       throw new IOException(NLS.bind(msg, ex.getMessage()));
@@ -103,10 +99,7 @@ public class ArchetypeCatalogsWriter {
       transformer.transform(new SAXSource(new XMLArchetypeCatalogsWriter(catalogs), new InputSource()),
           new StreamResult(os));
 
-    } catch(TransformerFactoryConfigurationError ex) {
-      throw new IOException(NLS.bind(Messages.ArchetypeCatalogsWriter_error_write, ex.getMessage()));
-
-    } catch(TransformerException ex) {
+    } catch(TransformerFactoryConfigurationError | TransformerException ex) {
       throw new IOException(NLS.bind(Messages.ArchetypeCatalogsWriter_error_write, ex.getMessage()));
 
     }

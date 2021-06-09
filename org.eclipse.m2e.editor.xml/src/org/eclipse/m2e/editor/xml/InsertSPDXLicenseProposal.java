@@ -78,9 +78,7 @@ public class InsertSPDXLicenseProposal implements ICompletionProposal {
           this.selection = operation.getSelection();
         }
 
-      } catch(CoreException e) {
-        log.error("Failed inserting parent element", e); //$NON-NLS-1$
-      } catch(IOException e) {
+      } catch(CoreException | IOException e) {
         log.error("Failed inserting parent element", e); //$NON-NLS-1$
       }
     }

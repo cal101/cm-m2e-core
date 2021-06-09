@@ -57,9 +57,7 @@ public class WorkspaceHelpers {
       try {
         System.gc();
         doCleanWorkspace();
-      } catch(InterruptedException e) {
-        throw e;
-      } catch(OperationCanceledException e) {
+      } catch(InterruptedException | OperationCanceledException e) {
         throw e;
       } catch(Exception e) {
         cause = e;

@@ -1190,9 +1190,7 @@ public class ProjectRegistryManager {
     try {
       IManagedCache cache = (IManagedCache) maven.getPlexusContainer().lookup(clazz);
       return cache.removeProject(pom, key, force);
-    } catch(ComponentLookupException ex) {
-      // can't really happen
-    } catch(CoreException ex) {
+    } catch(ComponentLookupException | CoreException ex) {
       // can't really happen
     }
     return Collections.emptySet();

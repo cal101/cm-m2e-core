@@ -155,8 +155,6 @@ public class ProjectRegistryRefreshJob extends Job implements IResourceChangeLis
       } finally {
         newState.close();
       }
-    } catch(CoreException ex) {
-      log.error(ex.getMessage(), ex);
     } catch(OperationCanceledException ex) {
       log.info("{} was canceled", getClass().getName());
     } catch(StaleMutableProjectRegistryException e) {

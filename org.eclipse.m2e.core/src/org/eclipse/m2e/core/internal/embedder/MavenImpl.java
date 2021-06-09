@@ -283,9 +283,6 @@ public class MavenImpl implements IMaven, IMavenConfigurationChangeListener {
     try {
       lookup(MavenExecutionRequestPopulator.class).populateDefaults(request);
       result = lookup(Maven.class).execute(request);
-    } catch(MavenExecutionRequestPopulationException ex) {
-      result = new DefaultMavenExecutionResult();
-      result.addException(ex);
     } catch(Exception e) {
       result = new DefaultMavenExecutionResult();
       result.addException(e);
@@ -352,19 +349,7 @@ public class MavenImpl implements IMaven, IMavenConfigurationChangeListener {
       // getPluginRealm creates plugin realm and populates pluginDescriptor.classRealm field
       lookup(BuildPluginManager.class).getPluginRealm(session, mojoDescriptor.getPluginDescriptor());
       return clazz.cast(lookup(MavenPluginManager.class).getConfiguredMojo(Mojo.class, session, mojoExecution));
-    } catch(PluginContainerException ex) {
-      throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1, NLS.bind(
-          Messages.MavenImpl_error_mojo, mojoExecution), ex));
-    } catch(PluginConfigurationException ex) {
-      throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1, NLS.bind(
-          Messages.MavenImpl_error_mojo, mojoExecution), ex));
-    } catch(ClassCastException ex) {
-      throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1, NLS.bind(
-          Messages.MavenImpl_error_mojo, mojoExecution), ex));
-    } catch(PluginResolutionException ex) {
-      throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1, NLS.bind(
-          Messages.MavenImpl_error_mojo, mojoExecution), ex));
-    } catch(PluginManagerException ex) {
+    } catch(PluginConfigurationException | ClassCastException | PluginResolutionException | PluginManagerException ex) {
       throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1, NLS.bind(
           Messages.MavenImpl_error_mojo, mojoExecution), ex));
     }
@@ -595,10 +580,7 @@ public class MavenImpl implements IMaven, IMavenConfigurationChangeListener {
           configuration.setValidationLevel(ModelBuildingRequest.VALIDATION_LEVEL_MINIMAL);
           configuration.setRepositorySession(createRepositorySession(request));
           return lookup(ProjectBuilder.class).build(pomFile, configuration).getProject();
-        } catch(ProjectBuildingException ex) {
-          throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1,
-              Messages.MavenImpl_error_read_project, ex));
-        } catch(MavenExecutionRequestPopulationException ex) {
+        } catch(ProjectBuildingException | MavenExecutionRequestPopulationException ex) {
           throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1,
               Messages.MavenImpl_error_read_project, ex));
         }
@@ -999,19 +981,7 @@ public class MavenImpl implements IMaven, IMavenConfigurationChangeListener {
       try {
         mojoDescriptor = lookup(BuildPluginManager.class).getMojoDescriptor(plugin, goal,
             session.getCurrentProject().getRemotePluginRepositories(), session.getRepositorySession());
-      } catch(PluginNotFoundException ex) {
-        throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1,
-            Messages.MavenImpl_error_param, ex));
-      } catch(PluginResolutionException ex) {
-        throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1,
-            Messages.MavenImpl_error_param, ex));
-      } catch(PluginDescriptorParsingException ex) {
-        throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1,
-            Messages.MavenImpl_error_param, ex));
-      } catch(MojoNotFoundException ex) {
-        throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1,
-            Messages.MavenImpl_error_param, ex));
-      } catch(InvalidPluginDescriptorException ex) {
+      } catch(PluginNotFoundException | PluginResolutionException | PluginDescriptorParsingException | MojoNotFoundException | InvalidPluginDescriptorException ex) {
         throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1,
             Messages.MavenImpl_error_param, ex));
       }
@@ -1038,10 +1008,7 @@ public class MavenImpl implements IMaven, IMavenConfigurationChangeListener {
       Object value = typeConverter.fromConfiguration(converterLookup, paramConfig, type, Object.class,
           plexus.getContainerRealm(), expressionEvaluator, null);
       return type.cast(value);
-    } catch(ComponentConfigurationException ex) {
-      throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1, Messages.MavenImpl_error_param,
-          ex));
-    } catch(ClassCastException ex) {
+    } catch(ComponentConfigurationException | ClassCastException ex) {
       throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, -1, Messages.MavenImpl_error_param,
           ex));
     }
@@ -1268,9 +1235,7 @@ public class MavenImpl implements IMaven, IMavenConfigurationChangeListener {
     try {
       ProjectSorter rm = new ProjectSorter(projects);
       return rm.getSortedProjects();
-    } catch(CycleDetectedException ex) {
-      throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, Messages.MavenImpl_error_sort, ex));
-    } catch(DuplicateProjectException ex) {
+    } catch(CycleDetectedException | DuplicateProjectException ex) {
       throw new CoreException(new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, Messages.MavenImpl_error_sort, ex));
     }
   }

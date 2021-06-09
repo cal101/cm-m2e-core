@@ -216,9 +216,7 @@ public class MarkerLocationService implements IMarkerLocationService, IEditorMar
                 childEquals(PomEdits.ARTIFACT_ID, artifactId));
           }
         });
-      } catch(IOException e) {
-        log.error("Error locating marker", e);
-      } catch(CoreException e) {
+      } catch(IOException | CoreException e) {
         log.error("Error locating marker", e);
       }
     }

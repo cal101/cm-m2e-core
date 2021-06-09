@@ -242,10 +242,7 @@ public class BuildPathManager implements IMavenProjectChangedListener, IResource
     try {
       is = new FileInputStream(containerStateFile);
       return new MavenClasspathContainerSaveHelper().readContainer(is);
-    } catch(IOException ex) {
-      throw new CoreException(new Status(IStatus.ERROR, MavenJdtPlugin.PLUGIN_ID, -1, //
-          "Can't read classpath container state for " + project.getName(), ex));
-    } catch(ClassNotFoundException ex) {
+    } catch(IOException | ClassNotFoundException ex) {
       throw new CoreException(new Status(IStatus.ERROR, MavenJdtPlugin.PLUGIN_ID, -1, //
           "Can't read classpath container state for " + project.getName(), ex));
     } finally {
@@ -748,9 +745,7 @@ public class BuildPathManager implements IMavenProjectChangedListener, IResource
       if(file.canRead()) {
         return file;
       }
-    } catch(CoreException ex) {
-      // fall through
-    } catch(IOException ex) {
+    } catch(CoreException | IOException ex) {
       // fall through
     }
     return null;

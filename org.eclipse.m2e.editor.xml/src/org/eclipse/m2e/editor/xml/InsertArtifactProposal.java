@@ -144,9 +144,7 @@ public class InsertArtifactProposal implements ICompletionProposal, ICompletionP
               generatedOffset = ((IndexedRegion) parent).getStartOffset();
               generatedLength = ((IndexedRegion) parent).getEndOffset() - generatedOffset;
             }));
-          } catch(IOException e) {
-            log.error("Failed inserting parent element", e); //$NON-NLS-1$
-          } catch(CoreException e) {
+          } catch(IOException | CoreException e) {
             log.error("Failed inserting parent element", e); //$NON-NLS-1$
           }
         }
@@ -195,9 +193,7 @@ public class InsertArtifactProposal implements ICompletionProposal, ICompletionP
               generatedOffset = ((IndexedRegion) toFormat).getStartOffset();
               generatedLength = ((IndexedRegion) toFormat).getEndOffset() - generatedOffset;
             }));
-          } catch(IOException e) {
-            log.error("Failed inserting plugin element", e); //$NON-NLS-1$
-          } catch(CoreException e) {
+          } catch(IOException | CoreException e) {
             log.error("Failed inserting plugin element", e); //$NON-NLS-1$
           }
         }
@@ -247,9 +243,7 @@ public class InsertArtifactProposal implements ICompletionProposal, ICompletionP
               generatedOffset = ((IndexedRegion) toFormat).getStartOffset();
               generatedLength = ((IndexedRegion) toFormat).getEndOffset() - generatedOffset;
             }));
-          } catch(IOException e) {
-            log.error("Failed inserting dependency element", e); //$NON-NLS-1$
-          } catch(CoreException e) {
+          } catch(IOException | CoreException e) {
             log.error("Failed inserting dependency element", e); //$NON-NLS-1$
           }
         }

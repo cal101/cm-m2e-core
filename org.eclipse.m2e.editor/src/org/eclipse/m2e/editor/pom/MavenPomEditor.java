@@ -510,10 +510,7 @@ public class MavenPomEditor extends FormEditor implements IResourceChangeListene
         IDocument doc = getEffectivePomSourcePage().getDocumentProvider().getDocument(getEffectivePomEditorInput());
         doc.set(content);
         return Status.OK_STATUS;
-      } catch(CoreException ce) {
-        return new Status(IStatus.ERROR, MavenEditorPlugin.PLUGIN_ID, -1,
-            Messages.MavenPomEditor_error_failed_effective, ce);
-      } catch(IOException ie) {
+      } catch(CoreException | IOException ie) {
         return new Status(IStatus.ERROR, MavenEditorPlugin.PLUGIN_ID, -1,
             Messages.MavenPomEditor_error_failed_effective, ie);
       }

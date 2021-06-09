@@ -575,9 +575,7 @@ public class LifecycleMappingPage extends WizardPage {
         }
         mappingConfiguration.autoCompleteMapping();
       });
-    } catch(InvocationTargetException e) {
-      setErrorMessage(e.getMessage());
-    } catch(InterruptedException e) {
+    } catch(InvocationTargetException | InterruptedException e) {
       setErrorMessage(e.getMessage());
     }
     loading = false;

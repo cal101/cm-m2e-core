@@ -217,9 +217,7 @@ public abstract class AbstractMavenProjectTestCase {
     for(int i = 0; i < DELETE_RETRY_COUNT; i++ ) {
       try {
         doDeleteProject(project);
-      } catch(InterruptedException e) {
-        throw e;
-      } catch(OperationCanceledException e) {
+      } catch(InterruptedException | OperationCanceledException e) {
         throw e;
       } catch(Exception e) {
         cause = e;

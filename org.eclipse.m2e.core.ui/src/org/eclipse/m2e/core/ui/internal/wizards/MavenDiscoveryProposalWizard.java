@@ -182,9 +182,7 @@ public class MavenDiscoveryProposalWizard extends Wizard implements IImportWizar
             try {
               PomEdits.performOnDOMDocument(new OperationTuple(pomFile, new LifecycleMappingOperation(pluginGroupId,
                   pluginArtifactId, pluginVersion, PluginExecutionAction.ignore, goals)));
-            } catch(IOException ex) {
-              LOG.error(ex.getMessage(), ex);
-            } catch(CoreException ex) {
+            } catch(IOException | CoreException ex) {
               LOG.error(ex.getMessage(), ex);
             }
           }

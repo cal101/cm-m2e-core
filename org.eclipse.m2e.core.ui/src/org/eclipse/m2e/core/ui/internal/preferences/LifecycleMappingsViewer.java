@@ -535,9 +535,7 @@ class LifecycleMappingsViewer {
             throw new InvocationTargetException(ex);
           }
         });
-      } catch(InvocationTargetException ex) {
-        log.error(ex.getMessage(), ex);
-      } catch(InterruptedException ex) {
+      } catch(InvocationTargetException | InterruptedException ex) {
         log.error(ex.getMessage(), ex);
       }
     }
