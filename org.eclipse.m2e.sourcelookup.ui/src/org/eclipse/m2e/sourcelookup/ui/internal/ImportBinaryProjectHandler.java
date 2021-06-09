@@ -41,7 +41,7 @@ public class ImportBinaryProjectHandler extends AbstractHandler {
       try {
         importBinaryProjects(((IStructuredSelection) selection).getFirstElement());
       } catch (DebugException e) {
-        throw new ExecutionException("Could not import binary project", e);
+        throw new ExecutionException("Could not import binary project", e); //$NON-NLS-1$
       }
     }
 

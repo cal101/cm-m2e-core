@@ -160,7 +160,7 @@ public abstract class MavenProjectCheckoutJob extends WorkspaceJob {
       }
 
       if(projects.isEmpty()) {
-        log.info("No Maven projects to import");
+        log.info("No Maven projects to import"); //$NON-NLS-1$
 
         if(collectedLocations.size() == 1) {
           final String location = collectedLocations.get(0);
@@ -234,7 +234,7 @@ public abstract class MavenProjectCheckoutJob extends WorkspaceJob {
         try {
           FileUtils.deleteDirectory(location);
         } catch(IOException ex) {
-          String msg = "Can't delete " + location + "; " + (ex.getMessage() == null ? ex.toString() : ex.getMessage()); //$NON-NLS-1$
+          String msg = "Can't delete " + location + "; " + (ex.getMessage() == null ? ex.toString() : ex.getMessage()); //$NON-NLS-1$ //$NON-NLS-2$
           log.error(msg, ex);
         }
       }

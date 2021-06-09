@@ -98,7 +98,7 @@ public class MavenTargetLocationEditor implements ITargetLocationHandler {
 						return finish;
 					}
 				};
-				wizard.setWindowTitle(wizard.getWindowTitle() + " [" + artifact + "]");
+				wizard.setWindowTitle(wizard.getWindowTitle() + " [" + artifact + "]"); //$NON-NLS-1$ //$NON-NLS-2$
 				return wizard;
 			}
 		}
@@ -113,7 +113,7 @@ public class MavenTargetLocationEditor implements ITargetLocationHandler {
 	@Override
 	public IStatus update(ITargetDefinition target, TreePath[] treePaths, IProgressMonitor monitor) {
 		ITargetLocation[] targetLocations = target.getTargetLocations();
-		IStatus status = new Status(IStatus.OK, Activator.ID, ITargetLocationHandler.STATUS_CODE_NO_CHANGE, "", null);
+		IStatus status = new Status(IStatus.OK, Activator.ID, ITargetLocationHandler.STATUS_CODE_NO_CHANGE, "", null); //$NON-NLS-1$
 		for (TreePath treePath : treePaths) {
 			Object segment = treePath.getFirstSegment();
 			if (segment instanceof MavenTargetLocation) {
@@ -194,7 +194,7 @@ public class MavenTargetLocationEditor implements ITargetLocationHandler {
 				}
 			}
 		}
-		return toggled > 0 ? new Status(IStatus.OK, Activator.class.getPackageName(), STATUS_FORCE_RELOAD, "", null)
+		return toggled > 0 ? new Status(IStatus.OK, Activator.class.getPackageName(), STATUS_FORCE_RELOAD, "", null) //$NON-NLS-1$
 				: Status.CANCEL_STATUS;
 	}
 

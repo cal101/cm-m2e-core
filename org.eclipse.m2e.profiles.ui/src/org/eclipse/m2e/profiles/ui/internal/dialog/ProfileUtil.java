@@ -24,7 +24,7 @@ public class ProfileUtil {
 
 	private ProfileUtil(){}
 
-	private static final String COMMA = ", ";
+	private static final String COMMA = ", "; //$NON-NLS-1$
 
 	/**
 	* Turns a {@link ProfileSelection} collection as a String, joined by a comma separator.

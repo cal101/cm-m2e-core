@@ -136,8 +136,8 @@ public class ProfileData {
 
 	@Override
 	public String toString() {
-		return "ProfileData [id=" + id + ", autoActive=" + autoActive
-				+ ", userSelected=" + userSelected + ", activationState="
-				+ activationState + ", source=" + source + "]";
+		return "ProfileData [id=" + id + ", autoActive=" + autoActive //$NON-NLS-1$ //$NON-NLS-2$
+				+ ", userSelected=" + userSelected + ", activationState=" //$NON-NLS-1$ //$NON-NLS-2$
+				+ activationState + ", source=" + source + "]"; //$NON-NLS-1$ //$NON-NLS-2$
 	}
 }

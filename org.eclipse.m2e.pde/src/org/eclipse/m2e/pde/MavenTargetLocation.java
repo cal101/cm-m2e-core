@@ -60,22 +60,22 @@ import org.eclipse.pde.internal.core.target.AbstractBundleContainer;
 @SuppressWarnings("restriction")
 public class MavenTargetLocation extends AbstractBundleContainer {
 
-	public static final String ELEMENT_CLASSIFIER = "classifier";
-	public static final String ELEMENT_TYPE = "type";
-	public static final String ELEMENT_VERSION = "version";
-	public static final String ELEMENT_ARTIFACT_ID = "artifactId";
-	public static final String ELEMENT_GROUP_ID = "groupId";
-	public static final String ELEMENT_INSTRUCTIONS = "instructions";
-	public static final String ELEMENT_EXCLUDED = "exclude";
-	public static final String ATTRIBUTE_INSTRUCTIONS_REFERENCE = "reference";
-	public static final String ATTRIBUTE_DEPENDENCY_SCOPE = "includeDependencyScope";
-	public static final String ATTRIBUTE_INCLUDE_SOURCE = "includeSource";
-	public static final String ATTRIBUTE_MISSING_META_DATA = "missingManifest";
-	public static final String DEFAULT_DEPENDENCY_SCOPE = "";
+	public static final String ELEMENT_CLASSIFIER = "classifier"; //$NON-NLS-1$
+	public static final String ELEMENT_TYPE = "type"; //$NON-NLS-1$
+	public static final String ELEMENT_VERSION = "version"; //$NON-NLS-1$
+	public static final String ELEMENT_ARTIFACT_ID = "artifactId"; //$NON-NLS-1$
+	public static final String ELEMENT_GROUP_ID = "groupId"; //$NON-NLS-1$
+	public static final String ELEMENT_INSTRUCTIONS = "instructions"; //$NON-NLS-1$
+	public static final String ELEMENT_EXCLUDED = "exclude"; //$NON-NLS-1$
+	public static final String ATTRIBUTE_INSTRUCTIONS_REFERENCE = "reference"; //$NON-NLS-1$
+	public static final String ATTRIBUTE_DEPENDENCY_SCOPE = "includeDependencyScope"; //$NON-NLS-1$
+	public static final String ATTRIBUTE_INCLUDE_SOURCE = "includeSource"; //$NON-NLS-1$
+	public static final String ATTRIBUTE_MISSING_META_DATA = "missingManifest"; //$NON-NLS-1$
+	public static final String DEFAULT_DEPENDENCY_SCOPE = ""; //$NON-NLS-1$
 	public static final MissingMetadataMode DEFAULT_METADATA_MODE = MissingMetadataMode.GENERATE;
-	public static final String DEFAULT_PACKAGE_TYPE = "jar";
-	public static final String DEPENDENCYNODE_IS_ROOT = "dependencynode.root";
-	public static final String DEPENDENCYNODE_PARENT = "dependencynode.parent";
+	public static final String DEFAULT_PACKAGE_TYPE = "jar"; //$NON-NLS-1$
+	public static final String DEPENDENCYNODE_IS_ROOT = "dependencynode.root"; //$NON-NLS-1$
+	public static final String DEPENDENCYNODE_PARENT = "dependencynode.parent"; //$NON-NLS-1$
 
 	private final String artifactId;
 	private final String groupId;
@@ -148,10 +148,10 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 							} catch (RepositoryException e) {
 								throw new CoreException(
 										new Status(IStatus.ERROR, MavenTargetLocation.class.getPackage().getName(),
-												"Resolving dependencies failed", e));
+												"Resolving dependencies failed", e)); //$NON-NLS-1$
 							} catch (RuntimeException e) {
 								throw new CoreException(new Status(IStatus.ERROR,
-										MavenTargetLocation.class.getPackage().getName(), "Internal error", e));
+										MavenTargetLocation.class.getPackage().getName(), "Internal error", e)); //$NON-NLS-1$
 							}
 						}
 					}, monitor);
@@ -175,7 +175,7 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 		if (bndInstructions == null) {
 			// no specific instructions for this artifact, try using the location default
 			// then
-			bndInstructions = instructionsMap.get("");
+			bndInstructions = instructionsMap.get(""); //$NON-NLS-1$
 		}
 		TargetBundle bundle = cacheManager.getTargetBundle(artifact, bndInstructions, metadataMode);
 		IStatus status = bundle.getStatus();
@@ -184,7 +184,7 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 			if (includeSource) {
 				try {
 					Artifact resolve = RepositoryUtils.toArtifact(maven.resolve(artifact.getGroupId(),
-							artifact.getArtifactId(), artifact.getBaseVersion(), artifact.getExtension(), "sources",
+							artifact.getArtifactId(), artifact.getBaseVersion(), artifact.getExtension(), "sources", //$NON-NLS-1$
 							maven.getArtifactRepositories(), new NullProgressMonitor()));
 					targetBundles.put(resolve, new MavenSourceBundle(bundle.getBundleInfo(), resolve, cacheManager));
 				} catch (Exception e) {
@@ -202,7 +202,7 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 
 	public MavenTargetLocation update(IProgressMonitor monitor) throws CoreException {
 
-		Artifact artifact = new DefaultArtifact(getGroupId() + ":" + getArtifactId() + ":(0,]");
+		Artifact artifact = new DefaultArtifact(getGroupId() + ":" + getArtifactId() + ":(0,]"); //$NON-NLS-1$ //$NON-NLS-2$
 		IMaven maven = MavenPlugin.getMaven();
 		RepositorySystem repoSystem = MavenPluginActivator.getDefault().getRepositorySystem();
 		IMavenExecutionContext context = maven.createExecutionContext();
@@ -219,7 +219,7 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 					return repoSystem.resolveVersionRange(session, request);
 				} catch (VersionRangeResolutionException e) {
 					throw new CoreException(new Status(IStatus.ERROR, MavenTargetLocation.class.getPackage().getName(),
-							"Resolving latest version failed", e));
+							"Resolving latest version failed", e)); //$NON-NLS-1$
 				}
 			}
 		}, monitor);
@@ -248,14 +248,14 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 
 	private static String getKey(Artifact artifact) {
 		if (artifact == null) {
-			return "";
+			return ""; //$NON-NLS-1$
 		}
-		String key = artifact.getGroupId() + ":" + artifact.getArtifactId();
+		String key = artifact.getGroupId() + ":" + artifact.getArtifactId(); //$NON-NLS-1$
 		String classifier = artifact.getClassifier();
 		if (classifier != null) {
-			key += ":" + classifier;
+			key += ":" + classifier; //$NON-NLS-1$
 		}
-		key += ":" + artifact.getBaseVersion();
+		key += ":" + artifact.getBaseVersion(); //$NON-NLS-1$
 		return key;
 	}
 
@@ -280,12 +280,12 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 
 	@Override
 	public String getType() {
-		return "Maven";
+		return "Maven"; //$NON-NLS-1$
 	}
 
 	@Override
 	public String getLocation(boolean resolve) throws CoreException {
-		return System.getProperty("java.io.tmpdir");
+		return System.getProperty("java.io.tmpdir"); //$NON-NLS-1$
 	}
 
 	@Override
@@ -321,12 +321,12 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 	@Override
 	public String serialize() {
 		StringBuilder xml = new StringBuilder();
-		xml.append("<location");
-		attribute(xml, "type", getType());
+		xml.append("<location"); //$NON-NLS-1$
+		attribute(xml, "type", getType()); //$NON-NLS-1$
 		attribute(xml, ATTRIBUTE_MISSING_META_DATA, metadataMode.name().toLowerCase());
 		attribute(xml, ATTRIBUTE_DEPENDENCY_SCOPE, dependencyScope);
-		attribute(xml, ATTRIBUTE_INCLUDE_SOURCE, includeSource ? "true" : "");
-		xml.append(">");
+		attribute(xml, ATTRIBUTE_INCLUDE_SOURCE, includeSource ? "true" : ""); //$NON-NLS-1$ //$NON-NLS-2$
+		xml.append(">"); //$NON-NLS-1$
 		element(xml, ELEMENT_GROUP_ID, groupId);
 		element(xml, ELEMENT_ARTIFACT_ID, artifactId);
 		element(xml, ELEMENT_VERSION, version);
@@ -335,16 +335,16 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 		instructionsMap.values().stream().filter(Predicate.not(BNDInstructions::isEmpty))
 				.sorted(Comparator.comparing(BNDInstructions::getKey)).forEach(bnd -> {
 					String instructions = bnd.getInstructions();
-					xml.append("<" + ELEMENT_INSTRUCTIONS);
+					xml.append("<" + ELEMENT_INSTRUCTIONS); //$NON-NLS-1$
 					attribute(xml, ATTRIBUTE_INSTRUCTIONS_REFERENCE, bnd.getKey());
-					xml.append("><![CDATA[\r\n");
+					xml.append("><![CDATA[\r\n"); //$NON-NLS-1$
 					xml.append(instructions);
-					xml.append("\r\n]]></" + ELEMENT_INSTRUCTIONS + ">");
+					xml.append("\r\n]]></" + ELEMENT_INSTRUCTIONS + ">"); //$NON-NLS-1$ //$NON-NLS-2$
 				});
 		excludedArtifacts.stream().sorted().forEach(ignored -> {
 			element(xml, ELEMENT_EXCLUDED, ignored);
 		});
-		xml.append("</location>");
+		xml.append("</location>"); //$NON-NLS-1$
 		return xml.toString();
 	}
 
@@ -354,7 +354,7 @@ public class MavenTargetLocation extends AbstractBundleContainer {
 			xml.append(name);
 			xml.append('>');
 			xml.append(value);
-			xml.append("</");
+			xml.append("</"); //$NON-NLS-1$
 			xml.append(name);
 			xml.append('>');
 		}

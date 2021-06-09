@@ -80,8 +80,8 @@ public class ReportPluginItemProvider extends ItemProviderAdapter implements IEd
   protected void addGroupIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_ReportPlugin_groupId_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_ReportPlugin_groupId_feature", "_UI_ReportPlugin_type"),
+        getString("_UI_ReportPlugin_groupId_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_ReportPlugin_groupId_feature", "_UI_ReportPlugin_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.REPORT_PLUGIN__GROUP_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -96,9 +96,9 @@ public class ReportPluginItemProvider extends ItemProviderAdapter implements IEd
         .add(createItemPropertyDescriptor(
             ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
             getResourceLocator(),
-            getString("_UI_ReportPlugin_artifactId_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_ReportPlugin_artifactId_feature",
-                "_UI_ReportPlugin_type"), PomPackage.Literals.REPORT_PLUGIN__ARTIFACT_ID, true, false, false,
+            getString("_UI_ReportPlugin_artifactId_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_ReportPlugin_artifactId_feature", //$NON-NLS-1$ //$NON-NLS-2$
+                "_UI_ReportPlugin_type"), PomPackage.Literals.REPORT_PLUGIN__ARTIFACT_ID, true, false, false, //$NON-NLS-1$
             ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -110,8 +110,8 @@ public class ReportPluginItemProvider extends ItemProviderAdapter implements IEd
   protected void addVersionPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_ReportPlugin_version_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_ReportPlugin_version_feature", "_UI_ReportPlugin_type"),
+        getString("_UI_ReportPlugin_version_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_ReportPlugin_version_feature", "_UI_ReportPlugin_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.REPORT_PLUGIN__VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -124,8 +124,8 @@ public class ReportPluginItemProvider extends ItemProviderAdapter implements IEd
   protected void addInheritedPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_ReportPlugin_inherited_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_ReportPlugin_inherited_feature", "_UI_ReportPlugin_type"),
+        getString("_UI_ReportPlugin_inherited_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_ReportPlugin_inherited_feature", "_UI_ReportPlugin_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.REPORT_PLUGIN__INHERITED, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -139,9 +139,9 @@ public class ReportPluginItemProvider extends ItemProviderAdapter implements IEd
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_ReportPlugin_configuration_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_ReportPlugin_configuration_feature",
-            "_UI_ReportPlugin_type"), PomPackage.Literals.REPORT_PLUGIN__CONFIGURATION, true, false, true, null, null,
+        getString("_UI_ReportPlugin_configuration_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_ReportPlugin_configuration_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_ReportPlugin_type"), PomPackage.Literals.REPORT_PLUGIN__CONFIGURATION, true, false, true, null, null, //$NON-NLS-1$
         null));
   }
 
@@ -183,7 +183,7 @@ public class ReportPluginItemProvider extends ItemProviderAdapter implements IEd
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/ReportPlugin"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/ReportPlugin")); //$NON-NLS-1$
   }
 
   /**
@@ -194,8 +194,8 @@ public class ReportPluginItemProvider extends ItemProviderAdapter implements IEd
   @Override
   public String getText(Object object) {
     String label = ((ReportPlugin) object).getGroupId();
-    return label == null || label.length() == 0 ? getString("_UI_ReportPlugin_type")
-        : getString("_UI_ReportPlugin_type") + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_ReportPlugin_type") //$NON-NLS-1$
+        : getString("_UI_ReportPlugin_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   /**

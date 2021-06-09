@@ -69,7 +69,7 @@ public class RenameArtifactHandler extends AbstractHandler {
       String titleForFailedChecks = ""; //$NON-NLS-1$
       op.run(shell, titleForFailedChecks);
     } catch(Exception e) {
-      log.error("Unable to rename " + file, e);
+      log.error("Unable to rename " + file, e); //$NON-NLS-1$
     }
   }
 

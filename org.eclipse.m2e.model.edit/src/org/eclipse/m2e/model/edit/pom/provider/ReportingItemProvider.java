@@ -77,8 +77,8 @@ public class ReportingItemProvider extends ItemProviderAdapter implements IEditi
   protected void addExcludeDefaultsPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Reporting_excludeDefaults_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Reporting_excludeDefaults_feature", "_UI_Reporting_type"),
+        getString("_UI_Reporting_excludeDefaults_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Reporting_excludeDefaults_feature", "_UI_Reporting_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.REPORTING__EXCLUDE_DEFAULTS, true, false, false,
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
@@ -91,8 +91,8 @@ public class ReportingItemProvider extends ItemProviderAdapter implements IEditi
   protected void addOutputDirectoryPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Reporting_outputDirectory_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Reporting_outputDirectory_feature", "_UI_Reporting_type"),
+        getString("_UI_Reporting_outputDirectory_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Reporting_outputDirectory_feature", "_UI_Reporting_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.REPORTING__OUTPUT_DIRECTORY, true, false, false,
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
@@ -135,7 +135,7 @@ public class ReportingItemProvider extends ItemProviderAdapter implements IEditi
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Reporting"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Reporting")); //$NON-NLS-1$
   }
 
   /**
@@ -146,8 +146,8 @@ public class ReportingItemProvider extends ItemProviderAdapter implements IEditi
   @Override
   public String getText(Object object) {
     String label = ((Reporting) object).getExcludeDefaults();
-    return label == null || label.length() == 0 ? getString("_UI_Reporting_type") : getString("_UI_Reporting_type")
-        + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_Reporting_type") : getString("_UI_Reporting_type") //$NON-NLS-1$ //$NON-NLS-2$
+        + " " + label; //$NON-NLS-1$
   }
 
   /**

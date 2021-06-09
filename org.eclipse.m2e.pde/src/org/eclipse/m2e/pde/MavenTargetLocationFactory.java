@@ -93,7 +93,7 @@ public class MavenTargetLocationFactory implements ITargetLocationFactory {
 				return textContent;
 			}
 		}
-		return "";
+		return ""; //$NON-NLS-1$
 	}
 
 }

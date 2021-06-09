@@ -73,7 +73,7 @@ public class DependencySetAction implements IActionDelegate {
         } else*/if(selected instanceof org.eclipse.aether.graph.DependencyNode) {
           file = getFileFromEditor();
           org.eclipse.aether.graph.DependencyNode selected2 = (org.eclipse.aether.graph.DependencyNode) selected;
-          if(selected2.getData().get("LEVEL") == null) {
+          if(selected2.getData().get("LEVEL") == null) { //$NON-NLS-1$
             keys.add(new ArtifactKey(selected2.getDependency().getArtifact()));
           }
 

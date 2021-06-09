@@ -155,7 +155,7 @@ public class MavenArtifactInstructionsWizard extends Wizard {
 	 *         canceled the wizard
 	 */
 	public static BNDInstructions openWizard(Shell shell, BNDInstructions instructions) {
-		Objects.requireNonNull(instructions, "BNDInstructions can't be null");
+		Objects.requireNonNull(instructions, "BNDInstructions can't be null"); //$NON-NLS-1$
 		MavenArtifactInstructionsWizard wizard = new MavenArtifactInstructionsWizard(instructions);
 		WizardDialog dialog = new WizardDialog(shell, wizard);
 		dialog.setMinimumPageSize(800, 600);

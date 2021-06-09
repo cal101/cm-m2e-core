@@ -73,7 +73,7 @@ public class ProfileManager implements IProfileManager {
 
     final ResolverConfiguration configuration = configurationManager.getResolverConfiguration(project);
 
-    final String profilesAsString = String.join(", ", profiles);
+    final String profilesAsString = String.join(", ", profiles); //$NON-NLS-1$
     if(profilesAsString.equals(configuration.getSelectedProfiles())) {
       //Nothing changed
       return;
@@ -137,7 +137,7 @@ public class ProfileManager implements IProfileManager {
     for(Profile p : availableProfiles) {
       String pId = p.getId();
       ProfileData status = new ProfileData(pId);
-      boolean isDisabled = configuredProfiles.contains("!" + pId);
+      boolean isDisabled = configuredProfiles.contains("!" + pId); //$NON-NLS-1$
       if(isActive(pId, allActiveProfiles)) {
         status.setActivationState(ProfileState.Active);
       } else if(isDisabled) {
@@ -173,7 +173,7 @@ public class ProfileManager implements IProfileManager {
   private List<String> toList(String profilesAsText) {
     List<String> profiles = new ArrayList<>();
     if(profilesAsText != null && profilesAsText.trim().length() > 0) {
-      profiles.addAll(Arrays.asList(profilesAsText.split("[,\\s\\|]")));
+      profiles.addAll(Arrays.asList(profilesAsText.split("[,\\s\\|]"))); //$NON-NLS-1$
     }
     return profiles;
   }
@@ -260,7 +260,7 @@ public class ProfileManager implements IProfileManager {
 
   private Model resolvePomModel(String groupId, String artifactId, String version,
       List<ArtifactRepository> repositories, IProgressMonitor monitor) throws CoreException {
-    monitor.subTask(NLS.bind("Resolving {0}:{1}:{2}", new Object[] {groupId, artifactId, version}));
+    monitor.subTask(NLS.bind("Resolving {0}:{1}:{2}", new Object[] {groupId, artifactId, version})); //$NON-NLS-1$
 
     IMavenProjectFacade facade = MavenPlugin.getMavenProjectRegistry().getMavenProject(groupId, artifactId, version);
     IMaven maven = MavenPlugin.getMaven();

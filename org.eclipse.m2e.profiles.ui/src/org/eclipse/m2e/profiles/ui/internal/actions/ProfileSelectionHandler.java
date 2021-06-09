@@ -162,7 +162,7 @@ public class ProfileSelectionHandler extends AbstractHandler {
         }
       }
     } catch(CoreException e) {
-      log.error("Unable to select Maven projects", e);
+      log.error("Unable to select Maven projects", e); //$NON-NLS-1$
     }
 
     return facades;
@@ -321,7 +321,7 @@ public class ProfileSelectionHandler extends AbstractHandler {
               subProgress.newChild(100));
         }
       } catch(CoreException ex) {
-        log.error("Unable to update Maven profiles", ex);
+        log.error("Unable to update Maven profiles", ex); //$NON-NLS-1$
         return ex.getStatus();
       }
       return Status.OK_STATUS;

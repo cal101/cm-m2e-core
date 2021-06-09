@@ -83,14 +83,14 @@ public class MavenTargetBundle extends TargetBundle {
 			MissingMetadataMode metadataMode) {
 		this.artifact = artifact;
 		File file = artifact.getFile();
-		this.bundleInfo = new BundleInfo(artifact.getGroupId() + "." + artifact.getArtifactId(), artifact.getVersion(),
+		this.bundleInfo = new BundleInfo(artifact.getGroupId() + "." + artifact.getArtifactId(), artifact.getVersion(), //$NON-NLS-1$
 				file != null ? file.toURI() : null, -1, false);
 		try {
 			bundle = new TargetBundle(file);
 		} catch (Exception ex) {
 			if (metadataMode == MissingMetadataMode.ERROR) {
 				status = new Status(Status.ERROR, MavenTargetBundle.class.getPackage().getName(),
-						artifact + " is not a bundle", ex);
+						artifact + " is not a bundle", ex); //$NON-NLS-1$
 			} else if (metadataMode == MissingMetadataMode.GENERATE) {
 				try {
 					bundle = cacheManager.accessArtifactFile(artifact,
@@ -98,9 +98,9 @@ public class MavenTargetBundle extends TargetBundle {
 					isWrapped = true;
 				} catch (Exception e) {
 					// not possible then
-					String message = artifact + " is not a bundle and cannot be automatically bundled as such ";
+					String message = artifact + " is not a bundle and cannot be automatically bundled as such "; //$NON-NLS-1$
 					if (e.getMessage() != null) {
-						message += " (" + e.getMessage() + ")";
+						message += " (" + e.getMessage() + ")"; //$NON-NLS-1$ //$NON-NLS-2$
 					}
 					status = new Status(Status.ERROR, MavenTargetBundle.class.getPackage().getName(), message, e);
 				}
@@ -118,7 +118,7 @@ public class MavenTargetBundle extends TargetBundle {
 			throws Exception {
 		File artifactFile = artifact.getFile();
 		File instructionsFile = new File(wrappedFile.getParentFile(),
-				FilenameUtils.getBaseName(wrappedFile.getName()) + ".xml");
+				FilenameUtils.getBaseName(wrappedFile.getName()) + ".xml"); //$NON-NLS-1$
 		if (CacheManager.isOutdated(wrappedFile, artifactFile)
 				|| propertiesChanged(bndInstructions, instructionsFile)) {
 			try (Jar jar = new Jar(artifactFile)) {
@@ -128,11 +128,11 @@ public class MavenTargetBundle extends TargetBundle {
 					if (originalManifest != null) {
 						analyzer.mergeManifest(originalManifest);
 					}
-					analyzer.setProperty("mvnGroupId", artifact.getGroupId());
-					analyzer.setProperty("mvnArtifactId", artifact.getArtifactId());
-					analyzer.setProperty("mvnVersion", artifact.getBaseVersion());
-					analyzer.setProperty("mvnClassifier", artifact.getClassifier());
-					analyzer.setProperty("generatedOSGiVersion", createBundleVersion(artifact).toString());
+					analyzer.setProperty("mvnGroupId", artifact.getGroupId()); //$NON-NLS-1$
+					analyzer.setProperty("mvnArtifactId", artifact.getArtifactId()); //$NON-NLS-1$
+					analyzer.setProperty("mvnVersion", artifact.getBaseVersion()); //$NON-NLS-1$
+					analyzer.setProperty("mvnClassifier", artifact.getClassifier()); //$NON-NLS-1$
+					analyzer.setProperty("generatedOSGiVersion", createBundleVersion(artifact).toString()); //$NON-NLS-1$
 					analyzer.setProperties(bndInstructions);
 					jar.setManifest(analyzer.calcManifest());
 					jar.write(wrappedFile);

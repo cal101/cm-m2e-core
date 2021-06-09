@@ -157,8 +157,8 @@ public class SelectProfilesDialog extends TitleAreaDialog implements IMenuListen
 
       addSelectionButton(container, Messages.SelectProfilesDialog_SelectAll, true);
       addSelectionButton(container, Messages.SelectProfilesDialog_DeselectAll, false);
-      addActivationButton(container, "Activate", ProfileState.Active);
-      addActivationButton(container, "Deactivate", ProfileState.Disabled);
+      addActivationButton(container, "Activate", ProfileState.Active); //$NON-NLS-1$
+      addActivationButton(container, "Deactivate", ProfileState.Disabled); //$NON-NLS-1$
       offlineModeBtn = addCheckButton(container, Messages.SelectProfilesDialog_Offline, offlineMode);
       forceUpdateBtn = addCheckButton(container, Messages.SelectProfilesDialog_Force_update, forceUpdate);
     }
@@ -353,7 +353,7 @@ public class SelectProfilesDialog extends TitleAreaDialog implements IMenuListen
       String selectionText;
       String text;
       if(multiSelection) {
-        selectionText = "selected profiles";
+        selectionText = "selected profiles"; //$NON-NLS-1$
       } else {
         ProfileSelection entry = (ProfileSelection) selection.getFirstElement();
         state = entry.getActivationState();

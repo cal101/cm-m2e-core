@@ -79,8 +79,8 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements IEdit
   protected void addIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors
         .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-            getResourceLocator(), getString("_UI_Repository_id_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_Repository_id_feature", "_UI_Repository_type"),
+            getResourceLocator(), getString("_UI_Repository_id_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_Repository_id_feature", "_UI_Repository_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
             PomPackage.Literals.REPOSITORY__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
             null));
   }
@@ -93,8 +93,8 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements IEdit
   protected void addNamePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Repository_name_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Repository_name_feature", "_UI_Repository_type"),
+        getString("_UI_Repository_name_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Repository_name_feature", "_UI_Repository_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.REPOSITORY__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -107,8 +107,8 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements IEdit
   protected void addUrlPropertyDescriptor(Object object) {
     itemPropertyDescriptors
         .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-            getResourceLocator(), getString("_UI_Repository_url_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_Repository_url_feature", "_UI_Repository_type"),
+            getResourceLocator(), getString("_UI_Repository_url_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_Repository_url_feature", "_UI_Repository_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
             PomPackage.Literals.REPOSITORY__URL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
             null));
   }
@@ -121,8 +121,8 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements IEdit
   protected void addLayoutPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Repository_layout_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Repository_layout_feature", "_UI_Repository_type"),
+        getString("_UI_Repository_layout_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Repository_layout_feature", "_UI_Repository_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.REPOSITORY__LAYOUT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -166,7 +166,7 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements IEdit
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Repository"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Repository")); //$NON-NLS-1$
   }
 
   /**
@@ -177,8 +177,8 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements IEdit
   @Override
   public String getText(Object object) {
     String label = ((Repository) object).getName();
-    return label == null || label.length() == 0 ? getString("_UI_Repository_type") : getString("_UI_Repository_type")
-        + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_Repository_type") : getString("_UI_Repository_type") //$NON-NLS-1$ //$NON-NLS-2$
+        + " " + label; //$NON-NLS-1$
   }
 
   /**
@@ -238,7 +238,7 @@ public class RepositoryItemProvider extends ItemProviderAdapter implements IEdit
         || childFeature == PomPackage.Literals.REPOSITORY__SNAPSHOTS;
 
     if(qualify) {
-      return getString("_UI_CreateChild_text2", new Object[] {getTypeText(childObject), getFeatureText(childFeature),
+      return getString("_UI_CreateChild_text2", new Object[] {getTypeText(childObject), getFeatureText(childFeature), //$NON-NLS-1$
           getTypeText(owner)});
     }
     return super.getCreateChildText(owner, feature, child, selection);

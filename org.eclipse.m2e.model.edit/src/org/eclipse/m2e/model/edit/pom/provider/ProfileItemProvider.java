@@ -77,8 +77,8 @@ public class ProfileItemProvider extends ItemProviderAdapter implements IEditing
   protected void addIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Profile_id_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Profile_id_feature", "_UI_Profile_type"),
+        getString("_UI_Profile_id_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Profile_id_feature", "_UI_Profile_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.PROFILE__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -90,8 +90,8 @@ public class ProfileItemProvider extends ItemProviderAdapter implements IEditing
   protected void addReportingPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Profile_reporting_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Profile_reporting_feature", "_UI_Profile_type"),
+        getString("_UI_Profile_reporting_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Profile_reporting_feature", "_UI_Profile_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.PROFILE__REPORTING, true, false, true, null, null, null));
   }
 
@@ -142,7 +142,7 @@ public class ProfileItemProvider extends ItemProviderAdapter implements IEditing
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Profile"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Profile")); //$NON-NLS-1$
   }
 
   /**
@@ -153,7 +153,7 @@ public class ProfileItemProvider extends ItemProviderAdapter implements IEditing
   @Override
   public String getText(Object object) {
     String label = ((Profile) object).getId();
-    return label == null || label.length() == 0 ? getString("_UI_Profile_type") : getString("_UI_Profile_type") + " "
+    return label == null || label.length() == 0 ? getString("_UI_Profile_type") : getString("_UI_Profile_type") + " " //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         + label;
   }
 
@@ -227,7 +227,7 @@ public class ProfileItemProvider extends ItemProviderAdapter implements IEditing
     newChildDescriptors.add(createChildParameter(PomPackage.Literals.PROFILE__PROPERTIES,
         PomFactory.eINSTANCE.createPropertyElement()));
 
-    newChildDescriptors.add(createChildParameter(PomPackage.Literals.PROFILE__MODULES, ""));
+    newChildDescriptors.add(createChildParameter(PomPackage.Literals.PROFILE__MODULES, "")); //$NON-NLS-1$
   }
 
   /**
@@ -245,7 +245,7 @@ public class ProfileItemProvider extends ItemProviderAdapter implements IEditing
         || childFeature == PomPackage.Literals.PROFILE__PLUGIN_REPOSITORIES;
 
     if(qualify) {
-      return getString("_UI_CreateChild_text2", new Object[] {getTypeText(childObject), getFeatureText(childFeature),
+      return getString("_UI_CreateChild_text2", new Object[] {getTypeText(childObject), getFeatureText(childFeature), //$NON-NLS-1$
           getTypeText(owner)});
     }
     return super.getCreateChildText(owner, feature, child, selection);

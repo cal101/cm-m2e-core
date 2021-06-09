@@ -59,7 +59,7 @@ public class ProfileSelection {
 	public String toMavenString() {
 		String s = id;
 		if (ProfileState.Disabled == activationState) {
-			s = "!"+id;
+			s = "!"+id; //$NON-NLS-1$
 		}
 		return s;
 	}

@@ -77,8 +77,8 @@ public class RelocationItemProvider extends ItemProviderAdapter implements IEdit
   protected void addGroupIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Relocation_groupId_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Relocation_groupId_feature", "_UI_Relocation_type"),
+        getString("_UI_Relocation_groupId_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Relocation_groupId_feature", "_UI_Relocation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.RELOCATION__GROUP_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -91,8 +91,8 @@ public class RelocationItemProvider extends ItemProviderAdapter implements IEdit
   protected void addArtifactIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Relocation_artifactId_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Relocation_artifactId_feature", "_UI_Relocation_type"),
+        getString("_UI_Relocation_artifactId_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Relocation_artifactId_feature", "_UI_Relocation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.RELOCATION__ARTIFACT_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -105,8 +105,8 @@ public class RelocationItemProvider extends ItemProviderAdapter implements IEdit
   protected void addVersionPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Relocation_version_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Relocation_version_feature", "_UI_Relocation_type"),
+        getString("_UI_Relocation_version_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Relocation_version_feature", "_UI_Relocation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.RELOCATION__VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -119,8 +119,8 @@ public class RelocationItemProvider extends ItemProviderAdapter implements IEdit
   protected void addMessagePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Relocation_message_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Relocation_message_feature", "_UI_Relocation_type"),
+        getString("_UI_Relocation_message_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Relocation_message_feature", "_UI_Relocation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.RELOCATION__MESSAGE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -132,7 +132,7 @@ public class RelocationItemProvider extends ItemProviderAdapter implements IEdit
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Relocation"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Relocation")); //$NON-NLS-1$
   }
 
   /**
@@ -143,8 +143,8 @@ public class RelocationItemProvider extends ItemProviderAdapter implements IEdit
   @Override
   public String getText(Object object) {
     String label = ((Relocation) object).getGroupId();
-    return label == null || label.length() == 0 ? getString("_UI_Relocation_type") : getString("_UI_Relocation_type")
-        + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_Relocation_type") : getString("_UI_Relocation_type") //$NON-NLS-1$ //$NON-NLS-2$
+        + " " + label; //$NON-NLS-1$
   }
 
   /**

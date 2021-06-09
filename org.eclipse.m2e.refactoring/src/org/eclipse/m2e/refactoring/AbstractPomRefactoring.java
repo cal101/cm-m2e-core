@@ -338,7 +338,7 @@ public abstract class AbstractPomRefactoring extends Refactoring {
       return (PomResourceImpl) resource;
 
     } catch(Exception ex) {
-      String msg = NLS.bind("Can't load model {0}", pomFile);
+      String msg = NLS.bind("Can't load model {0}", pomFile); //$NON-NLS-1$
       log.error(msg, ex);
       throw new CoreException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, -1, msg, ex));
     }

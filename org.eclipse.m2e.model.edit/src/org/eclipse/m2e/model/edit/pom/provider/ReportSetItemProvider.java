@@ -77,8 +77,8 @@ public class ReportSetItemProvider extends ItemProviderAdapter implements IEditi
   protected void addIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors
         .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-            getResourceLocator(), getString("_UI_ReportSet_id_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_ReportSet_id_feature", "_UI_ReportSet_type"),
+            getResourceLocator(), getString("_UI_ReportSet_id_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_ReportSet_id_feature", "_UI_ReportSet_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
             PomPackage.Literals.REPORT_SET__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
             null));
   }
@@ -91,8 +91,8 @@ public class ReportSetItemProvider extends ItemProviderAdapter implements IEditi
   protected void addInheritedPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_ReportSet_inherited_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_ReportSet_inherited_feature", "_UI_ReportSet_type"),
+        getString("_UI_ReportSet_inherited_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_ReportSet_inherited_feature", "_UI_ReportSet_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.REPORT_SET__INHERITED, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -105,8 +105,8 @@ public class ReportSetItemProvider extends ItemProviderAdapter implements IEditi
   protected void addConfigurationPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_ReportSet_configuration_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_ReportSet_configuration_feature", "_UI_ReportSet_type"),
+        getString("_UI_ReportSet_configuration_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_ReportSet_configuration_feature", "_UI_ReportSet_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.REPORT_SET__CONFIGURATION, true, false, true, null, null, null));
   }
 
@@ -148,7 +148,7 @@ public class ReportSetItemProvider extends ItemProviderAdapter implements IEditi
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/ReportSet"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/ReportSet")); //$NON-NLS-1$
   }
 
   /**
@@ -159,8 +159,8 @@ public class ReportSetItemProvider extends ItemProviderAdapter implements IEditi
   @Override
   public String getText(Object object) {
     String label = ((ReportSet) object).getId();
-    return label == null || label.length() == 0 ? getString("_UI_ReportSet_type") : getString("_UI_ReportSet_type")
-        + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_ReportSet_type") : getString("_UI_ReportSet_type") //$NON-NLS-1$ //$NON-NLS-2$
+        + " " + label; //$NON-NLS-1$
   }
 
   /**
@@ -195,7 +195,7 @@ public class ReportSetItemProvider extends ItemProviderAdapter implements IEditi
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
     super.collectNewChildDescriptors(newChildDescriptors, object);
 
-    newChildDescriptors.add(createChildParameter(PomPackage.Literals.REPORT_SET__REPORTS, ""));
+    newChildDescriptors.add(createChildParameter(PomPackage.Literals.REPORT_SET__REPORTS, "")); //$NON-NLS-1$
   }
 
   /**

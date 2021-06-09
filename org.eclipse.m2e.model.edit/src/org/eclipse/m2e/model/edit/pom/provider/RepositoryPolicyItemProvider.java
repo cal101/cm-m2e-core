@@ -77,9 +77,9 @@ public class RepositoryPolicyItemProvider extends ItemProviderAdapter implements
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_RepositoryPolicy_enabled_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_RepositoryPolicy_enabled_feature",
-            "_UI_RepositoryPolicy_type"), PomPackage.Literals.REPOSITORY_POLICY__ENABLED, true, false, false,
+        getString("_UI_RepositoryPolicy_enabled_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_RepositoryPolicy_enabled_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_RepositoryPolicy_type"), PomPackage.Literals.REPOSITORY_POLICY__ENABLED, true, false, false, //$NON-NLS-1$
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -92,9 +92,9 @@ public class RepositoryPolicyItemProvider extends ItemProviderAdapter implements
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_RepositoryPolicy_updatePolicy_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_RepositoryPolicy_updatePolicy_feature",
-            "_UI_RepositoryPolicy_type"), PomPackage.Literals.REPOSITORY_POLICY__UPDATE_POLICY, true, false, false,
+        getString("_UI_RepositoryPolicy_updatePolicy_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_RepositoryPolicy_updatePolicy_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_RepositoryPolicy_type"), PomPackage.Literals.REPOSITORY_POLICY__UPDATE_POLICY, true, false, false, //$NON-NLS-1$
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -107,9 +107,9 @@ public class RepositoryPolicyItemProvider extends ItemProviderAdapter implements
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_RepositoryPolicy_checksumPolicy_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_RepositoryPolicy_checksumPolicy_feature",
-            "_UI_RepositoryPolicy_type"), PomPackage.Literals.REPOSITORY_POLICY__CHECKSUM_POLICY, true, false, false,
+        getString("_UI_RepositoryPolicy_checksumPolicy_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_RepositoryPolicy_checksumPolicy_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_RepositoryPolicy_type"), PomPackage.Literals.REPOSITORY_POLICY__CHECKSUM_POLICY, true, false, false, //$NON-NLS-1$
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -120,7 +120,7 @@ public class RepositoryPolicyItemProvider extends ItemProviderAdapter implements
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/RepositoryPolicy"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/RepositoryPolicy")); //$NON-NLS-1$
   }
 
   /**
@@ -131,8 +131,8 @@ public class RepositoryPolicyItemProvider extends ItemProviderAdapter implements
   @Override
   public String getText(Object object) {
     String label = ((RepositoryPolicy) object).getEnabled();
-    return label == null || label.length() == 0 ? getString("_UI_RepositoryPolicy_type")
-        : getString("_UI_RepositoryPolicy_type") + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_RepositoryPolicy_type") //$NON-NLS-1$
+        : getString("_UI_RepositoryPolicy_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   /**

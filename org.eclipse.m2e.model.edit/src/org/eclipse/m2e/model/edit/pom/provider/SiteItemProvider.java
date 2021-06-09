@@ -76,8 +76,8 @@ public class SiteItemProvider extends ItemProviderAdapter implements IEditingDom
   protected void addIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Site_id_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Site_id_feature", "_UI_Site_type"),
+        getString("_UI_Site_id_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Site_id_feature", "_UI_Site_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.SITE__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -89,8 +89,8 @@ public class SiteItemProvider extends ItemProviderAdapter implements IEditingDom
   protected void addNamePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Site_name_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Site_name_feature", "_UI_Site_type"),
+        getString("_UI_Site_name_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Site_name_feature", "_UI_Site_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.SITE__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -102,8 +102,8 @@ public class SiteItemProvider extends ItemProviderAdapter implements IEditingDom
   protected void addUrlPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Site_url_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Site_url_feature", "_UI_Site_type"),
+        getString("_UI_Site_url_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Site_url_feature", "_UI_Site_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.SITE__URL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -114,7 +114,7 @@ public class SiteItemProvider extends ItemProviderAdapter implements IEditingDom
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Site"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Site")); //$NON-NLS-1$
   }
 
   /**
@@ -125,7 +125,7 @@ public class SiteItemProvider extends ItemProviderAdapter implements IEditingDom
   @Override
   public String getText(Object object) {
     String label = ((Site) object).getName();
-    return label == null || label.length() == 0 ? getString("_UI_Site_type") : getString("_UI_Site_type") + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_Site_type") : getString("_UI_Site_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
   }
 
   /**

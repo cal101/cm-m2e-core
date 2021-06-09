@@ -127,16 +127,16 @@ public class MavenArtifactIdentifier {
 
     try {
       String sha1 = Files.hash(file, Hashing.sha1()).toString(); // TODO use Locations for caching
-      URL url = new URL("https://search.maven.org/solrsearch/select?q=1:" + sha1);
+      URL url = new URL("https://search.maven.org/solrsearch/select?q=1:" + sha1); //$NON-NLS-1$
       try (InputStreamReader reader = new InputStreamReader(url.openStream(), StandardCharsets.UTF_8)) {
         Set<ArtifactKey> result = new LinkedHashSet<>();
         JsonObject container = new Gson().fromJson(reader, JsonObject.class);
-        JsonArray docs = container.get("response").getAsJsonObject().get("docs").getAsJsonArray();
+        JsonArray docs = container.get("response").getAsJsonObject().get("docs").getAsJsonArray(); //$NON-NLS-1$ //$NON-NLS-2$
         for (int i = 0; i < docs.size(); i++) {
           JsonObject doc = docs.get(i).getAsJsonObject();
-          String g = doc.get("g").getAsString();
-          String a = doc.get("a").getAsString();
-          String v = doc.get("v").getAsString();
+          String g = doc.get("g").getAsString(); //$NON-NLS-1$
+          String a = doc.get("a").getAsString(); //$NON-NLS-1$
+          String v = doc.get("v").getAsString(); //$NON-NLS-1$
           result.add(new ArtifactKey(g, a, v, null));
         }
         return !result.isEmpty() ? ImmutableSet.copyOf(result) : null;
@@ -149,10 +149,10 @@ public class MavenArtifactIdentifier {
 
   public Collection<ArtifactKey> scanPomProperties(File classesLocation) {
     Set<ArtifactKey> artifacts = new LinkedHashSet<>();
-    for (Properties pomProperties : scanner.scan(classesLocation, "pom.properties")) {
-      String groupId = pomProperties.getProperty("groupId");
-      String artifactId = pomProperties.getProperty("artifactId");
-      String version = pomProperties.getProperty("version");
+    for (Properties pomProperties : scanner.scan(classesLocation, "pom.properties")) { //$NON-NLS-1$
+      String groupId = pomProperties.getProperty("groupId"); //$NON-NLS-1$
+      String artifactId = pomProperties.getProperty("artifactId"); //$NON-NLS-1$
+      String version = pomProperties.getProperty("version"); //$NON-NLS-1$
       if (groupId != null && artifactId != null && version != null) {
         artifacts.add(new ArtifactKey(groupId, artifactId, version, /* classifier= */null));
       }

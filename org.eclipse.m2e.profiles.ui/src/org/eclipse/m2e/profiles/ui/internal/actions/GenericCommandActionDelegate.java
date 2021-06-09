@@ -130,12 +130,12 @@ public class GenericCommandActionDelegate implements IWorkbenchWindowActionDeleg
       parameterMap = (Map<?, ?>) data;
       if(parameterMap.get(PARM_COMMAND_ID) == null) {
         Status status = new Status(IStatus.ERROR, MavenProfilesUIActivator.PLUGIN_ID,
-            "The '" + id + "' action won't work without a commandId");
+            "The '" + id + "' action won't work without a commandId"); //$NON-NLS-1$ //$NON-NLS-2$
         throw new CoreException(status);
       }
     } else {
       Status status = new Status(IStatus.ERROR, MavenProfilesUIActivator.PLUGIN_ID,
-          "The '" + id + "' action won't work without some initialization parameters");
+          "The '" + id + "' action won't work without some initialization parameters"); //$NON-NLS-1$ //$NON-NLS-2$
       throw new CoreException(status);
     }
   }

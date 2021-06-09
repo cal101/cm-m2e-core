@@ -37,7 +37,7 @@ public class SourceLookupPreferencePage extends PreferencePage implements IWorkb
   private Text launchFileAttribute;
 
   public SourceLookupPreferencePage() {
-    setMessage("Manual configuration of dynamic source lookup");
+    setMessage("Manual configuration of dynamic source lookup"); //$NON-NLS-1$
     noDefaultAndApplyButton();
   }
 
@@ -56,7 +56,7 @@ public void init(IWorkbench workbench) {}
     composite.setLayout(gl_composite);
 
     Label lblVMArguments = new Label(composite, SWT.NONE);
-    lblVMArguments.setText("VM arguments:");
+    lblVMArguments.setText("VM arguments:"); //$NON-NLS-1$
 
     GridDataFactory textGridDataFactory = GridDataFactory.createFrom(new GridData(SWT.FILL, SWT.FILL, true, false, 1, 1)).hint(parent.getSize().x, SWT.DEFAULT);
 
@@ -65,18 +65,18 @@ public void init(IWorkbench workbench) {}
     vmArguments.setText(AdvancedSourceLookupSupport.getJavaagentString());
 
     Label lblLaunchVMArguments = new Label(composite, SWT.NONE);
-    lblLaunchVMArguments.setText(".launch file VM arguments:");
+    lblLaunchVMArguments.setText(".launch file VM arguments:"); //$NON-NLS-1$
 
     launchFileVMArguments = new Text(composite, SWT.BORDER | SWT.READ_ONLY | SWT.WRAP | SWT.MULTI);
     textGridDataFactory.applyTo(launchFileVMArguments);
-    launchFileVMArguments.setText("-javaagent:${sourcelookup_agent_path}");
+    launchFileVMArguments.setText("-javaagent:${sourcelookup_agent_path}"); //$NON-NLS-1$
 
     Label lblLaunchFileAttribute = new Label(composite, SWT.NONE);
-    lblLaunchFileAttribute.setText(".launch file attribute:");
+    lblLaunchFileAttribute.setText(".launch file attribute:"); //$NON-NLS-1$
 
     launchFileAttribute = new Text(composite, SWT.BORDER | SWT.READ_ONLY | SWT.WRAP | SWT.MULTI);
     launchFileAttribute.setText(
-        "<stringAttribute key=\"org.eclipse.debug.core.source_locator_id\" value=\"org.eclipse.m2e.sourcelookupDirector\"/>\n");
+        "<stringAttribute key=\"org.eclipse.debug.core.source_locator_id\" value=\"org.eclipse.m2e.sourcelookupDirector\"/>\n"); //$NON-NLS-1$
     textGridDataFactory.applyTo(launchFileAttribute);
 
     return composite;

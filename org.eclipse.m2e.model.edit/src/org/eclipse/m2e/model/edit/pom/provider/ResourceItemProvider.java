@@ -77,8 +77,8 @@ public class ResourceItemProvider extends ItemProviderAdapter implements IEditin
   protected void addTargetPathPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Resource_targetPath_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Resource_targetPath_feature", "_UI_Resource_type"),
+        getString("_UI_Resource_targetPath_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Resource_targetPath_feature", "_UI_Resource_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.RESOURCE__TARGET_PATH, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -91,8 +91,8 @@ public class ResourceItemProvider extends ItemProviderAdapter implements IEditin
   protected void addFilteringPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Resource_filtering_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Resource_filtering_feature", "_UI_Resource_type"),
+        getString("_UI_Resource_filtering_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Resource_filtering_feature", "_UI_Resource_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.RESOURCE__FILTERING, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -105,8 +105,8 @@ public class ResourceItemProvider extends ItemProviderAdapter implements IEditin
   protected void addDirectoryPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Resource_directory_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Resource_directory_feature", "_UI_Resource_type"),
+        getString("_UI_Resource_directory_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Resource_directory_feature", "_UI_Resource_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.RESOURCE__DIRECTORY, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -150,7 +150,7 @@ public class ResourceItemProvider extends ItemProviderAdapter implements IEditin
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Resource"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Resource")); //$NON-NLS-1$
   }
 
   /**
@@ -161,7 +161,7 @@ public class ResourceItemProvider extends ItemProviderAdapter implements IEditin
   @Override
   public String getText(Object object) {
     String label = ((Resource) object).getTargetPath();
-    return label == null || label.length() == 0 ? getString("_UI_Resource_type") : getString("_UI_Resource_type") + " "
+    return label == null || label.length() == 0 ? getString("_UI_Resource_type") : getString("_UI_Resource_type") + " " //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         + label;
   }
 
@@ -199,9 +199,9 @@ public class ResourceItemProvider extends ItemProviderAdapter implements IEditin
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
     super.collectNewChildDescriptors(newChildDescriptors, object);
 
-    newChildDescriptors.add(createChildParameter(PomPackage.Literals.RESOURCE__INCLUDES, ""));
+    newChildDescriptors.add(createChildParameter(PomPackage.Literals.RESOURCE__INCLUDES, "")); //$NON-NLS-1$
 
-    newChildDescriptors.add(createChildParameter(PomPackage.Literals.RESOURCE__EXCLUDES, ""));
+    newChildDescriptors.add(createChildParameter(PomPackage.Literals.RESOURCE__EXCLUDES, "")); //$NON-NLS-1$
   }
 
   /**

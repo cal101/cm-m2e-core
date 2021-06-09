@@ -29,17 +29,17 @@ public class DependencyNodeLabelProvider implements ILabelProvider {
 
 	private ResourceManager resourceManager = new LocalResourceManager(JFaceResources.getResources());
 	private ImageDescriptor jarDescriptor = ImageDescriptor.createFromURLSupplier(true,
-			() -> DependencyNodeLabelProvider.class.getResource("/icons/jar_obj.gif"));
+			() -> DependencyNodeLabelProvider.class.getResource("/icons/jar_obj.gif")); //$NON-NLS-1$
 	private ImageDescriptor inheritedDescriptor = ImageDescriptor.createFromURLSupplier(true,
-			() -> DependencyNodeLabelProvider.class.getResource("/icons/show_inherited_dependencies.gif"));
+			() -> DependencyNodeLabelProvider.class.getResource("/icons/show_inherited_dependencies.gif")); //$NON-NLS-1$
 	private ImageDescriptor inheritedJarDescriptor = ImageDescriptor.createFromURLSupplier(true,
-			() -> DependencyNodeLabelProvider.class.getResource("/icons/jar_dep.png"));
+			() -> DependencyNodeLabelProvider.class.getResource("/icons/jar_dep.png")); //$NON-NLS-1$
 	private ImageDescriptor inheritedJarDefaultDescriptor = ImageDescriptor.createFromURLSupplier(true,
-			() -> DependencyNodeLabelProvider.class.getResource("/icons/jar_dep_default.png"));
+			() -> DependencyNodeLabelProvider.class.getResource("/icons/jar_dep_default.png")); //$NON-NLS-1$
 	private ImageDescriptor errorDescriptor = ImageDescriptor.createFromURLSupplier(true,
-			() -> DependencyNodeLabelProvider.class.getResource("/icons/error_st_obj.gif"));
+			() -> DependencyNodeLabelProvider.class.getResource("/icons/error_st_obj.gif")); //$NON-NLS-1$
 	private ImageDescriptor disabledDescriptor = ImageDescriptor.createFromURLSupplier(true,
-			() -> DependencyNodeLabelProvider.class.getResource("/icons/clear.gif"));
+			() -> DependencyNodeLabelProvider.class.getResource("/icons/clear.gif")); //$NON-NLS-1$
 
 	@Override
 	public String getText(Object element) {
@@ -47,15 +47,15 @@ public class DependencyNodeLabelProvider implements ILabelProvider {
 			DependencyNode node = (DependencyNode) element;
 			Artifact artifact = node.getArtifact();
 			MavenTargetLocation location = getTargetLocation(node);
-			String baseLabel = artifact.getGroupId() + ":" + artifact.getArtifactId() + " (" + artifact.getVersion()
-					+ ")";
+			String baseLabel = artifact.getGroupId() + ":" + artifact.getArtifactId() + " (" + artifact.getVersion() //$NON-NLS-1$ //$NON-NLS-2$
+					+ ")"; //$NON-NLS-1$
 			if (location != null) {
 				if (location.isExcluded(artifact)) {
-					return "(excluded) " + baseLabel;
+					return "(excluded) " + baseLabel; //$NON-NLS-1$
 				} else if (location.isIgnored(artifact)) {
-					return "(ignored) " + baseLabel;
+					return "(ignored) " + baseLabel; //$NON-NLS-1$
 				} else if (location.isFailed(artifact)) {
-					return "(failed) " + baseLabel;
+					return "(failed) " + baseLabel; //$NON-NLS-1$
 				}
 			}
 			return baseLabel;

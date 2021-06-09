@@ -73,8 +73,8 @@ public class MavenSourceContainerResolver implements ISourceContainerResolver {
       repositories.addAll(maven.getArtifactRepositories());
       repositories.addAll(maven.getPluginArtifactRepositories());
 
-      if (!maven.isUnavailable(groupId, artifactId, version, "jar", "sources", repositories)) {
-        Artifact resolve = maven.resolve(groupId, artifactId, version, "jar", "sources", null, monitor);
+      if (!maven.isUnavailable(groupId, artifactId, version, "jar", "sources", repositories)) { //$NON-NLS-1$ //$NON-NLS-2$
+        Artifact resolve = maven.resolve(groupId, artifactId, version, "jar", "sources", null, monitor); //$NON-NLS-1$ //$NON-NLS-2$
 
         return new ExternalArchiveSourceContainer(resolve.getFile().getAbsolutePath(), true);
       }

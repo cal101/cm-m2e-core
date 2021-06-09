@@ -60,7 +60,7 @@ public class DependencySetRefactoring extends Refactoring {
   @Override
   public String getName() {
     // TODO Auto-generated method stub
-    return "Set dependency version";
+    return "Set dependency version"; //$NON-NLS-1$
   }
 
   @Override

@@ -45,7 +45,7 @@ import org.eclipse.pde.core.target.TargetBundle;
  */
 public class CacheManager {
 
-	private static final String LASTACCESS_MARKER = ".lastaccess";
+	private static final String LASTACCESS_MARKER = ".lastaccess"; //$NON-NLS-1$
 
 	private static File baseDir;
 
@@ -82,12 +82,12 @@ public class CacheManager {
 	 */
 	public synchronized <R> R accessArtifactFile(Artifact artifact, CacheConsumer<R> consumer) throws Exception {
 		File gavFolder = new File(folder,
-				artifact.getGroupId() + "/" + artifact.getArtifactId() + "/" + artifact.getBaseVersion());
+				artifact.getGroupId() + "/" + artifact.getArtifactId() + "/" + artifact.getBaseVersion()); //$NON-NLS-1$ //$NON-NLS-2$
 		FileUtils.forceMkdir(gavFolder);
 		File file = new File(gavFolder, artifact.getFile().getName());
-		File lockFile = new File(gavFolder, artifact.getFile().getName() + ".lock");
+		File lockFile = new File(gavFolder, artifact.getFile().getName() + ".lock"); //$NON-NLS-1$
 		lockFile.deleteOnExit();
-		try (RandomAccessFile raf = new RandomAccessFile(lockFile, "rw"); FileChannel channel = raf.getChannel()) {
+		try (RandomAccessFile raf = new RandomAccessFile(lockFile, "rw"); FileChannel channel = raf.getChannel()) { //$NON-NLS-1$
 			FileLock lock = channel.lock();
 			try {
 				return consumer.consume(file);
@@ -109,7 +109,7 @@ public class CacheManager {
 	public MavenTargetBundle getTargetBundle(Artifact artifact, BNDInstructions bndInstructions,
 			MissingMetadataMode metadataMode) {
 		if (invalidated) {
-			throw new IllegalStateException("invalidated location");
+			throw new IllegalStateException("invalidated location"); //$NON-NLS-1$
 		}
 		Properties prop;
 		if (bndInstructions == null) {
@@ -133,7 +133,7 @@ public class CacheManager {
 	 */
 	public static synchronized CacheManager forTargetHandle(ITargetHandle handle) throws CoreException {
 		if (baseDir == null) {
-			throw new IllegalStateException("bundle not active");
+			throw new IllegalStateException("bundle not active"); //$NON-NLS-1$
 		}
 		String targetId = DigestUtils.sha1Hex(handle.getMemento());
 		return MANAGERS.computeIfAbsent(targetId, key -> {
@@ -151,7 +151,7 @@ public class CacheManager {
 	 */
 	public static synchronized void clearFilesOlderThan(long amount, TimeUnit unit) {
 		if (baseDir == null) {
-			throw new IllegalStateException("bundle not active");
+			throw new IllegalStateException("bundle not active"); //$NON-NLS-1$
 		}
 		File[] listFiles = baseDir.listFiles();
 		long deleteStamp = System.currentTimeMillis() - unit.toMillis(amount);

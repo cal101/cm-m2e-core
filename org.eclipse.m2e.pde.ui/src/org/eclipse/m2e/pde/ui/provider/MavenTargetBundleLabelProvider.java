@@ -34,7 +34,7 @@ public class MavenTargetBundleLabelProvider
 				Display current = Display.getCurrent();
 				if (image == null && current != null) {
 					image = new Image(current,
-							MavenTargetAdapterFactory.class.getResourceAsStream("/icons/jar_obj.gif"));
+							MavenTargetAdapterFactory.class.getResourceAsStream("/icons/jar_obj.gif")); //$NON-NLS-1$
 				}
 				return image;
 			}

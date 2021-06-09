@@ -86,7 +86,7 @@ public abstract class ScmHandler implements Comparable<ScmHandler>, IExecutableE
       try {
         this.priority = Integer.parseInt(priority);
       } catch(Exception ex) {
-        log.error("Unable to parse priority for " + handlerClass, ex);
+        log.error("Unable to parse priority for " + handlerClass, ex); //$NON-NLS-1$
       }
     }
   }

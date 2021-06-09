@@ -33,17 +33,17 @@ public class ClipboardParser {
 	private String scope;
 
 	public ClipboardParser(String text) {
-		if (text != null && text.trim().startsWith("<")) {
+		if (text != null && text.trim().startsWith("<")) { //$NON-NLS-1$
 			try {
 				DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
 				DocumentBuilder builder = factory.newDocumentBuilder();
-				ByteArrayInputStream input = new ByteArrayInputStream(text.getBytes("UTF-8"));
+				ByteArrayInputStream input = new ByteArrayInputStream(text.getBytes("UTF-8")); //$NON-NLS-1$
 				Document doc = builder.parse(input);
-				groupId = getTextFor("groupId", doc);
-				artifactId = getTextFor("artifactId", doc);
-				version = getTextFor("version", doc);
-				classifier = getTextFor("classifier", doc);
-				scope = getTextFor("scope", doc);
+				groupId = getTextFor("groupId", doc); //$NON-NLS-1$
+				artifactId = getTextFor("artifactId", doc); //$NON-NLS-1$
+				version = getTextFor("version", doc); //$NON-NLS-1$
+				classifier = getTextFor("classifier", doc); //$NON-NLS-1$
+				scope = getTextFor("scope", doc); //$NON-NLS-1$
 			} catch (Exception e) {
 				// we can't use the clipboard content then...
 				this.error = e;
@@ -69,18 +69,18 @@ public class ClipboardParser {
 	}
 
 	public String getGroupId() {
-		return Objects.requireNonNullElse(groupId, "");
+		return Objects.requireNonNullElse(groupId, ""); //$NON-NLS-1$
 	}
 
 	public String getArtifactId() {
-		return Objects.requireNonNullElse(artifactId, "");
+		return Objects.requireNonNullElse(artifactId, ""); //$NON-NLS-1$
 	}
 
 	public String getVersion() {
-		return Objects.requireNonNullElse(version, "");
+		return Objects.requireNonNullElse(version, ""); //$NON-NLS-1$
 	}
 
 	public String getClassifier() {
-		return Objects.requireNonNullElse(classifier, "");
+		return Objects.requireNonNullElse(classifier, ""); //$NON-NLS-1$
 	}
 }

@@ -21,7 +21,7 @@ import org.eclipse.ui.plugin.AbstractUIPlugin;
  */
 public class MavenProfilesUIActivator extends AbstractUIPlugin {
 
-	public static final String PLUGIN_ID = "org.eclipse.m2e.profiles.ui";
+	public static final String PLUGIN_ID = "org.eclipse.m2e.profiles.ui"; //$NON-NLS-1$
 
 	/**
 	 * The constructor

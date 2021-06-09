@@ -71,7 +71,7 @@ public class MavenProjectPomScanner<T> extends AbstractProjectScanner<MavenProje
       return d.getGroupId()
           + ":" + d.getArtifactId() + ":" + d.getVersion() + (d.getClassifier() == null ? "" : ":" + d.getClassifier()); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
     }
-    return "" + dependencies.length + " projects"; //$NON-NLS-1$
+    return "" + dependencies.length + " projects"; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   public void run(IProgressMonitor monitor) throws InterruptedException {
@@ -83,7 +83,7 @@ public class MavenProjectPomScanner<T> extends AbstractProjectScanner<MavenProje
       try {
         Model model = resolveModel(d.getGroupId(), d.getArtifactId(), d.getVersion(), monitor);
         if(model == null) {
-          String msg = "Can't resolve " + d.getArtifactId();
+          String msg = "Can't resolve " + d.getArtifactId(); //$NON-NLS-1$
           Exception error = new Exception(msg);
           log.error(msg, error);
           addError(error);
@@ -92,7 +92,7 @@ public class MavenProjectPomScanner<T> extends AbstractProjectScanner<MavenProje
 
         Scm scm = resolveScm(model, monitor);
         if(scm == null) {
-          String msg = "No SCM info for " + d.getArtifactId();
+          String msg = "No SCM info for " + d.getArtifactId(); //$NON-NLS-1$
           Exception error = new Exception(msg);
           log.error(msg, error);
           addError(error);
@@ -102,16 +102,16 @@ public class MavenProjectPomScanner<T> extends AbstractProjectScanner<MavenProje
         String tag = scm.getTag();
 
         log.info(d.getArtifactId());
-        log.info("Connection: " + scm.getConnection());
-        log.info("       dev: " + scm.getDeveloperConnection());
-        log.info("       url: " + scm.getUrl());
-        log.info("       tag: " + tag);
+        log.info("Connection: " + scm.getConnection()); //$NON-NLS-1$
+        log.info("       dev: " + scm.getDeveloperConnection()); //$NON-NLS-1$
+        log.info("       url: " + scm.getUrl()); //$NON-NLS-1$
+        log.info("       tag: " + tag); //$NON-NLS-1$
 
         String connection;
         if(developer) {
           connection = scm.getDeveloperConnection();
           if(connection == null) {
-            String msg = d.getArtifactId() + " doesn't specify developer SCM connection";
+            String msg = d.getArtifactId() + " doesn't specify developer SCM connection"; //$NON-NLS-1$
             Exception error = new Exception(msg);
             log.error(msg, error);
             addError(error);
@@ -120,7 +120,7 @@ public class MavenProjectPomScanner<T> extends AbstractProjectScanner<MavenProje
         } else {
           connection = scm.getConnection();
           if(connection == null) {
-            String msg = d.getArtifactId() + " doesn't specify SCM connection";
+            String msg = d.getArtifactId() + " doesn't specify SCM connection"; //$NON-NLS-1$
             Exception error = new Exception(msg);
             log.error(msg, error);
             addError(error);
@@ -146,7 +146,7 @@ public class MavenProjectPomScanner<T> extends AbstractProjectScanner<MavenProje
 
       } catch(Exception ex) {
         addError(ex);
-        String msg = "Error reading " + d.getArtifactId();
+        String msg = "Error reading " + d.getArtifactId(); //$NON-NLS-1$
         log.error(msg, ex);
       }
     }

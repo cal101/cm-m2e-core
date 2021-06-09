@@ -71,7 +71,7 @@ public class SourceLookupInfoDialog extends Dialog {
   @Override
   protected void configureShell(Shell newShell) {
     super.configureShell(newShell);
-    newShell.setText("Source lookup properties");
+    newShell.setText("Source lookup properties"); //$NON-NLS-1$
   }
 
   @Override
@@ -81,7 +81,7 @@ public class SourceLookupInfoDialog extends Dialog {
 
     Label lblCodeLocation = new Label(container, SWT.NONE);
     lblCodeLocation.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-    lblCodeLocation.setText("Code location:");
+    lblCodeLocation.setText("Code location:"); //$NON-NLS-1$
 
     textLocation = new Text(container, SWT.BORDER | SWT.WRAP | SWT.MULTI);
     textLocation.setEditable(false);
@@ -89,7 +89,7 @@ public class SourceLookupInfoDialog extends Dialog {
 
     Label lblGav = new Label(container, SWT.NONE);
     lblGav.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-    lblGav.setText("GAV:");
+    lblGav.setText("GAV:"); //$NON-NLS-1$
 
     textGAV = new Text(container, SWT.BORDER | SWT.WRAP);
     textGAV.setEditable(false);
@@ -97,7 +97,7 @@ public class SourceLookupInfoDialog extends Dialog {
 
     Label lblJavaProject = new Label(container, SWT.NONE);
     lblJavaProject.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-    lblJavaProject.setText("Java project:");
+    lblJavaProject.setText("Java project:"); //$NON-NLS-1$
 
     textJavaProject = new Text(container, SWT.BORDER | SWT.WRAP);
     textJavaProject.setEditable(false);
@@ -105,7 +105,7 @@ public class SourceLookupInfoDialog extends Dialog {
 
     Label lblSourceContainer = new Label(container, SWT.NONE);
     lblSourceContainer.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-    lblSourceContainer.setText("Source container:");
+    lblSourceContainer.setText("Source container:"); //$NON-NLS-1$
 
     textSourceContainer = new Text(container, SWT.BORDER | SWT.WRAP);
     textSourceContainer.setEditable(false);
@@ -121,8 +121,8 @@ public class SourceLookupInfoDialog extends Dialog {
     Button btnCopy = new Button(actionsComposite, SWT.NONE);
     btnCopy.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> copyToClipboard()
     ));
-    btnCopy.setToolTipText("Copy to clipboard");
-    btnCopy.setText("Copy");
+    btnCopy.setToolTipText("Copy to clipboard"); //$NON-NLS-1$
+    btnCopy.setText("Copy"); //$NON-NLS-1$
 
     Button btnRefresh = new Button(actionsComposite, SWT.NONE);
   	btnRefresh.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> {
@@ -132,8 +132,8 @@ public class SourceLookupInfoDialog extends Dialog {
   			showError(e1);
   		}
   	}));
-    btnRefresh.setToolTipText("Force rediscovery of source lookup information for this code location.");
-    btnRefresh.setText("Refresh");
+    btnRefresh.setToolTipText("Force rediscovery of source lookup information for this code location."); //$NON-NLS-1$
+    btnRefresh.setText("Refresh"); //$NON-NLS-1$
 
     updateDisplay(monitor);
 
@@ -168,7 +168,7 @@ public class SourceLookupInfoDialog extends Dialog {
       textGAV.setText(artifacts.toString());
 
       // TODO extract project(s) from the container
-      textJavaProject.setText("<not-implemented>");
+      textJavaProject.setText("<not-implemented>"); //$NON-NLS-1$
 
       textSourceContainer.setText(toString(container));
     } catch (CoreException e) {
@@ -177,20 +177,20 @@ public class SourceLookupInfoDialog extends Dialog {
   }
 
   void showError(CoreException e) {
-    ErrorDialog.openError(getParentShell(), "Source lookup info", "Could not determine code maven coordinates",
+    ErrorDialog.openError(getParentShell(), "Source lookup info", "Could not determine code maven coordinates", //$NON-NLS-1$ //$NON-NLS-2$
         e.getStatus());
   }
 
   private String toString(ISourceContainer container) {
     if (container == null) {
-      return "";
+      return ""; //$NON-NLS-1$
     }
 
     StringBuilder sb = new StringBuilder();
-    sb.append(container.getClass().getSimpleName()).append(" ").append(container.getName());
+    sb.append(container.getClass().getSimpleName()).append(" ").append(container.getName()); //$NON-NLS-1$
 
     if (container instanceof PackageFragmentRootSourceContainer) {
-      sb.append(" ").append(
+      sb.append(" ").append( //$NON-NLS-1$
           ((PackageFragmentRootSourceContainer) container).getPackageFragmentRoot().getJavaProject().getProject());
     }
 
@@ -204,10 +204,10 @@ public class SourceLookupInfoDialog extends Dialog {
     Clipboard clipboard = new Clipboard(getShell().getDisplay());
 
     StringBuilder sb = new StringBuilder();
-    sb.append("Location: ").append(textLocation.getText()).append("\n");
-    sb.append("GAV: ").append(textGAV.getText()).append("\n");
-    sb.append("Java project: ").append(textJavaProject.getText()).append("\n");
-    sb.append("Source container: ").append(textSourceContainer.getText()).append("\n");
+    sb.append("Location: ").append(textLocation.getText()).append("\n"); //$NON-NLS-1$ //$NON-NLS-2$
+    sb.append("GAV: ").append(textGAV.getText()).append("\n"); //$NON-NLS-1$ //$NON-NLS-2$
+    sb.append("Java project: ").append(textJavaProject.getText()).append("\n"); //$NON-NLS-1$ //$NON-NLS-2$
+    sb.append("Source container: ").append(textSourceContainer.getText()).append("\n"); //$NON-NLS-1$ //$NON-NLS-2$
 
     dataTypes.add(TextTransfer.getInstance());
     data.add(sb.toString());

@@ -24,8 +24,8 @@ import org.apache.commons.io.IOUtils;
 
 public class BNDInstructions {
 
-	private static final String BND_DEFAULT_PROPERTIES_PATH = "bnd-default.properties";
-	public static final BNDInstructions EMPTY = new BNDInstructions("", null);
+	private static final String BND_DEFAULT_PROPERTIES_PATH = "bnd-default.properties"; //$NON-NLS-1$
+	public static final BNDInstructions EMPTY = new BNDInstructions("", null); //$NON-NLS-1$
 	private final String key;
 	private final String instructions;
 
@@ -45,9 +45,9 @@ public class BNDInstructions {
 	public static BNDInstructions getDefaultInstructions() {
 		InputStream input = MavenTargetLocation.class.getResourceAsStream(BND_DEFAULT_PROPERTIES_PATH);
 		try {
-			return new BNDInstructions("", IOUtils.toString(input, StandardCharsets.ISO_8859_1));
+			return new BNDInstructions("", IOUtils.toString(input, StandardCharsets.ISO_8859_1)); //$NON-NLS-1$
 		} catch (IOException e) {
-			throw new RuntimeException("load default properties failed", e);
+			throw new RuntimeException("load default properties failed", e); //$NON-NLS-1$
 		}
 	}
 
@@ -63,7 +63,7 @@ public class BNDInstructions {
 		try {
 			properties.load(reader);
 		} catch (IOException e) {
-			throw new RuntimeException("conversion to properties failed", e);
+			throw new RuntimeException("conversion to properties failed", e); //$NON-NLS-1$
 		}
 		return properties;
 	}

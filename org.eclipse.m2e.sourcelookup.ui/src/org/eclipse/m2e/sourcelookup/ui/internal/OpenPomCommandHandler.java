@@ -66,13 +66,13 @@ public class OpenPomCommandHandler extends AbstractHandler {
           return toEditorInput(name, jar.getInputStream(entry));
         }
 
-      }.scan(location, "pom.xml");
+      }.scan(location, "pom.xml"); //$NON-NLS-1$
 
       if (inputs.isEmpty()) {
         return null;
       }
 
-      OpenPomAction.openEditor(inputs.get(0), "pom.xml");
+      OpenPomAction.openEditor(inputs.get(0), "pom.xml"); //$NON-NLS-1$
     } catch (CoreException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();

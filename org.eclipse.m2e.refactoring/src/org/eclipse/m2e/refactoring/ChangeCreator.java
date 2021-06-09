@@ -114,7 +114,7 @@ public class ChangeCreator {
   }
 
   private void addEdit(TextFileChange change, int startLine, TextEdit edit) {
-    change.addTextEditGroup(new TextEditGroup("Line " + (startLine + 1), edit));
+    change.addTextEditGroup(new TextEditGroup("Line " + (startLine + 1), edit)); //$NON-NLS-1$
     change.addEdit(edit);
   }
 
@@ -143,7 +143,7 @@ public class ChangeCreator {
       try {
         return getHash(thisIndex).equals(((LineComparator) other).getHash(otherIndex));
       } catch(BadLocationException e) {
-        log.error("Problem comparing", e);
+        log.error("Problem comparing", e); //$NON-NLS-1$
         return false;
       }
     }

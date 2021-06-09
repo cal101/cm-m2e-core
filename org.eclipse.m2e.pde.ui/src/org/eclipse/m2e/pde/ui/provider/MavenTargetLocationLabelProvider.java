@@ -26,7 +26,7 @@ public class MavenTargetLocationLabelProvider implements ILabelProvider {
 	public String getText(Object element) {
 		if (element instanceof MavenTargetLocation) {
 			MavenTargetLocation location = (MavenTargetLocation) element;
-			return location.getGroupId() + ":" + location.getArtifactId() + " (" + location.getVersion() + ")";
+			return location.getGroupId() + ":" + location.getArtifactId() + " (" + location.getVersion() + ")"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 		}
 		return String.valueOf(element);
 	}
@@ -35,7 +35,7 @@ public class MavenTargetLocationLabelProvider implements ILabelProvider {
 	public Image getImage(Object element) {
 		Display current = Display.getCurrent();
 		if (image == null && current != null) {
-			image = new Image(current, MavenTargetAdapterFactory.class.getResourceAsStream("/icons/m2.gif"));
+			image = new Image(current, MavenTargetAdapterFactory.class.getResourceAsStream("/icons/m2.gif")); //$NON-NLS-1$
 		}
 		return image;
 	}

@@ -74,8 +74,8 @@ public class PrerequisitesItemProvider extends ItemProviderAdapter implements IE
   protected void addMavenPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Prerequisites_maven_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Prerequisites_maven_feature", "_UI_Prerequisites_type"),
+        getString("_UI_Prerequisites_maven_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Prerequisites_maven_feature", "_UI_Prerequisites_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.PREREQUISITES__MAVEN, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -87,7 +87,7 @@ public class PrerequisitesItemProvider extends ItemProviderAdapter implements IE
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Prerequisites"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Prerequisites")); //$NON-NLS-1$
   }
 
   /**
@@ -98,8 +98,8 @@ public class PrerequisitesItemProvider extends ItemProviderAdapter implements IE
   @Override
   public String getText(Object object) {
     String label = ((Prerequisites) object).getMaven();
-    return label == null || label.length() == 0 ? getString("_UI_Prerequisites_type")
-        : getString("_UI_Prerequisites_type") + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_Prerequisites_type") //$NON-NLS-1$
+        : getString("_UI_Prerequisites_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   /**

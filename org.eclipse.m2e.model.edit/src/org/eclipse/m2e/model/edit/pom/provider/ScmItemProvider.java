@@ -77,8 +77,8 @@ public class ScmItemProvider extends ItemProviderAdapter implements IEditingDoma
   protected void addConnectionPropertyDescriptor(Object object) {
     itemPropertyDescriptors
         .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-            getResourceLocator(), getString("_UI_Scm_connection_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_Scm_connection_feature", "_UI_Scm_type"),
+            getResourceLocator(), getString("_UI_Scm_connection_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_Scm_connection_feature", "_UI_Scm_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
             PomPackage.Literals.SCM__CONNECTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
             null));
   }
@@ -91,8 +91,8 @@ public class ScmItemProvider extends ItemProviderAdapter implements IEditingDoma
   protected void addDeveloperConnectionPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Scm_developerConnection_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Scm_developerConnection_feature", "_UI_Scm_type"),
+        getString("_UI_Scm_developerConnection_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Scm_developerConnection_feature", "_UI_Scm_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.SCM__DEVELOPER_CONNECTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -105,8 +105,8 @@ public class ScmItemProvider extends ItemProviderAdapter implements IEditingDoma
   protected void addTagPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Scm_tag_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Scm_tag_feature", "_UI_Scm_type"),
+        getString("_UI_Scm_tag_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Scm_tag_feature", "_UI_Scm_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.SCM__TAG, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -118,8 +118,8 @@ public class ScmItemProvider extends ItemProviderAdapter implements IEditingDoma
   protected void addUrlPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Scm_url_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Scm_url_feature", "_UI_Scm_type"),
+        getString("_UI_Scm_url_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Scm_url_feature", "_UI_Scm_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.SCM__URL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -130,7 +130,7 @@ public class ScmItemProvider extends ItemProviderAdapter implements IEditingDoma
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Scm"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Scm")); //$NON-NLS-1$
   }
 
   /**
@@ -141,7 +141,7 @@ public class ScmItemProvider extends ItemProviderAdapter implements IEditingDoma
   @Override
   public String getText(Object object) {
     String label = ((Scm) object).getConnection();
-    return label == null || label.length() == 0 ? getString("_UI_Scm_type") : getString("_UI_Scm_type") + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_Scm_type") : getString("_UI_Scm_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
   }
 
   /**

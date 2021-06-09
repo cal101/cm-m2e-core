@@ -94,7 +94,7 @@ public class MavenCheckoutOperation {
 
       ScmHandler handler = ScmHandlerFactory.getHandler(info.getFolderUrl());
       if(handler == null) {
-        String msg = "SCM provider is not available for " + info.getFolderUrl();
+        String msg = "SCM provider is not available for " + info.getFolderUrl(); //$NON-NLS-1$
         log.error(msg);
       } else {
         handler.checkoutProject(info, location, monitor);

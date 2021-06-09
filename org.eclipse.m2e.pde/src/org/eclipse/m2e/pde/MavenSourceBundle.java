@@ -38,7 +38,7 @@ public class MavenSourceBundle extends TargetBundle {
 
 	public MavenSourceBundle(BundleInfo sourceTarget, Artifact artifact, CacheManager cacheManager) throws Exception {
 		this.fSourceTarget = sourceTarget;
-		fInfo.setSymbolicName(sourceTarget.getSymbolicName() + ".source");
+		fInfo.setSymbolicName(sourceTarget.getSymbolicName() + ".source"); //$NON-NLS-1$
 		fInfo.setVersion(sourceTarget.getVersion());
 		Manifest manifest;
 		File sourceFile = artifact.getFile();
@@ -55,13 +55,13 @@ public class MavenSourceBundle extends TargetBundle {
 					if (CacheManager.isOutdated(file, sourceFile)) {
 						Attributes attr = manifest.getMainAttributes();
 						if (attr.isEmpty()) {
-							attr.put(Name.MANIFEST_VERSION, "1.0");
+							attr.put(Name.MANIFEST_VERSION, "1.0"); //$NON-NLS-1$
 						}
-						attr.putValue(ECLIPSE_SOURCE_BUNDLE_HEADER, sourceTarget.getSymbolicName() + ";version=\""
-								+ sourceTarget.getVersion() + "\";roots:=\".\"");
-						attr.putValue(Constants.BUNDLE_MANIFESTVERSION, "2");
-						attr.putValue(Constants.BUNDLE_NAME, "Source Bundle for " + sourceTarget.getSymbolicName()
-								+ ":" + sourceTarget.getVersion());
+						attr.putValue(ECLIPSE_SOURCE_BUNDLE_HEADER, sourceTarget.getSymbolicName() + ";version=\"" //$NON-NLS-1$
+								+ sourceTarget.getVersion() + "\";roots:=\".\""); //$NON-NLS-1$
+						attr.putValue(Constants.BUNDLE_MANIFESTVERSION, "2"); //$NON-NLS-1$
+						attr.putValue(Constants.BUNDLE_NAME, "Source Bundle for " + sourceTarget.getSymbolicName() //$NON-NLS-1$
+								+ ":" + sourceTarget.getVersion()); //$NON-NLS-1$
 						attr.putValue(Constants.BUNDLE_SYMBOLICNAME, fInfo.getSymbolicName());
 						attr.putValue(Constants.BUNDLE_VERSION, fInfo.getVersion());
 						try (JarOutputStream stream = new JarOutputStream(new FileOutputStream(file), manifest)) {

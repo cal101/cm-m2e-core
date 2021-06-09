@@ -82,7 +82,7 @@ public class MavenCheckoutLocationPage extends AbstractMavenWizardPage {
   private Link m2eMarketplace;
 
   protected MavenCheckoutLocationPage(ProjectImportConfiguration projectImportConfiguration) {
-    super("MavenCheckoutLocationPage", projectImportConfiguration);
+    super("MavenCheckoutLocationPage", projectImportConfiguration); //$NON-NLS-1$
     setTitle(Messages.MavenCheckoutLocationPage_title);
     setDescription(Messages.MavenCheckoutLocationPage_description);
   }
@@ -243,7 +243,7 @@ public class MavenCheckoutLocationPage extends AbstractMavenWizardPage {
         updatePage();
       });
     }
-    if(Platform.getBundle("org.eclipse.m2e.discovery") != null) {
+    if(Platform.getBundle("org.eclipse.m2e.discovery") != null) { //$NON-NLS-1$
       m2eMarketplace = new Link(composite, SWT.NONE);
       m2eMarketplace.setLayoutData(new GridData(SWT.END, SWT.END, true, true, 5, 1));
       m2eMarketplace.setText(Messages.MavenCheckoutLocationPage_linkMarketPlace);
@@ -255,14 +255,14 @@ public class MavenCheckoutLocationPage extends AbstractMavenWizardPage {
             ((WizardDialog) container).close();
           }
           IExtensionRegistry registry = RegistryFactory.getRegistry();
-          IExtensionPoint point = registry.getExtensionPoint("org.eclipse.m2e.core.ui.discoveryLaunch");
+          IExtensionPoint point = registry.getExtensionPoint("org.eclipse.m2e.core.ui.discoveryLaunch"); //$NON-NLS-1$
           if(point != null) {
             IExtension[] extension = point.getExtensions();
             if(extension.length > 0) {
               for(IConfigurationElement element : extension[0].getConfigurationElements()) {
-                if("launcher".equals(element.getName())) {
+                if("launcher".equals(element.getName())) { //$NON-NLS-1$
                   try {
-                    ((IMavenDiscovery) element.createExecutableExtension("class"))
+                    ((IMavenDiscovery) element.createExecutableExtension("class")) //$NON-NLS-1$
                         .launch(Display.getCurrent().getActiveShell());
                     break;
                   } catch(CoreException e1) {
@@ -407,7 +407,7 @@ public class MavenCheckoutLocationPage extends AbstractMavenWizardPage {
       } catch(CoreException ignore) {
       }
     }
-    return url == null || url.isEmpty() || ("scm:" + type + ":").equals(url);
+    return url == null || url.isEmpty() || ("scm:" + type + ":").equals(url); //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   public void setParent(String parentUrl) {
