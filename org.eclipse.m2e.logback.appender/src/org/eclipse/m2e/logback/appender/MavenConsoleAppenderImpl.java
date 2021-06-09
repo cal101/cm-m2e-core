@@ -39,7 +39,6 @@ public class MavenConsoleAppenderImpl {
       case Level.INFO_INT:
       default:
         mavenConsole.info(logEvent.toString());
-        return;
     }
   }
 }

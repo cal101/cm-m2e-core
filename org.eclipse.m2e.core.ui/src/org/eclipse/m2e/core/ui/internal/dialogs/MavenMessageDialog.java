@@ -79,7 +79,6 @@ public class MavenMessageDialog extends MessageDialog {
     dialog.getMessageArea().setText(message);
     dialog.getDialogArea().pack(true);
     dialog.open();
-    return;
   }
 
   /**
@@ -98,7 +97,6 @@ public class MavenMessageDialog extends MessageDialog {
     dialog.getMessageArea().setText(message);
     dialog.getDialogArea().pack(true);
     dialog.open();
-    return;
   }
 
   /**

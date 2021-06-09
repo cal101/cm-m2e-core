@@ -49,7 +49,6 @@ public class MavenClasspathContainerInitializer extends ClasspathContainerInitia
         if(mavenContainer != null) {
           JavaCore.setClasspathContainer(containerPath, new IJavaProject[] {project},
               new IClasspathContainer[] {mavenContainer}, new NullProgressMonitor());
-          return;
         }
       } catch(CoreException ex) {
         log.error("Exception initializing classpath container " + containerPath.toString(), ex);

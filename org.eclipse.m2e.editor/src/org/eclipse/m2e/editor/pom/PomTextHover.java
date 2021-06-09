@@ -149,7 +149,6 @@ public class PomTextHover implements ITextHover, ITextHoverExtension, ITextHover
       ManagedArtifactRegion manReg = PomHyperlinkDetector.findManagedArtifactRegion(node, textViewer, offset);
       if(manReg != null) {
         regs[1] = manReg;
-        return;
       }
     });
     CompoundRegion toRet = new CompoundRegion(textViewer, offset);

@@ -348,7 +348,6 @@ public class MavenSettingsPreferencePage extends PreferencePage implements IWork
     if(userSettings != null
         && !checkSettings(userSettings, Messages.MavenSettingsPreferencePage_error_userSettingsMissing,
             Messages.MavenSettingsPreferencePage_error_userSettingsParse)) {
-      return;
     }
   }
 

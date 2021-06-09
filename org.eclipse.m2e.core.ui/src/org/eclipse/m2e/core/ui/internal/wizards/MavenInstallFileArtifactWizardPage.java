@@ -300,7 +300,6 @@ public class MavenInstallFileArtifactWizardPage extends WizardPage {
       artifactIdCombo.setText(mavenProject.getArtifactId());
       versionCombo.setText(mavenProject.getVersion());
       packagingCombo.setText(mavenProject.getPackaging());
-      return;
 
     } catch(CoreException ex) {
       log.error(ex.getMessage(), ex);
