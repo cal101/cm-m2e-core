@@ -64,14 +64,17 @@ public class LifecycleMappingConfiguration implements ILifecycleMappingConfigura
     this.mojoExecutionConfiguration = mojoExecutionConfiguration;
   }
 
+  @Override
   public String getLifecycleMappingId() {
     return lifecycleMappingId;
   }
 
+  @Override
   public Map<MojoExecutionKey, List<IPluginExecutionMetadata>> getMojoExecutionMapping() {
     return mojoExecutionMapping;
   }
 
+  @Override
   public Xpp3Dom getMojoExecutionConfiguration(MojoExecutionKey key) {
     return mojoExecutionConfiguration.get(key);
   }

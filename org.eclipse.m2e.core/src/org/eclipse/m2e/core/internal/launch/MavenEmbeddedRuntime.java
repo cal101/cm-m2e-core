@@ -73,18 +73,22 @@ public class MavenEmbeddedRuntime extends AbstractMavenRuntime {
     super(MavenRuntimeManagerImpl.EMBEDDED);
   }
 
+  @Override
   public boolean isEditable() {
     return false;
   }
 
+  @Override
   public String getLocation() {
     return MavenRuntimeManagerImpl.EMBEDDED;
   }
 
+  @Override
   public boolean isAvailable() {
     return true;
   }
 
+  @Override
   public void createLauncherConfiguration(IMavenLauncherConfiguration collector, IProgressMonitor monitor)
       throws CoreException {
     collector.setMainType(MAVEN_EXECUTOR_CLASS, PLEXUS_CLASSWORLD_NAME);
@@ -171,6 +175,7 @@ public class MavenEmbeddedRuntime extends AbstractMavenRuntime {
     return Bundles.findDependencyBundle(m2eCore, MAVEN_EMBEDDER_BUNDLE_SYMBOLICNAME);
   }
 
+  @Override
   public String toString() {
     Bundle embedder = findMavenEmbedderBundle();
 
@@ -238,6 +243,7 @@ public class MavenEmbeddedRuntime extends AbstractMavenRuntime {
     return Messages.MavenEmbeddedRuntime_unknown;
   }
 
+  @Override
   public String getVersion() {
     Bundle bundle = findMavenEmbedderBundle();
     return getVersion(bundle);

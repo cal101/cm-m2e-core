@@ -73,6 +73,7 @@ public class AetherClientResourceFetcher implements ResourceFetcher {
     this.userAgent = MavenPluginActivator.getUserAgent();
   }
 
+  @Override
   public void connect(String id, String url) {
     this.baseUrl = url;
     aetherClient = new OkHttpAetherClient(
@@ -80,6 +81,7 @@ public class AetherClientResourceFetcher implements ResourceFetcher {
         new HashMap<String, String>()));
   }
 
+  @Override
   public void disconnect() throws IOException {
     aetherClient.close();
   }
@@ -101,6 +103,7 @@ public class AetherClientResourceFetcher implements ResourceFetcher {
     }
   }
 
+  @Override
   public InputStream retrieve(String name) throws IOException, FileNotFoundException {
     String url = baseUrl + "/" + name;
     Response response = aetherClient.get(url);
@@ -141,18 +144,22 @@ public class AetherClientResourceFetcher implements ResourceFetcher {
       }
     }
 
+    @Override
     public String getUserAgent() {
       return userAgent;
     }
 
+    @Override
     public int getConnectionTimeout() {
       return connectionTimeout;
     }
 
+    @Override
     public int getRequestTimeout() {
       return requestTimeout;
     }
 
+    @Override
     public AetherClientProxy getProxy() {
 
       if(proxyInfo == null) {
@@ -168,15 +175,18 @@ public class AetherClientResourceFetcher implements ResourceFetcher {
 
       return new AetherClientProxy() {
 
-        public String getHost() {
+          @Override
+          public String getHost() {
           return proxyInfo.getHost();
         }
 
-        public int getPort() {
+          @Override
+          public int getPort() {
           return proxyInfo.getPort();
         }
 
-        public AetherClientAuthentication getAuthentication() {
+          @Override
+          public AetherClientAuthentication getAuthentication() {
 
           if(proxyInfo != null && proxyInfo.getUserName() != null && proxyInfo.getPassword() != null) {
             return new AetherClientAuthentication(proxyInfo.getUserName(), proxyInfo.getPassword());
@@ -186,6 +196,7 @@ public class AetherClientResourceFetcher implements ResourceFetcher {
       };
     }
 
+    @Override
     public AetherClientAuthentication getAuthentication() {
 
       if(authInfo != null) {
@@ -194,6 +205,7 @@ public class AetherClientResourceFetcher implements ResourceFetcher {
       return null;
     }
 
+    @Override
     public Map<String, String> getHeaders() {
       return headers;
     }

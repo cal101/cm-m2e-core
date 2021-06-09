@@ -39,18 +39,22 @@ public class ProjectRegistry extends BasicProjectRegistry implements Serializabl
 
   private transient int version;
 
+  @Override
   public synchronized MavenProjectFacade getProjectFacade(IFile pom) {
     return super.getProjectFacade(pom);
   }
 
+  @Override
   public synchronized MavenProjectFacade getProjectFacade(String groupId, String artifactId, String version) {
     return super.getProjectFacade(groupId, artifactId, version);
   }
 
+  @Override
   public synchronized MavenProjectFacade[] getProjects() {
     return super.getProjects();
   }
 
+  @Override
   public synchronized Map<ArtifactKey, Collection<IFile>> getWorkspaceArtifacts(String groupId, String artifactId) {
     return super.getWorkspaceArtifacts(groupId, artifactId);
   }

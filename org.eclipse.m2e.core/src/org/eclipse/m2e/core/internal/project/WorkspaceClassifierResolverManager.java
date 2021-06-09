@@ -56,7 +56,8 @@ public class WorkspaceClassifierResolverManager implements IWorkspaceClassifierR
       return null;
     }
 
-    public int getPriority() {
+      @Override
+      public int getPriority() {
       return 0;
     }
   };
@@ -72,6 +73,7 @@ public class WorkspaceClassifierResolverManager implements IWorkspaceClassifierR
     return classifierResolvers;
   }
 
+  @Override
   public IWorkspaceClassifierResolver getResolver() {
     return defaultResolver;
   }

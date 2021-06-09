@@ -741,6 +741,7 @@ public class NexusIndexManager implements IndexManager, IMavenProjectChangedList
     return key + ".pom"; //$NON-NLS-1$
   }
 
+  @Override
   public void mavenProjectChanged(MavenProjectChangedEvent[] events, IProgressMonitor monitor) {
     /*
      * This method is called while holding workspace lock. Avoid long-running operations if possible.
@@ -772,10 +773,12 @@ public class NexusIndexManager implements IndexManager, IMavenProjectChangedList
     }
   }
 
+  @Override
   public NexusIndex getWorkspaceIndex() {
     return workspaceIndex;
   }
 
+  @Override
   public NexusIndex getLocalIndex() {
     IRepository localRepository = repositoryRegistry.getLocalRepository();
     synchronized(getIndexLock(localRepository)) {
@@ -786,6 +789,7 @@ public class NexusIndexManager implements IndexManager, IMavenProjectChangedList
     return localIndex;
   }
 
+  @Override
   public IIndex getIndex(IProject project) {
     IMavenProjectFacade projectFacade = project != null ? projectManager.getProject(project) : null;
 
@@ -813,6 +817,7 @@ public class NexusIndexManager implements IndexManager, IMavenProjectChangedList
     return new CompositeIndex(indexes);
   }
 
+  @Override
   public IIndex getAllIndexes() {
     ArrayList<IIndex> indexes = new ArrayList<>();
     indexes.add(getWorkspaceIndex());
@@ -872,6 +877,7 @@ public class NexusIndexManager implements IndexManager, IMavenProjectChangedList
     }
   }
 
+  @Override
   public void repositoryAdded(IRepository repository, IProgressMonitor monitor) throws CoreException {
     String details = getIndexDetails(repository);
 
@@ -980,6 +986,7 @@ public class NexusIndexManager implements IndexManager, IMavenProjectChangedList
     return fullIndex ? fullCreators : minCreators;
   }
 
+  @Override
   public void repositoryRemoved(IRepository repository, IProgressMonitor monitor) {
     synchronized(getIndexLock(repository)) {
       try {
@@ -1053,12 +1060,14 @@ public class NexusIndexManager implements IndexManager, IMavenProjectChangedList
     }
   }
 
+  @Override
   public void removeIndexListener(IndexListener listener) {
     synchronized(indexListeners) {
       indexListeners.remove(listener);
     }
   }
 
+  @Override
   public void addIndexListener(IndexListener listener) {
     synchronized(indexListeners) {
       if(!indexListeners.contains(listener)) {
@@ -1193,6 +1202,7 @@ public class NexusIndexManager implements IndexManager, IMavenProjectChangedList
     return request;
   }
 
+  @Override
   public void initialize(IProgressMonitor monitor) throws CoreException {
     try {
       BufferedInputStream is = new BufferedInputStream(new FileInputStream(getIndexDetailsFile()));
@@ -1234,6 +1244,7 @@ public class NexusIndexManager implements IndexManager, IMavenProjectChangedList
     return updaterJob;
   }
 
+  @Override
   public String getIndexerId() {
     return Messages.NexusIndexManager_78;
   }

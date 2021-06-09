@@ -72,7 +72,8 @@ public class ProjectRegistryReader {
             enableResolveObject(true);
           }
 
-          protected Object resolveObject(Object o) throws IOException {
+            @Override
+            protected Object resolveObject(Object o) throws IOException {
             if(o instanceof IPathReplace) {
               return ((IPathReplace) o).getPath();
             } else if(o instanceof IFileReplace) {
@@ -83,7 +84,8 @@ public class ProjectRegistryReader {
             return super.resolveObject(o);
           }
 
-          protected java.lang.Class<?> resolveClass(java.io.ObjectStreamClass desc) throws IOException,
+            @Override
+            protected java.lang.Class<?> resolveClass(java.io.ObjectStreamClass desc) throws IOException,
               ClassNotFoundException {
             String symbolicName = (String) readObject();
             if(symbolicName == null) {
@@ -130,7 +132,8 @@ public class ProjectRegistryReader {
           enableReplaceObject(true);
         }
 
-        protected Object replaceObject(Object o) throws IOException {
+          @Override
+          protected Object replaceObject(Object o) throws IOException {
           if(o instanceof IPath) {
             return new IPathReplace((IPath) o);
           } else if(o instanceof IFile) {
@@ -141,7 +144,8 @@ public class ProjectRegistryReader {
           return super.replaceObject(o);
         }
 
-        protected void annotateClass(java.lang.Class<?> cl) throws IOException {
+          @Override
+          protected void annotateClass(java.lang.Class<?> cl) throws IOException {
           // if the class is visible through this classloader, assume it will be during reading stream back
           try {
             Class<?> target = cl;
