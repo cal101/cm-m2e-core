@@ -76,7 +76,7 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
   }
 
   protected String getOutputFolderParameterName() {
-    return "outputDirectory";
+    return "outputDirectory"; //$NON-NLS-1$
   }
 
 }

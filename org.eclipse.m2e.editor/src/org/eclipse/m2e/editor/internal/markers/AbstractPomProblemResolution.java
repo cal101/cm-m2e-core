@@ -71,7 +71,7 @@ public abstract class AbstractPomProblemResolution extends EditorAwareMavenProbl
       XmlUtils.performOnRootElement((IFile) resource, (node, structured) -> processFix(structured, node, markers),
           true);
     } catch(IOException | CoreException e) {
-      LOG.error("Error processing marker", e);
+      LOG.error("Error processing marker", e); //$NON-NLS-1$
     }
   }
 
@@ -90,13 +90,13 @@ public abstract class AbstractPomProblemResolution extends EditorAwareMavenProbl
         int next2End = doc.getLineOffset(Math.min(line + 3, maxl));
 
         String prevString = doc.get(prev2Start, startLine - prev2Start);
-        String nextString = next2Start < next2End ? doc.get(next2Start, next2End - next2Start) : "";
+        String nextString = next2Start < next2End ? doc.get(next2Start, next2End - next2Start) : ""; //$NON-NLS-1$
         // tabs in html make the DefaultInformationControl go mad
         prevString = prevString.replace("\t", "  "); //$NON-NLS-1$ //$NON-NLS-2$
         nextString = nextString.replace("\t", "  "); //$NON-NLS-1$ //$NON-NLS-2$
         prevString = StringUtils.convertToHTMLContent(prevString);
         nextString = StringUtils.convertToHTMLContent(nextString);
-        return "<html>...<br>" + prevString + /** "<del>" + currentLine + "</del>" + */ //$NON-NLS-0$
+        return "<html>...<br>" + prevString + /** "<del>" + currentLine + "</del>" + */ //$NON-NLS-1$
             nextString + "...<html>"; //$NON-NLS-1$
       } catch(BadLocationException e) {
         // TODO Auto-generated catch block

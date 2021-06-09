@@ -73,13 +73,13 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
 
   private static final Logger log = LoggerFactory.getLogger(AbstractJavaProjectConfigurator.class);
 
-  private static final String GOAL_COMPILE = "compile";
+  private static final String GOAL_COMPILE = "compile"; //$NON-NLS-1$
 
-  private static final String GOAL_TESTCOMPILE = "testCompile";
+  private static final String GOAL_TESTCOMPILE = "testCompile"; //$NON-NLS-1$
 
-  public static final String COMPILER_PLUGIN_ARTIFACT_ID = "maven-compiler-plugin";
+  public static final String COMPILER_PLUGIN_ARTIFACT_ID = "maven-compiler-plugin"; //$NON-NLS-1$
 
-  public static final String COMPILER_PLUGIN_GROUP_ID = "org.apache.maven.plugins";
+  public static final String COMPILER_PLUGIN_GROUP_ID = "org.apache.maven.plugins"; //$NON-NLS-1$
 
   protected static final List<String> RELEASES;
 
@@ -87,13 +87,13 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
 
   protected static final List<String> TARGETS;
 
-  private static final String GOAL_RESOURCES = "resources";
+  private static final String GOAL_RESOURCES = "resources"; //$NON-NLS-1$
 
-  private static final String GOAL_TESTRESOURCES = "testResources";
+  private static final String GOAL_TESTRESOURCES = "testResources"; //$NON-NLS-1$
 
-  private static final String RESOURCES_PLUGIN_ARTIFACT_ID = "maven-resources-plugin";
+  private static final String RESOURCES_PLUGIN_ARTIFACT_ID = "maven-resources-plugin"; //$NON-NLS-1$
 
-  private static final String RESOURCES_PLUGIN_GROUP_ID = "org.apache.maven.plugins";
+  private static final String RESOURCES_PLUGIN_GROUP_ID = "org.apache.maven.plugins"; //$NON-NLS-1$
 
   protected static final LinkedHashMap<String, String> ENVIRONMENTS = new LinkedHashMap<>();
 
@@ -299,13 +299,13 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
             inclusion = toPaths(
                 maven.getMojoParameterValue(mavenProject, compile, "includes", String[].class, monitor)); //$NON-NLS-1$
           } catch(CoreException ex) {
-            log.error("Failed to determine compiler inclusions, assuming defaults", ex);
+            log.error("Failed to determine compiler inclusions, assuming defaults", ex); //$NON-NLS-1$
           }
           try {
             exclusion = toPaths(
                 maven.getMojoParameterValue(mavenProject, compile, "excludes", String[].class, monitor)); //$NON-NLS-1$
           } catch(CoreException ex) {
-            log.error("Failed to determine compiler exclusions, assuming defaults", ex);
+            log.error("Failed to determine compiler exclusions, assuming defaults", ex); //$NON-NLS-1$
           }
         }
       }
@@ -317,13 +317,13 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
             inclusionTest = toPaths(
                 maven.getMojoParameterValue(mavenProject, compile, "testIncludes", String[].class, monitor)); //$NON-NLS-1$
           } catch(CoreException ex) {
-            log.error("Failed to determine compiler test inclusions, assuming defaults", ex);
+            log.error("Failed to determine compiler test inclusions, assuming defaults", ex); //$NON-NLS-1$
           }
           try {
             exclusionTest = toPaths(
                 maven.getMojoParameterValue(mavenProject, compile, "testExcludes", String[].class, monitor)); //$NON-NLS-1$
           } catch(CoreException ex) {
-            log.error("Failed to determine compiler test exclusions, assuming defaults", ex);
+            log.error("Failed to determine compiler test exclusions, assuming defaults", ex); //$NON-NLS-1$
           }
         }
       }
@@ -367,7 +367,7 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
     }
     IPath[] paths = new IPath[values.length];
     for(int i = 0; i < values.length; i++ ) {
-      if(values[i] != null && !"".equals(values[i].trim())) {
+      if(values[i] != null && !"".equals(values[i].trim())) { //$NON-NLS-1$
         paths[i] = new Path(values[i]);
       }
     }
@@ -402,16 +402,16 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
 
       IClasspathEntryDescriptor enclosing = getEnclosingEntryDescriptor(classpath, sourceFolder.getFullPath());
       if(enclosing == null || getEntryDescriptor(classpath, sourceFolder.getFullPath()) != null) {
-        log.info("Adding source folder " + sourceFolder.getFullPath());
+        log.info("Adding source folder " + sourceFolder.getFullPath()); //$NON-NLS-1$
 
         // source folder entries are created even when corresponding resources do not actually exist in workspace
         // to keep JDT from complaining too loudly about non-existing folders,
         // all source entries are marked as generated (a.k.a. optional)
         IClasspathEntryDescriptor descriptor = classpath.addSourceEntry(sourceFolder.getFullPath(), outputPath,
             inclusion, exclusion, true /*generated*/);
-        descriptor.setClasspathAttribute(IClasspathManager.TEST_ATTRIBUTE, addTestFlag ? "true" : null);
+        descriptor.setClasspathAttribute(IClasspathManager.TEST_ATTRIBUTE, addTestFlag ? "true" : null); //$NON-NLS-1$
       } else {
-        log.info("Not adding source folder " + sourceFolder.getFullPath() + " because it overlaps with "
+        log.info("Not adding source folder " + sourceFolder.getFullPath() + " because it overlaps with " //$NON-NLS-1$ //$NON-NLS-2$
             + enclosing.getPath());
       }
     }
@@ -465,7 +465,7 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
            *       </includes>
            *     </resource>
            */
-          log.error("Skipping resource folder " + r.getFullPath());
+          log.error("Skipping resource folder " + r.getFullPath()); //$NON-NLS-1$
 
         } else if(r != null && project.equals(r.getProject())) {
 
@@ -475,7 +475,7 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
             configureOverlapWithSource(classpath, enclosing, path);
           } else if(overlapsWithOtherResourceFolder(path, project, mavenProject)) {
             // skip adding resource folders that are included by other resource folders
-            log.info("Skipping resource folder " + path + " since it's contained by another resource folder");
+            log.info("Skipping resource folder " + path + " since it's contained by another resource folder"); //$NON-NLS-1$ //$NON-NLS-2$
           } else {
             addResourceFolder(classpath, path, outputPath, addTestFlag);
           }
@@ -485,7 +485,7 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
           resourceFolder.setDefaultCharset(resourceEncoding, monitor);
 
         } else {
-          log.info("Not adding resources folder " + resourceDirectory.getAbsolutePath());
+          log.info("Not adding resources folder " + resourceDirectory.getAbsolutePath()); //$NON-NLS-1$
         }
       }
     }
@@ -493,18 +493,18 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
 
   private void addResourceFolder(IClasspathDescriptor classpath, IPath resourceFolder, IPath outputPath,
       boolean addTestFlag) {
-    log.info("Adding resource folder " + resourceFolder);
+    log.info("Adding resource folder " + resourceFolder); //$NON-NLS-1$
     IClasspathEntryDescriptor descriptor = classpath.addSourceEntry(resourceFolder, outputPath, DEFAULT_INCLUSIONS,
-        new IPath[] {new Path("**")}, false /*optional*/);
-    descriptor.setClasspathAttribute(IClasspathManager.TEST_ATTRIBUTE, addTestFlag ? "true" : null);
+        new IPath[] {new Path("**")}, false /*optional*/); //$NON-NLS-1$
+    descriptor.setClasspathAttribute(IClasspathManager.TEST_ATTRIBUTE, addTestFlag ? "true" : null); //$NON-NLS-1$
   }
 
   private void configureOverlapWithSource(IClasspathDescriptor classpath, IClasspathEntryDescriptor enclosing,
       IPath resourceFolder) {
     // resources and sources folders overlap. make sure JDT only processes java sources.
-    log.info("Resources folder " + resourceFolder + " overlaps with sources folder " + enclosing.getPath());
-    enclosing.addInclusionPattern(new Path("**/*.java"));
-    enclosing.removeExclusionPattern(new Path("**"));
+    log.info("Resources folder " + resourceFolder + " overlaps with sources folder " + enclosing.getPath()); //$NON-NLS-1$ //$NON-NLS-2$
+    enclosing.addInclusionPattern(new Path("**/*.java")); //$NON-NLS-1$
+    enclosing.removeExclusionPattern(new Path("**")); //$NON-NLS-1$
     classpath.touchEntry(resourceFolder);
   }
 
@@ -562,7 +562,7 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
     boolean enablePreviewFeatures = false;
 
     for(MojoExecution execution : getCompilerMojoExecutions(request, monitor)) {
-      release = getCompilerLevel(request.getMavenProject(), execution, "release", release, RELEASES, monitor);
+      release = getCompilerLevel(request.getMavenProject(), execution, "release", release, RELEASES, monitor); //$NON-NLS-1$
       //XXX ignoring testRelease option, since JDT doesn't support main/test classpath separation - yet
       source = getCompilerLevel(request.getMavenProject(), execution, "source", source, SOURCES, monitor); //$NON-NLS-1$
       target = getCompilerLevel(request.getMavenProject(), execution, "target", target, TARGETS, monitor); //$NON-NLS-1$
@@ -577,12 +577,12 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
     } else {
       if(source == null) {
         source = getDefaultSourceLevel();
-        log.warn("Could not determine source level, using default " + source);
+        log.warn("Could not determine source level, using default " + source); //$NON-NLS-1$
       }
 
       if(target == null) {
         target = getDefaultTargetLevel(source);
-        log.warn("Could not determine target level, using default " + target);
+        log.warn("Could not determine target level, using default " + target); //$NON-NLS-1$
       }
 
     }
@@ -626,7 +626,7 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
       try {
         List<?> args = maven.getMojoParameterValue(mavenProject, execution, "compilerArgs", List.class, monitor);//$NON-NLS-1$
         if(args != null) {
-          generateParameters = args.contains(JavaSettingsUtils.PARAMETERS_JVM_FLAG);//$NON-NLS-1$
+          generateParameters = args.contains(JavaSettingsUtils.PARAMETERS_JVM_FLAG);
         }
       } catch(Exception ex) {
         //ignore
@@ -639,7 +639,7 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
         String compilerArgument = maven.getMojoParameterValue(mavenProject, execution, "compilerArgument", String.class, //$NON-NLS-1$
             monitor);
         if(compilerArgument != null) {
-          generateParameters = compilerArgument.contains(JavaSettingsUtils.PARAMETERS_JVM_FLAG);//$NON-NLS-1$
+          generateParameters = compilerArgument.contains(JavaSettingsUtils.PARAMETERS_JVM_FLAG);
         }
       } catch(CoreException ex) {
         //ignore
@@ -654,7 +654,7 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
     //1st, check the --enable-preview flag in the compilerArgs list
     try {
       List<?> args = maven.getMojoParameterValue(mavenProject, execution, "compilerArgs", List.class, monitor);//$NON-NLS-1$
-      if(args != null && args.contains(JavaSettingsUtils.ENABLE_PREVIEW_JVM_FLAG)) {//$NON-NLS-1$
+      if(args != null && args.contains(JavaSettingsUtils.ENABLE_PREVIEW_JVM_FLAG)) {
         return true;
       }
     } catch(Exception ex) {
@@ -665,7 +665,7 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
     try {
       String compilerArgument = maven.getMojoParameterValue(mavenProject, execution, "compilerArgument", String.class, //$NON-NLS-1$
           monitor);
-      if(compilerArgument != null && compilerArgument.contains(JavaSettingsUtils.ENABLE_PREVIEW_JVM_FLAG)) {//$NON-NLS-1$
+      if(compilerArgument != null && compilerArgument.contains(JavaSettingsUtils.ENABLE_PREVIEW_JVM_FLAG)) {
         return true;
       }
     } catch(CoreException ex) {
@@ -676,14 +676,14 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
 
   private String sanitizeJavaVersion(String version) {
     switch(version) {
-      case "5":
-      case "6":
-      case "7":
-      case "8":
-        version = "1." + version;
+      case "5": //$NON-NLS-1$
+      case "6": //$NON-NLS-1$
+      case "7": //$NON-NLS-1$
+      case "8": //$NON-NLS-1$
+        version = "1." + version; //$NON-NLS-1$
         break;
       default:
-        if(version.startsWith("1.")) {
+        if(version.startsWith("1.")) { //$NON-NLS-1$
           String subVersion = version.substring(2);
           if(Integer.parseInt(subVersion) > 8) {
             version = subVersion;
@@ -715,7 +715,7 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
     try {
       source = maven.getMojoParameterValue(mavenProject, execution, parameter, String.class, monitor);
     } catch(CoreException ex) {
-      log.error("Failed to determine compiler " + parameter + " setting, assuming default", ex);
+      log.error("Failed to determine compiler " + parameter + " setting, assuming default", ex); //$NON-NLS-1$ //$NON-NLS-2$
     }
 
     int newLevelIdx = getLevelIndex(source, levels);
@@ -793,7 +793,7 @@ public abstract class AbstractJavaProjectConfigurator extends AbstractProjectCon
     } else {
       relative = absolutePath;
     }
-    return new Path(relative.replace('\\', '/')); //$NON-NLS-1$ //$NON-NLS-2$
+    return new Path(relative.replace('\\', '/'));
   }
 
   public void configureClasspath(IMavenProjectFacade facade, IClasspathDescriptor classpath, IProgressMonitor monitor) {

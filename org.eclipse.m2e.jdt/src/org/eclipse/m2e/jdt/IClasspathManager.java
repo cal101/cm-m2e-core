@@ -76,7 +76,7 @@ public interface IClasspathManager {
    *
    * @since 1.9
    */
-  String TEST_ATTRIBUTE = "test";
+  String TEST_ATTRIBUTE = "test"; //$NON-NLS-1$
 
   /**
    * Name of IClasspathEntry attribute that is to limit the imported code of project by jdt.core. Same as
@@ -85,7 +85,7 @@ public interface IClasspathManager {
    *
    * @since 1.9
    */
-  String WITHOUT_TEST_CODE = "without_test_code";
+  String WITHOUT_TEST_CODE = "without_test_code"; //$NON-NLS-1$
 
   /**
    * Maven dependency resolution scope constant indicating test scope.

@@ -48,7 +48,7 @@ class PomTemplateContextUtil {
   private final Map<String, PluginDescriptor> descriptors = new HashMap<>();
 
   public PluginDescriptor getPluginDescriptor(String groupId, String artifactId, String version) {
-    String name = groupId + ":" + artifactId + ":" + version;
+    String name = groupId + ":" + artifactId + ":" + version; //$NON-NLS-1$ //$NON-NLS-2$
     PluginDescriptor descriptor = descriptors.get(name);
     if(descriptor != null) {
       return descriptor;
@@ -95,7 +95,7 @@ class PomTemplateContextUtil {
       IStatus status = ex.getStatus();
       String msg = status.getMessage();
       if(status.getException() != null) {
-        msg += "; " + status.getException().getMessage();
+        msg += "; " + status.getException().getMessage(); //$NON-NLS-1$
       }
       log.error(msg, ex);
     }

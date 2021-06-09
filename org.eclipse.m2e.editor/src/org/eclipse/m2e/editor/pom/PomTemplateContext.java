@@ -176,7 +176,7 @@ public enum PomTemplateContext {
       Element configNode = (Element) node;
       while(configNode != null && !getNodeName().equals(configNode.getNodeName())) {
 
-        String impl = configNode.getAttribute("implementation");
+        String impl = configNode.getAttribute("implementation"); //$NON-NLS-1$
         if(impl != null && !impl.trim().isEmpty()) {
           configImpl = impl;
         }
@@ -293,7 +293,7 @@ public enum PomTemplateContext {
                 || PomTemplateContext.fromNodeName(nestedParam.getName()).handlesFiles();
             if(containsFiles) {
               addFileTemplates(project, eclipseprj, proposals, node, prefix,
-                  param.getName().toLowerCase().endsWith("directory"), nestedParam.getName());
+                  param.getName().toLowerCase().endsWith("directory"), nestedParam.getName()); //$NON-NLS-1$
             }
           }
         }
@@ -302,7 +302,7 @@ public enum PomTemplateContext {
             || PomTemplateContext.fromNodeName(param.getName()).handlesFiles();
         if(containsFiles) {
           addFileTemplates(project, eclipseprj, proposals, node, prefix,
-              param.getName().toLowerCase().endsWith("directory"), null);
+              param.getName().toLowerCase().endsWith("directory"), null); //$NON-NLS-1$
         }
 
       }
@@ -326,13 +326,13 @@ public enum PomTemplateContext {
         String prefix) throws CoreException {
       String groupId = getGroupId(node);
       //#MNGECLIPSE-1832
-      if((groupId == null || groupId.trim().length() == 0) && "plugin".equals(node.getParentNode().getNodeName())) {
+      if((groupId == null || groupId.trim().length() == 0) && "plugin".equals(node.getParentNode().getNodeName())) { //$NON-NLS-1$
         groupId = "org.apache.maven.plugins"; //$NON-NLS-1$
       }
       if(groupId != null) {
         for(String artifactId : getSearchEngine(eclipseprj).findArtifactIds(groupId, prefix, getPackaging(node),
             getContainingArtifact(node))) {
-          checkAndAdd(proposals, prefix, artifactId, groupId + ":" + artifactId);
+          checkAndAdd(proposals, prefix, artifactId, groupId + ":" + artifactId); //$NON-NLS-1$
         }
       }
     }
@@ -344,14 +344,14 @@ public enum PomTemplateContext {
         String prefix) throws CoreException {
       String groupId = getGroupId(node);
       //#MNGECLIPSE-1832
-      if((groupId == null || groupId.trim().length() == 0) && "plugin".equals(node.getParentNode().getNodeName())) {
+      if((groupId == null || groupId.trim().length() == 0) && "plugin".equals(node.getParentNode().getNodeName())) { //$NON-NLS-1$
         groupId = "org.apache.maven.plugins"; //$NON-NLS-1$
       }
       String artifactId = getArtifactId(node);
       if(groupId != null && artifactId != null) {
         for(String version : getSearchEngine(eclipseprj).findVersions(groupId, artifactId, prefix,
             getPackaging(node))) {
-          checkAndAdd(proposals, prefix, version, groupId + ":" + artifactId + ":" + version);
+          checkAndAdd(proposals, prefix, version, groupId + ":" + artifactId + ":" + version); //$NON-NLS-1$ //$NON-NLS-2$
         }
       }
       //mkleint: this concept that all versions out there are equal is questionable..
@@ -365,7 +365,7 @@ public enum PomTemplateContext {
           //if groupid is the same, suggest ${project.version}
           if(groupId != null && groupId.equals(mvn.getGroupId())) {
             proposals.add(new Template("${project.version}", Messages.PomTemplateContext_project_version_hint, //$NON-NLS-1$
-                contextTypeId, "$${project.version}", false)); //$NON-NLS-3$
+                contextTypeId, "$${project.version}", false)); //$NON-NLS-1$
           }
           Properties props = mvn.getProperties();
           if(props != null) {
@@ -381,7 +381,7 @@ public enum PomTemplateContext {
               for(String key : keys) {
                 String expr = "${" + key + "}"; //$NON-NLS-1$ //$NON-NLS-2$
                 proposals.add(new Template(expr, Messages.PomTemplateContext_expression_description, contextTypeId,
-                    "$" + expr, false)); //$NON-NLS-2$ //$NON-NLS-1$
+                    "$" + expr, false)); //$NON-NLS-1$
               }
             }
           }
@@ -400,7 +400,7 @@ public enum PomTemplateContext {
             }
             if(groupId != null && groupId.equals(currentgroupid)) {
               proposals.add(new Template("${project.version}", Messages.PomTemplateContext_project_version_hint, //$NON-NLS-1$
-                  contextTypeId, "$${project.version}", false)); //$NON-NLS-3$
+                  contextTypeId, "$${project.version}", false)); //$NON-NLS-1$
             }
           }
         }
@@ -418,7 +418,7 @@ public enum PomTemplateContext {
       if(groupId != null && artifactId != null && version != null) {
         for(String classifier : getSearchEngine(eclipseprj).findClassifiers(groupId, artifactId, version, prefix,
             getPackaging(node))) {
-          checkAndAdd(proposals, prefix, classifier, groupId + ":" + artifactId + ":" + version + ":" + classifier);
+          checkAndAdd(proposals, prefix, classifier, groupId + ":" + artifactId + ":" + version + ":" + classifier); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         }
       }
     }
@@ -434,7 +434,7 @@ public enum PomTemplateContext {
       if(groupId != null && artifactId != null && version != null) {
         for(String type : getSearchEngine(eclipseprj).findTypes(groupId, artifactId, version, prefix,
             getPackaging(node))) {
-          checkAndAdd(proposals, prefix, type, groupId + ":" + artifactId + ":" + version + ":" + type);
+          checkAndAdd(proposals, prefix, type, groupId + ":" + artifactId + ":" + version + ":" + type); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         }
       }
     }
@@ -468,7 +468,7 @@ public enum PomTemplateContext {
       checkAndAdd(proposals, prefix, "runtime"); //$NON-NLS-1$
       checkAndAdd(proposals, prefix, "system"); //$NON-NLS-1$
 
-      if(getAncestor(node, "dependency", "dependencies", "dependencyManagement") != null) {// $NON-NLS-1$ $NON-NLS-2$ $NON-NLS-3$
+      if(getAncestor(node, "dependency", "dependencies", "dependencyManagement") != null) {// $NON-NLS-1$ $NON-NLS-2$ $NON-NLS-3$ //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         checkAndAdd(proposals, prefix, "import"); //$NON-NLS-1$
       }
     }
@@ -635,7 +635,7 @@ public enum PomTemplateContext {
   protected void addTemplates(MavenProject project, IProject eclipsePrj, Collection<Template> templates,
       Node currentNode, String prefix) throws CoreException {
     if(handlesFiles()) {
-      addFileTemplates(project, eclipsePrj, templates, currentNode, prefix, name().toLowerCase().endsWith("directory"),
+      addFileTemplates(project, eclipsePrj, templates, currentNode, prefix, name().toLowerCase().endsWith("directory"), //$NON-NLS-1$
           null);
     }
   }
@@ -659,7 +659,7 @@ public enum PomTemplateContext {
       prefixPath = prefix.substring(0, lastSep) + '/';
       prefix = prefix.substring(lastSep + 1);
     } else {
-      prefixPath = "";
+      prefixPath = ""; //$NON-NLS-1$
     }
     String interpolated = simpleInterpolate(project, prefixPath);
     parentPath = interpolated == null ? prefixPath : interpolated;
@@ -703,13 +703,13 @@ public enum PomTemplateContext {
         } else if(dirsOnly) {
           continue;
         }
-        template = template.replace("$", "$$");
+        template = template.replace("$", "$$"); //$NON-NLS-1$ //$NON-NLS-2$
 
         if(wrapperNode != null) {
-          template = '<' + wrapperNode + '>' + template + "${cursor}</" + wrapperNode + '>';
+          template = '<' + wrapperNode + '>' + template + "${cursor}</" + wrapperNode + '>'; //$NON-NLS-1$
         }
 
-        templates.add(new PomTemplate(f.getName(), "", getContextTypeId(), template, false).image(getFileIcon(f))
+        templates.add(new PomTemplate(f.getName(), "", getContextTypeId(), template, false).image(getFileIcon(f)) //$NON-NLS-1$
             .matchValue(value).relevance(rel-- ).retriggerOnApply(retrigger));
       }
     }
@@ -759,13 +759,13 @@ public enum PomTemplateContext {
     Node moduleNode = node;
     if(moduleNode != null) {
       Node modulesNode;
-      if("modules".equals(moduleNode.getLocalName())) {
+      if("modules".equals(moduleNode.getLocalName())) { //$NON-NLS-1$
         modulesNode = moduleNode;
       } else {
         modulesNode = moduleNode.getParentNode();
       }
       while(modulesNode != null) {
-        for(Element el : XmlUtils.findChilds((Element) modulesNode, "module")) {
+        for(Element el : XmlUtils.findChilds((Element) modulesNode, "module")) { //$NON-NLS-1$
           if(el != moduleNode) {
             String val = XmlUtils.getTextValue(el);
             if(val != null) {
@@ -773,9 +773,9 @@ public enum PomTemplateContext {
             }
           }
         }
-        Node profileProjectNode = getAncestor(modulesNode, "profile", "profiles", "project");
+        Node profileProjectNode = getAncestor(modulesNode, "profile", "profiles", "project"); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         if(profileProjectNode != null) {
-          modulesNode = getChildWithName(profileProjectNode, "modules");
+          modulesNode = getChildWithName(profileProjectNode, "modules"); //$NON-NLS-1$
         } else {
           modulesNode = null;
         }
@@ -803,7 +803,7 @@ public enum PomTemplateContext {
           }
 
           String name = dir.getFileName().toString();
-          if(name.startsWith(".")) {
+          if(name.startsWith(".")) { //$NON-NLS-1$
             // skip dotfiles
             return FileVisitResult.SKIP_SUBTREE;
           }
@@ -813,7 +813,7 @@ public enum PomTemplateContext {
             return FileVisitResult.CONTINUE;
           }
 
-          if(projectPath.equals(dir) && pctx.prefixPath.startsWith("../")) {
+          if(projectPath.equals(dir) && pctx.prefixPath.startsWith("../")) { //$NON-NLS-1$
             // skip this project's dir entirely when looking for modules in parent dir
             return FileVisitResult.SKIP_SUBTREE;
           }
@@ -824,12 +824,12 @@ public enum PomTemplateContext {
           }
 
           //TODO polyglot?
-          if(Arrays.asList("src", "target", "bin").contains(name) && dir.resolve("../pom.xml").toFile().exists()) {
+          if(Arrays.asList("src", "target", "bin").contains(name) && dir.resolve("../pom.xml").toFile().exists()) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
             // skip recursing into certain the project dirs
             return FileVisitResult.SKIP_SUBTREE;
           }
 
-          if(dir.resolve("pom.xml").toFile().exists()) {
+          if(dir.resolve("pom.xml").toFile().exists()) { //$NON-NLS-1$
 
             if(submodulesSearch) {
               // we were looking for submodules and found at least one
@@ -881,13 +881,13 @@ public enum PomTemplateContext {
       if(path.startsWith(prefix)) {
         String value = path;
         String template = value;
-        template = template.replace("$", "$$");
+        template = template.replace("$", "$$"); //$NON-NLS-1$ //$NON-NLS-2$
 
         Image image;
         String description;
         int rel;
         boolean retrigger = false;
-        if(path.endsWith("/")) {
+        if(path.endsWith("/")) { //$NON-NLS-1$
           image = MavenEditorImages.IMG_DISCOVERY;
           description = NLS.bind(Messages.PomTemplateContext_submodules, path);
           rel = submoduleRel-- ;
@@ -898,7 +898,7 @@ public enum PomTemplateContext {
           rel = moduleRel-- ;
         }
         if(wrap) {
-          template = "<module>" + template + "${cursor}</module>";
+          template = "<module>" + template + "${cursor}</module>"; //$NON-NLS-1$ //$NON-NLS-2$
         }
 
         proposals.add(new PomTemplate(value, description, getContextTypeId(), template, false).image(image)
@@ -1145,7 +1145,7 @@ public enum PomTemplateContext {
     }
     String version = null;
     //see if we can find the dependency is in dependency management of resolved project.
-    String id = groupId + ":" + artifactId + ":";
+    String id = groupId + ":" + artifactId + ":"; //$NON-NLS-1$ //$NON-NLS-2$
     DependencyManagement dm = project.getDependencyManagement();
     if(dm != null) {
       for(Dependency dep : dm.getDependencies()) {

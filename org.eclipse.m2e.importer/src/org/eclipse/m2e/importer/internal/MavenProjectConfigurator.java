@@ -50,7 +50,7 @@ import org.eclipse.ui.wizards.datatransfer.ProjectConfigurator;
 
 public class MavenProjectConfigurator implements ProjectConfigurator {
 
-    public static final String UPDATE_MAVEN_CONFIGURATION_JOB_NAME = "Update Maven projects configuration";
+    public static final String UPDATE_MAVEN_CONFIGURATION_JOB_NAME = "Update Maven projects configuration"; //$NON-NLS-1$
 
     private static class CumulativeMappingDiscoveryJob extends MappingDiscoveryJob {
         private static CumulativeMappingDiscoveryJob INSTANCE;
@@ -101,7 +101,7 @@ public class MavenProjectConfigurator implements ProjectConfigurator {
         public void addProjects(Collection<IProject> projects) {
             synchronized (this.toProcess) {
                 if (this.started) {
-                    throw new IllegalStateException("Cannot add projects when processing is started");
+                    throw new IllegalStateException("Cannot add projects when processing is started"); //$NON-NLS-1$
                 }
                 if (projects != null) {
                     this.toProcess.addAll(projects);
@@ -173,7 +173,7 @@ public class MavenProjectConfigurator implements ProjectConfigurator {
                 }
             }
             return new Status(IStatus.CANCEL, Activator.getDefault().getBundle().getSymbolicName(),
-                    "Cancelled by user");
+                    "Cancelled by user"); //$NON-NLS-1$
         }
 
         @Override
@@ -292,8 +292,8 @@ public class MavenProjectConfigurator implements ProjectConfigurator {
     public Set<IFolder> getFoldersToIgnore(IProject project, IProgressMonitor monitor) {
         Set<IFolder> res = new HashSet<>();
         // TODO: get these values from pom/project config
-        res.add(project.getFolder("src"));
-        res.add(project.getFolder("target"));
+        res.add(project.getFolder("src")); //$NON-NLS-1$
+        res.add(project.getFolder("target")); //$NON-NLS-1$
         return res;
     }
 

@@ -89,7 +89,7 @@ public class SearchControl extends ControlContribution {
     clearToolItem.setEnabled(false);
     clearToolItem.setImage(MavenEditorImages.IMG_CLEAR);
     clearToolItem.setDisabledImage(MavenEditorImages.IMG_CLEAR_DISABLED);
-    clearToolItem.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> searchText.setText("")));
+    clearToolItem.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> searchText.setText(""))); //$NON-NLS-1$
 
     searchText.addModifyListener(e -> clearToolItem.setEnabled(searchText.getText().length() > 0));
 

@@ -72,14 +72,14 @@ public class LifecycleMappingDialog extends Dialog implements ISelectionChangedL
   @Override
   protected void configureShell(Shell shell) {
     super.configureShell(shell);
-    shell.setText(NLS.bind("Ignore {0}", goal));
+    shell.setText(NLS.bind("Ignore {0}", goal)); //$NON-NLS-1$
   }
 
   @Override
   protected Control createDialogArea(Composite parent) {
     Composite container = (Composite) super.createDialogArea(parent);
     Label label = new Label(container, SWT.NONE);
-    label.setText("Select location to place ignore");
+    label.setText("Select location to place ignore"); //$NON-NLS-1$
     pomComposite = new PomHierarchyComposite(container, SWT.BORDER);
     pomComposite.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
     pomComposite.addSelectionChangedListener(this);
@@ -113,13 +113,13 @@ public class LifecycleMappingDialog extends Dialog implements ISelectionChangedL
 
   private void updateStatus(ParentHierarchyEntry project) {
     if(project.getResource() == null) {
-      status.setText("Non-workspace pom");
+      status.setText("Non-workspace pom"); //$NON-NLS-1$
       status.setImage(PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJS_ERROR_TSK));
     } else if(project.equals(pluginProject)) {
-      status.setText("Plugin definition in selected pom.");
+      status.setText("Plugin definition in selected pom."); //$NON-NLS-1$
       status.setImage(null);
     } else {
-      status.setText("");
+      status.setText(""); //$NON-NLS-1$
       status.setImage(null);
     }
   }
@@ -140,13 +140,13 @@ public class LifecycleMappingDialog extends Dialog implements ISelectionChangedL
   private ParentHierarchyEntry locatePlugin() {
     MavenProject project = facade.getMavenProject(); // if we got here, facade.getMavenProject cannot be null
 
-    Plugin plugin = project.getPlugin(pluginGroupId + ":" + pluginArtifactId);
+    Plugin plugin = project.getPlugin(pluginGroupId + ":" + pluginArtifactId); //$NON-NLS-1$
 
     if(plugin == null) {
       return null; // can't really happy
     }
 
-    InputLocation location = plugin.getLocation("");
+    InputLocation location = plugin.getLocation(""); //$NON-NLS-1$
 
     if(location == null || location.getSource() == null || location.getSource().getLocation() == null) {
       // that's odd. where does this come from???

@@ -139,7 +139,7 @@ public class DefaultClasspathManagerDelegate implements IClasspathManagerDelegat
         File artifactFile = a.getFile();
         if(artifactFile != null /*&& artifactFile.canRead()*/) {
           entry = classpath.addLibraryEntry(Path.fromOSString(artifactFile.getAbsolutePath()));
-          entry.setClasspathAttribute(IClasspathManager.TEST_ATTRIBUTE, addTestFlag ? "true" : null);
+          entry.setClasspathAttribute(IClasspathManager.TEST_ATTRIBUTE, addTestFlag ? "true" : null); //$NON-NLS-1$
         }
       }
 
@@ -154,9 +154,9 @@ public class DefaultClasspathManagerDelegate implements IClasspathManagerDelegat
     projectTestAttributes.forEach((entryPath, testAttributes) -> {
       //the classpath definitely has an entry matching the path
       IClasspathEntryDescriptor descriptor = findClasspathDescriptor(classpath, entryPath);
-      descriptor.setClasspathAttribute(IClasspathManager.TEST_ATTRIBUTE, (testAttributes.isTest) ? "true" : null);
+      descriptor.setClasspathAttribute(IClasspathManager.TEST_ATTRIBUTE, (testAttributes.isTest) ? "true" : null); //$NON-NLS-1$
       descriptor.setClasspathAttribute(IClasspathManager.WITHOUT_TEST_CODE,
-          (testAttributes.excludeTestSources) ? "true" : null);
+          (testAttributes.excludeTestSources) ? "true" : null); //$NON-NLS-1$
     });
   }
 
@@ -165,7 +165,7 @@ public class DefaultClasspathManagerDelegate implements IClasspathManagerDelegat
   }
 
   private boolean isTestArtifact(Artifact a) {
-    return BuildPathManager.CLASSIFIER_TESTS.equals(a.getClassifier()) || "test-jar".equals(a.getType());
+    return BuildPathManager.CLASSIFIER_TESTS.equals(a.getClassifier()) || "test-jar".equals(a.getType()); //$NON-NLS-1$
   }
 
   private IClasspathEntryDescriptor findClasspathDescriptor(IClasspathDescriptor classpath, IPath p) {

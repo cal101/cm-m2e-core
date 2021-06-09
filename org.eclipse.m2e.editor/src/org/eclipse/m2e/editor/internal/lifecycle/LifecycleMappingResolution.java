@@ -87,9 +87,9 @@ public class LifecycleMappingResolution extends AbstractLifecycleMappingResoluti
     final IFile[] pomFile = new IFile[1];
     PlatformUI.getWorkbench().getDisplay().syncExec(() -> {
       LifecycleMappingDialog dialog = new LifecycleMappingDialog(Display.getCurrent().getActiveShell(),
-          (IFile) getMarker().getResource(), getMarker().getAttribute(IMavenConstants.MARKER_ATTR_GROUP_ID, ""),
-          getMarker().getAttribute(IMavenConstants.MARKER_ATTR_ARTIFACT_ID, ""),
-          getMarker().getAttribute(IMavenConstants.MARKER_ATTR_GOAL, ""));
+          (IFile) getMarker().getResource(), getMarker().getAttribute(IMavenConstants.MARKER_ATTR_GROUP_ID, ""), //$NON-NLS-1$
+          getMarker().getAttribute(IMavenConstants.MARKER_ATTR_ARTIFACT_ID, ""), //$NON-NLS-1$
+          getMarker().getAttribute(IMavenConstants.MARKER_ATTR_GOAL, "")); //$NON-NLS-1$
       dialog.setBlockOnOpen(true);
       if(dialog.open() == Window.OK) {
         pomFile[0] = dialog.getPomFile();

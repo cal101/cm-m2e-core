@@ -175,7 +175,7 @@ public class PropertiesSection {
           if(!pp.getValue().equals(value)) {
             setText(old, value);
           }
-        }, LOG, "error updating property");
+        }, LOG, "error updating property"); //$NON-NLS-1$
       } finally {
         propertiesEditor.setInput(getProperties());
       }
@@ -184,7 +184,7 @@ public class PropertiesSection {
 
   void createNewProperty() {
     MavenPropertyDialog dialog = new MavenPropertyDialog(propertiesSection.getShell(), //
-        Messages.PropertiesSection_title_addProperty, "", "", listener); //$NON-NLS-1$//$NON-NLS-2$ //$NON-NLS-3$
+        Messages.PropertiesSection_title_addProperty, "", "", listener); //$NON-NLS-1$//$NON-NLS-2$
     if(dialog.open() == IDialogConstants.OK_ID) {
       final String key = dialog.getName();
       final String value = dialog.getValue();
@@ -192,7 +192,7 @@ public class PropertiesSection {
         page.performEditOperation(document -> {
           Element prop = getChild(document.getDocumentElement(), PROPERTIES, key);
           setText(prop, value);
-        }, LOG, "error creating property");
+        }, LOG, "error creating property"); //$NON-NLS-1$
       } finally {
         propertiesEditor.setInput(getProperties());
       }
@@ -211,7 +211,7 @@ public class PropertiesSection {
           }
           removeIfNoChildElement(props);
         }
-      }, LOG, "error deleting property");
+      }, LOG, "error deleting property"); //$NON-NLS-1$
     } finally {
       propertiesEditor.setInput(getProperties());
     }

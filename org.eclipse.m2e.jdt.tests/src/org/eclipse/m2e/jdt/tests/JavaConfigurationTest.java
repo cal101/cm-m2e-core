@@ -37,20 +37,20 @@ public class JavaConfigurationTest extends AbstractMavenProjectTestCase {
   public void testFileChangeUpdatesJDTSettings() throws CoreException, IOException, InterruptedException {
     ((MavenConfigurationImpl) MavenPlugin.getMavenConfiguration()).setAutomaticallyUpdateConfiguration(true);
     setAutoBuilding(true);
-    File pomFileFS = new File(FileLocator.toFileURL(getClass().getResource("/projects/compilerSettings/pom.xml")).getFile());
+    File pomFileFS = new File(FileLocator.toFileURL(getClass().getResource("/projects/compilerSettings/pom.xml")).getFile()); //$NON-NLS-1$
     IProject project = importProject(pomFileFS.getAbsolutePath());
     waitForJobsToComplete();
     IJavaProject javaProject = (IJavaProject) project.getNature(JavaCore.NATURE_ID);
-    assertEquals("1.8", javaProject.getOption(JavaCore.COMPILER_SOURCE, false));
-    IFile pomFileWS = project.getFile("pom.xml");
+    assertEquals("1.8", javaProject.getOption(JavaCore.COMPILER_SOURCE, false)); //$NON-NLS-1$
+    IFile pomFileWS = project.getFile("pom.xml"); //$NON-NLS-1$
     byte[] bytes = new byte[(int) pomFileFS.length()];
     try (InputStream stream = pomFileWS.getContents()) {
       stream.read(bytes);
     }
     String contents = new String(bytes);
-    contents = contents.replace("1.8", "11");
+    contents = contents.replace("1.8", "11"); //$NON-NLS-1$ //$NON-NLS-2$
     pomFileWS.setContents(new ByteArrayInputStream(contents.getBytes()), true, false, null);
     waitForJobsToComplete();
-    assertEquals("11", javaProject.getOption(JavaCore.COMPILER_SOURCE, false));
+    assertEquals("11", javaProject.getOption(JavaCore.COMPILER_SOURCE, false)); //$NON-NLS-1$
   }
 }

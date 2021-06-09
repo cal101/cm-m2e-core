@@ -26,8 +26,8 @@ public class InitializationOptionsProvider implements org.eclipse.wildwebdevelop
 
 	static Map<String, Object> toLemMinXOptions(IMavenConfiguration config) {
 		Map<String, Object> mavenSettings = new HashMap<>(2, 1.f);
-		Optional.ofNullable(config.getGlobalSettingsFile()).ifPresent(globalSettings -> mavenSettings.put("globalSettings", globalSettings));
-		Optional.ofNullable(config.getUserSettingsFile()).ifPresent(userSettings -> mavenSettings.put("userSettings", userSettings));
-		return Map.of("maven", mavenSettings);		
+		Optional.ofNullable(config.getGlobalSettingsFile()).ifPresent(globalSettings -> mavenSettings.put("globalSettings", globalSettings)); //$NON-NLS-1$
+		Optional.ofNullable(config.getUserSettingsFile()).ifPresent(userSettings -> mavenSettings.put("userSettings", userSettings)); //$NON-NLS-1$
+		return Map.of("maven", mavenSettings);		 //$NON-NLS-1$
 	}
 }

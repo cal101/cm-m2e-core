@@ -146,10 +146,10 @@ public class PomHyperlinkDetector implements IHyperlinkDetector {
     if(current != null) {
       Node artNode = null;
       Node groupNode = null;
-      if(ARTIFACT_ID.equals(current.getNodeName())) { //$NON-NLS-1$
+      if(ARTIFACT_ID.equals(current.getNodeName())) {
         artNode = current;
       }
-      if(GROUP_ID.equals(current.getNodeName())) { //$NON-NLS-1$
+      if(GROUP_ID.equals(current.getNodeName())) {
         groupNode = current;
       }
       //only on artifactid and groupid elements..
@@ -161,10 +161,10 @@ public class PomHyperlinkDetector implements IHyperlinkDetector {
       boolean isPlugin = false;
       if(root != null) {
         String name = root.getNodeName();
-        if(DEPENDENCY.equals(name)) { //$NON-NLS-1$
+        if(DEPENDENCY.equals(name)) {
           isDependency = true;
         }
-        if(PLUGIN.equals(name)) { //$NON-NLS-1$
+        if(PLUGIN.equals(name)) {
           isPlugin = true;
         }
       } else {
@@ -180,13 +180,13 @@ public class PomHyperlinkDetector implements IHyperlinkDetector {
         Node child = childs.item(i);
         if(child instanceof Element) {
           Element el = (Element) child;
-          if(VERSION.equals(el.getNodeName())) { //$NON-NLS-1$
+          if(VERSION.equals(el.getNodeName())) {
             return null;
           }
-          if(artNode == null && ARTIFACT_ID.equals(el.getNodeName())) { //$NON-NLS-1$
+          if(artNode == null && ARTIFACT_ID.equals(el.getNodeName())) {
             artNode = el;
           }
-          if(groupNode == null && GROUP_ID.equals(el.getNodeName())) { //$NON-NLS-1$
+          if(groupNode == null && GROUP_ID.equals(el.getNodeName())) {
             groupNode = el;
           }
         }
@@ -219,7 +219,7 @@ public class PomHyperlinkDetector implements IHyperlinkDetector {
 
       public String getHyperlinkText() {
         return NLS.bind(org.eclipse.m2e.editor.internal.Messages.PomHyperlinkDetector_link_managed,
-            "" + region.groupId + ":" + region.artifactId);
+            "" + region.groupId + ":" + region.artifactId); //$NON-NLS-1$ //$NON-NLS-2$
       }
 
       public String getTypeLabel() {
@@ -264,7 +264,7 @@ public class PomHyperlinkDetector implements IHyperlinkDetector {
         if(list != null) {
           for(Dependency dep : list) {
             if(dep.getManagementKey().startsWith(id)) {
-              InputLocation location = dep.getLocation(ARTIFACT_ID); //$NON-NLS-1$
+              InputLocation location = dep.getLocation(ARTIFACT_ID);
               //when would this be null?
               if(location != null) {
                 openLocation = location;
@@ -285,7 +285,7 @@ public class PomHyperlinkDetector implements IHyperlinkDetector {
           if(list != null) {
             for(Plugin plg : list) {
               if(id.equals(plg.getKey())) {
-                InputLocation location = plg.getLocation(ARTIFACT_ID); //$NON-NLS-1$
+                InputLocation location = plg.getLocation(ARTIFACT_ID);
                 //when would this be null?
                 if(location != null) {
                   openLocation = location;
@@ -316,7 +316,7 @@ public class PomHyperlinkDetector implements IHyperlinkDetector {
           start = -1;
         }
         int end = after.indexOf("}"); //$NON-NLS-1$
-        if(after.indexOf("${") != -1 && after.indexOf("${") < end) {//$NON-NLS-1$
+        if(after.indexOf("${") != -1 && after.indexOf("${") < end) {//$NON-NLS-1$ //$NON-NLS-2$
           //we might be in between two expressions..
           end = -1;
         }
@@ -363,9 +363,9 @@ public class PomHyperlinkDetector implements IHyperlinkDetector {
           if(mdl.getProperties().containsKey(region.property)) {
             location = mdl.getLocation(PROPERTIES).getLocation(region.property);
           } else if(region.property != null && region.property.startsWith("project.")) {//$NON-NLS-1$
-            if("project.version".equals(region.property)) {
+            if("project.version".equals(region.property)) { //$NON-NLS-1$
               location = mdl.getLocation(VERSION);
-            } else if("project.name".equals(region.property)) {
+            } else if("project.name".equals(region.property)) { //$NON-NLS-1$
               location = mdl.getLocation(NAME);
             }
           }
@@ -383,7 +383,7 @@ public class PomHyperlinkDetector implements IHyperlinkDetector {
   }
 
   public static boolean canCreateHyperLink(final ExpressionRegion region) {
-    if("project.version".equals(region.property) || "project.name".equals(region.property)) {
+    if("project.version".equals(region.property) || "project.name".equals(region.property)) { //$NON-NLS-1$ //$NON-NLS-2$
       return true;
     }
     return region.project != null && region.project.getModel().getProperties().containsKey(region.property);
@@ -437,7 +437,7 @@ public class PomHyperlinkDetector implements IHyperlinkDetector {
       }
 
       public String getHyperlinkText() {
-        return NLS.bind("Open definition in parent for {0}", mark.getAnnotation().getText()); //TODO if there are multiple markers in one spot, how to differentiate better..
+        return NLS.bind("Open definition in parent for {0}", mark.getAnnotation().getText()); //TODO if there are multiple markers in one spot, how to differentiate better.. //$NON-NLS-1$
       }
 
       public void open() {
@@ -539,7 +539,7 @@ public class PomHyperlinkDetector implements IHyperlinkDetector {
     Element parent = (Element) current;
     String parentName = parent.getNodeName();
     if(DEPENDENCY.equals(parentName) || PARENT.equals(parentName) || PLUGIN.equals(parentName)
-        || "reportPlugin".equals(parentName) || EXTENSION.equals(parentName)) {
+        || "reportPlugin".equals(parentName) || EXTENSION.equals(parentName)) { //$NON-NLS-1$
       final Node groupId = XmlUtils.findChild(parent, GROUP_ID);
       final Node artifactId = XmlUtils.findChild(parent, ARTIFACT_ID);
       final Node version = XmlUtils.findChild(parent, VERSION);

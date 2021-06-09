@@ -72,7 +72,7 @@ public class PomQuickAssistProcessor implements IQuickAssistProcessor {
           }
         } catch(Exception e) {
           MvnIndexPlugin.getDefault().getLog()
-              .log(new Status(IStatus.ERROR, MvnIndexPlugin.PLUGIN_ID, "Exception in pom quick assist.", e));
+              .log(new Status(IStatus.ERROR, MvnIndexPlugin.PLUGIN_ID, "Exception in pom quick assist.", e)); //$NON-NLS-1$
         }
       }
     }

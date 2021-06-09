@@ -210,7 +210,7 @@ public class DependenciesComposite extends Composite {
             }
           }
           removeIfNoChildElement(deps);
-        }, log, "error removing dependencies");
+        }, log, "error removing dependencies"); //$NON-NLS-1$
       } finally {
         setDependenciesInput();
       }
@@ -225,7 +225,7 @@ public class DependenciesComposite extends Composite {
         d.setDependency(toApacheDependency(dependency));
         if(d.open() == Window.OK) {
           try {
-            editorPage.performEditOperation(d.getEditOperation(), log, "Error updating dependency");
+            editorPage.performEditOperation(d.getEditOperation(), log, "Error updating dependency"); //$NON-NLS-1$
           } finally {
             setDependenciesInput();
             dependenciesEditor.setSelection(Collections.singletonList((Object) dependency));
@@ -270,7 +270,7 @@ public class DependenciesComposite extends Composite {
             PomHelper.addOrUpdateDependency(depsEl, dep.group, dep.artifact,
                 isManaged(dep.group, dep.artifact, dep.version) ? null : dep.version, dep.type, selectedScope,
                 dep.classifier);
-          }, log, "errror adding dependency");
+          }, log, "errror adding dependency"); //$NON-NLS-1$
         } finally {
           setDependenciesInput();
           List<Dependency> deps = getDependencies();
@@ -407,7 +407,7 @@ public class DependenciesComposite extends Composite {
             removeChild(deps, dep);
           }
           removeIfNoChildElement(deps);
-        }, log, "error removing managed dependencies");
+        }, log, "error removing managed dependencies"); //$NON-NLS-1$
       } finally {
         setDependencyManagementInput();
         dependenciesEditor.refresh();
@@ -421,7 +421,7 @@ public class DependenciesComposite extends Composite {
       d.setDependency(toApacheDependency(dependency));
       if(d.open() == Window.OK) {
         try {
-          editorPage.performEditOperation(d.getEditOperation(), log, "Error updating dependency");
+          editorPage.performEditOperation(d.getEditOperation(), log, "Error updating dependency"); //$NON-NLS-1$
         } finally {
           setDependencyManagementInput();
           dependencyManagementEditor.setSelection(Collections.singletonList(dependency));
@@ -454,7 +454,7 @@ public class DependenciesComposite extends Composite {
             Element depsEl = getChild(document.getDocumentElement(), DEPENDENCY_MANAGEMENT, DEPENDENCIES);
             PomHelper.addOrUpdateDependency(depsEl, dep.group, dep.artifact, dep.version, dep.type, selectedScope,
                 dep.classifier);
-          }, log, "errror adding dependency");
+          }, log, "errror adding dependency"); //$NON-NLS-1$
         } finally {
           setDependencyManagementInput();
           List<Dependency> dlist = getManagedDependencies();
@@ -588,7 +588,7 @@ public class DependenciesComposite extends Composite {
     // Create a job to update the contents of the viewers when the
     // filter text is modified. Using a job is in this way lets us
     // defer updating the field while the user is typing.
-    final Job updateJob = new WorkbenchJob("Update Maven Dependency Viewers") {
+    final Job updateJob = new WorkbenchJob("Update Maven Dependency Viewers") { //$NON-NLS-1$
       public IStatus runInUIThread(IProgressMonitor monitor) {
         dependenciesViewer.refresh();
         dependencyManagementViewer.refresh();
@@ -708,7 +708,7 @@ public class DependenciesComposite extends Composite {
             }
           }, true));
         } catch(Exception ex) {
-          log.error("Error loading managed dependencies", ex);
+          log.error("Error loading managed dependencies", ex); //$NON-NLS-1$
         }
       }
       return manageddependencies;
@@ -738,7 +738,7 @@ public class DependenciesComposite extends Composite {
             }
           }, true));
         } catch(Exception ex) {
-          log.error("Error loading dependencies", ex);
+          log.error("Error loading dependencies", ex); //$NON-NLS-1$
         }
       }
       return dependencies;
@@ -779,7 +779,7 @@ public class DependenciesComposite extends Composite {
         }
         if(!found) {
           //now check the temporary keys
-          if(!temporaryRemovedDependencies.contains(mavenDep.getGroupId() + ":" + mavenDep.getArtifactId())) {
+          if(!temporaryRemovedDependencies.contains(mavenDep.getGroupId() + ":" + mavenDep.getArtifactId())) { //$NON-NLS-1$
             deps.add(mavenDep);
           }
         }

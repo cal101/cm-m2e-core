@@ -78,7 +78,7 @@ public abstract class AbstractProjectConversionParticipant implements IExecutabl
     if(str == null) {
       return null;
     }
-    String[] split = str.split(",");
+    String[] split = str.split(","); //$NON-NLS-1$
     ArrayList<String> list = new ArrayList<>(split.length);
     for(String s : split) {
       s = s.trim();

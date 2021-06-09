@@ -112,7 +112,7 @@ public class MavenPomEditor extends FormEditor implements IResourceChangeListene
     ISearchEditorAccess, IMavenProjectChangedListener {
   private static final Logger log = LoggerFactory.getLogger(MavenPomEditor.class);
 
-  public static final String POM_XML = "pom.xml";
+  public static final String POM_XML = "pom.xml"; //$NON-NLS-1$
 
   public static final String EDITOR_ID = "org.eclipse.m2e.editor.MavenPomEditor"; //$NON-NLS-1$
 
@@ -260,7 +260,7 @@ public class MavenPomEditor extends FormEditor implements IResourceChangeListene
         try {
           IMarker[] markers = pomFile.findMarkers(IMavenConstants.MARKER_ID, true, IResource.DEPTH_ZERO);
           final String msg = markers != null && markers.length > 0 //
-              ? markers[0].getAttribute(IMarker.MESSAGE, "Unknown error")
+              ? markers[0].getAttribute(IMarker.MESSAGE, "Unknown error") //$NON-NLS-1$
               : null;
           final int severity = markers != null && markers.length > 0
               ? (markers[0].getAttribute(IMarker.SEVERITY, IMarker.SEVERITY_ERROR) == IMarker.SEVERITY_WARNING
@@ -586,9 +586,9 @@ public class MavenPomEditor extends FormEditor implements IResourceChangeListene
 
       DependencyNode root = MavenPlugin.getMavenModelManager().readDependencyTree(facade, mavenProject, classpath,
           monitor);
-      root.setData("LEVEL", "ROOT");
+      root.setData("LEVEL", "ROOT"); //$NON-NLS-1$ //$NON-NLS-2$
       for(DependencyNode nd : root.getChildren()) {
-        nd.setData("LEVEL", "DIRECT");
+        nd.setData("LEVEL", "DIRECT"); //$NON-NLS-1$ //$NON-NLS-2$
       }
       rootNodes.put(classpath, root);
     }
@@ -928,14 +928,14 @@ public class MavenPomEditor extends FormEditor implements IResourceChangeListene
 
   private void reloadMavenProjectCache() {
     //reload the cached MavenProject instance here.
-    Job jb = new Job("reload maven project") {
+    Job jb = new Job("reload maven project") { //$NON-NLS-1$
       @Override
       protected IStatus run(IProgressMonitor monitor) {
         try {
           //we're not interested in the result, just want to get the MP instance cached.
           readMavenProject(true, monitor);
         } catch(CoreException e) {
-          log.error("failed to load maven project for " + getEditorInput(), e);
+          log.error("failed to load maven project for " + getEditorInput(), e); //$NON-NLS-1$
         }
         return Status.OK_STATUS;
       }

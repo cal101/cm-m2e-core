@@ -87,7 +87,7 @@ public abstract class AbstractSourcesGenerationProjectConfigurator extends Abstr
   }
 
   protected String getOutputFolderParameterName() {
-    return "outputDirectory";
+    return "outputDirectory"; //$NON-NLS-1$
   }
 
 }

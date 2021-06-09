@@ -99,9 +99,9 @@ import org.eclipse.m2e.editor.internal.Messages;
  * @author Eugene Kuleshov
  */
 public abstract class MavenPomEditorPage extends FormPage {
-  private static final String MODIFY_LISTENER = "MODIFY_LISTENER";
+  private static final String MODIFY_LISTENER = "MODIFY_LISTENER"; //$NON-NLS-1$
 
-  private static final String VALUE_PROVIDER = "VALUE_PROVIDER";
+  private static final String VALUE_PROVIDER = "VALUE_PROVIDER"; //$NON-NLS-1$
 
   private static final Logger LOG = LoggerFactory.getLogger(MavenPomEditorPage.class);
 
@@ -202,7 +202,7 @@ public abstract class MavenPomEditorPage extends FormPage {
             }.schedule();
           }
         } catch(Exception e) {
-          LOG.error("Error finding parent element", e);
+          LOG.error("Error finding parent element", e); //$NON-NLS-1$
         }
 
       }
@@ -289,10 +289,10 @@ public abstract class MavenPomEditorPage extends FormPage {
             if(toAdd != null) {
               //errors get prepended while warnings get appended.
               if(toAdd.getAttribute(IMarker.SEVERITY, -1) == IMarker.SEVERITY_ERROR) {
-                text = NLS.bind(Messages.MavenPomEditorPage_error_add, toAdd.getAttribute(IMarker.MESSAGE, "")) + text; //$NON-NLS-2$
+                text = NLS.bind(Messages.MavenPomEditorPage_error_add, toAdd.getAttribute(IMarker.MESSAGE, "")) + text; //$NON-NLS-1$
               } else {
                 text = text
-                    + NLS.bind(Messages.MavenPomEditorPage_warning_add, toAdd.getAttribute(IMarker.MESSAGE, "")); //$NON-NLS-2$
+                    + NLS.bind(Messages.MavenPomEditorPage_warning_add, toAdd.getAttribute(IMarker.MESSAGE, "")); //$NON-NLS-1$
               }
             }
           }
@@ -361,7 +361,7 @@ public abstract class MavenPomEditorPage extends FormPage {
         if(!getManagedForm().getForm().isDisposed()) {
           ISourceViewer sourceViewer = null;
           try {
-            Method getSourceViewer = AbstractTextEditor.class.getDeclaredMethod("getSourceViewer");
+            Method getSourceViewer = AbstractTextEditor.class.getDeclaredMethod("getSourceViewer"); //$NON-NLS-1$
             getSourceViewer.setAccessible(true);
             sourceViewer = (ISourceViewer) getSourceViewer.invoke(getPomEditor().getSourcePage());
           } catch(NoSuchMethodException | SecurityException | IllegalAccessException | IllegalArgumentException
@@ -426,7 +426,7 @@ public abstract class MavenPomEditorPage extends FormPage {
    */
   public final void createEvaluatorInfo(final Control control) {
     if(!(control instanceof Text || control instanceof CCombo)) {
-      throw new IllegalArgumentException("Not a Text or CCombo");
+      throw new IllegalArgumentException("Not a Text or CCombo"); //$NON-NLS-1$
     }
     FieldDecoration fieldDecoration = FieldDecorationRegistry.getDefault()
         .getFieldDecoration(FieldDecorationRegistry.DEC_INFORMATION);
@@ -442,7 +442,7 @@ public abstract class MavenPomEditorPage extends FormPage {
           return FormUtils.simpleInterpolate(mp,
               control instanceof Text ? ((Text) control).getText() : ((CCombo) control).getText());
         }
-        return "Cannot interpolate expressions, not resolvable file.";
+        return "Cannot interpolate expressions, not resolvable file."; //$NON-NLS-1$
       }
 
     };
@@ -454,7 +454,7 @@ public abstract class MavenPomEditorPage extends FormPage {
         SelectionListener.widgetSelectedAdapter(e -> decoration.showHoverText(decoration.getDescriptionText())));
     ModifyListener listener = e -> {
       String text = control instanceof Text ? ((Text) control).getText() : ((CCombo) control).getText();
-      if(text.indexOf("${") != -1 && text.indexOf("}") != -1) {
+      if(text.indexOf("${") != -1 && text.indexOf("}") != -1) { //$NON-NLS-1$ //$NON-NLS-2$
         decoration.show();
       } else {
         decoration.hide();
@@ -515,7 +515,7 @@ public abstract class MavenPomEditorPage extends FormPage {
       public void modifyText(ModifyEvent e) {
         final ElementValueProvider provider = (ElementValueProvider) control.getData(VALUE_PROVIDER);
         if(provider == null) {
-          throw new IllegalStateException("no value provider for " + control);
+          throw new IllegalStateException("no value provider for " + control); //$NON-NLS-1$
         }
         performEditOperation(document -> {
           String text = getText(control);
@@ -534,7 +534,7 @@ public abstract class MavenPomEditorPage extends FormPage {
             Element el2 = provider.get(document);
             setText(el2, text);
           }
-        }, LOG, "Error updating document");
+        }, LOG, "Error updating document"); //$NON-NLS-1$
       }
     };
     control.setData(MODIFY_LISTENER, ml);

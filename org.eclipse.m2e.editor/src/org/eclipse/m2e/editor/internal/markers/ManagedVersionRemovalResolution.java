@@ -93,7 +93,7 @@ public class ManagedVersionRemovalResolution extends AbstractPomProblemResolutio
           LOG.error("Unable to find the marked element"); //$NON-NLS-1$
           continue;
         }
-        Element value = XmlUtils.findChild(artifact, VERSION_NODE); //$NON-NLS-1$ //$NON-NLS-2$
+        Element value = XmlUtils.findChild(artifact, VERSION_NODE);
         if(value instanceof IndexedRegion) {
           IndexedRegion off = (IndexedRegion) value;
 
@@ -122,18 +122,18 @@ public class ManagedVersionRemovalResolution extends AbstractPomProblemResolutio
     if(root == null) {
       return null;
     }
-    String groupId = marker.getAttribute("groupId", null);
-    String artifactId = marker.getAttribute("artifactId", null);
+    String groupId = marker.getAttribute("groupId", null); //$NON-NLS-1$
+    String artifactId = marker.getAttribute("artifactId", null); //$NON-NLS-1$
     assert groupId != null;
     assert artifactId != null;
 
-    String profile = marker.getAttribute("profile", null);
+    String profile = marker.getAttribute("profile", null); //$NON-NLS-1$
     Element artifactParent = root;
     if(profile != null) {
-      Element profileRoot = XmlUtils.findChild(root, "profiles");
+      Element profileRoot = XmlUtils.findChild(root, "profiles"); //$NON-NLS-1$
       if(profileRoot != null) {
-        for(Element prf : XmlUtils.findChilds(profileRoot, "profile")) {
-          if(profile.equals(XmlUtils.getTextValue(XmlUtils.findChild(prf, "id")))) {
+        for(Element prf : XmlUtils.findChilds(profileRoot, "profile")) { //$NON-NLS-1$
+          if(profile.equals(XmlUtils.getTextValue(XmlUtils.findChild(prf, "id")))) { //$NON-NLS-1$
             artifactParent = prf;
             break;
           }
@@ -142,17 +142,17 @@ public class ManagedVersionRemovalResolution extends AbstractPomProblemResolutio
     }
     if(!isDependency) {
       //we have plugins now, need to go one level down to build
-      artifactParent = XmlUtils.findChild(artifactParent, "build");
+      artifactParent = XmlUtils.findChild(artifactParent, "build"); //$NON-NLS-1$
     }
     if(artifactParent == null) {
       return null;
     }
-    Element list = XmlUtils.findChild(artifactParent, isDependency ? "dependencies" : "plugins");
+    Element list = XmlUtils.findChild(artifactParent, isDependency ? "dependencies" : "plugins"); //$NON-NLS-1$ //$NON-NLS-2$
     if(list == null) {
       return null;
     }
     Element artifact = null;
-    for(Element art : XmlUtils.findChilds(list, isDependency ? "dependency" : "plugin")) {
+    for(Element art : XmlUtils.findChilds(list, isDependency ? "dependency" : "plugin")) { //$NON-NLS-1$ //$NON-NLS-2$
       String grpString = XmlUtils.getTextValue(XmlUtils.findChild(art, GROUP_ID_NODE));
       String artString = XmlUtils.getTextValue(XmlUtils.findChild(art, ARTIFACT_ID_NODE));
       if(groupId.equals(grpString) && artifactId.equals(artString)) {

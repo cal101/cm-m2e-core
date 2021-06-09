@@ -116,7 +116,7 @@ public class OpenJavaDocAction extends ActionDelegate {
       });
 
     } catch(CoreException ex) {
-      log.error("Can't download Javadoc for " + name, ex);
+      log.error("Can't download Javadoc for " + name, ex); //$NON-NLS-1$
       openDialog(NLS.bind(Messages.OpenJavaDocAction_error_download, name));
       // TODO search index and offer to select other version
     }

@@ -204,7 +204,7 @@ public class MavenJdtPlugin extends Plugin {
     private boolean done;
 
     public WorkspaceSourceDownloadJob() {
-      super("Scheduling source/javadoc downloads");
+      super("Scheduling source/javadoc downloads"); //$NON-NLS-1$
       setPriority(BuildPathManager.SOURCE_DOWNLOAD_PRIORITY);//low priority job
     }
 

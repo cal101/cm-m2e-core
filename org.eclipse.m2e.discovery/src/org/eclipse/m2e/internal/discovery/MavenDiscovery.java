@@ -165,7 +165,7 @@ public class MavenDiscovery {
       }
     } catch(FileNotFoundException e) {
       // CatalogItem does not contain lifecycle mapping
-      log.info("No lifecyle mapping found at " + url);
+      log.info("No lifecyle mapping found at " + url); //$NON-NLS-1$
     } catch(Exception e) {
       log.warn(NLS.bind(Messages.MavenCatalogViewer_Error_loading_lifecycle, ci.getId()), e);
     }

@@ -71,7 +71,7 @@ public class InsertExpressionProposal
     if(mavprj != null) {
       Model mdl = mavprj.getModel();
       if(mdl.getProperties() != null && mdl.getProperties().containsKey(key)) {
-        if(mdl.getLocation("properties") != null) {
+        if(mdl.getLocation("properties") != null) { //$NON-NLS-1$
           InputLocation location = mdl.getLocation("properties").getLocation(key); //$NON-NLS-1$
           if(location != null) {
             //MNGECLIPSE-2539 apparently you can have an InputLocation with null input source.
@@ -103,7 +103,7 @@ public class InsertExpressionProposal
       document.replace(offset, region.getLength(), replace);
       len = replace.length();
     } catch(BadLocationException e) {
-      log.error("Cannot apply proposal", e);
+      log.error("Cannot apply proposal", e); //$NON-NLS-1$
     }
   }
 

@@ -88,9 +88,9 @@ public class PomContentAssistProcessor extends DefaultXMLCompletionProposalCompu
       PomTemplateContext.UNKNOWN);
 
   private static List<String> hardwiredProperties = Collections.unmodifiableList(Arrays.asList( //
-      "basedir", "project.basedir", //
-      "project.version", "project.groupId", "project.artifactId", "project.version", "project.name", //
-      "project.build.directory", "project.build.outputDirectory"));
+      "basedir", "project.basedir", // //$NON-NLS-1$ //$NON-NLS-2$
+      "project.version", "project.groupId", "project.artifactId", "project.version", "project.name", // //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+      "project.build.directory", "project.build.outputDirectory")); //$NON-NLS-1$ //$NON-NLS-2$
 
   protected void addTagNameProposals(ContentAssistRequest contentAssistRequest, int childPosition,
       CompletionProposalInvocationContext ctx) {
@@ -145,8 +145,8 @@ public class PomContentAssistProcessor extends DefaultXMLCompletionProposalCompu
 
         String currentProp = null;
         Node node = request.getParent();
-        if(PomTemplateContext.getAncestor(node, "properties", "project") != null
-            || PomTemplateContext.getAncestor(node, "properties", "profile", "profiles", "project") != null) {
+        if(PomTemplateContext.getAncestor(node, "properties", "project") != null //$NON-NLS-1$ //$NON-NLS-2$
+            || PomTemplateContext.getAncestor(node, "properties", "profile", "profiles", "project") != null) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
           currentProp = node.getLocalName();
         }
 
@@ -270,7 +270,7 @@ public class PomContentAssistProcessor extends DefaultXMLCompletionProposalCompu
         }
       }
     }
-    if((context == PomTemplateContext.PROJECT && XmlUtils.findChild((Element) node, "licenses") == null)
+    if((context == PomTemplateContext.PROJECT && XmlUtils.findChild((Element) node, "licenses") == null) //$NON-NLS-1$
         || context == PomTemplateContext.LICENSES) {
       Region region = new Region(request.getReplacementBeginPosition(), 0);
       request.addProposal(new InsertSPDXLicenseProposal(sourceViewer, context, region));

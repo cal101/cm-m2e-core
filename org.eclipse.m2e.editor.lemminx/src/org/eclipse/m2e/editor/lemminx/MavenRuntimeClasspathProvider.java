@@ -34,10 +34,10 @@ public class MavenRuntimeClasspathProvider implements LemminxClasspathExtensionP
 	public MavenRuntimeClasspathProvider() {
 		if (mavenConfigurationlistener == null) {
 			final IMavenConfiguration mavenConfiguration = MavenPlugin.getMavenConfiguration();
-			final LanguageServerDefinition lemminxDefinition = LanguageServersRegistry.getInstance().getDefinition("org.eclipse.wildwebdeveloper.xml");
+			final LanguageServerDefinition lemminxDefinition = LanguageServersRegistry.getInstance().getDefinition("org.eclipse.wildwebdeveloper.xml"); //$NON-NLS-1$
 			if (mavenConfiguration != null && lemminxDefinition != null) {
 				mavenConfigurationlistener = event -> {
-					DidChangeConfigurationParams params = new DidChangeConfigurationParams(Map.of("xml", InitializationOptionsProvider.toLemMinXOptions(mavenConfiguration)));
+					DidChangeConfigurationParams params = new DidChangeConfigurationParams(Map.of("xml", InitializationOptionsProvider.toLemMinXOptions(mavenConfiguration))); //$NON-NLS-1$
 					LanguageServiceAccessor.getActiveLanguageServers(null).stream().filter(server -> lemminxDefinition.equals(LanguageServiceAccessor.resolveServerDefinition(server).get()))
 						.forEach(ls -> ls.getWorkspaceService().didChangeConfiguration(params));
 				};
@@ -49,14 +49,14 @@ public class MavenRuntimeClasspathProvider implements LemminxClasspathExtensionP
 	@Override
 	public List<File> get() {
 		List<File> mavenRuntimeJars = new ArrayList<>();
-		File jarDir = BundleResolver.getBundleResource("org.eclipse.m2e.maven.runtime", "/jars/");
+		File jarDir = BundleResolver.getBundleResource("org.eclipse.m2e.maven.runtime", "/jars/"); //$NON-NLS-1$ //$NON-NLS-2$
 		for (File jar : jarDir.listFiles()) {
 			if (!jar.isDirectory()) {
 				mavenRuntimeJars.add(jar);
 			}
 		}
 		// Indexer jars
-		jarDir = BundleResolver.getBundleResource("org.eclipse.m2e.editor.lemminx", "/indexer-jars/");
+		jarDir = BundleResolver.getBundleResource("org.eclipse.m2e.editor.lemminx", "/indexer-jars/"); //$NON-NLS-1$ //$NON-NLS-2$
 		for (File jar : jarDir.listFiles()) {
 			if (!jar.isDirectory()) {
 				mavenRuntimeJars.add(jar);
@@ -64,8 +64,8 @@ public class MavenRuntimeClasspathProvider implements LemminxClasspathExtensionP
 		}
 		// Libraries that are also required and not included in org.eclipse.m2e.maven.runtime
 		try {
-			mavenRuntimeJars.add(FileLocator.getBundleFile(Platform.getBundle("javax.inject")));
-			mavenRuntimeJars.add(FileLocator.getBundleFile(Platform.getBundle("org.slf4j.api")));
+			mavenRuntimeJars.add(FileLocator.getBundleFile(Platform.getBundle("javax.inject"))); //$NON-NLS-1$
+			mavenRuntimeJars.add(FileLocator.getBundleFile(Platform.getBundle("org.slf4j.api"))); //$NON-NLS-1$
 		} catch (IOException e) {
 			// TODO
 		}

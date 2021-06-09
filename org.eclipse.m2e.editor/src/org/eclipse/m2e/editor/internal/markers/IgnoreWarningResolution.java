@@ -55,7 +55,7 @@ public class IgnoreWarningResolution extends AbstractPomProblemResolution {
 
   @Override
   public String getLabel() {
-    return "Ignore this warning";
+    return "Ignore this warning"; //$NON-NLS-1$
   }
 
   @Override
@@ -87,18 +87,18 @@ public class IgnoreWarningResolution extends AbstractPomProblemResolution {
         if(reg instanceof Element) { //just a simple guard against moved marker
           String currentLine = StringUtils
               .convertToHTMLContent(doc.get(reg.getStartOffset(), reg.getEndOffset() - reg.getStartOffset()));
-          String insert = StringUtils.convertToHTMLContent("<!--" + markupText + "-->");
-          return "<html>...<br>" + currentLine + "<b>" + insert + "</b><br>...<html>"; //$NON-NLS-1$ //$NON-NLS-2$
+          String insert = StringUtils.convertToHTMLContent("<!--" + markupText + "-->"); //$NON-NLS-1$ //$NON-NLS-2$
+          return "<html>...<br>" + currentLine + "<b>" + insert + "</b><br>...<html>"; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         }
       } catch(BadLocationException e1) {
-        LOG.error("Error while computing completion proposal", e1);
+        LOG.error("Error while computing completion proposal", e1); //$NON-NLS-1$
       } finally {
         if(domModel != null) {
           domModel.releaseFromRead();
         }
       }
     }
-    return "Adds comment markup next to the affected element. No longer shows the warning afterwards";
+    return "Adds comment markup next to the affected element. No longer shows the warning afterwards"; //$NON-NLS-1$
   }
 
   @Override
@@ -127,7 +127,7 @@ public class IgnoreWarningResolution extends AbstractPomProblemResolution {
             }
           }
           if(reg instanceof Element) {
-            InsertEdit edit = new InsertEdit(reg.getEndOffset(), "<!--" + markupText + "-->");
+            InsertEdit edit = new InsertEdit(reg.getEndOffset(), "<!--" + markupText + "-->"); //$NON-NLS-1$ //$NON-NLS-2$
             try {
               edit.apply(doc);
               marker.delete();

@@ -32,14 +32,14 @@ public class NoopLifecycleMapping extends AbstractLifecycleMapping {
   /**
    * @since 1.3
    */
-  public static final String LIFECYCLE_MAPPING_ID = "NULL";
+  public static final String LIFECYCLE_MAPPING_ID = "NULL"; //$NON-NLS-1$
 
   public String getId() {
     return LIFECYCLE_MAPPING_ID;
   }
 
   public String getName() {
-    return "noop";
+    return "noop"; //$NON-NLS-1$
   }
 
   public void configure(ProjectConfigurationRequest request, IProgressMonitor monitor) {

@@ -65,7 +65,7 @@ public class OpenManagedVersionDefinitionResolution extends AbstractPomProblemRe
   @Override
   public String getDescription() {
     try {
-      String locationURIString = (String) getMarker().getAttribute("managedVersionLocation");
+      String locationURIString = (String) getMarker().getAttribute("managedVersionLocation"); //$NON-NLS-1$
       return NLS.bind(Messages.MavenMarkerResolution_openManaged_description, locationURIString);
     } catch(CoreException ex) {
       // ignore
@@ -76,11 +76,11 @@ public class OpenManagedVersionDefinitionResolution extends AbstractPomProblemRe
   @Override
   protected void processFix(IStructuredDocument doc, Element root, List<IMarker> markers) {
     try {
-      String locationURIString = (String) getMarker().getAttribute("managedVersionLocation");
+      String locationURIString = (String) getMarker().getAttribute("managedVersionLocation"); //$NON-NLS-1$
       if(locationURIString != null) {
         IFileStore fileStore = EFS.getLocalFileSystem().getStore(new URI(locationURIString));
-        int lineNumber = getMarker().getAttribute("managedVersionLine", -1);
-        int columnNumber = Math.max(1, getMarker().getAttribute("managedVersionColumn", -1));
+        int lineNumber = getMarker().getAttribute("managedVersionLine", -1); //$NON-NLS-1$
+        int columnNumber = Math.max(1, getMarker().getAttribute("managedVersionColumn", -1)); //$NON-NLS-1$
         XMLEditorUtility.openXmlEditor(fileStore, lineNumber, columnNumber, fileStore.getName());
       }
     } catch(Exception ex) {

@@ -77,7 +77,7 @@ public class PlexusConfigHelper {
       parameters = new ArrayList<>();
       processedClasses.put(paramClass, parameters);
 
-      log.debug("Loading properties of {}", paramClass.getName());
+      log.debug("Loading properties of {}", paramClass.getName()); //$NON-NLS-1$
       Map<String, Type> properties = getClassProperties(paramClass);
 
       for(Map.Entry<String, Type> e : properties.entrySet()) {
@@ -125,8 +125,8 @@ public class PlexusConfigHelper {
     // properties
     if(Properties.class.isAssignableFrom(paramClass)) {
 
-      MojoParameter nested = new MojoParameter("property", "property",
-          Arrays.asList(new MojoParameter("name", "String"), new MojoParameter("value", "String")));
+      MojoParameter nested = new MojoParameter("property", "property", //$NON-NLS-1$ //$NON-NLS-2$
+          Arrays.asList(new MojoParameter("name", "String"), new MojoParameter("value", "String"))); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 
       parameters.add(configure(new MojoParameter(name, getTypeDisplayName(paramType), nested), required, expression,
           description, defaultValue));
@@ -452,7 +452,7 @@ public class PlexusConfigHelper {
       URL.class.getName(),
       Date.class.getName(),
 
-      "org.codehaus.plexus.configuration.PlexusConfiguration"
+      "org.codehaus.plexus.configuration.PlexusConfiguration" //$NON-NLS-1$
     );
     // @formatter:on
   }

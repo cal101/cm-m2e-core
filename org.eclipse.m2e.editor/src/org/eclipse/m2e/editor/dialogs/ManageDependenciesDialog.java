@@ -257,7 +257,7 @@ public class ManageDependenciesDialog extends AbstractMavenDialog {
      */
 
     //First we remove the version from the original dependency
-    Job perform = new Job("Updating POM file(s)") {
+    Job perform = new Job("Updating POM file(s)") { //$NON-NLS-1$
       @Override
       protected IStatus run(IProgressMonitor monitor) {
         try {
@@ -269,8 +269,8 @@ public class ManageDependenciesDialog extends AbstractMavenDialog {
                 current, createRemoveVersionOperation(modelDeps)));
           }
         } catch(Exception e) {
-          LOG.error("Error updating managed dependencies", e);
-          return new Status(IStatus.ERROR, MavenEditorPlugin.PLUGIN_ID, "Error updating managed dependencies", e);
+          LOG.error("Error updating managed dependencies", e); //$NON-NLS-1$
+          return new Status(IStatus.ERROR, MavenEditorPlugin.PLUGIN_ID, "Error updating managed dependencies", e); //$NON-NLS-1$
         }
         return Status.OK_STATUS;
       }

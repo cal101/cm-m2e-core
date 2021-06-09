@@ -100,13 +100,13 @@ public class DependencyLabelProvider extends LabelProvider implements IColorProv
       String version = null;
       String scope = null;
       if(mp != null) {
-        String id = mp.getGroupId() + ":" + mp.getArtifactId() + ":" + mp.getVersion();
+        String id = mp.getGroupId() + ":" + mp.getArtifactId() + ":" + mp.getVersion(); //$NON-NLS-1$ //$NON-NLS-2$
         DependencyManagement dm = mp.getDependencyManagement();
         if(dm != null) {
           for(org.apache.maven.model.Dependency d : dm.getDependencies()) {
             if(d.getGroupId().equals(dep.groupId) && d.getArtifactId().equals(dep.artifactId)) {
               //based on location, try finding a match in the live Model
-              InputLocation location = d.getLocation("artifactId");
+              InputLocation location = d.getLocation("artifactId"); //$NON-NLS-1$
               if(location != null) {
                 if(id.equals(location.getSource().getModelId())) {
                   version = d.getVersion();
@@ -127,7 +127,7 @@ public class DependencyLabelProvider extends LabelProvider implements IColorProv
         String modelScope = modelDep.getScope();
         if(modelGroupId != null && modelGroupId.equals(dep.groupId) && modelArtifactId != null
             && modelArtifactId.equals(dep.artifactId)) {
-          if(version != null && (modelVersion == null || modelVersion.contains("${"))) {
+          if(version != null && (modelVersion == null || modelVersion.contains("${"))) { //$NON-NLS-1$
             //prefer the resolved version to the model one if the model version as expressions..
             return new String[] {version, modelScope == null ? scope : modelScope};
           }
@@ -146,7 +146,7 @@ public class DependencyLabelProvider extends LabelProvider implements IColorProv
       if(managed != null && managed[0] != null) {
         String man = managed[0];
         if(managed[1] != null && !Artifact.SCOPE_COMPILE.equals(managed[1])) {
-          man = man + "," + managed[1];
+          man = man + "," + managed[1]; //$NON-NLS-1$
         }
         ss.append(NLS.bind(Messages.DependencyLabelProvider_0, man), StyledString.DECORATIONS_STYLER);
       }

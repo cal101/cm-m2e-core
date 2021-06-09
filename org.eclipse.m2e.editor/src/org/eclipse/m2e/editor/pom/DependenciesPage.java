@@ -73,7 +73,7 @@ public class DependenciesPage extends MavenPomEditorPage {
     toolkit.adapt(link, true, true);
     link.setText(Messages.DependenciesPage_exclusions_link);
     link.addSelectionListener(SelectionListener
-        .widgetSelectedAdapter(e -> pomEditor.setActivePage(IMavenConstants.PLUGIN_ID + ".pom.dependencyTree")));
+        .widgetSelectedAdapter(e -> pomEditor.setActivePage(IMavenConstants.PLUGIN_ID + ".pom.dependencyTree"))); //$NON-NLS-1$
 
     searchControl = new SearchControl(Messages.DependenciesPage_find, managedForm);
 

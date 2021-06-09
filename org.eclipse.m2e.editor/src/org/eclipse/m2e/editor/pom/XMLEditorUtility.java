@@ -57,7 +57,7 @@ public class XMLEditorUtility {
       IWorkbenchPage page = window.getActivePage();
       if(page != null) {
         try {
-          if(!fileStore.getName().endsWith(".pom")) { //.pom means stuff from local repository?
+          if(!fileStore.getName().endsWith(".pom")) { //.pom means stuff from local repository? //$NON-NLS-1$
             IEditorPart part = IDE.openEditorOnFileStore(page, fileStore);
             reveal(selectEditorPage(part), line, column);
           } else {
@@ -70,7 +70,7 @@ public class XMLEditorUtility {
               IEditorPart part = OpenPomAction.openEditor(input, name);
               reveal(selectEditorPage(part), line, column);
             } catch(IOException e) {
-              log.error("failed opening editor", e);
+              log.error("failed opening editor", e); //$NON-NLS-1$
             }
           }
         } catch(PartInitException e) {
@@ -109,7 +109,7 @@ public class XMLEditorUtility {
         int offset = document.getLineOffset(line - 1);
         editor.selectAndReveal(offset + column - 1, 0);
       } catch(BadLocationException e) {
-        log.error("failed selecting part of editor", e);
+        log.error("failed selecting part of editor", e); //$NON-NLS-1$
       }
     }
   }

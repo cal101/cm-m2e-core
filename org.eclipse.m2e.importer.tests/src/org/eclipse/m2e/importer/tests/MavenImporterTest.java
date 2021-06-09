@@ -45,15 +45,15 @@ public class MavenImporterTest extends AbstractMavenProjectTestCase {
 
   @Before
   public void setUp() throws IOException {
-    projectDirectory = new File(Files.createTempDirectory("m2e-tests").toFile(), "example1");
-    projectDirectory.mkdirs(); //$NON-NLS-1$ //$NON-NLS-2$
-    copyDir(new File("resources/examples/example1"), projectDirectory);
+    projectDirectory = new File(Files.createTempDirectory("m2e-tests").toFile(), "example1"); //$NON-NLS-1$ //$NON-NLS-2$
+    projectDirectory.mkdirs();
+    copyDir(new File("resources/examples/example1"), projectDirectory); //$NON-NLS-1$
 
     // Make sure projects don't have Eclipse metadata set
-    new File(projectDirectory, ".project").delete();
-    new File(projectDirectory, ".classpath").delete();
-    new File(projectDirectory, "module1/.project").delete();
-    new File(projectDirectory, "module1/.classpath").delete();
+    new File(projectDirectory, ".project").delete(); //$NON-NLS-1$
+    new File(projectDirectory, ".classpath").delete(); //$NON-NLS-1$
+    new File(projectDirectory, "module1/.project").delete(); //$NON-NLS-1$
+    new File(projectDirectory, "module1/.classpath").delete(); //$NON-NLS-1$
   }
 
   @After

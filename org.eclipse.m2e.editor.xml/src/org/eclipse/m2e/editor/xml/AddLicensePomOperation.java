@@ -78,18 +78,18 @@ public class AddLicensePomOperation implements Operation {
   private Element createLicenses(Document doc) {
     Element licensesDom;
     if(region != null) {
-      licensesDom = insertAt(doc.createElement("licenses"), region.getOffset());
+      licensesDom = insertAt(doc.createElement("licenses"), region.getOffset()); //$NON-NLS-1$
     } else {
-      licensesDom = getChild(doc.getDocumentElement(), "licenses");
+      licensesDom = getChild(doc.getDocumentElement(), "licenses"); //$NON-NLS-1$
     }
 
-    setLicense(createElement(licensesDom, "license"));
+    setLicense(createElement(licensesDom, "license")); //$NON-NLS-1$
 
     return licensesDom;
   }
 
   private Element createLicense(Document doc) {
-    Element licenseDom = insertAt(doc.createElement("license"), region.getOffset());
+    Element licenseDom = insertAt(doc.createElement("license"), region.getOffset()); //$NON-NLS-1$
 
     setLicense(licenseDom);
 
@@ -97,8 +97,8 @@ public class AddLicensePomOperation implements Operation {
   }
 
   void setLicense(Element licenseDom) {
-    setText(getChild(licenseDom, "name"), license.getName());
-    setText(getChild(licenseDom, "url"), license.getURL());
+    setText(getChild(licenseDom, "name"), license.getName()); //$NON-NLS-1$
+    setText(getChild(licenseDom, "url"), license.getURL()); //$NON-NLS-1$
   }
 
   public Point getSelection() {

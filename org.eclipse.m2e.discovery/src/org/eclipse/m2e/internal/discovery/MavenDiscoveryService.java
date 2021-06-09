@@ -211,7 +211,7 @@ public class MavenDiscoveryService implements IMavenDiscoveryUI, IMavenDiscovery
           sources.add(src);
         }
 
-        metadataSourcesMap.put("bundleMetadataSources",
+        metadataSourcesMap.put("bundleMetadataSources", //$NON-NLS-1$
             Collections.singletonList((MappingMetadataSource) new SimpleMappingMetadataSource(sources)));
 
         List<MappingMetadataSource> metadataSources = LifecycleMappingFactory.asList(metadataSourcesMap);

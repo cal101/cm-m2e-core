@@ -203,12 +203,12 @@ class DownloadSourcesJob extends Job implements IBackgroundProcessingQueue {
     try {
       for(IProject mavenProject : toUpdateMavenProjects) {
         updateMonitor
-            .setTaskName(Messages.DownloadSourcesJob_job_associateWithClasspath + " - " + mavenProject.getName());
+            .setTaskName(Messages.DownloadSourcesJob_job_associateWithClasspath + " - " + mavenProject.getName()); //$NON-NLS-1$
         manager.updateClasspath(mavenProject, updateMonitor.split(1));
       }
       for(Map.Entry<IPackageFragmentRoot, Attachments> entry : toUpdateAttachments.entrySet()) {
         updateMonitor.setTaskName(
-            Messages.DownloadSourcesJob_job_associateWithClasspath + " - " + entry.getKey().getElementName());
+            Messages.DownloadSourcesJob_job_associateWithClasspath + " - " + entry.getKey().getElementName()); //$NON-NLS-1$
         manager.attachSourcesAndJavadoc(entry.getKey(), entry.getValue().sources, entry.getValue().javadoc,
             updateMonitor.split(1));
       }
@@ -224,9 +224,9 @@ class DownloadSourcesJob extends Job implements IBackgroundProcessingQueue {
     SubMonitor requestMonitor = SubMonitor.convert(monitor, 33);
     try {
       if(request.artifact != null) {
-        requestMonitor.setTaskName(getName() + ": " + request.artifact.getArtifactId());
+        requestMonitor.setTaskName(getName() + ": " + request.artifact.getArtifactId()); //$NON-NLS-1$
       } else if(request.project != null) {
-        requestMonitor.setTaskName(getName() + ": " + request.project.getName());
+        requestMonitor.setTaskName(getName() + ": " + request.project.getName()); //$NON-NLS-1$
       }
       IMavenProjectFacade projectFacade = projectManager.create(request.project, requestMonitor.split(1));
       if(projectFacade != null) {
@@ -242,7 +242,7 @@ class DownloadSourcesJob extends Job implements IBackgroundProcessingQueue {
             request.downloadJavaDoc, requestMonitor.split(2));
         if(request.fragment == null) {
           log.warn(
-              "IPackageFragmentRoot is missing, skipping javadoc/source attachment for project " + request.project);
+              "IPackageFragmentRoot is missing, skipping javadoc/source attachment for project " + request.project); //$NON-NLS-1$
         } else {
           toUpdateAttachments.put(request.fragment, files);
         }
@@ -254,7 +254,7 @@ class DownloadSourcesJob extends Job implements IBackgroundProcessingQueue {
 
     if(!exceptions.isEmpty()) {
       IStatus[] problems = exceptions.toArray(new IStatus[exceptions.size()]);
-      return new MultiStatus(MavenJdtPlugin.PLUGIN_ID, -1, problems, "Could not download sources or javadoc", null);
+      return new MultiStatus(MavenJdtPlugin.PLUGIN_ID, -1, problems, "Could not download sources or javadoc", null); //$NON-NLS-1$
     }
 
     return Status.OK_STATUS;
@@ -302,7 +302,7 @@ class DownloadSourcesJob extends Job implements IBackgroundProcessingQueue {
     if(attached[0] != null) {
       try {
         source = download(attached[0], repositories, monitor);
-        log.info("Downloaded sources for " + artifact.toString());
+        log.info("Downloaded sources for " + artifact.toString()); //$NON-NLS-1$
       } catch(CoreException e) {
         log.error("Could not download sources for " + artifact.toString(), e); //$NON-NLS-1$
       }
@@ -314,7 +314,7 @@ class DownloadSourcesJob extends Job implements IBackgroundProcessingQueue {
     if(attached[1] != null) {
       try {
         javadoc = download(attached[1], repositories, monitor);
-        log.info("Downloaded javadoc for " + artifact.toString());
+        log.info("Downloaded javadoc for " + artifact.toString()); //$NON-NLS-1$
       } catch(CoreException e) {
         log.error("Could not download javadoc for " + artifact.toString(), e); //$NON-NLS-1$
       }

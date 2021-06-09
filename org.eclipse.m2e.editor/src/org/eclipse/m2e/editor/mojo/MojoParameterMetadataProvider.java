@@ -111,7 +111,7 @@ public class MojoParameterMetadataProvider implements IMojoParameterMetadataProv
   public MojoParameter getClassConfiguration(final ArtifactKey pluginKey, final String className) throws CoreException {
 
     try {
-      String key = pluginKey.toPortableString() + "/" + className;
+      String key = pluginKey.toPortableString() + "/" + className; //$NON-NLS-1$
 
       return cache.get(key, () -> execute(pluginKey, (context, monitor) -> {
         PluginDescriptor pd = getPluginDescriptor(pluginKey, context, monitor);
@@ -213,7 +213,7 @@ public class MojoParameterMetadataProvider implements IMojoParameterMetadataProv
   }
 
   private MojoParameter getPredefined(ArtifactKey pluginKey) {
-    return PREDEF.get(pluginKey.getGroupId() + ":" + pluginKey.getArtifactId() + ":" + pluginKey.getVersion());
+    return PREDEF.get(pluginKey.getGroupId() + ":" + pluginKey.getArtifactId() + ":" + pluginKey.getVersion()); //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   <T> T execute(final ArtifactKey pluginKey, final ICallable<T> callable) throws CoreException {
@@ -346,26 +346,26 @@ public class MojoParameterMetadataProvider implements IMojoParameterMetadataProv
   static {
     // @formatter:off
     PREDEF = ImmutableMap
-        .<String, MojoParameter> of("org.eclipse.m2e:lifecycle-mapping:1.0.0",
-            new MojoParameter("", "",
+        .<String, MojoParameter> of("org.eclipse.m2e:lifecycle-mapping:1.0.0", //$NON-NLS-1$
+            new MojoParameter("", "", //$NON-NLS-1$ //$NON-NLS-2$
                 Collections
                     .singletonList(
-                        new MojoParameter("lifecycleMappingMetadata", "LifecycleMappingMetadata",
-                            Collections.singletonList(new MojoParameter("pluginExecutions", "List<PluginExecution>",
-                                Collections.singletonList(new MojoParameter("pluginExecution", "PluginExecution",
+                        new MojoParameter("lifecycleMappingMetadata", "LifecycleMappingMetadata", //$NON-NLS-1$ //$NON-NLS-2$
+                            Collections.singletonList(new MojoParameter("pluginExecutions", "List<PluginExecution>", //$NON-NLS-1$ //$NON-NLS-2$
+                                Collections.singletonList(new MojoParameter("pluginExecution", "PluginExecution", //$NON-NLS-1$ //$NON-NLS-2$
                                     Arrays.asList(
-                                        new MojoParameter("pluginExecutionFilter", "PluginExecutionFilter",
-                                            Arrays.asList(new MojoParameter("groupId", "String"),
-                                                new MojoParameter("artifactId", "String"),
-                                                new MojoParameter("versionRange", "String"),
-                                                new MojoParameter("goals", "List<String>",
+                                        new MojoParameter("pluginExecutionFilter", "PluginExecutionFilter", //$NON-NLS-1$ //$NON-NLS-2$
+                                            Arrays.asList(new MojoParameter("groupId", "String"), //$NON-NLS-1$ //$NON-NLS-2$
+                                                new MojoParameter("artifactId", "String"), //$NON-NLS-1$ //$NON-NLS-2$
+                                                new MojoParameter("versionRange", "String"), //$NON-NLS-1$ //$NON-NLS-2$
+                                                new MojoParameter("goals", "List<String>", //$NON-NLS-1$ //$NON-NLS-2$
                                                     Collections.singletonList(
-                                                        new MojoParameter("goal", "String").multiple())))),
-                                        new MojoParameter("action", "Action",
-                                            Arrays.asList(new MojoParameter("ignore", "void"),
-                                                new MojoParameter("execute", "Execute",
-                                                    Arrays.asList(new MojoParameter("runOnIncremental", "boolean"),
-                                                        new MojoParameter("runOnConfiguration", "boolean")))))))
+                                                        new MojoParameter("goal", "String").multiple())))), //$NON-NLS-1$ //$NON-NLS-2$
+                                        new MojoParameter("action", "Action", //$NON-NLS-1$ //$NON-NLS-2$
+                                            Arrays.asList(new MojoParameter("ignore", "void"), //$NON-NLS-1$ //$NON-NLS-2$
+                                                new MojoParameter("execute", "Execute", //$NON-NLS-1$ //$NON-NLS-2$
+                                                    Arrays.asList(new MojoParameter("runOnIncremental", "boolean"), //$NON-NLS-1$ //$NON-NLS-2$
+                                                        new MojoParameter("runOnConfiguration", "boolean"))))))) //$NON-NLS-1$ //$NON-NLS-2$
                                                             .multiple())))))));
     // @formatter:on
   }

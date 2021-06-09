@@ -41,9 +41,9 @@ import org.eclipse.m2e.jdt.internal.ModuleSupport;
 public abstract class AbstractClassifierClasspathProvider
     implements IClassifierClasspathProvider, IExecutableExtension {
 
-  private static final String ATTR_ID = "id";
+  private static final String ATTR_ID = "id"; //$NON-NLS-1$
 
-  private static final String ATTR_NAME = "name";
+  private static final String ATTR_NAME = "name"; //$NON-NLS-1$
 
   private String id;
 

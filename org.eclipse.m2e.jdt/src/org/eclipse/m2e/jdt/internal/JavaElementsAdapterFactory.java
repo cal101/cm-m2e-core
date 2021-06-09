@@ -59,7 +59,7 @@ public class JavaElementsAdapterFactory implements IAdapterFactory {
           try {
             return adapterType.cast(getBuildPathManager().findArtifact(project, fragment.getPath()));
           } catch(CoreException ex) {
-            log.error("Can't find artifact for " + fragment, ex);
+            log.error("Can't find artifact for " + fragment, ex); //$NON-NLS-1$
             return null;
           }
         }

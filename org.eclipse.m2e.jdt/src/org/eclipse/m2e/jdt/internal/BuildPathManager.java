@@ -244,10 +244,10 @@ public class BuildPathManager implements IMavenProjectChangedListener, IResource
       return new MavenClasspathContainerSaveHelper().readContainer(is);
     } catch(IOException ex) {
       throw new CoreException(new Status(IStatus.ERROR, MavenJdtPlugin.PLUGIN_ID, -1, //
-          "Can't read classpath container state for " + project.getName(), ex));
+          "Can't read classpath container state for " + project.getName(), ex)); //$NON-NLS-1$
     } catch(ClassNotFoundException ex) {
       throw new CoreException(new Status(IStatus.ERROR, MavenJdtPlugin.PLUGIN_ID, -1, //
-          "Can't read classpath container state for " + project.getName(), ex));
+          "Can't read classpath container state for " + project.getName(), ex)); //$NON-NLS-1$
     } finally {
       if(is != null) {
         try {
@@ -383,7 +383,7 @@ public class BuildPathManager implements IMavenProjectChangedListener, IResource
       return getClasspath(facade, scope, props, uniquePaths, monitor);
     } catch(IOException e) {
       throw new CoreException(new Status(IStatus.ERROR, MavenJdtPlugin.PLUGIN_ID, -1, //
-          "Can't save classpath container changes", e));
+          "Can't save classpath container changes", e)); //$NON-NLS-1$
     }
   }
 
@@ -565,7 +565,7 @@ public class BuildPathManager implements IMavenProjectChangedListener, IResource
       }
     } catch(IOException e) {
       throw new CoreException(
-          new Status(IStatus.ERROR, MavenJdtPlugin.PLUGIN_ID, -1, "Can't save classpath container changes", e));
+          new Status(IStatus.ERROR, MavenJdtPlugin.PLUGIN_ID, -1, "Can't save classpath container changes", e)); //$NON-NLS-1$
     }
 
     // update classpath container. suboptimal as this will re-calculate classpath

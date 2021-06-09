@@ -362,7 +362,7 @@ public class OverviewPage extends MavenPomEditorPage {
     artifactPackagingCombo.setData("name", "packaging"); //$NON-NLS-1$ //$NON-NLS-2$
     toolkit.paintBordersFor(artifactPackagingCombo);
     ElementValueProvider provider = new ElementValueProvider(PomEdits.PACKAGING);
-    provider.setDefaultValue("jar");
+    provider.setDefaultValue("jar"); //$NON-NLS-1$
     setElementValueProvider(artifactPackagingCombo, provider);
     setModifyListener(artifactPackagingCombo);
 
@@ -621,7 +621,7 @@ public class OverviewPage extends MavenPomEditorPage {
           }
         }, true));
       } catch(Exception e1) {
-        LOG.error("Cannot load modules", e1);
+        LOG.error("Cannot load modules", e1); //$NON-NLS-1$
       }
 
       for(String module : modules) {
@@ -671,7 +671,7 @@ public class OverviewPage extends MavenPomEditorPage {
             //now remove the <modules> element itself when there are no more elements left
             removeIfNoChildElement(modules);
           }
-        }, LOG, "error removing module entry");
+        }, LOG, "error removing module entry"); //$NON-NLS-1$
       } finally {
         loadThis(RELOAD_MODULES);
       }
@@ -695,7 +695,7 @@ public class OverviewPage extends MavenPomEditorPage {
             if(module != null && !value.equals(getTextValue(module))) {
               setText(module, value.toString());
             }
-          }, LOG, "error changing module entry");
+          }, LOG, "error changing module entry"); //$NON-NLS-1$
         } finally {
           loadThis(RELOAD_MODULES);
         }
@@ -1210,7 +1210,7 @@ public class OverviewPage extends MavenPomEditorPage {
           }
         }, true));
       } catch(Exception e) {
-        LOG.error("Failed to populate overview panel", e);
+        LOG.error("Failed to populate overview panel", e); //$NON-NLS-1$
       }
 
       addNotifyListener(artifactGroupIdText);
@@ -1269,7 +1269,7 @@ public class OverviewPage extends MavenPomEditorPage {
         if(findChild(modules, MODULE, textEquals(moduleName)) == null) {
           format(createElementWithText(modules, MODULE, moduleName));
         }
-      }, LOG, "error updating modules list for pom file");
+      }, LOG, "error updating modules list for pom file"); //$NON-NLS-1$
     } finally {
       loadThis(RELOAD_MODULES);
     }
@@ -1295,7 +1295,7 @@ public class OverviewPage extends MavenPomEditorPage {
         vals[2] = version;
       }, true));
     } catch(Exception ex) {
-      LOG.error("Error getting values from document", ex);
+      LOG.error("Error getting values from document", ex); //$NON-NLS-1$
     }
 
     final String parentGroupId = vals[0];
@@ -1346,7 +1346,7 @@ public class OverviewPage extends MavenPomEditorPage {
             }
           }));
         } catch(Exception e) {
-          LOG.error("Error updating parent reference in file:" + pomFile, e);
+          LOG.error("Error updating parent reference in file:" + pomFile, e); //$NON-NLS-1$
         }
       }
 

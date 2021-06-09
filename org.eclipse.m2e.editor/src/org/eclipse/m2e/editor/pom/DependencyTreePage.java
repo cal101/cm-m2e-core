@@ -574,7 +574,7 @@ public class DependencyTreePage extends FormPage implements IMavenProjectChanged
     // Create a job to update the contents of the viewers when the
     // filter text is modified. Using a job is in this way lets us
     // defer updating the field while the user is typing.
-    final Job updateJob = new WorkbenchJob("Update Maven Dependency Viewers") {
+    final Job updateJob = new WorkbenchJob("Update Maven Dependency Viewers") { //$NON-NLS-1$
       public IStatus runInUIThread(IProgressMonitor monitor) {
         if(!listViewer.getTable().isDisposed()) {
           isSettingSelection = true;
@@ -825,10 +825,10 @@ public class DependencyTreePage extends FormPage implements IMavenProjectChanged
         StringBuilder label = new StringBuilder(128);
 
         if(showGroupId) {
-          label.append(a.getGroupId()).append(" : ");
+          label.append(a.getGroupId()).append(" : "); //$NON-NLS-1$
         }
 
-        label.append(a.getArtifactId()).append(" : ");
+        label.append(a.getArtifactId()).append(" : "); //$NON-NLS-1$
 
         String nodeVersion = a.getBaseVersion();
         label.append(nodeVersion);
@@ -836,14 +836,14 @@ public class DependencyTreePage extends FormPage implements IMavenProjectChanged
         String premanagedVersion = DependencyManagerUtils.getPremanagedVersion(node);
 
         if(premanagedVersion != null && !premanagedVersion.equals(nodeVersion)) {
-          label.append(" (managed from ").append(premanagedVersion).append(")");
+          label.append(" (managed from ").append(premanagedVersion).append(")"); //$NON-NLS-1$ //$NON-NLS-2$
         }
 
         DependencyNode winner = (DependencyNode) node.getData().get(ConflictResolver.NODE_DATA_WINNER);
         if(winner != null) {
           String winnerVersion = winner.getArtifact().getVersion();
           if(!nodeVersion.equals(winnerVersion)) {
-            label.append(" (omitted for conflict with ").append(winnerVersion).append(")");
+            label.append(" (omitted for conflict with ").append(winnerVersion).append(")"); //$NON-NLS-1$ //$NON-NLS-2$
           }
         }
 
@@ -851,12 +851,12 @@ public class DependencyTreePage extends FormPage implements IMavenProjectChanged
           label.append(Messages.DependencyTreePage_0).append(a.getClassifier());
         }
 
-        label.append(" [").append(node.getDependency().getScope()).append("]");
+        label.append(" [").append(node.getDependency().getScope()).append("]"); //$NON-NLS-1$ //$NON-NLS-2$
 
         String premanagedScope = DependencyManagerUtils.getPremanagedScope(node);
 
         if(premanagedScope != null) {
-          label.append(" (from ").append(premanagedScope).append(")");
+          label.append(" (from ").append(premanagedScope).append(")"); //$NON-NLS-1$ //$NON-NLS-2$
         }
 
         return label.toString();
@@ -899,7 +899,7 @@ public class DependencyTreePage extends FormPage implements IMavenProjectChanged
       if(element instanceof Artifact) {
         Artifact a = (Artifact) element;
         String scope = a.getScope();
-        if(scope != null && !"compile".equals(scope) && !isMatching(a)) {
+        if(scope != null && !"compile".equals(scope) && !isMatching(a)) { //$NON-NLS-1$
           return Display.getDefault().getSystemColor(SWT.COLOR_DARK_GRAY);
         }
       }
@@ -928,17 +928,17 @@ public class DependencyTreePage extends FormPage implements IMavenProjectChanged
         StringBuilder label = new StringBuilder(64);
 
         if(showGroupId) {
-          label.append(a.getGroupId()).append(" : ");
+          label.append(a.getGroupId()).append(" : "); //$NON-NLS-1$
         }
 
-        label.append(a.getArtifactId()).append(" : ").append(a.getVersion());
+        label.append(a.getArtifactId()).append(" : ").append(a.getVersion()); //$NON-NLS-1$
 
         if(a.hasClassifier()) {
-          label.append(" - ").append(a.getClassifier());
+          label.append(" - ").append(a.getClassifier()); //$NON-NLS-1$
         }
 
         if(a.getScope() != null) {
-          label.append(" [").append(a.getScope()).append("]");
+          label.append(" [").append(a.getScope()).append("]"); //$NON-NLS-1$ //$NON-NLS-2$
         }
 
         return label.toString();
@@ -1012,7 +1012,7 @@ public class DependencyTreePage extends FormPage implements IMavenProjectChanged
     }
 
     protected String getKey(String groupId, String artifactId) {
-      return groupId + ":" + artifactId;
+      return groupId + ":" + artifactId; //$NON-NLS-1$
     }
 
   }
@@ -1130,7 +1130,7 @@ public class DependencyTreePage extends FormPage implements IMavenProjectChanged
    */
   private static class Highlighter implements IPropertyChangeListener, IDisposable {
 
-    private static final String HIGHLIGHT_BG_COLOR_NAME = "org.eclipse.search.ui.match.highlight";
+    private static final String HIGHLIGHT_BG_COLOR_NAME = "org.eclipse.search.ui.match.highlight"; //$NON-NLS-1$
 
     private Color backgroundColor;
 
