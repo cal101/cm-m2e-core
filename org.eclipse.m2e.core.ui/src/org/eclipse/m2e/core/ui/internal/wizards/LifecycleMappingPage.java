@@ -143,6 +143,7 @@ public class LifecycleMappingPage extends WizardPage {
    *
    * @param parent
    */
+  @Override
   public void createControl(Composite parent) {
     Composite container = new Composite(parent, SWT.NULL);
 
@@ -279,13 +280,16 @@ public class LifecycleMappingPage extends WizardPage {
 
     treeViewer.setContentProvider(new ITreeContentProvider() {
 
-      public void dispose() {
+        @Override
+        public void dispose() {
       }
 
-      public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+        @Override
+        public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
       }
 
-      public Object[] getElements(Object inputElement) {
+        @Override
+        public Object[] getElements(Object inputElement) {
         if(inputElement instanceof LifecycleMappingDiscoveryRequest) {
           Map<ILifecycleMappingRequirement, List<ILifecycleMappingLabelProvider>> packagings = new HashMap<>();
           Map<ILifecycleMappingRequirement, List<ILifecycleMappingLabelProvider>> mojos = new HashMap<>();
@@ -304,7 +308,8 @@ public class LifecycleMappingPage extends WizardPage {
                 }
                 val.add(new ILifecycleMappingLabelProvider() {
 
-                  public String getMavenText() {
+                                @Override
+                                public String getMavenText() {
                     String executionId = null;
                     if(requirement instanceof MojoExecutionMappingRequirement) {
                       executionId = ((MojoExecutionMappingRequirement) requirement).getExecutionId();
@@ -323,15 +328,18 @@ public class LifecycleMappingPage extends WizardPage {
                     return null;
                   }
 
-                  public boolean isError(LifecycleMappingDiscoveryRequest mappingConfiguration) {
+                                @Override
+                                public boolean isError(LifecycleMappingDiscoveryRequest mappingConfiguration) {
                     return !mappingConfiguration.isRequirementSatisfied(getKey());
                   }
 
-                  public ILifecycleMappingRequirement getKey() {
+                                @Override
+                                public ILifecycleMappingRequirement getKey() {
                     return requirement;
                   }
 
-                  @SuppressWarnings("synthetic-access")
+                                @Override
+                                @SuppressWarnings("synthetic-access")
                   public Collection<MavenProject> getProjects() {
                     MavenProject mavenProject;
                     try {
@@ -360,18 +368,21 @@ public class LifecycleMappingPage extends WizardPage {
         return null;
       }
 
-      public Object[] getChildren(Object parentElement) {
+        @Override
+        public Object[] getChildren(Object parentElement) {
         if(parentElement instanceof AggregateMappingLabelProvider) {
           return ((AggregateMappingLabelProvider) parentElement).getChildren();
         }
         return new Object[0];
       }
 
-      public Object getParent(Object element) {
+        @Override
+        public Object getParent(Object element) {
         return null;
       }
 
-      public boolean hasChildren(Object element) {
+        @Override
+        public boolean hasChildren(Object element) {
         Object[] children = getChildren(element);
         return children != null && children.length > 0;
       }
@@ -379,20 +390,25 @@ public class LifecycleMappingPage extends WizardPage {
     });
     treeViewer.setLabelProvider(new ITableLabelProvider() {
 
-      public void removeListener(ILabelProviderListener listener) {
+        @Override
+        public void removeListener(ILabelProviderListener listener) {
       }
 
-      public boolean isLabelProperty(Object element, String property) {
+        @Override
+        public boolean isLabelProperty(Object element, String property) {
         return false;
       }
 
-      public void dispose() {
+        @Override
+        public void dispose() {
       }
 
-      public void addListener(ILabelProviderListener listener) {
+        @Override
+        public void addListener(ILabelProviderListener listener) {
       }
 
-      @SuppressWarnings("synthetic-access")
+        @Override
+        @SuppressWarnings("synthetic-access")
       public String getColumnText(Object element, int columnIndex) {
         if(element instanceof ILifecycleMappingLabelProvider) {
           ILifecycleMappingLabelProvider prov = (ILifecycleMappingLabelProvider) element;
@@ -423,7 +439,8 @@ public class LifecycleMappingPage extends WizardPage {
         return null;
       }
 
-      @SuppressWarnings("synthetic-access")
+        @Override
+        @SuppressWarnings("synthetic-access")
       public Image getColumnImage(Object element, int columnIndex) {
         if(columnIndex != 0) {
           return null;
@@ -469,7 +486,8 @@ public class LifecycleMappingPage extends WizardPage {
     });
 
     treeViewer.setComparator(new ViewerComparator() {
-      public int compare(Viewer viewer, Object e1, Object e2) {
+        @Override
+        public int compare(Viewer viewer, Object e1, Object e2) {
         if(!(e1 instanceof ILifecycleMappingLabelProvider && e2 instanceof ILifecycleMappingLabelProvider)) {
           return super.compare(viewer, e1, e2);
         }
@@ -602,6 +620,7 @@ public class LifecycleMappingPage extends WizardPage {
     }
   }
 
+  @Override
   public boolean canFlipToNextPage() {
     return true;//getNextPage() != null;
   }

@@ -150,14 +150,16 @@ class LifecycleMappingsViewer {
     btnShowIgnored.setText(Messages.LifecycleMappingPropertyPage_mntmShowIgnoredExecutions_text);
     final Action actExpandAll = new Action(Messages.LifecycleMappingPropertyPage_mntmExpandAll_text,
         MavenImages.EXPANDALL) {
-      public void run() {
+        @Override
+        public void run() {
         mappingsTreeViewer.expandAll();
       }
     };
     actExpandAll.setEnabled(showPhases);
     final Action actCollapseAll = new Action(Messages.LifecycleMappingPropertyPage_mntmCollapseAll_text,
         MavenImages.COLLAPSEALL) {
-      public void run() {
+        @Override
+        public void run() {
         mappingsTreeViewer.collapseAll();
       }
     };
@@ -206,21 +208,26 @@ class LifecycleMappingsViewer {
 
     mappingsTreeViewer.setContentProvider(new ITreeContentProvider() {
 
-      public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
+        @Override
+        public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
       }
 
-      public void dispose() {
+        @Override
+        public void dispose() {
       }
 
-      public boolean hasChildren(Object element) {
+        @Override
+        public boolean hasChildren(Object element) {
         return getChildren(element) != null;
       }
 
-      public Object getParent(Object element) {
+        @Override
+        public Object getParent(Object element) {
         return null;
       }
 
-      public Object[] getElements(Object inputElement) {
+        @Override
+        public Object[] getElements(Object inputElement) {
         if(showPhases) {
           return phases.keySet().toArray();
         }
@@ -238,7 +245,8 @@ class LifecycleMappingsViewer {
         return executions.toArray();
       }
 
-      public Object[] getChildren(Object parentElement) {
+        @Override
+        public Object[] getChildren(Object parentElement) {
         List<MojoExecutionKey> executions = phases.get(parentElement);
         if(executions == null || executions.isEmpty()) {
           return null;
@@ -261,27 +269,33 @@ class LifecycleMappingsViewer {
 
     mappingsTreeViewer.setLabelProvider(new ITableLabelProvider() {
 
-      public void addListener(ILabelProviderListener listener) {
+        @Override
+        public void addListener(ILabelProviderListener listener) {
       }
 
-      public void dispose() {
+        @Override
+        public void dispose() {
       }
 
-      public boolean isLabelProperty(Object element, String property) {
+        @Override
+        public boolean isLabelProperty(Object element, String property) {
         return false;
       }
 
-      public void removeListener(ILabelProviderListener listener) {
+        @Override
+        public void removeListener(ILabelProviderListener listener) {
       }
 
-      public Image getColumnImage(Object element, int columnIndex) {
+        @Override
+        public Image getColumnImage(Object element, int columnIndex) {
         if(columnIndex == 0 && element instanceof MojoExecutionKey) {
           return isErrorMapping((MojoExecutionKey) element) ? MavenImages.IMG_ERROR : MavenImages.IMG_PASSED;
         }
         return null;
       }
 
-      public String getColumnText(Object element, int columnIndex) {
+        @Override
+        public String getColumnText(Object element, int columnIndex) {
         if(element instanceof MojoExecutionKey) {
           MojoExecutionKey execution = (MojoExecutionKey) element;
           switch(columnIndex) {

@@ -65,18 +65,22 @@ public class ProposalUtil {
       this.text = text;
     }
 
+    @Override
     public int getCursorPosition() {
       return text.length();
     }
 
+    @Override
     public String getContent() {
       return text;
     }
 
+    @Override
     public String getLabel() {
       return text;
     }
 
+    @Override
     public String getDescription() {
       return null;
     }
@@ -125,7 +129,8 @@ public class ProposalUtil {
   public static void addClassifierProposal(final IProject project, final Text groupIdText, final Text artifactIdText,
       final Text versionText, final Text classifierText, final Packaging packaging) {
     addCompletionProposal(classifierText, new Searcher() {
-      public Collection<String> search() throws CoreException {
+        @Override
+        public Collection<String> search() throws CoreException {
         return getSearchEngine(project).findClassifiers(
             escapeQuerySpecialCharacters(groupIdText.getText()), //
             escapeQuerySpecialCharacters(artifactIdText.getText()),
@@ -137,7 +142,8 @@ public class ProposalUtil {
   public static void addVersionProposal(final IProject project, final MavenProject mp, final Text groupIdText,
       final Text artifactIdText, final Text versionText, final Packaging packaging) {
     addCompletionProposal(versionText, new Searcher() {
-      public Collection<String> search() throws CoreException {
+        @Override
+        public Collection<String> search() throws CoreException {
         Collection<String> toRet = new ArrayList<>();
         toRet.addAll(getSearchEngine(project).findVersions(escapeQuerySpecialCharacters(groupIdText.getText()), //
             escapeQuerySpecialCharacters(artifactIdText.getText()), "", packaging));
@@ -164,7 +170,8 @@ public class ProposalUtil {
   public static void addArtifactIdProposal(final IProject project, final Text groupIdText, final Text artifactIdText,
       final Packaging packaging) {
     addCompletionProposal(artifactIdText, new Searcher() {
-      public Collection<String> search() throws CoreException {
+        @Override
+        public Collection<String> search() throws CoreException {
         // TODO handle artifact info
         return getSearchEngine(project).findArtifactIds(escapeQuerySpecialCharacters(groupIdText.getText()), "",
             packaging, null);
@@ -174,7 +181,8 @@ public class ProposalUtil {
 
   public static void addGroupIdProposal(final IProject project, final Text groupIdText, final Packaging packaging) {
     addCompletionProposal(groupIdText, new Searcher() {
-      public Collection<String> search() throws CoreException {
+        @Override
+        public Collection<String> search() throws CoreException {
         // TODO handle artifact info
         return getSearchEngine(project).findGroupIds(escapeQuerySpecialCharacters(groupIdText.getText()), packaging,
             null);

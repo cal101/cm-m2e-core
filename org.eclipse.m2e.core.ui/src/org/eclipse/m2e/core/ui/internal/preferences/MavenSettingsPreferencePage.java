@@ -103,9 +103,11 @@ public class MavenSettingsPreferencePage extends PreferencePage implements IWork
     this.maven = MavenPlugin.getMaven();
   }
 
+  @Override
   public void init(IWorkbench workbench) {
   }
 
+  @Override
   public void setVisible(boolean visible) {
     super.setVisible(visible);
     if(visible) {
@@ -139,7 +141,8 @@ public class MavenSettingsPreferencePage extends PreferencePage implements IWork
     }
 
     new Job(Messages.MavenSettingsPreferencePage_job_updating) {
-      protected IStatus run(IProgressMonitor monitor) {
+        @Override
+        protected IStatus run(IProgressMonitor monitor) {
         try {
           final File localRepositoryDir = new File(maven.getLocalRepository().getBasedir());
 
@@ -194,6 +197,7 @@ public class MavenSettingsPreferencePage extends PreferencePage implements IWork
     return true;
   }
 
+  @Override
   protected Control createContents(Composite parent) {
     Composite composite = new Composite(parent, SWT.NONE);
     composite.setLayout(new GridLayout(2, false));
@@ -258,7 +262,8 @@ public class MavenSettingsPreferencePage extends PreferencePage implements IWork
     reindexButton.setText(Messages.preferencesReindexButton);
     reindexButton.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> {
       new WorkspaceJob(Messages.MavenSettingsPreferencePage_job_indexing) {
-        public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
+            @Override
+            public IStatus runInWorkspace(IProgressMonitor monitor) throws CoreException {
           IndexManager indexManager = MavenPlugin.getIndexManager();
           indexManager.getWorkspaceIndex().updateIndex(true, monitor);
           return Status.OK_STATUS;

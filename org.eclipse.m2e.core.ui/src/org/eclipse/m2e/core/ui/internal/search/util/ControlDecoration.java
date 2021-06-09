@@ -251,7 +251,8 @@ public class ControlDecoration {
         }
       });
       hoverShell.addMouseListener(new MouseAdapter() {
-        public void mouseDown(MouseEvent e) {
+          @Override
+          public void mouseDown(MouseEvent e) {
           hideHover();
         }
       });
@@ -518,14 +519,16 @@ public class ControlDecoration {
     control.addDisposeListener(disposeListener);
 
     focusListener = new FocusListener() {
-      public void focusGained(FocusEvent event) {
+        @Override
+        public void focusGained(FocusEvent event) {
         hasFocus = true;
         if(showOnlyOnFocus) {
           update();
         }
       }
 
-      public void focusLost(FocusEvent event) {
+        @Override
+        public void focusLost(FocusEvent event) {
         hasFocus = false;
         if(showOnlyOnFocus) {
           update();
@@ -560,7 +563,8 @@ public class ControlDecoration {
 
     // Listener for tracking the beginning of a hover. Always installed.
     mouseTrackListener = new MouseTrackListener() {
-      public void mouseExit(MouseEvent event) {
+        @Override
+        public void mouseExit(MouseEvent event) {
         // Just in case we didn't catch it before.
         Control target = (Control) event.widget;
         if(target == moveListeningTarget) {
@@ -571,7 +575,8 @@ public class ControlDecoration {
         hideHover();
       }
 
-      public void mouseHover(MouseEvent event) {
+        @Override
+        public void mouseHover(MouseEvent event) {
         if(showHover) {
           decorationRectangle = getDecorationRectangle((Control) event.widget);
           if(decorationRectangle.contains(event.x, event.y)) {
@@ -594,7 +599,8 @@ public class ControlDecoration {
         }
       }
 
-      public void mouseEnter(MouseEvent event) {
+        @Override
+        public void mouseEnter(MouseEvent event) {
         // Nothing to do until a hover occurs.
       }
     };
