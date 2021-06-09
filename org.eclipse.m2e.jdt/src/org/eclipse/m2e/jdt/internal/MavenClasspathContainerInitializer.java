@@ -52,7 +52,7 @@ public class MavenClasspathContainerInitializer extends ClasspathContainerInitia
           return;
         }
       } catch(CoreException ex) {
-        log.error("Exception initializing classpath container " + containerPath.toString(), ex);
+        log.error("Exception initializing classpath container " + containerPath.toString(), ex); //$NON-NLS-1$
       }
     }
   }

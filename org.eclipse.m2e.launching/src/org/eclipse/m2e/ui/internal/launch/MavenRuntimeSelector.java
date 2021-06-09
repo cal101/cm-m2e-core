@@ -104,11 +104,11 @@ public class MavenRuntimeSelector extends Composite {
         StringBuilder sb = new StringBuilder();
 
         if(runtime.isLegacy()) {
-          sb.append(MavenRuntimeManagerImpl.EXTERNAL).append(" ").append(runtime.toString());
+          sb.append(MavenRuntimeManagerImpl.EXTERNAL).append(" ").append(runtime.toString()); //$NON-NLS-1$
         } else if(!runtime.isEditable()) {
-          sb.append(getType(runtime)).append(" (").append(runtime.toString()).append(')');
+          sb.append(getType(runtime)).append(" (").append(runtime.toString()).append(')'); //$NON-NLS-1$
         } else {
-          sb.append(runtime.getName()).append(" (");
+          sb.append(runtime.getName()).append(" ("); //$NON-NLS-1$
           sb.append(getType(runtime)).append(' ').append(runtime.toString());
           sb.append(')');
         }
@@ -171,7 +171,7 @@ public class MavenRuntimeSelector extends Composite {
   }
 
   public void initializeFrom(ILaunchConfiguration configuration) {
-    String name = "";
+    String name = ""; //$NON-NLS-1$
     try {
       name = configuration.getAttribute(MavenLaunchConstants.ATTR_RUNTIME, ""); //$NON-NLS-1$
     } catch(CoreException ex) {

@@ -67,7 +67,7 @@ import org.eclipse.m2e.jdt.IClasspathEntryDescriptor;
 @SuppressWarnings("restriction")
 public class ModuleSupport {
 
-  public static final String MODULE_INFO_JAVA = "module-info.java";
+  public static final String MODULE_INFO_JAVA = "module-info.java"; //$NON-NLS-1$
 
   private static final Logger log = LoggerFactory.getLogger(ModuleSupport.class);
 
@@ -88,8 +88,8 @@ public class ModuleSupport {
     int targetCompliance = 8;
     String option = javaProject.getOption(JavaCore.COMPILER_CODEGEN_TARGET_PLATFORM, true);
     if(option != null) {
-      if(option.startsWith("1.")) {
-        option = option.substring("1.".length());
+      if(option.startsWith("1.")) { //$NON-NLS-1$
+        option = option.substring("1.".length()); //$NON-NLS-1$
       }
       try {
         targetCompliance = Integer.parseInt(option);
@@ -227,7 +227,7 @@ public class ModuleSupport {
       Manifest manifest = jar.getManifest();
       boolean isMultiRelease = false;
       if(manifest != null) {
-        isMultiRelease = "true".equalsIgnoreCase(manifest.getMainAttributes().getValue("Multi-Release"));
+        isMultiRelease = "true".equalsIgnoreCase(manifest.getMainAttributes().getValue("Multi-Release")); //$NON-NLS-1$ //$NON-NLS-2$
       }
       int compliance = isMultiRelease ? targetCompliance : 8;
       for(int i = compliance; i >= 8; i-- ) {
@@ -236,7 +236,7 @@ public class ModuleSupport {
           // 8 represents unversioned module-info.class
           filename = IModule.MODULE_INFO_CLASS;
         } else {
-          filename = "META-INF/versions/" + i + "/" + IModule.MODULE_INFO_CLASS;
+          filename = "META-INF/versions/" + i + "/" + IModule.MODULE_INFO_CLASS; //$NON-NLS-1$ //$NON-NLS-2$
         }
         ClassFileReader reader = ClassFileReader.read(jar, filename);
         if(reader != null) {
@@ -249,7 +249,7 @@ public class ModuleSupport {
       if(manifest != null) {
         // optimization: we already have the manifest, so directly check for Automatic-Module-Name
         // rather than using AutomaticModuleNaming.determineAutomaticModuleName(String)
-        String automaticModuleName = manifest.getMainAttributes().getValue("Automatic-Module-Name");
+        String automaticModuleName = manifest.getMainAttributes().getValue("Automatic-Module-Name"); //$NON-NLS-1$
         if(automaticModuleName != null) {
           return InternalModuleInfo.withAutomaticName(automaticModuleName);
         }
@@ -274,7 +274,7 @@ public class ModuleSupport {
 
   public static boolean isModuleEntry(IClasspathEntry entry) {
     return Arrays.stream(entry.getExtraAttributes())
-        .anyMatch(p -> IClasspathAttribute.MODULE.equals(p.getName()) && "true".equals(p.getValue()));
+        .anyMatch(p -> IClasspathAttribute.MODULE.equals(p.getName()) && "true".equals(p.getValue())); //$NON-NLS-1$
   }
 
   public static int determineModularClasspathProperty(IClasspathEntry entry) {
@@ -283,7 +283,7 @@ public class ModuleSupport {
 
   public static IRuntimeClasspathEntry createRuntimeClasspathEntry(IFolder folder, int classpathProperty,
       IProject project) {
-    if(classpathProperty == IRuntimeClasspathEntry.MODULE_PATH && !folder.exists(new Path("module-info.class"))) {
+    if(classpathProperty == IRuntimeClasspathEntry.MODULE_PATH && !folder.exists(new Path("module-info.class"))) { //$NON-NLS-1$
       classpathProperty = IRuntimeClasspathEntry.PATCH_MODULE;
     }
     IRuntimeClasspathEntry newArchiveRuntimeClasspathEntry = JavaRuntime

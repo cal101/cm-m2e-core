@@ -78,9 +78,9 @@ public class DistributionManagementItemProvider extends ItemProviderAdapter impl
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_DistributionManagement_downloadUrl_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_DistributionManagement_downloadUrl_feature",
-            "_UI_DistributionManagement_type"), PomPackage.Literals.DISTRIBUTION_MANAGEMENT__DOWNLOAD_URL, true, false,
+        getString("_UI_DistributionManagement_downloadUrl_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_DistributionManagement_downloadUrl_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_DistributionManagement_type"), PomPackage.Literals.DISTRIBUTION_MANAGEMENT__DOWNLOAD_URL, true, false, //$NON-NLS-1$
         false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -93,9 +93,9 @@ public class DistributionManagementItemProvider extends ItemProviderAdapter impl
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_DistributionManagement_status_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_DistributionManagement_status_feature",
-            "_UI_DistributionManagement_type"), PomPackage.Literals.DISTRIBUTION_MANAGEMENT__STATUS, true, false,
+        getString("_UI_DistributionManagement_status_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_DistributionManagement_status_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_DistributionManagement_type"), PomPackage.Literals.DISTRIBUTION_MANAGEMENT__STATUS, true, false, //$NON-NLS-1$
         false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -140,7 +140,7 @@ public class DistributionManagementItemProvider extends ItemProviderAdapter impl
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/DistributionManagement"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/DistributionManagement")); //$NON-NLS-1$
   }
 
   /**
@@ -151,8 +151,8 @@ public class DistributionManagementItemProvider extends ItemProviderAdapter impl
   @Override
   public String getText(Object object) {
     String label = ((DistributionManagement) object).getDownloadUrl();
-    return label == null || label.length() == 0 ? getString("_UI_DistributionManagement_type")
-        : getString("_UI_DistributionManagement_type") + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_DistributionManagement_type") //$NON-NLS-1$
+        : getString("_UI_DistributionManagement_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   /**
@@ -218,7 +218,7 @@ public class DistributionManagementItemProvider extends ItemProviderAdapter impl
         || childFeature == PomPackage.Literals.DISTRIBUTION_MANAGEMENT__SNAPSHOT_REPOSITORY;
 
     if(qualify) {
-      return getString("_UI_CreateChild_text2", new Object[] {getTypeText(childObject), getFeatureText(childFeature),
+      return getString("_UI_CreateChild_text2", new Object[] {getTypeText(childObject), getFeatureText(childFeature), //$NON-NLS-1$
           getTypeText(owner)});
     }
     return super.getCreateChildText(owner, feature, child, selection);

@@ -297,13 +297,13 @@ public class ExecutePomAction implements ILaunchShortcut, IExecutableExtension {
               matchingConfigs.add(configuration);
             }
           } catch(CoreException e) {
-            log.error("Skipping launch configuration {}", configuration.getName(), e);
+            log.error("Skipping launch configuration {}", configuration.getName(), e); //$NON-NLS-1$
           }
 
         }
 
         if(matchingConfigs.size() == 1) {
-          log.info("Using existing launch configuration");
+          log.info("Using existing launch configuration"); //$NON-NLS-1$
           return matchingConfigs.get(0);
         } else if(matchingConfigs.size() > 1) {
           final IDebugModelPresentation labelProvider = DebugUITools.newDebugModelPresentation();
@@ -317,8 +317,8 @@ public class ExecutePomAction implements ILaunchShortcut, IExecutableExtension {
                   if(element instanceof ILaunchConfiguration) {
                     ILaunchConfiguration configuration = (ILaunchConfiguration) element;
                     try {
-                      return labelProvider.getText(element) + " : "
-                          + configuration.getAttribute(MavenLaunchConstants.ATTR_GOALS, "");
+                      return labelProvider.getText(element) + " : " //$NON-NLS-1$
+                          + configuration.getAttribute(MavenLaunchConstants.ATTR_GOALS, ""); //$NON-NLS-1$
                     } catch(CoreException ex) {
                       // ignore
                     }
@@ -360,7 +360,7 @@ public class ExecutePomAction implements ILaunchShortcut, IExecutableExtension {
       }
     }
 
-    log.info("Creating new launch configuration");
+    log.info("Creating new launch configuration"); //$NON-NLS-1$
 
     String newName = launchManager.generateLaunchConfigurationName(basedirLocation.lastSegment());
     try {
@@ -377,7 +377,7 @@ public class ExecutePomAction implements ILaunchShortcut, IExecutableExtension {
 
       return workingCopy.doSave();
     } catch(Exception ex) {
-      log.error("Error creating new launch configuration", ex);
+      log.error("Error creating new launch configuration", ex); //$NON-NLS-1$
     }
     return null;
   }

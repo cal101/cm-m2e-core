@@ -76,9 +76,9 @@ public class ActivationPropertyItemProvider extends ItemProviderAdapter implemen
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_ActivationProperty_name_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_ActivationProperty_name_feature",
-            "_UI_ActivationProperty_type"), PomPackage.Literals.ACTIVATION_PROPERTY__NAME, true, false, false,
+        getString("_UI_ActivationProperty_name_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_ActivationProperty_name_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_ActivationProperty_type"), PomPackage.Literals.ACTIVATION_PROPERTY__NAME, true, false, false, //$NON-NLS-1$
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -91,9 +91,9 @@ public class ActivationPropertyItemProvider extends ItemProviderAdapter implemen
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_ActivationProperty_value_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_ActivationProperty_value_feature",
-            "_UI_ActivationProperty_type"), PomPackage.Literals.ACTIVATION_PROPERTY__VALUE, true, false, false,
+        getString("_UI_ActivationProperty_value_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_ActivationProperty_value_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_ActivationProperty_type"), PomPackage.Literals.ACTIVATION_PROPERTY__VALUE, true, false, false, //$NON-NLS-1$
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -104,7 +104,7 @@ public class ActivationPropertyItemProvider extends ItemProviderAdapter implemen
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/ActivationProperty"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/ActivationProperty")); //$NON-NLS-1$
   }
 
   /**
@@ -115,8 +115,8 @@ public class ActivationPropertyItemProvider extends ItemProviderAdapter implemen
   @Override
   public String getText(Object object) {
     String label = ((ActivationProperty) object).getName();
-    return label == null || label.length() == 0 ? getString("_UI_ActivationProperty_type")
-        : getString("_UI_ActivationProperty_type") + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_ActivationProperty_type") //$NON-NLS-1$
+        : getString("_UI_ActivationProperty_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   /**

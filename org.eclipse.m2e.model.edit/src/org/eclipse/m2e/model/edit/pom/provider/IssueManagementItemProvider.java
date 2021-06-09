@@ -76,9 +76,9 @@ public class IssueManagementItemProvider extends ItemProviderAdapter implements 
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_IssueManagement_system_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_IssueManagement_system_feature",
-            "_UI_IssueManagement_type"), PomPackage.Literals.ISSUE_MANAGEMENT__SYSTEM, true, false, false,
+        getString("_UI_IssueManagement_system_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_IssueManagement_system_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_IssueManagement_type"), PomPackage.Literals.ISSUE_MANAGEMENT__SYSTEM, true, false, false, //$NON-NLS-1$
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -90,8 +90,8 @@ public class IssueManagementItemProvider extends ItemProviderAdapter implements 
   protected void addUrlPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_IssueManagement_url_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_IssueManagement_url_feature", "_UI_IssueManagement_type"),
+        getString("_UI_IssueManagement_url_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_IssueManagement_url_feature", "_UI_IssueManagement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.ISSUE_MANAGEMENT__URL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -103,7 +103,7 @@ public class IssueManagementItemProvider extends ItemProviderAdapter implements 
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/IssueManagement"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/IssueManagement")); //$NON-NLS-1$
   }
 
   /**
@@ -114,8 +114,8 @@ public class IssueManagementItemProvider extends ItemProviderAdapter implements 
   @Override
   public String getText(Object object) {
     String label = ((IssueManagement) object).getSystem();
-    return label == null || label.length() == 0 ? getString("_UI_IssueManagement_type")
-        : getString("_UI_IssueManagement_type") + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_IssueManagement_type") //$NON-NLS-1$
+        : getString("_UI_IssueManagement_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   /**

@@ -76,8 +76,8 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
   protected void addGroupIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Extension_groupId_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Extension_groupId_feature", "_UI_Extension_type"),
+        getString("_UI_Extension_groupId_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Extension_groupId_feature", "_UI_Extension_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.EXTENSION__GROUP_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -90,8 +90,8 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
   protected void addArtifactIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Extension_artifactId_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Extension_artifactId_feature", "_UI_Extension_type"),
+        getString("_UI_Extension_artifactId_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Extension_artifactId_feature", "_UI_Extension_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.EXTENSION__ARTIFACT_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -104,8 +104,8 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
   protected void addVersionPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Extension_version_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Extension_version_feature", "_UI_Extension_type"),
+        getString("_UI_Extension_version_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Extension_version_feature", "_UI_Extension_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.EXTENSION__VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -117,7 +117,7 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Extension"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Extension")); //$NON-NLS-1$
   }
 
   /**
@@ -128,8 +128,8 @@ public class ExtensionItemProvider extends ItemProviderAdapter implements IEditi
   @Override
   public String getText(Object object) {
     String label = ((Extension) object).getGroupId();
-    return label == null || label.length() == 0 ? getString("_UI_Extension_type") : getString("_UI_Extension_type")
-        + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_Extension_type") : getString("_UI_Extension_type") //$NON-NLS-1$ //$NON-NLS-2$
+        + " " + label; //$NON-NLS-1$
   }
 
   /**

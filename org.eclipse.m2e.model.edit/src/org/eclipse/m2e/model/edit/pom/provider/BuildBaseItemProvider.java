@@ -78,8 +78,8 @@ public class BuildBaseItemProvider extends ItemProviderAdapter implements IEditi
   protected void addDefaultGoalPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_BuildBase_defaultGoal_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_BuildBase_defaultGoal_feature", "_UI_BuildBase_type"),
+        getString("_UI_BuildBase_defaultGoal_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_BuildBase_defaultGoal_feature", "_UI_BuildBase_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.BUILD_BASE__DEFAULT_GOAL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -92,8 +92,8 @@ public class BuildBaseItemProvider extends ItemProviderAdapter implements IEditi
   protected void addDirectoryPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_BuildBase_directory_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_BuildBase_directory_feature", "_UI_BuildBase_type"),
+        getString("_UI_BuildBase_directory_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_BuildBase_directory_feature", "_UI_BuildBase_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.BUILD_BASE__DIRECTORY, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -106,8 +106,8 @@ public class BuildBaseItemProvider extends ItemProviderAdapter implements IEditi
   protected void addFinalNamePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_BuildBase_finalName_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_BuildBase_finalName_feature", "_UI_BuildBase_type"),
+        getString("_UI_BuildBase_finalName_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_BuildBase_finalName_feature", "_UI_BuildBase_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.BUILD_BASE__FINAL_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -154,7 +154,7 @@ public class BuildBaseItemProvider extends ItemProviderAdapter implements IEditi
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/BuildBase"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/BuildBase")); //$NON-NLS-1$
   }
 
   /**
@@ -165,8 +165,8 @@ public class BuildBaseItemProvider extends ItemProviderAdapter implements IEditi
   @Override
   public String getText(Object object) {
     String label = ((BuildBase) object).getFinalName();
-    return label == null || label.length() == 0 ? getString("_UI_BuildBase_type") : getString("_UI_BuildBase_type")
-        + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_BuildBase_type") : getString("_UI_BuildBase_type") //$NON-NLS-1$ //$NON-NLS-2$
+        + " " + label; //$NON-NLS-1$
   }
 
   /**
@@ -218,7 +218,7 @@ public class BuildBaseItemProvider extends ItemProviderAdapter implements IEditi
     newChildDescriptors.add(createChildParameter(PomPackage.Literals.BUILD_BASE__PLUGINS,
         PomFactory.eINSTANCE.createPlugin()));
 
-    newChildDescriptors.add(createChildParameter(PomPackage.Literals.BUILD_BASE__FILTERS, ""));
+    newChildDescriptors.add(createChildParameter(PomPackage.Literals.BUILD_BASE__FILTERS, "")); //$NON-NLS-1$
   }
 
   /**
@@ -236,7 +236,7 @@ public class BuildBaseItemProvider extends ItemProviderAdapter implements IEditi
         || childFeature == PomPackage.Literals.BUILD_BASE__TEST_RESOURCES;
 
     if(qualify) {
-      return getString("_UI_CreateChild_text2", new Object[] {getTypeText(childObject), getFeatureText(childFeature),
+      return getString("_UI_CreateChild_text2", new Object[] {getTypeText(childObject), getFeatureText(childFeature), //$NON-NLS-1$
           getTypeText(owner)});
     }
     return super.getCreateChildText(owner, feature, child, selection);

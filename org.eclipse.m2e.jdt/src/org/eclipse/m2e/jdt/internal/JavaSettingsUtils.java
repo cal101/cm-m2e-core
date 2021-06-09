@@ -24,9 +24,9 @@ import org.eclipse.jdt.core.JavaCore;
  */
 public class JavaSettingsUtils {
 
-  public static final String ENABLE_PREVIEW_JVM_FLAG = "--enable-preview";
+  public static final String ENABLE_PREVIEW_JVM_FLAG = "--enable-preview"; //$NON-NLS-1$
 
-  public static final String PARAMETERS_JVM_FLAG = "-parameters";
+  public static final String PARAMETERS_JVM_FLAG = "-parameters"; //$NON-NLS-1$
 
   private JavaSettingsUtils() {
     //No public instanciation

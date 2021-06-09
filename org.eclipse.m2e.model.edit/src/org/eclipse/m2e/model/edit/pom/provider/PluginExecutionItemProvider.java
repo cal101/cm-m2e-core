@@ -78,8 +78,8 @@ public class PluginExecutionItemProvider extends ItemProviderAdapter implements 
   protected void addIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_PluginExecution_id_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_PluginExecution_id_feature", "_UI_PluginExecution_type"),
+        getString("_UI_PluginExecution_id_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_PluginExecution_id_feature", "_UI_PluginExecution_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.PLUGIN_EXECUTION__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -94,9 +94,9 @@ public class PluginExecutionItemProvider extends ItemProviderAdapter implements 
         .add(createItemPropertyDescriptor(
             ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
             getResourceLocator(),
-            getString("_UI_PluginExecution_phase_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_PluginExecution_phase_feature",
-                "_UI_PluginExecution_type"), PomPackage.Literals.PLUGIN_EXECUTION__PHASE, true, false, false,
+            getString("_UI_PluginExecution_phase_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_PluginExecution_phase_feature", //$NON-NLS-1$ //$NON-NLS-2$
+                "_UI_PluginExecution_type"), PomPackage.Literals.PLUGIN_EXECUTION__PHASE, true, false, false, //$NON-NLS-1$
             ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -109,9 +109,9 @@ public class PluginExecutionItemProvider extends ItemProviderAdapter implements 
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_PluginExecution_inherited_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_PluginExecution_inherited_feature",
-            "_UI_PluginExecution_type"), PomPackage.Literals.PLUGIN_EXECUTION__INHERITED, true, false, false,
+        getString("_UI_PluginExecution_inherited_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_PluginExecution_inherited_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_PluginExecution_type"), PomPackage.Literals.PLUGIN_EXECUTION__INHERITED, true, false, false, //$NON-NLS-1$
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -124,9 +124,9 @@ public class PluginExecutionItemProvider extends ItemProviderAdapter implements 
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_PluginExecution_configuration_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_PluginExecution_configuration_feature",
-            "_UI_PluginExecution_type"), PomPackage.Literals.PLUGIN_EXECUTION__CONFIGURATION, true, false, true, null,
+        getString("_UI_PluginExecution_configuration_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_PluginExecution_configuration_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_PluginExecution_type"), PomPackage.Literals.PLUGIN_EXECUTION__CONFIGURATION, true, false, true, null, //$NON-NLS-1$
         null, null));
   }
 
@@ -168,7 +168,7 @@ public class PluginExecutionItemProvider extends ItemProviderAdapter implements 
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/PluginExecution"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/PluginExecution")); //$NON-NLS-1$
   }
 
   /**
@@ -179,8 +179,8 @@ public class PluginExecutionItemProvider extends ItemProviderAdapter implements 
   @Override
   public String getText(Object object) {
     String label = ((PluginExecution) object).getId();
-    return label == null || label.length() == 0 ? getString("_UI_PluginExecution_type")
-        : getString("_UI_PluginExecution_type") + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_PluginExecution_type") //$NON-NLS-1$
+        : getString("_UI_PluginExecution_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   /**
@@ -216,7 +216,7 @@ public class PluginExecutionItemProvider extends ItemProviderAdapter implements 
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
     super.collectNewChildDescriptors(newChildDescriptors, object);
 
-    newChildDescriptors.add(createChildParameter(PomPackage.Literals.PLUGIN_EXECUTION__GOALS, ""));
+    newChildDescriptors.add(createChildParameter(PomPackage.Literals.PLUGIN_EXECUTION__GOALS, "")); //$NON-NLS-1$
   }
 
   /**

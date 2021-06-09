@@ -76,7 +76,7 @@ public class MavenLaunchExtensionsSupport {
         try {
           participants.add(info.createParticipant());
         } catch(CoreException e) {
-          log.debug("Problem with external extension point", e);
+          log.debug("Problem with external extension point", e); //$NON-NLS-1$
         }
       }
     }
@@ -89,7 +89,7 @@ public class MavenLaunchExtensionsSupport {
     for(IMavenLaunchParticipant participant : participants) {
       String extensionArguments = participant.getProgramArguments(configuration, launch, monitor);
       if(extensionArguments != null) {
-        arguments.append(" ").append(extensionArguments);
+        arguments.append(" ").append(extensionArguments); //$NON-NLS-1$
       }
     }
   }

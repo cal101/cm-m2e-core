@@ -51,14 +51,14 @@ import org.eclipse.m2e.jdt.IMavenClassifierManager;
  */
 public class MavenClassifierManager implements IMavenClassifierManager {
 
-  private static final String EXTENSION_CLASSIFIER_CLASSPATH_PROVIDERS = "org.eclipse.m2e.jdt.classifierClasspathProviders";
+  private static final String EXTENSION_CLASSIFIER_CLASSPATH_PROVIDERS = "org.eclipse.m2e.jdt.classifierClasspathProviders"; //$NON-NLS-1$
 
   private static final Logger log = LoggerFactory.getLogger(MavenClassifierManager.class);
 
   private static final IClassifierClasspathProvider NO_OP_CLASSIFIER_CLASSPATH_PROVIDER = new AbstractClassifierClasspathProvider() {
 
     public String getClassifier() {
-      return "(__ignore_classifier__)";
+      return "(__ignore_classifier__)"; //$NON-NLS-1$
     }
 
     public boolean applies(IMavenProjectFacade mavenProjectFacade, String classifier) {
@@ -66,7 +66,7 @@ public class MavenClassifierManager implements IMavenClassifierManager {
     }
 
     public String toString() {
-      return "No-Op Classifier Classpath Provider";
+      return "No-Op Classifier Classpath Provider"; //$NON-NLS-1$
     }
   };
 
@@ -79,7 +79,7 @@ public class MavenClassifierManager implements IMavenClassifierManager {
     }
 
     public String getClassifier() {
-      return "(__ignore_classifier__)";
+      return "(__ignore_classifier__)"; //$NON-NLS-1$
     }
 
     public boolean applies(IMavenProjectFacade mavenProjectFacade, String classifier) {
@@ -97,7 +97,7 @@ public class MavenClassifierManager implements IMavenClassifierManager {
     }
 
     public String toString() {
-      return "Delegates to IWorkspaceClassifierResolver";
+      return "Delegates to IWorkspaceClassifierResolver"; //$NON-NLS-1$
     }
   }
 
@@ -134,7 +134,7 @@ public class MavenClassifierManager implements IMavenClassifierManager {
         IPath projectRelativePath = res.getProjectRelativePath();
         return new WorkspaceClassifierResolverDelegatingProvider(projectRelativePath);
       }
-      log.error("Project {} classifier {} resolved to wrong project at {}", project.getProject().getName(), classifier,
+      log.error("Project {} classifier {} resolved to wrong project at {}", project.getProject().getName(), classifier, //$NON-NLS-1$
           res == null ? resolvedPath : res.toString());
     }
 
@@ -159,7 +159,7 @@ public class MavenClassifierManager implements IMavenClassifierManager {
         for(IConfigurationElement element : extension.getConfigurationElements()) {
           IClassifierClasspathProvider classifierClasspathProvider = null;
           try {
-            classifierClasspathProvider = (IClassifierClasspathProvider) element.createExecutableExtension("class");
+            classifierClasspathProvider = (IClassifierClasspathProvider) element.createExecutableExtension("class"); //$NON-NLS-1$
             String classifier = classifierClasspathProvider.getClassifier();
             List<IClassifierClasspathProvider> providers = map.get(classifier);
             if(providers == null) {
@@ -168,7 +168,7 @@ public class MavenClassifierManager implements IMavenClassifierManager {
             }
             providers.add(classifierClasspathProvider);
           } catch(CoreException ex) {
-            log.debug("Can not instanciate IClassifierClasspathProvider", ex);
+            log.debug("Can not instanciate IClassifierClasspathProvider", ex); //$NON-NLS-1$
           }
         }
       }

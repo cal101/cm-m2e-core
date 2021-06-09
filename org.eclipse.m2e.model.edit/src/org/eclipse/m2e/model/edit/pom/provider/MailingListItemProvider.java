@@ -79,8 +79,8 @@ public class MailingListItemProvider extends ItemProviderAdapter implements IEdi
   protected void addNamePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_MailingList_name_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_MailingList_name_feature", "_UI_MailingList_type"),
+        getString("_UI_MailingList_name_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_MailingList_name_feature", "_UI_MailingList_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.MAILING_LIST__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -93,8 +93,8 @@ public class MailingListItemProvider extends ItemProviderAdapter implements IEdi
   protected void addSubscribePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_MailingList_subscribe_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_MailingList_subscribe_feature", "_UI_MailingList_type"),
+        getString("_UI_MailingList_subscribe_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_MailingList_subscribe_feature", "_UI_MailingList_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.MAILING_LIST__SUBSCRIBE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -107,8 +107,8 @@ public class MailingListItemProvider extends ItemProviderAdapter implements IEdi
   protected void addUnsubscribePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_MailingList_unsubscribe_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_MailingList_unsubscribe_feature", "_UI_MailingList_type"),
+        getString("_UI_MailingList_unsubscribe_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_MailingList_unsubscribe_feature", "_UI_MailingList_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.MAILING_LIST__UNSUBSCRIBE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -121,8 +121,8 @@ public class MailingListItemProvider extends ItemProviderAdapter implements IEdi
   protected void addPostPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_MailingList_post_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_MailingList_post_feature", "_UI_MailingList_type"),
+        getString("_UI_MailingList_post_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_MailingList_post_feature", "_UI_MailingList_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.MAILING_LIST__POST, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -135,8 +135,8 @@ public class MailingListItemProvider extends ItemProviderAdapter implements IEdi
   protected void addArchivePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_MailingList_archive_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_MailingList_archive_feature", "_UI_MailingList_type"),
+        getString("_UI_MailingList_archive_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_MailingList_archive_feature", "_UI_MailingList_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.MAILING_LIST__ARCHIVE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -179,7 +179,7 @@ public class MailingListItemProvider extends ItemProviderAdapter implements IEdi
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/MailingList"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/MailingList")); //$NON-NLS-1$
   }
 
   /**
@@ -190,8 +190,8 @@ public class MailingListItemProvider extends ItemProviderAdapter implements IEdi
   @Override
   public String getText(Object object) {
     String label = ((MailingList) object).getName();
-    return label == null || label.length() == 0 ? getString("_UI_MailingList_type") : getString("_UI_MailingList_type")
-        + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_MailingList_type") : getString("_UI_MailingList_type") //$NON-NLS-1$ //$NON-NLS-2$
+        + " " + label; //$NON-NLS-1$
   }
 
   /**
@@ -229,7 +229,7 @@ public class MailingListItemProvider extends ItemProviderAdapter implements IEdi
   protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
     super.collectNewChildDescriptors(newChildDescriptors, object);
 
-    newChildDescriptors.add(createChildParameter(PomPackage.Literals.MAILING_LIST__OTHER_ARCHIVES, ""));
+    newChildDescriptors.add(createChildParameter(PomPackage.Literals.MAILING_LIST__OTHER_ARCHIVES, "")); //$NON-NLS-1$
   }
 
   /**

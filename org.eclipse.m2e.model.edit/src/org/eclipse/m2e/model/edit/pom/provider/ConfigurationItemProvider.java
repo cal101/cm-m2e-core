@@ -66,7 +66,7 @@ public class ConfigurationItemProvider extends ItemProviderAdapter implements IE
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Configuration"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Configuration")); //$NON-NLS-1$
   }
 
   /**
@@ -76,7 +76,7 @@ public class ConfigurationItemProvider extends ItemProviderAdapter implements IE
    */
   @Override
   public String getText(Object object) {
-    return getString("_UI_Configuration_type");
+    return getString("_UI_Configuration_type"); //$NON-NLS-1$
   }
 
   /**

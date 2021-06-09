@@ -43,7 +43,7 @@ public class BlankClassifierClasspathProvider extends AbstractClassifierClasspat
    * @return an empty String
    */
   public String getClassifier() {
-    return "";
+    return ""; //$NON-NLS-1$
   }
 
   /**

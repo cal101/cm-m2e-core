@@ -42,7 +42,7 @@ public class MavenClasspathHelpers {
   }
 
   public static boolean isTestSource(IClasspathEntry entry) {
-    return "true".equals(getAttribute(entry, IClasspathManager.TEST_ATTRIBUTE));
+    return "true".equals(getAttribute(entry, IClasspathManager.TEST_ATTRIBUTE)); //$NON-NLS-1$
   }
 
   public static String getAttribute(IClasspathEntry entry, String key) {
@@ -55,6 +55,6 @@ public class MavenClasspathHelpers {
 
   public static boolean hasTestFlagDisabled(MavenProject mavenProject) {
     return mavenProject != null
-        && Boolean.valueOf(mavenProject.getProperties().getProperty("m2e.disableTestClasspathFlag", "false"));
+        && Boolean.valueOf(mavenProject.getProperties().getProperty("m2e.disableTestClasspathFlag", "false")); //$NON-NLS-1$ //$NON-NLS-2$
   }
 }

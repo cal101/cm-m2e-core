@@ -65,9 +65,9 @@ public class MavenConsoleLineTracker implements IConsoleLineTracker {
 
   private static final String PLUGIN_ID = "org.eclipse.m2e.launching"; //$NON-NLS-1$
 
-  private static final String LISTENING_MARKER = "Listening for transport dt_socket at address: ";
+  private static final String LISTENING_MARKER = "Listening for transport dt_socket at address: "; //$NON-NLS-1$
 
-  private static final String RUNNING_MARKER = "Running ";
+  private static final String RUNNING_MARKER = "Running "; //$NON-NLS-1$
 
   private static final String TEST_TEMPLATE = "(?:  )test.+\\(([\\w\\.]+)\\)"; //$NON-NLS-1$
 
@@ -177,7 +177,7 @@ public class MavenConsoleLineTracker implements IConsoleLineTracker {
      */
 
     ILaunchConfigurationWorkingCopy workingCopy = launchConfigurationType.newInstance(null, //
-        "Connecting debugger to port " + portString);
+        "Connecting debugger to port " + portString); //$NON-NLS-1$
     workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_ALLOW_TERMINATE, false);
     workingCopy.setAttribute(IJavaLaunchConfigurationConstants.ATTR_VM_CONNECTOR,
         IJavaLaunchConfigurationConstants.ID_SOCKET_ATTACH_VM_CONNECTOR);

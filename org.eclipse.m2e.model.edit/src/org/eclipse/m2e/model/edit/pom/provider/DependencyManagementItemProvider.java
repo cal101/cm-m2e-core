@@ -103,7 +103,7 @@ public class DependencyManagementItemProvider extends ItemProviderAdapter implem
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/DependencyManagement"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/DependencyManagement")); //$NON-NLS-1$
   }
 
   /**
@@ -113,7 +113,7 @@ public class DependencyManagementItemProvider extends ItemProviderAdapter implem
    */
   @Override
   public String getText(Object object) {
-    return getString("_UI_DependencyManagement_type");
+    return getString("_UI_DependencyManagement_type"); //$NON-NLS-1$
   }
 
   /**

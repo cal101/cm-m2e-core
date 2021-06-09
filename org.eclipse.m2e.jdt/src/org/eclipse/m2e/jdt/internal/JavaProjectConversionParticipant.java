@@ -202,7 +202,7 @@ public class JavaProjectConversionParticipant extends AbstractProjectConversionP
         compilerArgsDom = new Xpp3Dom(COMPILER_ARGS_KEY);
         configuration.addChild(compilerArgsDom);
       }
-      String argKey = "arg";
+      String argKey = "arg"; //$NON-NLS-1$
       boolean addFlag = true;
       if(compilerArgsDom.getChildCount() > 0) {
         argKey = compilerArgsDom.getChild(0).getName();
@@ -405,7 +405,7 @@ public class JavaProjectConversionParticipant extends AbstractProjectConversionP
       }
       if(resource instanceof IFile) {
         IFile file = (IFile) resource;
-        if(!"java".equals(file.getFileExtension())) {
+        if(!"java".equals(file.getFileExtension())) { //$NON-NLS-1$
           throw new NonJavaResourceFoundException();
         }
       }
@@ -453,8 +453,8 @@ public class JavaProjectConversionParticipant extends AbstractProjectConversionP
   @SuppressWarnings("restriction")
   //TODO extract as API when stabilized?
   private String getMostRecentPluginVersion(String groupId, String artifactId, String referenceVersion) {
-    Assert.isNotNull(groupId, "groupId can not be null");
-    Assert.isNotNull(artifactId, "artifactId can not be null");
+    Assert.isNotNull(groupId, "groupId can not be null"); //$NON-NLS-1$
+    Assert.isNotNull(artifactId, "artifactId can not be null"); //$NON-NLS-1$
     String version = referenceVersion;
     String partialKey = artifactId + " : " + groupId; //$NON-NLS-1$
     try {
@@ -478,7 +478,7 @@ public class JavaProjectConversionParticipant extends AbstractProjectConversionP
             continue;
           }
           for(IndexedArtifactFile f : e.getValue().getFiles()) {
-            if(groupId.equals(f.group) && artifactId.equals(f.artifact) && !f.version.contains("SNAPSHOT")) {
+            if(groupId.equals(f.group) && artifactId.equals(f.artifact) && !f.version.contains("SNAPSHOT")) { //$NON-NLS-1$
               ComparableVersion v = new ComparableVersion(f.version);
               if(referenceComparableVersion == null || v.compareTo(referenceComparableVersion) > 0) {
                 versions.add(v);
@@ -496,7 +496,7 @@ public class JavaProjectConversionParticipant extends AbstractProjectConversionP
         }
       }
     } catch(CoreException e) {
-      log.error("Can not retrieve latest version of " + partialKey, e);
+      log.error("Can not retrieve latest version of " + partialKey, e); //$NON-NLS-1$
     }
     return version;
   }

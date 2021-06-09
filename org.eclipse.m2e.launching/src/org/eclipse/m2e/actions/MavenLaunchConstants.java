@@ -17,7 +17,7 @@ import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 
 
 public interface MavenLaunchConstants {
-  String PLUGIN_ID = "org.eclipse.m2e.launching";
+  String PLUGIN_ID = "org.eclipse.m2e.launching"; //$NON-NLS-1$
 
   // this should correspond with launchConfigurationType.id attribute in plugin.xml!
   String LAUNCH_CONFIGURATION_TYPE_ID = "org.eclipse.m2e.Maven2LaunchConfigurationType"; //$NON-NLS-1$
@@ -72,7 +72,7 @@ public interface MavenLaunchConstants {
 
   String ATTR_RUNTIME = "M2_RUNTIME"; //$NON-NLS-1$
 
-  String ATTR_DISABLED_EXTENSIONS = "M2_DISABLED_EXTENSIONS";
+  String ATTR_DISABLED_EXTENSIONS = "M2_DISABLED_EXTENSIONS"; //$NON-NLS-1$
 
   String ATTR_THREADS = "M2_THREADS"; //$NON-NLS-1$
 }

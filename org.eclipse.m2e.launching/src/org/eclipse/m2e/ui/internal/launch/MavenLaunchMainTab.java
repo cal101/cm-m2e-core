@@ -196,7 +196,7 @@ public class MavenLaunchMainTab extends AbstractLaunchConfigurationTab implement
     gd_goalsLabel.horizontalAlignment = SWT.RIGHT;
     gd_goalsLabel.verticalIndent = 7;
     goalsLabel.setLayoutData(gd_goalsLabel);
-    goalsLabel.setText(Messages.launchGoalsLabel); //$NON-NLS-1$
+    goalsLabel.setText(Messages.launchGoalsLabel);
     goalsText = new Text(mainComposite, SWT.BORDER);
     goalsText.setData("name", "goalsText"); //$NON-NLS-1$ //$NON-NLS-2$
     GridData gd_goalsText = new GridData(SWT.FILL, SWT.CENTER, true, false, 4, 1);
@@ -207,7 +207,7 @@ public class MavenLaunchMainTab extends AbstractLaunchConfigurationTab implement
 
     Label profilesLabel = new Label(mainComposite, SWT.NONE);
     profilesLabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-    profilesLabel.setText(Messages.launchProfilesLabel); //$NON-NLS-1$
+    profilesLabel.setText(Messages.launchProfilesLabel);
     // profilesLabel.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false));
 
     profilesText = new Text(mainComposite, SWT.BORDER);
@@ -237,7 +237,7 @@ public class MavenLaunchMainTab extends AbstractLaunchConfigurationTab implement
 
     final Button userSettingsFilesystemButton = new Button(userSettingsButtonsComposite, SWT.NONE);
     userSettingsFilesystemButton.setText(Messages.launchBrowseFs);
-    userSettingsFilesystemButton.addSelectionListener(new BrowseFileAction(userSettings, new String[] {"*.xml"}));
+    userSettingsFilesystemButton.addSelectionListener(new BrowseFileAction(userSettings, new String[] {"*.xml"})); //$NON-NLS-1$
 
     final Button userSettingsVariablesButton = new Button(userSettingsButtonsComposite, SWT.NONE);
     userSettingsVariablesButton.setText(Messages.launchBrowseVariables);
@@ -245,7 +245,7 @@ public class MavenLaunchMainTab extends AbstractLaunchConfigurationTab implement
 
     new Label(mainComposite, SWT.NONE);
     offlineButton = new Button(mainComposite, SWT.CHECK);
-    offlineButton.setToolTipText("-o");
+    offlineButton.setToolTipText("-o"); //$NON-NLS-1$
     offlineButton.setText(org.eclipse.m2e.internal.launch.Messages.MavenLaunchMainTab_btnOffline);
     offlineButton.addSelectionListener(modyfyingListener);
 
@@ -340,19 +340,19 @@ public class MavenLaunchMainTab extends AbstractLaunchConfigurationTab implement
 
     final TableColumn propColumn = new TableColumn(this.propsTable, SWT.NONE, 0);
     propColumn.setWidth(120);
-    propColumn.setText(Messages.launchPropName); //$NON-NLS-1$
+    propColumn.setText(Messages.launchPropName);
 
     final TableColumn valueColumn = new TableColumn(this.propsTable, SWT.NONE, 1);
     valueColumn.setWidth(200);
-    valueColumn.setText(Messages.launchPropValue); //$NON-NLS-1$
+    valueColumn.setText(Messages.launchPropValue);
 
     final Button addPropButton = new Button(mainComposite, SWT.NONE);
     addPropButton.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
-    addPropButton.setText(Messages.launchPropAddButton); //$NON-NLS-1$
+    addPropButton.setText(Messages.launchPropAddButton);
     addPropButton.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> addProperty()));
     editPropButton = new Button(mainComposite, SWT.NONE);
     editPropButton.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
-    editPropButton.setText(Messages.launchPropEditButton); //$NON-NLS-1$
+    editPropButton.setText(Messages.launchPropEditButton);
     editPropButton.addSelectionListener(new SelectionAdapter() {
       public void widgetSelected(SelectionEvent e) {
         if(propsTable.getSelectionCount() > 0) {
@@ -366,7 +366,7 @@ public class MavenLaunchMainTab extends AbstractLaunchConfigurationTab implement
     editPropButton.setEnabled(false);
     removePropButton = new Button(mainComposite, SWT.NONE);
     removePropButton.setLayoutData(new GridData(SWT.FILL, SWT.TOP, false, false));
-    removePropButton.setText(Messages.launchPropRemoveButton); //$NON-NLS-1$
+    removePropButton.setText(Messages.launchPropRemoveButton);
     removePropButton.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> {
       if(propsTable.getSelectionCount() > 0) {
         propsTable.remove(propsTable.getSelectionIndices());
@@ -392,7 +392,7 @@ public class MavenLaunchMainTab extends AbstractLaunchConfigurationTab implement
 
   void addProperty() {
     MavenPropertyDialog dialog = getMavenPropertyDialog(
-        org.eclipse.m2e.internal.launch.Messages.MavenLaunchMainTab_property_dialog_title, "", ""); //$NON-NLS-2$ //$NON-NLS-3$
+        org.eclipse.m2e.internal.launch.Messages.MavenLaunchMainTab_property_dialog_title, "", "");  //$NON-NLS-1$//$NON-NLS-2$
     if(dialog.open() == IDialogConstants.OK_ID) {
       TableItem item = new TableItem(propsTable, SWT.NONE);
       item.setText(0, dialog.getName());
@@ -424,7 +424,7 @@ public class MavenLaunchMainTab extends AbstractLaunchConfigurationTab implement
             variablesButton.computeSize(SWT.DEFAULT, SWT.DEFAULT, true).x);
         variablesButton.setLayoutData(gd);
         variablesButton.setFont(comp.getFont());
-        variablesButton.setText(Messages.launchPropertyDialogBrowseVariables); //$NON-NLS-1$;
+        variablesButton.setText(Messages.launchPropertyDialogBrowseVariables); //;
 
         variablesButton.addSelectionListener(SelectionListener.widgetSelectedAdapter(e -> {
           StringVariableSelectionDialog variablesDialog = new StringVariableSelectionDialog(getShell());
@@ -463,7 +463,7 @@ public class MavenLaunchMainTab extends AbstractLaunchConfigurationTab implement
 
       this.runtimeSelector.initializeFrom(configuration);
 
-      this.userSettings.setText(getAttribute(configuration, ATTR_USER_SETTINGS, ""));
+      this.userSettings.setText(getAttribute(configuration, ATTR_USER_SETTINGS, "")); //$NON-NLS-1$
       this.userSettings.setMessage(nvl(mavenConfiguration.getUserSettingsFile(),
           SettingsXmlConfigurationProcessor.DEFAULT_USER_SETTINGS_FILE.getAbsolutePath()));
 
@@ -557,7 +557,7 @@ public class MavenLaunchMainTab extends AbstractLaunchConfigurationTab implement
   }
 
   public String getName() {
-    return Messages.launchMainTabName; //$NON-NLS-1$
+    return Messages.launchMainTabName;
   }
 
   public boolean isValid(ILaunchConfiguration launchConfig) {
@@ -631,7 +631,7 @@ public class MavenLaunchMainTab extends AbstractLaunchConfigurationTab implement
 
     public void widgetSelected(SelectionEvent e) {
       ContainerSelectionDialog dialog = new ContainerSelectionDialog(getShell(), //
-          ResourcesPlugin.getWorkspace().getRoot(), false, label); //$NON-NLS-1$
+          ResourcesPlugin.getWorkspace().getRoot(), false, label);
       dialog.showClosedProjects(false);
 
       int buttonId = dialog.open();

@@ -77,9 +77,9 @@ public class ActivationFileItemProvider extends ItemProviderAdapter implements I
         .add(createItemPropertyDescriptor(
             ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
             getResourceLocator(),
-            getString("_UI_ActivationFile_missing_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_ActivationFile_missing_feature",
-                "_UI_ActivationFile_type"), PomPackage.Literals.ACTIVATION_FILE__MISSING, true, false, false,
+            getString("_UI_ActivationFile_missing_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_ActivationFile_missing_feature", //$NON-NLS-1$ //$NON-NLS-2$
+                "_UI_ActivationFile_type"), PomPackage.Literals.ACTIVATION_FILE__MISSING, true, false, false, //$NON-NLS-1$
             ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -93,9 +93,9 @@ public class ActivationFileItemProvider extends ItemProviderAdapter implements I
         .add(createItemPropertyDescriptor(
             ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
             getResourceLocator(),
-            getString("_UI_ActivationFile_exists_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_ActivationFile_exists_feature",
-                "_UI_ActivationFile_type"), PomPackage.Literals.ACTIVATION_FILE__EXISTS, true, false, false,
+            getString("_UI_ActivationFile_exists_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_ActivationFile_exists_feature", //$NON-NLS-1$ //$NON-NLS-2$
+                "_UI_ActivationFile_type"), PomPackage.Literals.ACTIVATION_FILE__EXISTS, true, false, false, //$NON-NLS-1$
             ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -106,7 +106,7 @@ public class ActivationFileItemProvider extends ItemProviderAdapter implements I
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/ActivationFile"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/ActivationFile")); //$NON-NLS-1$
   }
 
   /**
@@ -117,8 +117,8 @@ public class ActivationFileItemProvider extends ItemProviderAdapter implements I
   @Override
   public String getText(Object object) {
     String label = ((ActivationFile) object).getMissing();
-    return label == null || label.length() == 0 ? getString("_UI_ActivationFile_type")
-        : getString("_UI_ActivationFile_type") + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_ActivationFile_type") //$NON-NLS-1$
+        : getString("_UI_ActivationFile_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   /**

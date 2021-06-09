@@ -78,8 +78,8 @@ public class BuildItemProvider extends BuildBaseItemProvider implements IEditing
   protected void addSourceDirectoryPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Build_sourceDirectory_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Build_sourceDirectory_feature", "_UI_Build_type"),
+        getString("_UI_Build_sourceDirectory_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Build_sourceDirectory_feature", "_UI_Build_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.BUILD__SOURCE_DIRECTORY, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -93,8 +93,8 @@ public class BuildItemProvider extends BuildBaseItemProvider implements IEditing
   protected void addScriptSourceDirectoryPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Build_scriptSourceDirectory_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Build_scriptSourceDirectory_feature", "_UI_Build_type"),
+        getString("_UI_Build_scriptSourceDirectory_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Build_scriptSourceDirectory_feature", "_UI_Build_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.BUILD__SCRIPT_SOURCE_DIRECTORY, true, false, false,
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
@@ -108,8 +108,8 @@ public class BuildItemProvider extends BuildBaseItemProvider implements IEditing
   protected void addTestSourceDirectoryPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Build_testSourceDirectory_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Build_testSourceDirectory_feature", "_UI_Build_type"),
+        getString("_UI_Build_testSourceDirectory_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Build_testSourceDirectory_feature", "_UI_Build_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.BUILD__TEST_SOURCE_DIRECTORY, true, false, false,
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
@@ -122,8 +122,8 @@ public class BuildItemProvider extends BuildBaseItemProvider implements IEditing
   protected void addOutputDirectoryPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Build_outputDirectory_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Build_outputDirectory_feature", "_UI_Build_type"),
+        getString("_UI_Build_outputDirectory_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Build_outputDirectory_feature", "_UI_Build_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.BUILD__OUTPUT_DIRECTORY, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -137,8 +137,8 @@ public class BuildItemProvider extends BuildBaseItemProvider implements IEditing
   protected void addTestOutputDirectoryPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Build_testOutputDirectory_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Build_testOutputDirectory_feature", "_UI_Build_type"),
+        getString("_UI_Build_testOutputDirectory_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Build_testOutputDirectory_feature", "_UI_Build_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.BUILD__TEST_OUTPUT_DIRECTORY, true, false, false,
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
@@ -181,7 +181,7 @@ public class BuildItemProvider extends BuildBaseItemProvider implements IEditing
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Build"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Build")); //$NON-NLS-1$
   }
 
   /**
@@ -192,7 +192,7 @@ public class BuildItemProvider extends BuildBaseItemProvider implements IEditing
   @Override
   public String getText(Object object) {
     String label = ((Build) object).getFinalName();
-    return label == null || label.length() == 0 ? getString("_UI_Build_type") : getString("_UI_Build_type") + " "
+    return label == null || label.length() == 0 ? getString("_UI_Build_type") : getString("_UI_Build_type") + " " //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         + label;
   }
 
@@ -250,7 +250,7 @@ public class BuildItemProvider extends BuildBaseItemProvider implements IEditing
         || childFeature == PomPackage.Literals.BUILD_BASE__TEST_RESOURCES;
 
     if(qualify) {
-      return getString("_UI_CreateChild_text2", new Object[] {getTypeText(childObject), getFeatureText(childFeature),
+      return getString("_UI_CreateChild_text2", new Object[] {getTypeText(childObject), getFeatureText(childFeature), //$NON-NLS-1$
           getTypeText(owner)});
     }
     return super.getCreateChildText(owner, feature, child, selection);

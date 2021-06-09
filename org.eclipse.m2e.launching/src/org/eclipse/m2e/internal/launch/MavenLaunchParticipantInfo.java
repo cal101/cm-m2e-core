@@ -35,24 +35,24 @@ public class MavenLaunchParticipantInfo {
   }
 
   public String getId() {
-    return extension.getAttribute("id");
+    return extension.getAttribute("id"); //$NON-NLS-1$
   }
 
   public String getName() {
-    return extension.getAttribute("name");
+    return extension.getAttribute("name"); //$NON-NLS-1$
   }
 
   public IMavenLaunchParticipant createParticipant() throws CoreException {
-    return (IMavenLaunchParticipant) extension.createExecutableExtension("class");
+    return (IMavenLaunchParticipant) extension.createExecutableExtension("class"); //$NON-NLS-1$
   }
 
   public List<String> getModes() {
-    String modes = extension.getAttribute("modes");
+    String modes = extension.getAttribute("modes"); //$NON-NLS-1$
     if(modes == null) {
       return Collections.emptyList();
     }
     List<String> result = new ArrayList<>();
-    StringTokenizer st = new StringTokenizer(modes, ",");
+    StringTokenizer st = new StringTokenizer(modes, ","); //$NON-NLS-1$
     while(st.hasMoreTokens()) {
       result.add(st.nextToken().trim());
     }
@@ -63,7 +63,7 @@ public class MavenLaunchParticipantInfo {
     List<MavenLaunchParticipantInfo> result = new ArrayList<>();
 
     IExtensionRegistry registry = Platform.getExtensionRegistry();
-    IExtensionPoint extensionPoint = registry.getExtensionPoint("org.eclipse.m2e.launching.mavenLaunchParticipants");
+    IExtensionPoint extensionPoint = registry.getExtensionPoint("org.eclipse.m2e.launching.mavenLaunchParticipants"); //$NON-NLS-1$
     if(extensionPoint != null) {
       for(IExtension extension : extensionPoint.getExtensions()) {
         for(IConfigurationElement element : extension.getConfigurationElements()) {

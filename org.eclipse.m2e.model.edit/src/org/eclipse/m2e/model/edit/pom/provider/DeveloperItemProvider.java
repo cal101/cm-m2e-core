@@ -82,8 +82,8 @@ public class DeveloperItemProvider extends ItemProviderAdapter implements IEditi
   protected void addIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Developer_id_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Developer_id_feature", "_UI_Developer_type"),
+        getString("_UI_Developer_id_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Developer_id_feature", "_UI_Developer_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEVELOPER__ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -95,8 +95,8 @@ public class DeveloperItemProvider extends ItemProviderAdapter implements IEditi
   protected void addNamePropertyDescriptor(Object object) {
     itemPropertyDescriptors
         .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-            getResourceLocator(), getString("_UI_Developer_name_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_Developer_name_feature", "_UI_Developer_type"),
+            getResourceLocator(), getString("_UI_Developer_name_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_Developer_name_feature", "_UI_Developer_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
             PomPackage.Literals.DEVELOPER__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
             null));
   }
@@ -109,8 +109,8 @@ public class DeveloperItemProvider extends ItemProviderAdapter implements IEditi
   protected void addEmailPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Developer_email_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Developer_email_feature", "_UI_Developer_type"),
+        getString("_UI_Developer_email_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Developer_email_feature", "_UI_Developer_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEVELOPER__EMAIL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -123,8 +123,8 @@ public class DeveloperItemProvider extends ItemProviderAdapter implements IEditi
   protected void addUrlPropertyDescriptor(Object object) {
     itemPropertyDescriptors
         .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-            getResourceLocator(), getString("_UI_Developer_url_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_Developer_url_feature", "_UI_Developer_type"),
+            getResourceLocator(), getString("_UI_Developer_url_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_Developer_url_feature", "_UI_Developer_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
             PomPackage.Literals.DEVELOPER__URL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
             null));
   }
@@ -137,8 +137,8 @@ public class DeveloperItemProvider extends ItemProviderAdapter implements IEditi
   protected void addOrganizationPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Developer_organization_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Developer_organization_feature", "_UI_Developer_type"),
+        getString("_UI_Developer_organization_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Developer_organization_feature", "_UI_Developer_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEVELOPER__ORGANIZATION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -151,8 +151,8 @@ public class DeveloperItemProvider extends ItemProviderAdapter implements IEditi
   protected void addOrganizationUrlPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Developer_organizationUrl_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Developer_organizationUrl_feature", "_UI_Developer_type"),
+        getString("_UI_Developer_organizationUrl_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Developer_organizationUrl_feature", "_UI_Developer_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEVELOPER__ORGANIZATION_URL, true, false, false,
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
@@ -165,8 +165,8 @@ public class DeveloperItemProvider extends ItemProviderAdapter implements IEditi
   protected void addTimezonePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Developer_timezone_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Developer_timezone_feature", "_UI_Developer_type"),
+        getString("_UI_Developer_timezone_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Developer_timezone_feature", "_UI_Developer_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEVELOPER__TIMEZONE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -210,7 +210,7 @@ public class DeveloperItemProvider extends ItemProviderAdapter implements IEditi
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Developer"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Developer")); //$NON-NLS-1$
   }
 
   /**
@@ -221,8 +221,8 @@ public class DeveloperItemProvider extends ItemProviderAdapter implements IEditi
   @Override
   public String getText(Object object) {
     String label = ((Developer) object).getName();
-    return label == null || label.length() == 0 ? getString("_UI_Developer_type") : getString("_UI_Developer_type")
-        + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_Developer_type") : getString("_UI_Developer_type") //$NON-NLS-1$ //$NON-NLS-2$
+        + " " + label; //$NON-NLS-1$
   }
 
   /**
@@ -266,7 +266,7 @@ public class DeveloperItemProvider extends ItemProviderAdapter implements IEditi
     newChildDescriptors.add(createChildParameter(PomPackage.Literals.DEVELOPER__PROPERTIES,
         PomFactory.eINSTANCE.createPropertyElement()));
 
-    newChildDescriptors.add(createChildParameter(PomPackage.Literals.DEVELOPER__ROLES, ""));
+    newChildDescriptors.add(createChildParameter(PomPackage.Literals.DEVELOPER__ROLES, "")); //$NON-NLS-1$
   }
 
   /**

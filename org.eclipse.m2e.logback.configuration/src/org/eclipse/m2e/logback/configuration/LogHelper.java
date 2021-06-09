@@ -29,7 +29,7 @@ public class LogHelper {
     }
     log.debug("Java properties (ordered by property name):"); //$NON-NLS-1$
     for(String key : sortedProperties.keySet()) {
-      log.debug("   {}={}", key, sortedProperties.get(key));
+      log.debug("   {}={}", key, sortedProperties.get(key)); //$NON-NLS-1$
     }
   }
 }

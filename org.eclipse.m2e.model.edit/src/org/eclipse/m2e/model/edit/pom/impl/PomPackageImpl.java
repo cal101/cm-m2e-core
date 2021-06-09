@@ -2881,608 +2881,608 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
     buildEClass.getESuperTypes().add(this.getBuildBase());
 
     // Initialize classes and features; add operations and parameters
-    initEClass(activationEClass, Activation.class, "Activation", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(activationEClass, Activation.class, "Activation", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActivation_ActiveByDefault(), theXMLTypePackage.getString(), "activeByDefault", "false", 0, 1,
+    initEAttribute(getActivation_ActiveByDefault(), theXMLTypePackage.getString(), "activeByDefault", "false", 0, 1, //$NON-NLS-1$ //$NON-NLS-2$
         Activation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getActivation_Jdk(), theXMLTypePackage.getString(), "jdk", null, 0, 1, Activation.class,
+    initEAttribute(getActivation_Jdk(), theXMLTypePackage.getString(), "jdk", null, 0, 1, Activation.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActivation_Os(), this.getActivationOS(), null, "os", null, 0, 1, Activation.class, !IS_TRANSIENT,
+    initEReference(getActivation_Os(), this.getActivationOS(), null, "os", null, 0, 1, Activation.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getActivation_Property(), this.getActivationProperty(), null, "property", null, 0, 1,
+    initEReference(getActivation_Property(), this.getActivationProperty(), null, "property", null, 0, 1, //$NON-NLS-1$
         Activation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getActivation_File(), this.getActivationFile(), null, "file", null, 0, 1, Activation.class,
+    initEReference(getActivation_File(), this.getActivationFile(), null, "file", null, 0, 1, Activation.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
-    initEClass(activationFileEClass, ActivationFile.class, "ActivationFile", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(activationFileEClass, ActivationFile.class, "ActivationFile", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActivationFile_Missing(), theXMLTypePackage.getString(), "missing", null, 0, 1,
+    initEAttribute(getActivationFile_Missing(), theXMLTypePackage.getString(), "missing", null, 0, 1, //$NON-NLS-1$
         ActivationFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActivationFile_Exists(), theXMLTypePackage.getString(), "exists", null, 0, 1,
+    initEAttribute(getActivationFile_Exists(), theXMLTypePackage.getString(), "exists", null, 0, 1, //$NON-NLS-1$
         ActivationFile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
-    initEClass(activationOSEClass, ActivationOS.class, "ActivationOS", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(activationOSEClass, ActivationOS.class, "ActivationOS", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActivationOS_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, ActivationOS.class,
+    initEAttribute(getActivationOS_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, ActivationOS.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActivationOS_Family(), theXMLTypePackage.getString(), "family", null, 0, 1, ActivationOS.class,
+    initEAttribute(getActivationOS_Family(), theXMLTypePackage.getString(), "family", null, 0, 1, ActivationOS.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActivationOS_Arch(), theXMLTypePackage.getString(), "arch", null, 0, 1, ActivationOS.class,
+    initEAttribute(getActivationOS_Arch(), theXMLTypePackage.getString(), "arch", null, 0, 1, ActivationOS.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActivationOS_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, ActivationOS.class,
+    initEAttribute(getActivationOS_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, ActivationOS.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(activationPropertyEClass, ActivationProperty.class, "ActivationProperty", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(activationPropertyEClass, ActivationProperty.class, "ActivationProperty", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getActivationProperty_Name(), theXMLTypePackage.getString(), "name", null, 0, 1,
+    initEAttribute(getActivationProperty_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, //$NON-NLS-1$
         ActivationProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getActivationProperty_Value(), theXMLTypePackage.getString(), "value", null, 0, 1,
+    initEAttribute(getActivationProperty_Value(), theXMLTypePackage.getString(), "value", null, 0, 1, //$NON-NLS-1$
         ActivationProperty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
-    initEClass(buildEClass, Build.class, "Build", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBuild_SourceDirectory(), theXMLTypePackage.getString(), "sourceDirectory", null, 0, 1,
+    initEClass(buildEClass, Build.class, "Build", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getBuild_SourceDirectory(), theXMLTypePackage.getString(), "sourceDirectory", null, 0, 1, //$NON-NLS-1$
         Build.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getBuild_ScriptSourceDirectory(), theXMLTypePackage.getString(), "scriptSourceDirectory", null, 0,
+    initEAttribute(getBuild_ScriptSourceDirectory(), theXMLTypePackage.getString(), "scriptSourceDirectory", null, 0, //$NON-NLS-1$
         1, Build.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getBuild_TestSourceDirectory(), theXMLTypePackage.getString(), "testSourceDirectory", null, 0, 1,
+    initEAttribute(getBuild_TestSourceDirectory(), theXMLTypePackage.getString(), "testSourceDirectory", null, 0, 1, //$NON-NLS-1$
         Build.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getBuild_OutputDirectory(), theXMLTypePackage.getString(), "outputDirectory", null, 0, 1,
+    initEAttribute(getBuild_OutputDirectory(), theXMLTypePackage.getString(), "outputDirectory", null, 0, 1, //$NON-NLS-1$
         Build.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getBuild_TestOutputDirectory(), theXMLTypePackage.getString(), "testOutputDirectory", null, 0, 1,
+    initEAttribute(getBuild_TestOutputDirectory(), theXMLTypePackage.getString(), "testOutputDirectory", null, 0, 1, //$NON-NLS-1$
         Build.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getBuild_Extensions(), this.getExtension(), null, "extensions", null, 0, -1, Build.class,
+    initEReference(getBuild_Extensions(), this.getExtension(), null, "extensions", null, 0, -1, Build.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
-    initEClass(buildBaseEClass, BuildBase.class, "BuildBase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getBuildBase_DefaultGoal(), theXMLTypePackage.getString(), "defaultGoal", null, 0, 1,
+    initEClass(buildBaseEClass, BuildBase.class, "BuildBase", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getBuildBase_DefaultGoal(), theXMLTypePackage.getString(), "defaultGoal", null, 0, 1, //$NON-NLS-1$
         BuildBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getBuildBase_Resources(), this.getResource(), null, "resources", null, 0, -1, BuildBase.class,
+    initEReference(getBuildBase_Resources(), this.getResource(), null, "resources", null, 0, -1, BuildBase.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getBuildBase_TestResources(), this.getResource(), null, "testResources", null, 0, -1,
+    initEReference(getBuildBase_TestResources(), this.getResource(), null, "testResources", null, 0, -1, //$NON-NLS-1$
         BuildBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBuildBase_Directory(), theXMLTypePackage.getString(), "directory", null, 0, 1, BuildBase.class,
+    initEAttribute(getBuildBase_Directory(), theXMLTypePackage.getString(), "directory", null, 0, 1, BuildBase.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBuildBase_FinalName(), theXMLTypePackage.getString(), "finalName", null, 0, 1, BuildBase.class,
+    initEAttribute(getBuildBase_FinalName(), theXMLTypePackage.getString(), "finalName", null, 0, 1, BuildBase.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBuildBase_PluginManagement(), this.getPluginManagement(), null, "pluginManagement", null, 0, 1,
+    initEReference(getBuildBase_PluginManagement(), this.getPluginManagement(), null, "pluginManagement", null, 0, 1, //$NON-NLS-1$
         BuildBase.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getBuildBase_Plugins(), this.getPlugin(), null, "plugins", null, 0, -1, BuildBase.class,
+    initEReference(getBuildBase_Plugins(), this.getPlugin(), null, "plugins", null, 0, -1, BuildBase.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getBuildBase_Filters(), theXMLTypePackage.getString(), "filters", null, 0, -1, BuildBase.class,
+    initEAttribute(getBuildBase_Filters(), theXMLTypePackage.getString(), "filters", null, 0, -1, BuildBase.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(ciManagementEClass, CiManagement.class, "CiManagement", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(ciManagementEClass, CiManagement.class, "CiManagement", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getCiManagement_System(), theXMLTypePackage.getString(), "system", null, 0, 1, CiManagement.class,
+    initEAttribute(getCiManagement_System(), theXMLTypePackage.getString(), "system", null, 0, 1, CiManagement.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getCiManagement_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, CiManagement.class,
+    initEAttribute(getCiManagement_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, CiManagement.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getCiManagement_Notifiers(), this.getNotifier(), null, "notifiers", null, 0, -1, CiManagement.class,
+    initEReference(getCiManagement_Notifiers(), this.getNotifier(), null, "notifiers", null, 0, -1, CiManagement.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
-    initEClass(contributorEClass, Contributor.class, "Contributor", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(contributorEClass, Contributor.class, "Contributor", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getContributor_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Contributor.class,
+    initEAttribute(getContributor_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Contributor.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContributor_Email(), theXMLTypePackage.getString(), "email", null, 0, 1, Contributor.class,
+    initEAttribute(getContributor_Email(), theXMLTypePackage.getString(), "email", null, 0, 1, Contributor.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContributor_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Contributor.class,
+    initEAttribute(getContributor_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Contributor.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContributor_Organization(), theXMLTypePackage.getString(), "organization", null, 0, 1,
+    initEAttribute(getContributor_Organization(), theXMLTypePackage.getString(), "organization", null, 0, 1, //$NON-NLS-1$
         Contributor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getContributor_OrganizationUrl(), theXMLTypePackage.getString(), "organizationUrl", null, 0, 1,
+    initEAttribute(getContributor_OrganizationUrl(), theXMLTypePackage.getString(), "organizationUrl", null, 0, 1, //$NON-NLS-1$
         Contributor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getContributor_Timezone(), theXMLTypePackage.getString(), "timezone", null, 0, 1, Contributor.class,
+    initEAttribute(getContributor_Timezone(), theXMLTypePackage.getString(), "timezone", null, 0, 1, Contributor.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getContributor_Properties(), this.getPropertyElement(), null, "properties", null, 0, -1,
+    initEReference(getContributor_Properties(), this.getPropertyElement(), null, "properties", null, 0, -1, //$NON-NLS-1$
         Contributor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getContributor_Roles(), theXMLTypePackage.getString(), "roles", null, 0, -1, Contributor.class,
+    initEAttribute(getContributor_Roles(), theXMLTypePackage.getString(), "roles", null, 0, -1, Contributor.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(dependencyEClass, Dependency.class, "Dependency", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(dependencyEClass, Dependency.class, "Dependency", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDependency_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Dependency.class,
+    initEAttribute(getDependency_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Dependency.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDependency_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1,
+    initEAttribute(getDependency_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, //$NON-NLS-1$
         Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getDependency_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, Dependency.class,
+    initEAttribute(getDependency_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, Dependency.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDependency_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, Dependency.class,
+    initEAttribute(getDependency_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, Dependency.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDependency_Classifier(), theXMLTypePackage.getString(), "classifier", null, 0, 1,
+    initEAttribute(getDependency_Classifier(), theXMLTypePackage.getString(), "classifier", null, 0, 1, //$NON-NLS-1$
         Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getDependency_Scope(), theXMLTypePackage.getString(), "scope", null, 0, 1, Dependency.class,
+    initEAttribute(getDependency_Scope(), theXMLTypePackage.getString(), "scope", null, 0, 1, Dependency.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDependency_SystemPath(), theXMLTypePackage.getString(), "systemPath", null, 0, 1,
+    initEAttribute(getDependency_SystemPath(), theXMLTypePackage.getString(), "systemPath", null, 0, 1, //$NON-NLS-1$
         Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getDependency_Exclusions(), this.getExclusion(), null, "exclusions", null, 0, -1, Dependency.class,
+    initEReference(getDependency_Exclusions(), this.getExclusion(), null, "exclusions", null, 0, -1, Dependency.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDependency_Optional(), theXMLTypePackage.getString(), "optional", "false", 0, 1,
+    initEAttribute(getDependency_Optional(), theXMLTypePackage.getString(), "optional", "false", 0, 1, //$NON-NLS-1$ //$NON-NLS-2$
         Dependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
 
-    initEClass(dependencyManagementEClass, DependencyManagement.class, "DependencyManagement", !IS_ABSTRACT,
+    initEClass(dependencyManagementEClass, DependencyManagement.class, "DependencyManagement", !IS_ABSTRACT, //$NON-NLS-1$
         !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDependencyManagement_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1,
+    initEReference(getDependencyManagement_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1, //$NON-NLS-1$
         DependencyManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(deploymentRepositoryEClass, DeploymentRepository.class, "DeploymentRepository", !IS_ABSTRACT,
+    initEClass(deploymentRepositoryEClass, DeploymentRepository.class, "DeploymentRepository", !IS_ABSTRACT, //$NON-NLS-1$
         !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDeploymentRepository_UniqueVersion(), theXMLTypePackage.getString(), "uniqueVersion", "true", 0,
+    initEAttribute(getDeploymentRepository_UniqueVersion(), theXMLTypePackage.getString(), "uniqueVersion", "true", 0, //$NON-NLS-1$ //$NON-NLS-2$
         1, DeploymentRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeploymentRepository_Id(), theXMLTypePackage.getString(), "id", null, 0, 1,
+    initEAttribute(getDeploymentRepository_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, //$NON-NLS-1$
         DeploymentRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeploymentRepository_Name(), theXMLTypePackage.getString(), "name", null, 0, 1,
+    initEAttribute(getDeploymentRepository_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, //$NON-NLS-1$
         DeploymentRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeploymentRepository_Url(), theXMLTypePackage.getString(), "url", null, 0, 1,
+    initEAttribute(getDeploymentRepository_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, //$NON-NLS-1$
         DeploymentRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeploymentRepository_Layout(), theXMLTypePackage.getString(), "layout", null, 0, 1,
+    initEAttribute(getDeploymentRepository_Layout(), theXMLTypePackage.getString(), "layout", null, 0, 1, //$NON-NLS-1$
         DeploymentRepository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
-    initEClass(developerEClass, Developer.class, "Developer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDeveloper_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, Developer.class, !IS_TRANSIENT,
+    initEClass(developerEClass, Developer.class, "Developer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getDeveloper_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, Developer.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeveloper_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Developer.class,
+    initEAttribute(getDeveloper_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Developer.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeveloper_Email(), theXMLTypePackage.getString(), "email", null, 0, 1, Developer.class,
+    initEAttribute(getDeveloper_Email(), theXMLTypePackage.getString(), "email", null, 0, 1, Developer.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeveloper_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Developer.class,
+    initEAttribute(getDeveloper_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Developer.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeveloper_Organization(), theXMLTypePackage.getString(), "organization", null, 0, 1,
+    initEAttribute(getDeveloper_Organization(), theXMLTypePackage.getString(), "organization", null, 0, 1, //$NON-NLS-1$
         Developer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getDeveloper_OrganizationUrl(), theXMLTypePackage.getString(), "organizationUrl", null, 0, 1,
+    initEAttribute(getDeveloper_OrganizationUrl(), theXMLTypePackage.getString(), "organizationUrl", null, 0, 1, //$NON-NLS-1$
         Developer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getDeveloper_Timezone(), theXMLTypePackage.getString(), "timezone", null, 0, 1, Developer.class,
+    initEAttribute(getDeveloper_Timezone(), theXMLTypePackage.getString(), "timezone", null, 0, 1, Developer.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDeveloper_Properties(), this.getPropertyElement(), null, "properties", null, 0, -1,
+    initEReference(getDeveloper_Properties(), this.getPropertyElement(), null, "properties", null, 0, -1, //$NON-NLS-1$
         Developer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDeveloper_Roles(), theXMLTypePackage.getString(), "roles", null, 0, -1, Developer.class,
+    initEAttribute(getDeveloper_Roles(), theXMLTypePackage.getString(), "roles", null, 0, -1, Developer.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(distributionManagementEClass, DistributionManagement.class, "DistributionManagement", !IS_ABSTRACT,
+    initEClass(distributionManagementEClass, DistributionManagement.class, "DistributionManagement", !IS_ABSTRACT, //$NON-NLS-1$
         !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDistributionManagement_Repository(), this.getDeploymentRepository(), null, "repository", null, 0,
+    initEReference(getDistributionManagement_Repository(), this.getDeploymentRepository(), null, "repository", null, 0, //$NON-NLS-1$
         1, DistributionManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDistributionManagement_SnapshotRepository(), this.getDeploymentRepository(), null,
-        "snapshotRepository", null, 0, 1, DistributionManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+        "snapshotRepository", null, 0, 1, DistributionManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, //$NON-NLS-1$
         IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDistributionManagement_Site(), this.getSite(), null, "site", null, 0, 1,
+    initEReference(getDistributionManagement_Site(), this.getSite(), null, "site", null, 0, 1, //$NON-NLS-1$
         DistributionManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDistributionManagement_DownloadUrl(), theXMLTypePackage.getString(), "downloadUrl", null, 0, 1,
+    initEAttribute(getDistributionManagement_DownloadUrl(), theXMLTypePackage.getString(), "downloadUrl", null, 0, 1, //$NON-NLS-1$
         DistributionManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getDistributionManagement_Relocation(), this.getRelocation(), null, "relocation", null, 0, 1,
+    initEReference(getDistributionManagement_Relocation(), this.getRelocation(), null, "relocation", null, 0, 1, //$NON-NLS-1$
         DistributionManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getDistributionManagement_Status(), theXMLTypePackage.getString(), "status", null, 0, 1,
+    initEAttribute(getDistributionManagement_Status(), theXMLTypePackage.getString(), "status", null, 0, 1, //$NON-NLS-1$
         DistributionManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
-    initEClass(documentRootEClass, DocumentRoot.class, "DocumentRoot", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(documentRootEClass, DocumentRoot.class, "DocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null,
+    initEAttribute(getDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap",
+    initEReference(getDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap", //$NON-NLS-1$
         null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null,
-        "xSISchemaLocation", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+        "xSISchemaLocation", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, //$NON-NLS-1$
         !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getDocumentRoot_Project(), this.getModel(), null, "project", null, 0, -2, null, IS_TRANSIENT,
+    initEReference(getDocumentRoot_Project(), this.getModel(), null, "project", null, 0, -2, null, IS_TRANSIENT, //$NON-NLS-1$
         IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
         IS_ORDERED);
 
-    initEClass(exclusionEClass, Exclusion.class, "Exclusion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExclusion_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, Exclusion.class,
+    initEClass(exclusionEClass, Exclusion.class, "Exclusion", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getExclusion_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, Exclusion.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExclusion_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Exclusion.class,
-        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(extensionEClass, Extension.class, "Extension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getExtension_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Extension.class,
-        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExtension_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, Extension.class,
-        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getExtension_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, Extension.class,
+    initEAttribute(getExclusion_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Exclusion.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(issueManagementEClass, IssueManagement.class, "IssueManagement", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(extensionEClass, Extension.class, "Extension", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getExtension_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Extension.class, //$NON-NLS-1$
+        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExtension_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, Extension.class, //$NON-NLS-1$
+        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getExtension_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, Extension.class, //$NON-NLS-1$
+        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(issueManagementEClass, IssueManagement.class, "IssueManagement", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getIssueManagement_System(), theXMLTypePackage.getString(), "system", null, 0, 1,
+    initEAttribute(getIssueManagement_System(), theXMLTypePackage.getString(), "system", null, 0, 1, //$NON-NLS-1$
         IssueManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getIssueManagement_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, IssueManagement.class,
+    initEAttribute(getIssueManagement_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, IssueManagement.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(licenseEClass, License.class, "License", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getLicense_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, License.class, !IS_TRANSIENT,
+    initEClass(licenseEClass, License.class, "License", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getLicense_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, License.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLicense_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, License.class, !IS_TRANSIENT,
+    initEAttribute(getLicense_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, License.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLicense_Distribution(), theXMLTypePackage.getString(), "distribution", null, 0, 1, License.class,
+    initEAttribute(getLicense_Distribution(), theXMLTypePackage.getString(), "distribution", null, 0, 1, License.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getLicense_Comments(), theXMLTypePackage.getString(), "comments", null, 0, 1, License.class,
+    initEAttribute(getLicense_Comments(), theXMLTypePackage.getString(), "comments", null, 0, 1, License.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(mailingListEClass, MailingList.class, "MailingList", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(mailingListEClass, MailingList.class, "MailingList", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMailingList_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, MailingList.class,
+    initEAttribute(getMailingList_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, MailingList.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMailingList_Subscribe(), theXMLTypePackage.getString(), "subscribe", null, 0, 1,
+    initEAttribute(getMailingList_Subscribe(), theXMLTypePackage.getString(), "subscribe", null, 0, 1, //$NON-NLS-1$
         MailingList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getMailingList_Unsubscribe(), theXMLTypePackage.getString(), "unsubscribe", null, 0, 1,
+    initEAttribute(getMailingList_Unsubscribe(), theXMLTypePackage.getString(), "unsubscribe", null, 0, 1, //$NON-NLS-1$
         MailingList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getMailingList_Post(), theXMLTypePackage.getString(), "post", null, 0, 1, MailingList.class,
+    initEAttribute(getMailingList_Post(), theXMLTypePackage.getString(), "post", null, 0, 1, MailingList.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMailingList_Archive(), theXMLTypePackage.getString(), "archive", null, 0, 1, MailingList.class,
+    initEAttribute(getMailingList_Archive(), theXMLTypePackage.getString(), "archive", null, 0, 1, MailingList.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getMailingList_OtherArchives(), ecorePackage.getEString(), "otherArchives", null, 0, -1,
+    initEAttribute(getMailingList_OtherArchives(), ecorePackage.getEString(), "otherArchives", null, 0, -1, //$NON-NLS-1$
         MailingList.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
 
-    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getModel_Parent(), this.getParent(), null, "parent", null, 0, 1, Model.class, !IS_TRANSIENT,
+    initEClass(modelEClass, Model.class, "Model", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEReference(getModel_Parent(), this.getParent(), null, "parent", null, 0, 1, Model.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getModel_ModelVersion(), theXMLTypePackage.getString(), "modelVersion", null, 0, 1, Model.class,
+    initEAttribute(getModel_ModelVersion(), theXMLTypePackage.getString(), "modelVersion", null, 0, 1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Model.class,
+    initEAttribute(getModel_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, Model.class,
+    initEAttribute(getModel_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_Packaging(), theXMLTypePackage.getString(), "packaging", null, 0, 1, Model.class,
+    initEAttribute(getModel_Packaging(), theXMLTypePackage.getString(), "packaging", null, 0, 1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Model.class, !IS_TRANSIENT,
+    initEAttribute(getModel_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Model.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, Model.class,
+    initEAttribute(getModel_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Model.class,
+    initEAttribute(getModel_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Model.class, !IS_TRANSIENT,
+    initEAttribute(getModel_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Model.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Prerequisites(), this.getPrerequisites(), null, "prerequisites", null, 0, 1, Model.class,
+    initEReference(getModel_Prerequisites(), this.getPrerequisites(), null, "prerequisites", null, 0, 1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_IssueManagement(), this.getIssueManagement(), null, "issueManagement", null, 0, 1,
+    initEReference(getModel_IssueManagement(), this.getIssueManagement(), null, "issueManagement", null, 0, 1, //$NON-NLS-1$
         Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_CiManagement(), this.getCiManagement(), null, "ciManagement", null, 0, 1, Model.class,
+    initEReference(getModel_CiManagement(), this.getCiManagement(), null, "ciManagement", null, 0, 1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_InceptionYear(), theXMLTypePackage.getString(), "inceptionYear", null, 0, 1, Model.class,
+    initEAttribute(getModel_InceptionYear(), theXMLTypePackage.getString(), "inceptionYear", null, 0, 1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_MailingLists(), this.getMailingList(), null, "mailingLists", null, 0, -1, Model.class,
+    initEReference(getModel_MailingLists(), this.getMailingList(), null, "mailingLists", null, 0, -1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Developers(), this.getDeveloper(), null, "developers", null, 0, -1, Model.class,
+    initEReference(getModel_Developers(), this.getDeveloper(), null, "developers", null, 0, -1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Contributors(), this.getContributor(), null, "contributors", null, 0, -1, Model.class,
+    initEReference(getModel_Contributors(), this.getContributor(), null, "contributors", null, 0, -1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Licenses(), this.getLicense(), null, "licenses", null, 0, -1, Model.class, !IS_TRANSIENT,
+    initEReference(getModel_Licenses(), this.getLicense(), null, "licenses", null, 0, -1, Model.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getModel_Scm(), this.getScm(), null, "scm", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE,
+    initEReference(getModel_Scm(), this.getScm(), null, "scm", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, //$NON-NLS-1$
         IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Organization(), this.getOrganization(), null, "organization", null, 0, 1, Model.class,
+    initEReference(getModel_Organization(), this.getOrganization(), null, "organization", null, 0, 1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Build(), this.getBuild(), null, "build", null, 0, 1, Model.class, !IS_TRANSIENT,
+    initEReference(getModel_Build(), this.getBuild(), null, "build", null, 0, 1, Model.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getModel_Profiles(), this.getProfile(), null, "profiles", null, 0, -1, Model.class, !IS_TRANSIENT,
+    initEReference(getModel_Profiles(), this.getProfile(), null, "profiles", null, 0, -1, Model.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getModel_Repositories(), this.getRepository(), null, "repositories", null, 0, -1, Model.class,
+    initEReference(getModel_Repositories(), this.getRepository(), null, "repositories", null, 0, -1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_PluginRepositories(), this.getRepository(), null, "pluginRepositories", null, 0, -1,
+    initEReference(getModel_PluginRepositories(), this.getRepository(), null, "pluginRepositories", null, 0, -1, //$NON-NLS-1$
         Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1, Model.class,
+    initEReference(getModel_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Reporting(), this.getReporting(), null, "reporting", null, 0, 1, Model.class,
+    initEReference(getModel_Reporting(), this.getReporting(), null, "reporting", null, 0, 1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_DependencyManagement(), this.getDependencyManagement(), null, "dependencyManagement", null,
+    initEReference(getModel_DependencyManagement(), this.getDependencyManagement(), null, "dependencyManagement", null, //$NON-NLS-1$
         0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_DistributionManagement(), this.getDistributionManagement(), null, "distributionManagement",
+    initEReference(getModel_DistributionManagement(), this.getDistributionManagement(), null, "distributionManagement", //$NON-NLS-1$
         null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getModel_Properties(), this.getPropertyElement(), null, "properties", null, 0, -1, Model.class,
+    initEReference(getModel_Properties(), this.getPropertyElement(), null, "properties", null, 0, -1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getModel_Modules(), theXMLTypePackage.getString(), "modules", null, 0, -1, Model.class,
+    initEAttribute(getModel_Modules(), theXMLTypePackage.getString(), "modules", null, 0, -1, Model.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(notifierEClass, Notifier.class, "Notifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getNotifier_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, Notifier.class,
+    initEClass(notifierEClass, Notifier.class, "Notifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getNotifier_Type(), theXMLTypePackage.getString(), "type", null, 0, 1, Notifier.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getNotifier_SendOnError(), theXMLTypePackage.getString(), "sendOnError", "true", 0, 1,
+    initEAttribute(getNotifier_SendOnError(), theXMLTypePackage.getString(), "sendOnError", "true", 0, 1, //$NON-NLS-1$ //$NON-NLS-2$
         Notifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getNotifier_SendOnFailure(), theXMLTypePackage.getString(), "sendOnFailure", "true", 0, 1,
+    initEAttribute(getNotifier_SendOnFailure(), theXMLTypePackage.getString(), "sendOnFailure", "true", 0, 1, //$NON-NLS-1$ //$NON-NLS-2$
         Notifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getNotifier_SendOnSuccess(), theXMLTypePackage.getString(), "sendOnSuccess", "true", 0, 1,
+    initEAttribute(getNotifier_SendOnSuccess(), theXMLTypePackage.getString(), "sendOnSuccess", "true", 0, 1, //$NON-NLS-1$ //$NON-NLS-2$
         Notifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getNotifier_SendOnWarning(), theXMLTypePackage.getString(), "sendOnWarning", "true", 0, 1,
+    initEAttribute(getNotifier_SendOnWarning(), theXMLTypePackage.getString(), "sendOnWarning", "true", 0, 1, //$NON-NLS-1$ //$NON-NLS-2$
         Notifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getNotifier_Address(), theXMLTypePackage.getString(), "address", null, 0, 1, Notifier.class,
+    initEAttribute(getNotifier_Address(), theXMLTypePackage.getString(), "address", null, 0, 1, Notifier.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getNotifier_Configuration(), this.getPropertyElement(), null, "configuration", null, 0, -1,
+    initEReference(getNotifier_Configuration(), this.getPropertyElement(), null, "configuration", null, 0, -1, //$NON-NLS-1$
         Notifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(organizationEClass, Organization.class, "Organization", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(organizationEClass, Organization.class, "Organization", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getOrganization_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Organization.class,
+    initEAttribute(getOrganization_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Organization.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getOrganization_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Organization.class,
-        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(parentEClass, Parent.class, "Parent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getParent_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, Parent.class,
-        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getParent_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Parent.class,
-        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getParent_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, Parent.class,
-        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getParent_RelativePath(), theXMLTypePackage.getString(), "relativePath", null, 0, 1, Parent.class,
+    initEAttribute(getOrganization_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Organization.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(pluginEClass, Plugin.class, "Plugin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPlugin_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Plugin.class,
-        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPlugin_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, Plugin.class,
+    initEClass(parentEClass, Parent.class, "Parent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getParent_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, Parent.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPlugin_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, Plugin.class,
+    initEAttribute(getParent_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Parent.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPlugin_Extensions(), theXMLTypePackage.getString(), "extensions", "false", 0, 1, Plugin.class,
+    initEAttribute(getParent_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, Parent.class, //$NON-NLS-1$
+        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getParent_RelativePath(), theXMLTypePackage.getString(), "relativePath", null, 0, 1, Parent.class, //$NON-NLS-1$
+        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(pluginEClass, Plugin.class, "Plugin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getPlugin_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Plugin.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPlugin_Executions(), this.getPluginExecution(), null, "executions", null, 0, -1, Plugin.class,
+    initEAttribute(getPlugin_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, Plugin.class, //$NON-NLS-1$
+        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPlugin_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, Plugin.class, //$NON-NLS-1$
+        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getPlugin_Extensions(), theXMLTypePackage.getString(), "extensions", "false", 0, 1, Plugin.class, //$NON-NLS-1$ //$NON-NLS-2$
+        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getPlugin_Executions(), this.getPluginExecution(), null, "executions", null, 0, -1, Plugin.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getPlugin_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1, Plugin.class,
+    initEReference(getPlugin_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1, Plugin.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPlugin_Inherited(), theXMLTypePackage.getString(), "inherited", null, 0, 1, Plugin.class,
+    initEAttribute(getPlugin_Inherited(), theXMLTypePackage.getString(), "inherited", null, 0, 1, Plugin.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getPlugin_Configuration(), this.getConfiguration(), null, "configuration", null, 0, 1, Plugin.class,
+    initEReference(getPlugin_Configuration(), this.getConfiguration(), null, "configuration", null, 0, 1, Plugin.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
-    initEClass(pluginExecutionEClass, PluginExecution.class, "PluginExecution", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(pluginExecutionEClass, PluginExecution.class, "PluginExecution", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPluginExecution_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, PluginExecution.class,
+    initEAttribute(getPluginExecution_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, PluginExecution.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPluginExecution_Phase(), theXMLTypePackage.getString(), "phase", null, 0, 1,
+    initEAttribute(getPluginExecution_Phase(), theXMLTypePackage.getString(), "phase", null, 0, 1, //$NON-NLS-1$
         PluginExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPluginExecution_Inherited(), theXMLTypePackage.getString(), "inherited", null, 0, 1,
+    initEAttribute(getPluginExecution_Inherited(), theXMLTypePackage.getString(), "inherited", null, 0, 1, //$NON-NLS-1$
         PluginExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPluginExecution_Goals(), theXMLTypePackage.getString(), "goals", null, 0, -1,
+    initEAttribute(getPluginExecution_Goals(), theXMLTypePackage.getString(), "goals", null, 0, -1, //$NON-NLS-1$
         PluginExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getPluginExecution_Configuration(), this.getConfiguration(), null, "configuration", null, 0, 1,
+    initEReference(getPluginExecution_Configuration(), this.getConfiguration(), null, "configuration", null, 0, 1, //$NON-NLS-1$
         PluginExecution.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(pluginManagementEClass, PluginManagement.class, "PluginManagement", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(pluginManagementEClass, PluginManagement.class, "PluginManagement", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getPluginManagement_Plugins(), this.getPlugin(), null, "plugins", null, 0, -1,
+    initEReference(getPluginManagement_Plugins(), this.getPlugin(), null, "plugins", null, 0, -1, //$NON-NLS-1$
         PluginManagement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(prerequisitesEClass, Prerequisites.class, "Prerequisites", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(prerequisitesEClass, Prerequisites.class, "Prerequisites", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPrerequisites_Maven(), theXMLTypePackage.getString(), "maven", null, 0, 1, Prerequisites.class,
+    initEAttribute(getPrerequisites_Maven(), theXMLTypePackage.getString(), "maven", null, 0, 1, Prerequisites.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(profileEClass, Profile.class, "Profile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getProfile_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, Profile.class, !IS_TRANSIENT,
+    initEClass(profileEClass, Profile.class, "Profile", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getProfile_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, Profile.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_Activation(), this.getActivation(), null, "activation", null, 0, 1, Profile.class,
+    initEReference(getProfile_Activation(), this.getActivation(), null, "activation", null, 0, 1, Profile.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_Build(), this.getBuildBase(), null, "build", null, 0, 1, Profile.class, !IS_TRANSIENT,
+    initEReference(getProfile_Build(), this.getBuildBase(), null, "build", null, 0, 1, Profile.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getProfile_Repositories(), this.getRepository(), null, "repositories", null, 0, -1, Profile.class,
+    initEReference(getProfile_Repositories(), this.getRepository(), null, "repositories", null, 0, -1, Profile.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_PluginRepositories(), this.getRepository(), null, "pluginRepositories", null, 0, -1,
+    initEReference(getProfile_PluginRepositories(), this.getRepository(), null, "pluginRepositories", null, 0, -1, //$NON-NLS-1$
         Profile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1, Profile.class,
+    initEReference(getProfile_Dependencies(), this.getDependency(), null, "dependencies", null, 0, -1, Profile.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_Reports(), this.getReportPlugin(), null, "reports", null, 0, -1, Profile.class,
+    initEReference(getProfile_Reports(), this.getReportPlugin(), null, "reports", null, 0, -1, Profile.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_DependencyManagement(), this.getDependencyManagement(), null, "dependencyManagement",
+    initEReference(getProfile_DependencyManagement(), this.getDependencyManagement(), null, "dependencyManagement", //$NON-NLS-1$
         null, 0, 1, Profile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProfile_DistributionManagement(), this.getDistributionManagement(), null,
-        "distributionManagement", null, 0, 1, Profile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+        "distributionManagement", null, 0, 1, Profile.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, //$NON-NLS-1$
         !IS_RESOLVE_PROXIES, IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_Properties(), this.getPropertyElement(), null, "properties", null, 0, -1, Profile.class,
+    initEReference(getProfile_Properties(), this.getPropertyElement(), null, "properties", null, 0, -1, Profile.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getProfile_Modules(), theXMLTypePackage.getString(), "modules", null, 0, -1, Profile.class,
+    initEAttribute(getProfile_Modules(), theXMLTypePackage.getString(), "modules", null, 0, -1, Profile.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getProfile_Reporting(), this.getReporting(), null, "reporting", null, 0, 1, Profile.class,
+    initEReference(getProfile_Reporting(), this.getReporting(), null, "reporting", null, 0, 1, Profile.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
-    initEClass(relocationEClass, Relocation.class, "Relocation", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(relocationEClass, Relocation.class, "Relocation", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRelocation_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Relocation.class,
+    initEAttribute(getRelocation_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, Relocation.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRelocation_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1,
+    initEAttribute(getRelocation_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, //$NON-NLS-1$
         Relocation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getRelocation_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, Relocation.class,
+    initEAttribute(getRelocation_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, Relocation.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRelocation_Message(), theXMLTypePackage.getString(), "message", null, 0, 1, Relocation.class,
+    initEAttribute(getRelocation_Message(), theXMLTypePackage.getString(), "message", null, 0, 1, Relocation.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(reportingEClass, Reporting.class, "Reporting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getReporting_ExcludeDefaults(), theXMLTypePackage.getString(), "excludeDefaults", "false", 0, 1,
+    initEClass(reportingEClass, Reporting.class, "Reporting", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getReporting_ExcludeDefaults(), theXMLTypePackage.getString(), "excludeDefaults", "false", 0, 1, //$NON-NLS-1$ //$NON-NLS-2$
         Reporting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getReporting_OutputDirectory(), theXMLTypePackage.getString(), "outputDirectory", null, 0, 1,
+    initEAttribute(getReporting_OutputDirectory(), theXMLTypePackage.getString(), "outputDirectory", null, 0, 1, //$NON-NLS-1$
         Reporting.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getReporting_Plugins(), this.getReportPlugin(), null, "plugins", null, 0, -1, Reporting.class,
+    initEReference(getReporting_Plugins(), this.getReportPlugin(), null, "plugins", null, 0, -1, Reporting.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE, !IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
-    initEClass(reportPluginEClass, ReportPlugin.class, "ReportPlugin", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(reportPluginEClass, ReportPlugin.class, "ReportPlugin", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getReportPlugin_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, ReportPlugin.class,
+    initEAttribute(getReportPlugin_GroupId(), theXMLTypePackage.getString(), "groupId", null, 0, 1, ReportPlugin.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReportPlugin_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1,
+    initEAttribute(getReportPlugin_ArtifactId(), theXMLTypePackage.getString(), "artifactId", null, 0, 1, //$NON-NLS-1$
         ReportPlugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getReportPlugin_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, ReportPlugin.class,
+    initEAttribute(getReportPlugin_Version(), theXMLTypePackage.getString(), "version", null, 0, 1, ReportPlugin.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReportPlugin_Inherited(), theXMLTypePackage.getString(), "inherited", null, 0, 1,
+    initEAttribute(getReportPlugin_Inherited(), theXMLTypePackage.getString(), "inherited", null, 0, 1, //$NON-NLS-1$
         ReportPlugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEReference(getReportPlugin_ReportSets(), this.getReportSet(), null, "reportSets", null, 0, -1,
+    initEReference(getReportPlugin_ReportSets(), this.getReportSet(), null, "reportSets", null, 0, -1, //$NON-NLS-1$
         ReportPlugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
         IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReportPlugin_Configuration(), this.getConfiguration(), null, "configuration", null, 0, 1,
+    initEReference(getReportPlugin_Configuration(), this.getConfiguration(), null, "configuration", null, 0, 1, //$NON-NLS-1$
         ReportPlugin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
         !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(reportSetEClass, ReportSet.class, "ReportSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getReportSet_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, ReportSet.class, !IS_TRANSIENT,
+    initEClass(reportSetEClass, ReportSet.class, "ReportSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getReportSet_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, ReportSet.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReportSet_Inherited(), theXMLTypePackage.getString(), "inherited", null, 0, 1, ReportSet.class,
+    initEAttribute(getReportSet_Inherited(), theXMLTypePackage.getString(), "inherited", null, 0, 1, ReportSet.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getReportSet_Reports(), theXMLTypePackage.getString(), "reports", null, 0, -1, ReportSet.class,
+    initEAttribute(getReportSet_Reports(), theXMLTypePackage.getString(), "reports", null, 0, -1, ReportSet.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getReportSet_Configuration(), this.getConfiguration(), null, "configuration", null, 0, 1,
+    initEReference(getReportSet_Configuration(), this.getConfiguration(), null, "configuration", null, 0, 1, //$NON-NLS-1$
         ReportSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(repositoryEClass, Repository.class, "Repository", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(repositoryEClass, Repository.class, "Repository", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRepository_Releases(), this.getRepositoryPolicy(), null, "releases", null, 0, 1,
+    initEReference(getRepository_Releases(), this.getRepositoryPolicy(), null, "releases", null, 0, 1, //$NON-NLS-1$
         Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRepository_Snapshots(), this.getRepositoryPolicy(), null, "snapshots", null, 0, 1,
+    initEReference(getRepository_Snapshots(), this.getRepositoryPolicy(), null, "snapshots", null, 0, 1, //$NON-NLS-1$
         Repository.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, IS_UNSETTABLE,
         IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRepository_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, Repository.class,
+    initEAttribute(getRepository_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, Repository.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRepository_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Repository.class,
+    initEAttribute(getRepository_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Repository.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRepository_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Repository.class,
+    initEAttribute(getRepository_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Repository.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRepository_Layout(), theXMLTypePackage.getString(), "layout", null, 0, 1, Repository.class,
+    initEAttribute(getRepository_Layout(), theXMLTypePackage.getString(), "layout", null, 0, 1, Repository.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(repositoryPolicyEClass, RepositoryPolicy.class, "RepositoryPolicy", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(repositoryPolicyEClass, RepositoryPolicy.class, "RepositoryPolicy", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getRepositoryPolicy_Enabled(), theXMLTypePackage.getString(), "enabled", "true", 0, 1,
+    initEAttribute(getRepositoryPolicy_Enabled(), theXMLTypePackage.getString(), "enabled", "true", 0, 1, //$NON-NLS-1$ //$NON-NLS-2$
         RepositoryPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRepositoryPolicy_UpdatePolicy(), theXMLTypePackage.getString(), "updatePolicy", null, 0, 1,
+    initEAttribute(getRepositoryPolicy_UpdatePolicy(), theXMLTypePackage.getString(), "updatePolicy", null, 0, 1, //$NON-NLS-1$
         RepositoryPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getRepositoryPolicy_ChecksumPolicy(), theXMLTypePackage.getString(), "checksumPolicy", null, 0, 1,
+    initEAttribute(getRepositoryPolicy_ChecksumPolicy(), theXMLTypePackage.getString(), "checksumPolicy", null, 0, 1, //$NON-NLS-1$
         RepositoryPolicy.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
-    initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getResource_TargetPath(), theXMLTypePackage.getString(), "targetPath", null, 0, 1, Resource.class,
+    initEClass(resourceEClass, Resource.class, "Resource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getResource_TargetPath(), theXMLTypePackage.getString(), "targetPath", null, 0, 1, Resource.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getResource_Filtering(), theXMLTypePackage.getString(), "filtering", "false", 0, 1, Resource.class,
+    initEAttribute(getResource_Filtering(), theXMLTypePackage.getString(), "filtering", "false", 0, 1, Resource.class, //$NON-NLS-1$ //$NON-NLS-2$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getResource_Directory(), theXMLTypePackage.getString(), "directory", null, 0, 1, Resource.class,
+    initEAttribute(getResource_Directory(), theXMLTypePackage.getString(), "directory", null, 0, 1, Resource.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getResource_Includes(), theXMLTypePackage.getString(), "includes", null, 0, -1, Resource.class,
+    initEAttribute(getResource_Includes(), theXMLTypePackage.getString(), "includes", null, 0, -1, Resource.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getResource_Excludes(), theXMLTypePackage.getString(), "excludes", null, 0, -1, Resource.class,
+    initEAttribute(getResource_Excludes(), theXMLTypePackage.getString(), "excludes", null, 0, -1, Resource.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(scmEClass, Scm.class, "Scm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getScm_Connection(), theXMLTypePackage.getString(), "connection", null, 0, 1, Scm.class,
+    initEClass(scmEClass, Scm.class, "Scm", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getScm_Connection(), theXMLTypePackage.getString(), "connection", null, 0, 1, Scm.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getScm_DeveloperConnection(), theXMLTypePackage.getString(), "developerConnection", null, 0, 1,
+    initEAttribute(getScm_DeveloperConnection(), theXMLTypePackage.getString(), "developerConnection", null, 0, 1, //$NON-NLS-1$
         Scm.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
         IS_ORDERED);
-    initEAttribute(getScm_Tag(), theXMLTypePackage.getString(), "tag", null, 0, 1, Scm.class, !IS_TRANSIENT,
+    initEAttribute(getScm_Tag(), theXMLTypePackage.getString(), "tag", null, 0, 1, Scm.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getScm_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Scm.class, !IS_TRANSIENT,
+    initEAttribute(getScm_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Scm.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(siteEClass, Site.class, "Site", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSite_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, Site.class, !IS_TRANSIENT,
+    initEClass(siteEClass, Site.class, "Site", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS); //$NON-NLS-1$
+    initEAttribute(getSite_Id(), theXMLTypePackage.getString(), "id", null, 0, 1, Site.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSite_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Site.class, !IS_TRANSIENT,
+    initEAttribute(getSite_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, Site.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getSite_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Site.class, !IS_TRANSIENT,
+    initEAttribute(getSite_Url(), theXMLTypePackage.getString(), "url", null, 0, 1, Site.class, !IS_TRANSIENT, //$NON-NLS-1$
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(propertyElementEClass, PropertyElement.class, "PropertyElement", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(propertyElementEClass, PropertyElement.class, "PropertyElement", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getPropertyElement_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, PropertyElement.class,
+    initEAttribute(getPropertyElement_Name(), theXMLTypePackage.getString(), "name", null, 0, 1, PropertyElement.class, //$NON-NLS-1$
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getPropertyElement_Value(), theXMLTypePackage.getString(), "value", null, 0, 1,
+    initEAttribute(getPropertyElement_Value(), theXMLTypePackage.getString(), "value", null, 0, 1, //$NON-NLS-1$
         PropertyElement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
         !IS_DERIVED, IS_ORDERED);
 
-    initEClass(configurationEClass, Configuration.class, "Configuration", !IS_ABSTRACT, !IS_INTERFACE,
+    initEClass(configurationEClass, Configuration.class, "Configuration", !IS_ABSTRACT, !IS_INTERFACE, //$NON-NLS-1$
         IS_GENERATED_INSTANCE_CLASS);
 
     // Create resource
@@ -3500,405 +3500,405 @@ public class PomPackageImpl extends EPackageImpl implements PomPackage {
    * @generated
    */
   protected void createExtendedMetaDataAnnotations() {
-    String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
-    addAnnotation(activationEClass, source, new String[] {"name", "Activation", "kind", "elementOnly"});
-    addAnnotation(getActivation_ActiveByDefault(), source, new String[] {"kind", "element", "name", "activeByDefault",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getActivation_Jdk(), source, new String[] {"kind", "element", "name", "jdk", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getActivation_Os(), source, new String[] {"kind", "element", "name", "os", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getActivation_Property(), source, new String[] {"kind", "element", "name", "property", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getActivation_File(), source, new String[] {"kind", "element", "name", "file", "namespace",
-        "##targetNamespace"});
-    addAnnotation(activationFileEClass, source, new String[] {"name", "ActivationFile", "kind", "elementOnly"});
-    addAnnotation(getActivationFile_Missing(), source, new String[] {"kind", "element", "name", "missing", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getActivationFile_Exists(), source, new String[] {"kind", "element", "name", "exists", "namespace",
-        "##targetNamespace"});
-    addAnnotation(activationOSEClass, source, new String[] {"name", "ActivationOS", "kind", "elementOnly"});
-    addAnnotation(getActivationOS_Name(), source, new String[] {"kind", "element", "name", "name", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getActivationOS_Family(), source, new String[] {"kind", "element", "name", "family", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getActivationOS_Arch(), source, new String[] {"kind", "element", "name", "arch", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getActivationOS_Version(), source, new String[] {"kind", "element", "name", "version", "namespace",
-        "##targetNamespace"});
-    addAnnotation(activationPropertyEClass, source, new String[] {"name", "ActivationProperty", "kind", "elementOnly"});
-    addAnnotation(getActivationProperty_Name(), source, new String[] {"kind", "element", "name", "name", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getActivationProperty_Value(), source, new String[] {"kind", "element", "name", "value", "namespace",
-        "##targetNamespace"});
-    addAnnotation(buildEClass, source, new String[] {"name", "Build", "kind", "elementOnly"});
-    addAnnotation(getBuild_SourceDirectory(), source, new String[] {"kind", "element", "name", "sourceDirectory",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getBuild_ScriptSourceDirectory(), source, new String[] {"kind", "element", "name",
-        "scriptSourceDirectory", "namespace", "##targetNamespace"});
-    addAnnotation(getBuild_TestSourceDirectory(), source, new String[] {"kind", "element", "name",
-        "testSourceDirectory", "namespace", "##targetNamespace"});
-    addAnnotation(getBuild_OutputDirectory(), source, new String[] {"kind", "element", "name", "outputDirectory",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getBuild_TestOutputDirectory(), source, new String[] {"kind", "element", "name",
-        "testOutputDirectory", "namespace", "##targetNamespace"});
-    addAnnotation(getBuild_Extensions(), source, new String[] {"kind", "element", "name", "extensions", "namespace",
-        "##targetNamespace"});
-    addAnnotation(buildBaseEClass, source, new String[] {"name", "BuildBase", "kind", "elementOnly"});
-    addAnnotation(getBuildBase_DefaultGoal(), source, new String[] {"kind", "element", "name", "defaultGoal",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getBuildBase_Resources(), source, new String[] {"kind", "element", "name", "resources", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getBuildBase_TestResources(), source, new String[] {"kind", "element", "name", "testResources",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getBuildBase_Directory(), source, new String[] {"kind", "element", "name", "directory", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getBuildBase_FinalName(), source, new String[] {"kind", "element", "name", "finalName", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getBuildBase_PluginManagement(), source, new String[] {"kind", "element", "name", "pluginManagement",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getBuildBase_Plugins(), source, new String[] {"kind", "element", "name", "plugins", "namespace",
-        "##targetNamespace"});
-    addAnnotation(ciManagementEClass, source, new String[] {"name", "CiManagement", "kind", "elementOnly"});
-    addAnnotation(getCiManagement_System(), source, new String[] {"kind", "element", "name", "system", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getCiManagement_Url(), source, new String[] {"kind", "element", "name", "url", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getCiManagement_Notifiers(), source, new String[] {"kind", "element", "name", "notifiers",
-        "namespace", "##targetNamespace"});
-    addAnnotation(contributorEClass, source, new String[] {"name", "Contributor", "kind", "elementOnly"});
-    addAnnotation(getContributor_Name(), source, new String[] {"kind", "element", "name", "name", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getContributor_Email(), source, new String[] {"kind", "element", "name", "email", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getContributor_Url(), source, new String[] {"kind", "element", "name", "url", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getContributor_Organization(), source, new String[] {"kind", "element", "name", "organization",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getContributor_OrganizationUrl(), source, new String[] {"kind", "element", "name", "organizationUrl",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getContributor_Timezone(), source, new String[] {"kind", "element", "name", "timezone", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getContributor_Properties(), source, new String[] {"kind", "element", "name", "properties",
-        "namespace", "##targetNamespace"});
-    addAnnotation(dependencyEClass, source, new String[] {"name", "Dependency", "kind", "elementOnly"});
-    addAnnotation(getDependency_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getDependency_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getDependency_Version(), source, new String[] {"kind", "element", "name", "version", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getDependency_Type(), source, new String[] {"kind", "element", "name", "type", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getDependency_Classifier(), source, new String[] {"kind", "element", "name", "classifier",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getDependency_Scope(), source, new String[] {"kind", "element", "name", "scope", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getDependency_SystemPath(), source, new String[] {"kind", "element", "name", "systemPath",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getDependency_Exclusions(), source, new String[] {"kind", "element", "name", "exclusions",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getDependency_Optional(), source, new String[] {"kind", "element", "name", "optional", "namespace",
-        "##targetNamespace"});
-    addAnnotation(dependencyManagementEClass, source, new String[] {"name", "DependencyManagement", "kind",
-        "elementOnly"});
-    addAnnotation(getDependencyManagement_Dependencies(), source, new String[] {"kind", "element", "name",
-        "dependencies", "namespace", "##targetNamespace"});
-    addAnnotation(deploymentRepositoryEClass, source, new String[] {"name", "DeploymentRepository", "kind",
-        "elementOnly"});
-    addAnnotation(getDeploymentRepository_UniqueVersion(), source, new String[] {"kind", "element", "name",
-        "uniqueVersion", "namespace", "##targetNamespace"});
-    addAnnotation(getDeploymentRepository_Id(), source, new String[] {"kind", "element", "name", "id", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getDeploymentRepository_Name(), source, new String[] {"kind", "element", "name", "name", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getDeploymentRepository_Url(), source, new String[] {"kind", "element", "name", "url", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getDeploymentRepository_Layout(), source, new String[] {"kind", "element", "name", "layout",
-        "namespace", "##targetNamespace"});
-    addAnnotation(developerEClass, source, new String[] {"name", "Developer", "kind", "elementOnly"});
-    addAnnotation(getDeveloper_Id(), source, new String[] {"kind", "element", "name", "id", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getDeveloper_Name(), source, new String[] {"kind", "element", "name", "name", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getDeveloper_Email(), source, new String[] {"kind", "element", "name", "email", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getDeveloper_Url(), source, new String[] {"kind", "element", "name", "url", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getDeveloper_Organization(), source, new String[] {"kind", "element", "name", "organization",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getDeveloper_OrganizationUrl(), source, new String[] {"kind", "element", "name", "organizationUrl",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getDeveloper_Timezone(), source, new String[] {"kind", "element", "name", "timezone", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getDeveloper_Properties(), source, new String[] {"kind", "element", "name", "properties",
-        "namespace", "##targetNamespace"});
-    addAnnotation(distributionManagementEClass, source, new String[] {"name", "DistributionManagement", "kind",
-        "elementOnly"});
-    addAnnotation(getDistributionManagement_Repository(), source, new String[] {"kind", "element", "name",
-        "repository", "namespace", "##targetNamespace"});
-    addAnnotation(getDistributionManagement_SnapshotRepository(), source, new String[] {"kind", "element", "name",
-        "snapshotRepository", "namespace", "##targetNamespace"});
-    addAnnotation(getDistributionManagement_Site(), source, new String[] {"kind", "element", "name", "site",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getDistributionManagement_DownloadUrl(), source, new String[] {"kind", "element", "name",
-        "downloadUrl", "namespace", "##targetNamespace"});
-    addAnnotation(getDistributionManagement_Relocation(), source, new String[] {"kind", "element", "name",
-        "relocation", "namespace", "##targetNamespace"});
-    addAnnotation(getDistributionManagement_Status(), source, new String[] {"kind", "element", "name", "status",
-        "namespace", "##targetNamespace"});
-    addAnnotation(documentRootEClass, source, new String[] {"name", "", "kind", "mixed"});
-    addAnnotation(getDocumentRoot_Mixed(), source, new String[] {"kind", "elementWildcard", "name", ":mixed"});
-    addAnnotation(getDocumentRoot_XMLNSPrefixMap(), source, new String[] {"kind", "attribute", "name", "xmlns:prefix"});
-    addAnnotation(getDocumentRoot_XSISchemaLocation(), source, new String[] {"kind", "attribute", "name",
-        "xsi:schemaLocation"});
-    addAnnotation(getDocumentRoot_Project(), source, new String[] {"kind", "element", "name", "project", "namespace",
-        "##targetNamespace"});
-    addAnnotation(exclusionEClass, source, new String[] {"name", "Exclusion", "kind", "elementOnly"});
-    addAnnotation(getExclusion_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getExclusion_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace",
-        "##targetNamespace"});
-    addAnnotation(extensionEClass, source, new String[] {"name", "Extension", "kind", "elementOnly"});
-    addAnnotation(getExtension_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getExtension_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getExtension_Version(), source, new String[] {"kind", "element", "name", "version", "namespace",
-        "##targetNamespace"});
-    addAnnotation(issueManagementEClass, source, new String[] {"name", "IssueManagement", "kind", "elementOnly"});
-    addAnnotation(getIssueManagement_System(), source, new String[] {"kind", "element", "name", "system", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getIssueManagement_Url(), source, new String[] {"kind", "element", "name", "url", "namespace",
-        "##targetNamespace"});
-    addAnnotation(licenseEClass, source, new String[] {"name", "License", "kind", "elementOnly"});
-    addAnnotation(getLicense_Name(), source, new String[] {"kind", "element", "name", "name", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getLicense_Url(), source, new String[] {"kind", "element", "name", "url", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getLicense_Distribution(), source, new String[] {"kind", "element", "name", "distribution",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getLicense_Comments(), source, new String[] {"kind", "element", "name", "comments", "namespace",
-        "##targetNamespace"});
-    addAnnotation(mailingListEClass, source, new String[] {"name", "MailingList", "kind", "elementOnly"});
-    addAnnotation(getMailingList_Name(), source, new String[] {"kind", "element", "name", "name", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getMailingList_Subscribe(), source, new String[] {"kind", "element", "name", "subscribe",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getMailingList_Unsubscribe(), source, new String[] {"kind", "element", "name", "unsubscribe",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getMailingList_Post(), source, new String[] {"kind", "element", "name", "post", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getMailingList_Archive(), source, new String[] {"kind", "element", "name", "archive", "namespace",
-        "##targetNamespace"});
-    addAnnotation(modelEClass, source, new String[] {"name", "Model", "kind", "elementOnly"});
-    addAnnotation(getModel_Parent(), source, new String[] {"kind", "element", "name", "parent", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_ModelVersion(), source, new String[] {"kind", "element", "name", "modelVersion",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getModel_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_Packaging(), source, new String[] {"kind", "element", "name", "packaging", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_Name(), source, new String[] {"kind", "element", "name", "name", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_Version(), source, new String[] {"kind", "element", "name", "version", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_Description(), source, new String[] {"kind", "element", "name", "description", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_Url(), source, new String[] {"kind", "element", "name", "url", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_Prerequisites(), source, new String[] {"kind", "element", "name", "prerequisites",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getModel_IssueManagement(), source, new String[] {"kind", "element", "name", "issueManagement",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getModel_CiManagement(), source, new String[] {"kind", "element", "name", "ciManagement",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getModel_InceptionYear(), source, new String[] {"kind", "element", "name", "inceptionYear",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getModel_MailingLists(), source, new String[] {"kind", "element", "name", "mailingLists",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getModel_Developers(), source, new String[] {"kind", "element", "name", "developers", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_Contributors(), source, new String[] {"kind", "element", "name", "contributors",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getModel_Licenses(), source, new String[] {"kind", "element", "name", "licenses", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_Scm(), source, new String[] {"kind", "element", "name", "scm", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_Organization(), source, new String[] {"kind", "element", "name", "organization",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getModel_Build(), source, new String[] {"kind", "element", "name", "build", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_Profiles(), source, new String[] {"kind", "element", "name", "profiles", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_Repositories(), source, new String[] {"kind", "element", "name", "repositories",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getModel_PluginRepositories(), source, new String[] {"kind", "element", "name", "pluginRepositories",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getModel_Dependencies(), source, new String[] {"kind", "element", "name", "dependencies",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getModel_Reporting(), source, new String[] {"kind", "element", "name", "reporting", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getModel_DependencyManagement(), source, new String[] {"kind", "element", "name",
-        "dependencyManagement", "namespace", "##targetNamespace"});
-    addAnnotation(getModel_DistributionManagement(), source, new String[] {"kind", "element", "name",
-        "distributionManagement", "namespace", "##targetNamespace"});
-    addAnnotation(getModel_Properties(), source, new String[] {"kind", "element", "name", "properties", "namespace",
-        "##targetNamespace"});
-    addAnnotation(notifierEClass, source, new String[] {"name", "Notifier", "kind", "elementOnly"});
-    addAnnotation(getNotifier_Type(), source, new String[] {"kind", "element", "name", "type", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getNotifier_SendOnError(), source, new String[] {"kind", "element", "name", "sendOnError",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getNotifier_SendOnFailure(), source, new String[] {"kind", "element", "name", "sendOnFailure",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getNotifier_SendOnSuccess(), source, new String[] {"kind", "element", "name", "sendOnSuccess",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getNotifier_SendOnWarning(), source, new String[] {"kind", "element", "name", "sendOnWarning",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getNotifier_Address(), source, new String[] {"kind", "element", "name", "address", "namespace",
-        "##targetNamespace"});
-    addAnnotation(organizationEClass, source, new String[] {"name", "Organization", "kind", "elementOnly"});
-    addAnnotation(getOrganization_Name(), source, new String[] {"kind", "element", "name", "name", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getOrganization_Url(), source, new String[] {"kind", "element", "name", "url", "namespace",
-        "##targetNamespace"});
-    addAnnotation(parentEClass, source, new String[] {"name", "Parent", "kind", "elementOnly"});
-    addAnnotation(getParent_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getParent_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getParent_Version(), source, new String[] {"kind", "element", "name", "version", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getParent_RelativePath(), source, new String[] {"kind", "element", "name", "relativePath",
-        "namespace", "##targetNamespace"});
-    addAnnotation(pluginEClass, source, new String[] {"name", "Plugin", "kind", "elementOnly"});
-    addAnnotation(getPlugin_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getPlugin_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getPlugin_Version(), source, new String[] {"kind", "element", "name", "version", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getPlugin_Extensions(), source, new String[] {"kind", "element", "name", "extensions", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getPlugin_Executions(), source, new String[] {"kind", "element", "name", "executions", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getPlugin_Dependencies(), source, new String[] {"kind", "element", "name", "dependencies",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getPlugin_Inherited(), source, new String[] {"kind", "element", "name", "inherited", "namespace",
-        "##targetNamespace"});
-    addAnnotation(pluginExecutionEClass, source, new String[] {"name", "PluginExecution", "kind", "elementOnly"});
-    addAnnotation(getPluginExecution_Id(), source, new String[] {"kind", "element", "name", "id", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getPluginExecution_Phase(), source, new String[] {"kind", "element", "name", "phase", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getPluginExecution_Inherited(), source, new String[] {"kind", "element", "name", "inherited",
-        "namespace", "##targetNamespace"});
-    addAnnotation(pluginManagementEClass, source, new String[] {"name", "PluginManagement", "kind", "elementOnly"});
-    addAnnotation(getPluginManagement_Plugins(), source, new String[] {"kind", "element", "name", "plugins",
-        "namespace", "##targetNamespace"});
-    addAnnotation(prerequisitesEClass, source, new String[] {"name", "Prerequisites", "kind", "elementOnly"});
-    addAnnotation(getPrerequisites_Maven(), source, new String[] {"kind", "element", "name", "maven", "namespace",
-        "##targetNamespace"});
-    addAnnotation(profileEClass, source, new String[] {"name", "Profile", "kind", "elementOnly"});
-    addAnnotation(getProfile_Id(), source, new String[] {"kind", "element", "name", "id", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getProfile_Activation(), source, new String[] {"kind", "element", "name", "activation", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getProfile_Build(), source, new String[] {"kind", "element", "name", "build", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getProfile_Repositories(), source, new String[] {"kind", "element", "name", "repositories",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getProfile_PluginRepositories(), source, new String[] {"kind", "element", "name",
-        "pluginRepositories", "namespace", "##targetNamespace"});
-    addAnnotation(getProfile_Dependencies(), source, new String[] {"kind", "element", "name", "dependencies",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getProfile_Reports(), source, new String[] {"kind", "element", "name", "reports", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getProfile_DependencyManagement(), source, new String[] {"kind", "element", "name",
-        "dependencyManagement", "namespace", "##targetNamespace"});
-    addAnnotation(getProfile_DistributionManagement(), source, new String[] {"kind", "element", "name",
-        "distributionManagement", "namespace", "##targetNamespace"});
-    addAnnotation(getProfile_Properties(), source, new String[] {"kind", "element", "name", "properties", "namespace",
-        "##targetNamespace"});
-    addAnnotation(relocationEClass, source, new String[] {"name", "Relocation", "kind", "elementOnly"});
-    addAnnotation(getRelocation_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getRelocation_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getRelocation_Version(), source, new String[] {"kind", "element", "name", "version", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getRelocation_Message(), source, new String[] {"kind", "element", "name", "message", "namespace",
-        "##targetNamespace"});
-    addAnnotation(reportingEClass, source, new String[] {"name", "Reporting", "kind", "elementOnly"});
-    addAnnotation(getReporting_ExcludeDefaults(), source, new String[] {"kind", "element", "name", "excludeDefaults",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getReporting_OutputDirectory(), source, new String[] {"kind", "element", "name", "outputDirectory",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getReporting_Plugins(), source, new String[] {"kind", "element", "name", "plugins", "namespace",
-        "##targetNamespace"});
-    addAnnotation(reportPluginEClass, source, new String[] {"name", "ReportPlugin", "kind", "elementOnly"});
-    addAnnotation(getReportPlugin_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getReportPlugin_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getReportPlugin_Version(), source, new String[] {"kind", "element", "name", "version", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getReportPlugin_Inherited(), source, new String[] {"kind", "element", "name", "inherited",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getReportPlugin_ReportSets(), source, new String[] {"kind", "element", "name", "reportSets",
-        "namespace", "##targetNamespace"});
-    addAnnotation(reportSetEClass, source, new String[] {"name", "ReportSet", "kind", "elementOnly"});
-    addAnnotation(getReportSet_Id(), source, new String[] {"kind", "element", "name", "id", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getReportSet_Inherited(), source, new String[] {"kind", "element", "name", "inherited", "namespace",
-        "##targetNamespace"});
-    addAnnotation(repositoryEClass, source, new String[] {"name", "Repository", "kind", "elementOnly"});
-    addAnnotation(getRepository_Releases(), source, new String[] {"kind", "element", "name", "releases", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getRepository_Snapshots(), source, new String[] {"kind", "element", "name", "snapshots", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getRepository_Id(), source, new String[] {"kind", "element", "name", "id", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getRepository_Name(), source, new String[] {"kind", "element", "name", "name", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getRepository_Url(), source, new String[] {"kind", "element", "name", "url", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getRepository_Layout(), source, new String[] {"kind", "element", "name", "layout", "namespace",
-        "##targetNamespace"});
-    addAnnotation(repositoryPolicyEClass, source, new String[] {"name", "RepositoryPolicy", "kind", "elementOnly"});
-    addAnnotation(getRepositoryPolicy_Enabled(), source, new String[] {"kind", "element", "name", "enabled",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getRepositoryPolicy_UpdatePolicy(), source, new String[] {"kind", "element", "name", "updatePolicy",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getRepositoryPolicy_ChecksumPolicy(), source, new String[] {"kind", "element", "name",
-        "checksumPolicy", "namespace", "##targetNamespace"});
-    addAnnotation(resourceEClass, source, new String[] {"name", "Resource", "kind", "elementOnly"});
-    addAnnotation(getResource_TargetPath(), source, new String[] {"kind", "element", "name", "targetPath", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getResource_Filtering(), source, new String[] {"kind", "element", "name", "filtering", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getResource_Directory(), source, new String[] {"kind", "element", "name", "directory", "namespace",
-        "##targetNamespace"});
-    addAnnotation(scmEClass, source, new String[] {"name", "Scm", "kind", "elementOnly"});
-    addAnnotation(getScm_Connection(), source, new String[] {"kind", "element", "name", "connection", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getScm_DeveloperConnection(), source, new String[] {"kind", "element", "name", "developerConnection",
-        "namespace", "##targetNamespace"});
-    addAnnotation(getScm_Tag(), source, new String[] {"kind", "element", "name", "tag", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getScm_Url(), source, new String[] {"kind", "element", "name", "url", "namespace",
-        "##targetNamespace"});
-    addAnnotation(siteEClass, source, new String[] {"name", "Site", "kind", "elementOnly"});
+    String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData"; //$NON-NLS-1$
+    addAnnotation(activationEClass, source, new String[] {"name", "Activation", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getActivation_ActiveByDefault(), source, new String[] {"kind", "element", "name", "activeByDefault", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getActivation_Jdk(), source, new String[] {"kind", "element", "name", "jdk", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getActivation_Os(), source, new String[] {"kind", "element", "name", "os", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getActivation_Property(), source, new String[] {"kind", "element", "name", "property", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getActivation_File(), source, new String[] {"kind", "element", "name", "file", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(activationFileEClass, source, new String[] {"name", "ActivationFile", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getActivationFile_Missing(), source, new String[] {"kind", "element", "name", "missing", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getActivationFile_Exists(), source, new String[] {"kind", "element", "name", "exists", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(activationOSEClass, source, new String[] {"name", "ActivationOS", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getActivationOS_Name(), source, new String[] {"kind", "element", "name", "name", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getActivationOS_Family(), source, new String[] {"kind", "element", "name", "family", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getActivationOS_Arch(), source, new String[] {"kind", "element", "name", "arch", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getActivationOS_Version(), source, new String[] {"kind", "element", "name", "version", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(activationPropertyEClass, source, new String[] {"name", "ActivationProperty", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getActivationProperty_Name(), source, new String[] {"kind", "element", "name", "name", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getActivationProperty_Value(), source, new String[] {"kind", "element", "name", "value", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(buildEClass, source, new String[] {"name", "Build", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getBuild_SourceDirectory(), source, new String[] {"kind", "element", "name", "sourceDirectory", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getBuild_ScriptSourceDirectory(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "scriptSourceDirectory", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getBuild_TestSourceDirectory(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "testSourceDirectory", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getBuild_OutputDirectory(), source, new String[] {"kind", "element", "name", "outputDirectory", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getBuild_TestOutputDirectory(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "testOutputDirectory", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getBuild_Extensions(), source, new String[] {"kind", "element", "name", "extensions", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(buildBaseEClass, source, new String[] {"name", "BuildBase", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getBuildBase_DefaultGoal(), source, new String[] {"kind", "element", "name", "defaultGoal", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getBuildBase_Resources(), source, new String[] {"kind", "element", "name", "resources", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getBuildBase_TestResources(), source, new String[] {"kind", "element", "name", "testResources", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getBuildBase_Directory(), source, new String[] {"kind", "element", "name", "directory", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getBuildBase_FinalName(), source, new String[] {"kind", "element", "name", "finalName", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getBuildBase_PluginManagement(), source, new String[] {"kind", "element", "name", "pluginManagement", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getBuildBase_Plugins(), source, new String[] {"kind", "element", "name", "plugins", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(ciManagementEClass, source, new String[] {"name", "CiManagement", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getCiManagement_System(), source, new String[] {"kind", "element", "name", "system", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getCiManagement_Url(), source, new String[] {"kind", "element", "name", "url", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getCiManagement_Notifiers(), source, new String[] {"kind", "element", "name", "notifiers", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(contributorEClass, source, new String[] {"name", "Contributor", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getContributor_Name(), source, new String[] {"kind", "element", "name", "name", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getContributor_Email(), source, new String[] {"kind", "element", "name", "email", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getContributor_Url(), source, new String[] {"kind", "element", "name", "url", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getContributor_Organization(), source, new String[] {"kind", "element", "name", "organization", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getContributor_OrganizationUrl(), source, new String[] {"kind", "element", "name", "organizationUrl", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getContributor_Timezone(), source, new String[] {"kind", "element", "name", "timezone", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getContributor_Properties(), source, new String[] {"kind", "element", "name", "properties", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(dependencyEClass, source, new String[] {"name", "Dependency", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getDependency_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getDependency_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getDependency_Version(), source, new String[] {"kind", "element", "name", "version", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getDependency_Type(), source, new String[] {"kind", "element", "name", "type", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getDependency_Classifier(), source, new String[] {"kind", "element", "name", "classifier", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getDependency_Scope(), source, new String[] {"kind", "element", "name", "scope", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getDependency_SystemPath(), source, new String[] {"kind", "element", "name", "systemPath", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getDependency_Exclusions(), source, new String[] {"kind", "element", "name", "exclusions", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getDependency_Optional(), source, new String[] {"kind", "element", "name", "optional", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(dependencyManagementEClass, source, new String[] {"name", "DependencyManagement", "kind", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "elementOnly"}); //$NON-NLS-1$
+    addAnnotation(getDependencyManagement_Dependencies(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "dependencies", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(deploymentRepositoryEClass, source, new String[] {"name", "DeploymentRepository", "kind", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "elementOnly"}); //$NON-NLS-1$
+    addAnnotation(getDeploymentRepository_UniqueVersion(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "uniqueVersion", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getDeploymentRepository_Id(), source, new String[] {"kind", "element", "name", "id", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getDeploymentRepository_Name(), source, new String[] {"kind", "element", "name", "name", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getDeploymentRepository_Url(), source, new String[] {"kind", "element", "name", "url", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getDeploymentRepository_Layout(), source, new String[] {"kind", "element", "name", "layout", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(developerEClass, source, new String[] {"name", "Developer", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getDeveloper_Id(), source, new String[] {"kind", "element", "name", "id", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getDeveloper_Name(), source, new String[] {"kind", "element", "name", "name", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getDeveloper_Email(), source, new String[] {"kind", "element", "name", "email", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getDeveloper_Url(), source, new String[] {"kind", "element", "name", "url", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getDeveloper_Organization(), source, new String[] {"kind", "element", "name", "organization", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getDeveloper_OrganizationUrl(), source, new String[] {"kind", "element", "name", "organizationUrl", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getDeveloper_Timezone(), source, new String[] {"kind", "element", "name", "timezone", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getDeveloper_Properties(), source, new String[] {"kind", "element", "name", "properties", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(distributionManagementEClass, source, new String[] {"name", "DistributionManagement", "kind", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "elementOnly"}); //$NON-NLS-1$
+    addAnnotation(getDistributionManagement_Repository(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "repository", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getDistributionManagement_SnapshotRepository(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "snapshotRepository", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getDistributionManagement_Site(), source, new String[] {"kind", "element", "name", "site", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getDistributionManagement_DownloadUrl(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "downloadUrl", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getDistributionManagement_Relocation(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "relocation", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getDistributionManagement_Status(), source, new String[] {"kind", "element", "name", "status", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(documentRootEClass, source, new String[] {"name", "", "kind", "mixed"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getDocumentRoot_Mixed(), source, new String[] {"kind", "elementWildcard", "name", ":mixed"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getDocumentRoot_XMLNSPrefixMap(), source, new String[] {"kind", "attribute", "name", "xmlns:prefix"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getDocumentRoot_XSISchemaLocation(), source, new String[] {"kind", "attribute", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "xsi:schemaLocation"}); //$NON-NLS-1$
+    addAnnotation(getDocumentRoot_Project(), source, new String[] {"kind", "element", "name", "project", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(exclusionEClass, source, new String[] {"name", "Exclusion", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getExclusion_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getExclusion_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(extensionEClass, source, new String[] {"name", "Extension", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getExtension_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getExtension_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getExtension_Version(), source, new String[] {"kind", "element", "name", "version", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(issueManagementEClass, source, new String[] {"name", "IssueManagement", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getIssueManagement_System(), source, new String[] {"kind", "element", "name", "system", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getIssueManagement_Url(), source, new String[] {"kind", "element", "name", "url", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(licenseEClass, source, new String[] {"name", "License", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getLicense_Name(), source, new String[] {"kind", "element", "name", "name", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getLicense_Url(), source, new String[] {"kind", "element", "name", "url", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getLicense_Distribution(), source, new String[] {"kind", "element", "name", "distribution", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getLicense_Comments(), source, new String[] {"kind", "element", "name", "comments", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(mailingListEClass, source, new String[] {"name", "MailingList", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getMailingList_Name(), source, new String[] {"kind", "element", "name", "name", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getMailingList_Subscribe(), source, new String[] {"kind", "element", "name", "subscribe", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getMailingList_Unsubscribe(), source, new String[] {"kind", "element", "name", "unsubscribe", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getMailingList_Post(), source, new String[] {"kind", "element", "name", "post", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getMailingList_Archive(), source, new String[] {"kind", "element", "name", "archive", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(modelEClass, source, new String[] {"name", "Model", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getModel_Parent(), source, new String[] {"kind", "element", "name", "parent", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_ModelVersion(), source, new String[] {"kind", "element", "name", "modelVersion", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getModel_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_Packaging(), source, new String[] {"kind", "element", "name", "packaging", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_Name(), source, new String[] {"kind", "element", "name", "name", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_Version(), source, new String[] {"kind", "element", "name", "version", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_Description(), source, new String[] {"kind", "element", "name", "description", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_Url(), source, new String[] {"kind", "element", "name", "url", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_Prerequisites(), source, new String[] {"kind", "element", "name", "prerequisites", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getModel_IssueManagement(), source, new String[] {"kind", "element", "name", "issueManagement", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getModel_CiManagement(), source, new String[] {"kind", "element", "name", "ciManagement", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getModel_InceptionYear(), source, new String[] {"kind", "element", "name", "inceptionYear", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getModel_MailingLists(), source, new String[] {"kind", "element", "name", "mailingLists", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getModel_Developers(), source, new String[] {"kind", "element", "name", "developers", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_Contributors(), source, new String[] {"kind", "element", "name", "contributors", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getModel_Licenses(), source, new String[] {"kind", "element", "name", "licenses", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_Scm(), source, new String[] {"kind", "element", "name", "scm", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_Organization(), source, new String[] {"kind", "element", "name", "organization", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getModel_Build(), source, new String[] {"kind", "element", "name", "build", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_Profiles(), source, new String[] {"kind", "element", "name", "profiles", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_Repositories(), source, new String[] {"kind", "element", "name", "repositories", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getModel_PluginRepositories(), source, new String[] {"kind", "element", "name", "pluginRepositories", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getModel_Dependencies(), source, new String[] {"kind", "element", "name", "dependencies", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getModel_Reporting(), source, new String[] {"kind", "element", "name", "reporting", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getModel_DependencyManagement(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "dependencyManagement", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getModel_DistributionManagement(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "distributionManagement", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getModel_Properties(), source, new String[] {"kind", "element", "name", "properties", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(notifierEClass, source, new String[] {"name", "Notifier", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getNotifier_Type(), source, new String[] {"kind", "element", "name", "type", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getNotifier_SendOnError(), source, new String[] {"kind", "element", "name", "sendOnError", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getNotifier_SendOnFailure(), source, new String[] {"kind", "element", "name", "sendOnFailure", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getNotifier_SendOnSuccess(), source, new String[] {"kind", "element", "name", "sendOnSuccess", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getNotifier_SendOnWarning(), source, new String[] {"kind", "element", "name", "sendOnWarning", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getNotifier_Address(), source, new String[] {"kind", "element", "name", "address", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(organizationEClass, source, new String[] {"name", "Organization", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getOrganization_Name(), source, new String[] {"kind", "element", "name", "name", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getOrganization_Url(), source, new String[] {"kind", "element", "name", "url", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(parentEClass, source, new String[] {"name", "Parent", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getParent_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getParent_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getParent_Version(), source, new String[] {"kind", "element", "name", "version", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getParent_RelativePath(), source, new String[] {"kind", "element", "name", "relativePath", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(pluginEClass, source, new String[] {"name", "Plugin", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getPlugin_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getPlugin_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getPlugin_Version(), source, new String[] {"kind", "element", "name", "version", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getPlugin_Extensions(), source, new String[] {"kind", "element", "name", "extensions", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getPlugin_Executions(), source, new String[] {"kind", "element", "name", "executions", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getPlugin_Dependencies(), source, new String[] {"kind", "element", "name", "dependencies", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getPlugin_Inherited(), source, new String[] {"kind", "element", "name", "inherited", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(pluginExecutionEClass, source, new String[] {"name", "PluginExecution", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getPluginExecution_Id(), source, new String[] {"kind", "element", "name", "id", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getPluginExecution_Phase(), source, new String[] {"kind", "element", "name", "phase", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getPluginExecution_Inherited(), source, new String[] {"kind", "element", "name", "inherited", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(pluginManagementEClass, source, new String[] {"name", "PluginManagement", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getPluginManagement_Plugins(), source, new String[] {"kind", "element", "name", "plugins", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(prerequisitesEClass, source, new String[] {"name", "Prerequisites", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getPrerequisites_Maven(), source, new String[] {"kind", "element", "name", "maven", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(profileEClass, source, new String[] {"name", "Profile", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getProfile_Id(), source, new String[] {"kind", "element", "name", "id", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getProfile_Activation(), source, new String[] {"kind", "element", "name", "activation", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getProfile_Build(), source, new String[] {"kind", "element", "name", "build", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getProfile_Repositories(), source, new String[] {"kind", "element", "name", "repositories", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getProfile_PluginRepositories(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "pluginRepositories", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getProfile_Dependencies(), source, new String[] {"kind", "element", "name", "dependencies", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getProfile_Reports(), source, new String[] {"kind", "element", "name", "reports", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getProfile_DependencyManagement(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "dependencyManagement", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getProfile_DistributionManagement(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "distributionManagement", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(getProfile_Properties(), source, new String[] {"kind", "element", "name", "properties", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(relocationEClass, source, new String[] {"name", "Relocation", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getRelocation_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getRelocation_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getRelocation_Version(), source, new String[] {"kind", "element", "name", "version", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getRelocation_Message(), source, new String[] {"kind", "element", "name", "message", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(reportingEClass, source, new String[] {"name", "Reporting", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getReporting_ExcludeDefaults(), source, new String[] {"kind", "element", "name", "excludeDefaults", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getReporting_OutputDirectory(), source, new String[] {"kind", "element", "name", "outputDirectory", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getReporting_Plugins(), source, new String[] {"kind", "element", "name", "plugins", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(reportPluginEClass, source, new String[] {"name", "ReportPlugin", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getReportPlugin_GroupId(), source, new String[] {"kind", "element", "name", "groupId", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getReportPlugin_ArtifactId(), source, new String[] {"kind", "element", "name", "artifactId", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getReportPlugin_Version(), source, new String[] {"kind", "element", "name", "version", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getReportPlugin_Inherited(), source, new String[] {"kind", "element", "name", "inherited", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getReportPlugin_ReportSets(), source, new String[] {"kind", "element", "name", "reportSets", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(reportSetEClass, source, new String[] {"name", "ReportSet", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getReportSet_Id(), source, new String[] {"kind", "element", "name", "id", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getReportSet_Inherited(), source, new String[] {"kind", "element", "name", "inherited", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(repositoryEClass, source, new String[] {"name", "Repository", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getRepository_Releases(), source, new String[] {"kind", "element", "name", "releases", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getRepository_Snapshots(), source, new String[] {"kind", "element", "name", "snapshots", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getRepository_Id(), source, new String[] {"kind", "element", "name", "id", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getRepository_Name(), source, new String[] {"kind", "element", "name", "name", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getRepository_Url(), source, new String[] {"kind", "element", "name", "url", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getRepository_Layout(), source, new String[] {"kind", "element", "name", "layout", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(repositoryPolicyEClass, source, new String[] {"name", "RepositoryPolicy", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getRepositoryPolicy_Enabled(), source, new String[] {"kind", "element", "name", "enabled", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getRepositoryPolicy_UpdatePolicy(), source, new String[] {"kind", "element", "name", "updatePolicy", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getRepositoryPolicy_ChecksumPolicy(), source, new String[] {"kind", "element", "name", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+        "checksumPolicy", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+    addAnnotation(resourceEClass, source, new String[] {"name", "Resource", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getResource_TargetPath(), source, new String[] {"kind", "element", "name", "targetPath", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getResource_Filtering(), source, new String[] {"kind", "element", "name", "filtering", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getResource_Directory(), source, new String[] {"kind", "element", "name", "directory", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(scmEClass, source, new String[] {"name", "Scm", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+    addAnnotation(getScm_Connection(), source, new String[] {"kind", "element", "name", "connection", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getScm_DeveloperConnection(), source, new String[] {"kind", "element", "name", "developerConnection", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$
+    addAnnotation(getScm_Tag(), source, new String[] {"kind", "element", "name", "tag", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getScm_Url(), source, new String[] {"kind", "element", "name", "url", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(siteEClass, source, new String[] {"name", "Site", "kind", "elementOnly"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
     addAnnotation(getSite_Id(), source,
-        new String[] {"kind", "element", "name", "id", "namespace", "##targetNamespace"});
-    addAnnotation(getSite_Name(), source, new String[] {"kind", "element", "name", "name", "namespace",
-        "##targetNamespace"});
-    addAnnotation(getSite_Url(), source, new String[] {"kind", "element", "name", "url", "namespace",
-        "##targetNamespace"});
+        new String[] {"kind", "element", "name", "id", "namespace", "##targetNamespace"}); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$ //$NON-NLS-6$
+    addAnnotation(getSite_Name(), source, new String[] {"kind", "element", "name", "name", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
+    addAnnotation(getSite_Url(), source, new String[] {"kind", "element", "name", "url", "namespace", //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        "##targetNamespace"}); //$NON-NLS-1$
   }
 
 } // PomPackageImpl

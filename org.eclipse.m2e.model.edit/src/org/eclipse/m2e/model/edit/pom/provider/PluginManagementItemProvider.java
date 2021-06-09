@@ -103,7 +103,7 @@ public class PluginManagementItemProvider extends ItemProviderAdapter implements
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/PluginManagement"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/PluginManagement")); //$NON-NLS-1$
   }
 
   /**
@@ -113,7 +113,7 @@ public class PluginManagementItemProvider extends ItemProviderAdapter implements
    */
   @Override
   public String getText(Object object) {
-    return getString("_UI_PluginManagement_type");
+    return getString("_UI_PluginManagement_type"); //$NON-NLS-1$
   }
 
   /**

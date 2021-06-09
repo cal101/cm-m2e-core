@@ -111,14 +111,14 @@ public class MavenLauncherConfigurationHandler implements IMavenLauncherConfigur
 
   public void save(OutputStream os) throws IOException {
     BufferedWriter out = new BufferedWriter(new OutputStreamWriter(os, StandardCharsets.UTF_8));
-    out.write(NLS.bind("main is {0} from {1}\n", mainType, mainRealm));
+    out.write(NLS.bind("main is {0} from {1}\n", mainType, mainRealm)); //$NON-NLS-1$
     for(Map.Entry<String, List<String>> realm : realms.entrySet()) {
       if(LAUNCHER_REALM.equals(realm.getKey())) {
         continue;
       }
-      out.write(NLS.bind("[{0}]\n", realm.getKey()));
+      out.write(NLS.bind("[{0}]\n", realm.getKey())); //$NON-NLS-1$
       for(String entry : realm.getValue()) {
-        out.write(NLS.bind("load {0}\n", entry));
+        out.write(NLS.bind("load {0}\n", entry)); //$NON-NLS-1$
       }
     }
     out.flush();

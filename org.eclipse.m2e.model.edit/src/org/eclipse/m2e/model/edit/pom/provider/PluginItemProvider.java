@@ -81,8 +81,8 @@ public class PluginItemProvider extends ItemProviderAdapter implements IEditingD
   protected void addGroupIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Plugin_groupId_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Plugin_groupId_feature", "_UI_Plugin_type"),
+        getString("_UI_Plugin_groupId_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Plugin_groupId_feature", "_UI_Plugin_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.PLUGIN__GROUP_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -95,8 +95,8 @@ public class PluginItemProvider extends ItemProviderAdapter implements IEditingD
   protected void addArtifactIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Plugin_artifactId_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Plugin_artifactId_feature", "_UI_Plugin_type"),
+        getString("_UI_Plugin_artifactId_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Plugin_artifactId_feature", "_UI_Plugin_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.PLUGIN__ARTIFACT_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -109,8 +109,8 @@ public class PluginItemProvider extends ItemProviderAdapter implements IEditingD
   protected void addVersionPropertyDescriptor(Object object) {
     itemPropertyDescriptors
         .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-            getResourceLocator(), getString("_UI_Plugin_version_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_Plugin_version_feature", "_UI_Plugin_type"),
+            getResourceLocator(), getString("_UI_Plugin_version_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_Plugin_version_feature", "_UI_Plugin_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
             PomPackage.Literals.PLUGIN__VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
             null));
   }
@@ -123,8 +123,8 @@ public class PluginItemProvider extends ItemProviderAdapter implements IEditingD
   protected void addExtensionsPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Plugin_extensions_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Plugin_extensions_feature", "_UI_Plugin_type"),
+        getString("_UI_Plugin_extensions_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Plugin_extensions_feature", "_UI_Plugin_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.PLUGIN__EXTENSIONS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -137,8 +137,8 @@ public class PluginItemProvider extends ItemProviderAdapter implements IEditingD
   protected void addInheritedPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Plugin_inherited_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Plugin_inherited_feature", "_UI_Plugin_type"),
+        getString("_UI_Plugin_inherited_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Plugin_inherited_feature", "_UI_Plugin_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.PLUGIN__INHERITED, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -151,8 +151,8 @@ public class PluginItemProvider extends ItemProviderAdapter implements IEditingD
   protected void addConfigurationPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Plugin_configuration_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Plugin_configuration_feature", "_UI_Plugin_type"),
+        getString("_UI_Plugin_configuration_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Plugin_configuration_feature", "_UI_Plugin_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.PLUGIN__CONFIGURATION, true, false, true, null, null, null));
   }
 
@@ -195,7 +195,7 @@ public class PluginItemProvider extends ItemProviderAdapter implements IEditingD
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Plugin"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Plugin")); //$NON-NLS-1$
   }
 
   /**
@@ -206,7 +206,7 @@ public class PluginItemProvider extends ItemProviderAdapter implements IEditingD
   @Override
   public String getText(Object object) {
     String label = ((Plugin) object).getGroupId();
-    return label == null || label.length() == 0 ? getString("_UI_Plugin_type") : getString("_UI_Plugin_type") + " "
+    return label == null || label.length() == 0 ? getString("_UI_Plugin_type") : getString("_UI_Plugin_type") + " " //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         + label;
   }
 

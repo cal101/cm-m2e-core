@@ -81,8 +81,8 @@ public class ContributorItemProvider extends ItemProviderAdapter implements IEdi
   protected void addNamePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Contributor_name_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Contributor_name_feature", "_UI_Contributor_type"),
+        getString("_UI_Contributor_name_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Contributor_name_feature", "_UI_Contributor_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.CONTRIBUTOR__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -95,8 +95,8 @@ public class ContributorItemProvider extends ItemProviderAdapter implements IEdi
   protected void addEmailPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Contributor_email_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Contributor_email_feature", "_UI_Contributor_type"),
+        getString("_UI_Contributor_email_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Contributor_email_feature", "_UI_Contributor_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.CONTRIBUTOR__EMAIL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -109,8 +109,8 @@ public class ContributorItemProvider extends ItemProviderAdapter implements IEdi
   protected void addUrlPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Contributor_url_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Contributor_url_feature", "_UI_Contributor_type"),
+        getString("_UI_Contributor_url_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Contributor_url_feature", "_UI_Contributor_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.CONTRIBUTOR__URL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -125,9 +125,9 @@ public class ContributorItemProvider extends ItemProviderAdapter implements IEdi
         .add(createItemPropertyDescriptor(
             ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
             getResourceLocator(),
-            getString("_UI_Contributor_organization_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_Contributor_organization_feature",
-                "_UI_Contributor_type"), PomPackage.Literals.CONTRIBUTOR__ORGANIZATION, true, false, false,
+            getString("_UI_Contributor_organization_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_Contributor_organization_feature", //$NON-NLS-1$ //$NON-NLS-2$
+                "_UI_Contributor_type"), PomPackage.Literals.CONTRIBUTOR__ORGANIZATION, true, false, false, //$NON-NLS-1$
             ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -140,9 +140,9 @@ public class ContributorItemProvider extends ItemProviderAdapter implements IEdi
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_Contributor_organizationUrl_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Contributor_organizationUrl_feature",
-            "_UI_Contributor_type"), PomPackage.Literals.CONTRIBUTOR__ORGANIZATION_URL, true, false, false,
+        getString("_UI_Contributor_organizationUrl_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Contributor_organizationUrl_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_Contributor_type"), PomPackage.Literals.CONTRIBUTOR__ORGANIZATION_URL, true, false, false, //$NON-NLS-1$
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -154,8 +154,8 @@ public class ContributorItemProvider extends ItemProviderAdapter implements IEdi
   protected void addTimezonePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Contributor_timezone_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Contributor_timezone_feature", "_UI_Contributor_type"),
+        getString("_UI_Contributor_timezone_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Contributor_timezone_feature", "_UI_Contributor_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.CONTRIBUTOR__TIMEZONE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -199,7 +199,7 @@ public class ContributorItemProvider extends ItemProviderAdapter implements IEdi
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Contributor"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Contributor")); //$NON-NLS-1$
   }
 
   /**
@@ -210,8 +210,8 @@ public class ContributorItemProvider extends ItemProviderAdapter implements IEdi
   @Override
   public String getText(Object object) {
     String label = ((Contributor) object).getName();
-    return label == null || label.length() == 0 ? getString("_UI_Contributor_type") : getString("_UI_Contributor_type")
-        + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_Contributor_type") : getString("_UI_Contributor_type") //$NON-NLS-1$ //$NON-NLS-2$
+        + " " + label; //$NON-NLS-1$
   }
 
   /**
@@ -254,7 +254,7 @@ public class ContributorItemProvider extends ItemProviderAdapter implements IEdi
     newChildDescriptors.add(createChildParameter(PomPackage.Literals.CONTRIBUTOR__PROPERTIES,
         PomFactory.eINSTANCE.createPropertyElement()));
 
-    newChildDescriptors.add(createChildParameter(PomPackage.Literals.CONTRIBUTOR__ROLES, ""));
+    newChildDescriptors.add(createChildParameter(PomPackage.Literals.CONTRIBUTOR__ROLES, "")); //$NON-NLS-1$
   }
 
   /**

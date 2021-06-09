@@ -77,8 +77,8 @@ public class CiManagementItemProvider extends ItemProviderAdapter implements IEd
   protected void addSystemPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_CiManagement_system_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_CiManagement_system_feature", "_UI_CiManagement_type"),
+        getString("_UI_CiManagement_system_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_CiManagement_system_feature", "_UI_CiManagement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.CI_MANAGEMENT__SYSTEM, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -91,8 +91,8 @@ public class CiManagementItemProvider extends ItemProviderAdapter implements IEd
   protected void addUrlPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_CiManagement_url_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_CiManagement_url_feature", "_UI_CiManagement_type"),
+        getString("_UI_CiManagement_url_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_CiManagement_url_feature", "_UI_CiManagement_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.CI_MANAGEMENT__URL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -135,7 +135,7 @@ public class CiManagementItemProvider extends ItemProviderAdapter implements IEd
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/CiManagement"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/CiManagement")); //$NON-NLS-1$
   }
 
   /**
@@ -146,8 +146,8 @@ public class CiManagementItemProvider extends ItemProviderAdapter implements IEd
   @Override
   public String getText(Object object) {
     String label = ((CiManagement) object).getSystem();
-    return label == null || label.length() == 0 ? getString("_UI_CiManagement_type")
-        : getString("_UI_CiManagement_type") + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_CiManagement_type") //$NON-NLS-1$
+        : getString("_UI_CiManagement_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   /**

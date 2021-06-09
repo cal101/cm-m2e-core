@@ -83,8 +83,8 @@ public class DependencyItemProvider extends ItemProviderAdapter implements IEdit
   protected void addGroupIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Dependency_groupId_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_groupId_feature", "_UI_Dependency_type"),
+        getString("_UI_Dependency_groupId_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_groupId_feature", "_UI_Dependency_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEPENDENCY__GROUP_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -97,8 +97,8 @@ public class DependencyItemProvider extends ItemProviderAdapter implements IEdit
   protected void addArtifactIdPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Dependency_artifactId_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_artifactId_feature", "_UI_Dependency_type"),
+        getString("_UI_Dependency_artifactId_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_artifactId_feature", "_UI_Dependency_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEPENDENCY__ARTIFACT_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -111,8 +111,8 @@ public class DependencyItemProvider extends ItemProviderAdapter implements IEdit
   protected void addVersionPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Dependency_version_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_version_feature", "_UI_Dependency_type"),
+        getString("_UI_Dependency_version_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_version_feature", "_UI_Dependency_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEPENDENCY__VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -125,8 +125,8 @@ public class DependencyItemProvider extends ItemProviderAdapter implements IEdit
   protected void addTypePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Dependency_type_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_type_feature", "_UI_Dependency_type"),
+        getString("_UI_Dependency_type_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_type_feature", "_UI_Dependency_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEPENDENCY__TYPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -139,8 +139,8 @@ public class DependencyItemProvider extends ItemProviderAdapter implements IEdit
   protected void addClassifierPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Dependency_classifier_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_classifier_feature", "_UI_Dependency_type"),
+        getString("_UI_Dependency_classifier_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_classifier_feature", "_UI_Dependency_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEPENDENCY__CLASSIFIER, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -153,8 +153,8 @@ public class DependencyItemProvider extends ItemProviderAdapter implements IEdit
   protected void addScopePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Dependency_scope_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_scope_feature", "_UI_Dependency_type"),
+        getString("_UI_Dependency_scope_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_scope_feature", "_UI_Dependency_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEPENDENCY__SCOPE, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -167,8 +167,8 @@ public class DependencyItemProvider extends ItemProviderAdapter implements IEdit
   protected void addSystemPathPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Dependency_systemPath_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_systemPath_feature", "_UI_Dependency_type"),
+        getString("_UI_Dependency_systemPath_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_systemPath_feature", "_UI_Dependency_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEPENDENCY__SYSTEM_PATH, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -181,8 +181,8 @@ public class DependencyItemProvider extends ItemProviderAdapter implements IEdit
   protected void addOptionalPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_Dependency_optional_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_optional_feature", "_UI_Dependency_type"),
+        getString("_UI_Dependency_optional_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_Dependency_optional_feature", "_UI_Dependency_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.DEPENDENCY__OPTIONAL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -225,7 +225,7 @@ public class DependencyItemProvider extends ItemProviderAdapter implements IEdit
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Dependency"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Dependency")); //$NON-NLS-1$
   }
 
   /**
@@ -236,8 +236,8 @@ public class DependencyItemProvider extends ItemProviderAdapter implements IEdit
   @Override
   public String getText(Object object) {
     String label = ((Dependency) object).getGroupId();
-    return label == null || label.length() == 0 ? getString("_UI_Dependency_type") : getString("_UI_Dependency_type")
-        + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_Dependency_type") : getString("_UI_Dependency_type") //$NON-NLS-1$ //$NON-NLS-2$
+        + " " + label; //$NON-NLS-1$
   }
 
   /**

@@ -60,7 +60,7 @@ public class MavenLaunchDelegate extends JavaLaunchDelegate implements MavenLaun
   static {
     VersionRange mvn33PlusRange;
     try {
-      mvn33PlusRange = VersionRange.createFromVersionSpec("[3.3,)");
+      mvn33PlusRange = VersionRange.createFromVersionSpec("[3.3,)"); //$NON-NLS-1$
     } catch(InvalidVersionSpecificationException O_o) {
       mvn33PlusRange = null;
     }
@@ -131,7 +131,7 @@ public class MavenLaunchDelegate extends JavaLaunchDelegate implements MavenLaun
       StringBuilder sb = new StringBuilder();
       getProperties(sb, configuration);
       getPreferences(sb, configuration, goals);
-      sb.append(" ").append(goals);
+      sb.append(" ").append(goals); //$NON-NLS-1$
 
       extensionsSupport.appendProgramArguments(sb, configuration, launch, monitor);
 
@@ -188,7 +188,7 @@ public class MavenLaunchDelegate extends JavaLaunchDelegate implements MavenLaun
         }
       }
     } catch(CoreException e) {
-      String msg = "Exception while getting configuration attribute " + ATTR_PROPERTIES;
+      String msg = "Exception while getting configuration attribute " + ATTR_PROPERTIES; //$NON-NLS-1$
       log.error(msg, e);
       throw e;
     }
@@ -199,7 +199,7 @@ public class MavenLaunchDelegate extends JavaLaunchDelegate implements MavenLaun
         sb.append(" -P").append(profiles.replaceAll("\\s+", ",")); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
       }
     } catch(CoreException ex) {
-      String msg = "Exception while getting configuration attribute " + ATTR_PROFILES;
+      String msg = "Exception while getting configuration attribute " + ATTR_PROFILES; //$NON-NLS-1$
       log.error(msg, ex);
       throw ex;
     }
@@ -237,7 +237,7 @@ public class MavenLaunchDelegate extends JavaLaunchDelegate implements MavenLaun
 
     int threads = configuration.getAttribute(MavenLaunchConstants.ATTR_THREADS, 1);
     if(threads > 1) {
-      sb.append(" --threads ").append(threads);
+      sb.append(" --threads ").append(threads); //$NON-NLS-1$
     }
 
     if(!goals.contains("-gs ")) { //$NON-NLS-1$
@@ -286,13 +286,13 @@ public class MavenLaunchDelegate extends JavaLaunchDelegate implements MavenLaun
 
   @SuppressWarnings("restriction")
   private void getArgsFromMvnDir(VMArguments arguments, ILaunchConfiguration configuration) throws CoreException {
-    String pomDir = LaunchingUtils.substituteVar(configuration.getAttribute(MavenLaunchConstants.ATTR_POM_DIR, ""));
+    String pomDir = LaunchingUtils.substituteVar(configuration.getAttribute(MavenLaunchConstants.ATTR_POM_DIR, "")); //$NON-NLS-1$
     if(pomDir.isEmpty()) {
       return;
     }
     File baseDir = findMavenProjectBasedir(new File(pomDir));
-    File mvnDir = new File(baseDir, ".mvn");
-    File jvmConfig = new File(mvnDir, "jvm.config");
+    File mvnDir = new File(baseDir, ".mvn"); //$NON-NLS-1$
+    File jvmConfig = new File(mvnDir, "jvm.config"); //$NON-NLS-1$
     if(jvmConfig.isFile()) {
       try {
         for(String line : Files.readAllLines(jvmConfig.toPath(), StandardCharsets.UTF_8)) {
@@ -304,7 +304,7 @@ public class MavenLaunchDelegate extends JavaLaunchDelegate implements MavenLaun
         throw new CoreException(error);
       }
     }
-    arguments.appendProperty("maven.multiModuleProjectDirectory", MavenLaunchUtils.quote(baseDir.getAbsolutePath()));
+    arguments.appendProperty("maven.multiModuleProjectDirectory", MavenLaunchUtils.quote(baseDir.getAbsolutePath())); //$NON-NLS-1$
   }
 
   //This will likely move to core when we need it
@@ -313,7 +313,7 @@ public class MavenLaunchDelegate extends JavaLaunchDelegate implements MavenLaun
     // loop upwards but stop if root
     while(folder != null && folder.getParentFile() != null) {
       // see if /.mvn exists
-      if(new File(folder, ".mvn").isDirectory()) {
+      if(new File(folder, ".mvn").isDirectory()) { //$NON-NLS-1$
         return folder;
       }
       folder = folder.getParentFile();

@@ -20,7 +20,7 @@ import org.eclipse.core.variables.VariablesPlugin;
 
 public class LaunchingUtils {
 
-  private static final String PROJECT_LOCATION_VARIABLE_NAME = "project_loc";
+  private static final String PROJECT_LOCATION_VARIABLE_NAME = "project_loc"; //$NON-NLS-1$
 
   /**
    * Substitute any variable

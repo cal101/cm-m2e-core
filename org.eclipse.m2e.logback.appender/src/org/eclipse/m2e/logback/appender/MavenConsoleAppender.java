@@ -39,7 +39,7 @@ public class MavenConsoleAppender extends UnsynchronizedAppenderBase<ILoggingEve
     if(m2eCoreUIBundle == null) {
       m2eCoreUIBundle = Platform.getBundle(M2E_CORE_UI_BUNDLE_ID);
       if(m2eCoreUIBundle == null) {
-        System.out.println("Could not find " + M2E_CORE_UI_BUNDLE_ID + " bundle.");
+        System.out.println("Could not find " + M2E_CORE_UI_BUNDLE_ID + " bundle."); //$NON-NLS-1$ //$NON-NLS-2$
         return false;
       }
     }

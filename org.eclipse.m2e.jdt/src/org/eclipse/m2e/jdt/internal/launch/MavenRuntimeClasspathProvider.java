@@ -98,7 +98,7 @@ public class MavenRuntimeClasspathProvider extends StandardClasspathProvider {
 
   private static final String GROUP_ORG_JUNIT_PLATFORM = "org.junit.platform"; //$NON-NLS-1$
 
-  private static final String PROPERTY_M2E_DISABLE_ADD_MISSING_J_UNIT5_EXECUTION_DEPENDENCIES = "m2e.disableAddMissingJUnit5ExecutionDependencies";
+  private static final String PROPERTY_M2E_DISABLE_ADD_MISSING_J_UNIT5_EXECUTION_DEPENDENCIES = "m2e.disableAddMissingJUnit5ExecutionDependencies"; //$NON-NLS-1$
 
   private static final Set<String> supportedTypes = new HashSet<>();
   static {
@@ -220,8 +220,8 @@ public class MavenRuntimeClasspathProvider extends StandardClasspathProvider {
     }
 
     if(scope == IClasspathManager.CLASSPATH_TEST
-        && TESTKIND_ORG_ECLIPSE_JDT_JUNIT_LOADER_JUNIT5 //$NON-NLS-1$
-            .equals(configuration.getAttribute(ATTRIBUTE_ORG_ECLIPSE_JDT_JUNIT_TEST_KIND, ""))) {
+        && TESTKIND_ORG_ECLIPSE_JDT_JUNIT_LOADER_JUNIT5
+            .equals(configuration.getAttribute(ATTRIBUTE_ORG_ECLIPSE_JDT_JUNIT_TEST_KIND, ""))) { //$NON-NLS-1$
       addMissingJUnit5ExecutionDependencies(resolved, monitor, javaProject);
     }
   }

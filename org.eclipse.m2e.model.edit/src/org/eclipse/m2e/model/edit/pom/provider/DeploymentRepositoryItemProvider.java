@@ -79,9 +79,9 @@ public class DeploymentRepositoryItemProvider extends ItemProviderAdapter implem
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_DeploymentRepository_uniqueVersion_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_DeploymentRepository_uniqueVersion_feature",
-            "_UI_DeploymentRepository_type"), PomPackage.Literals.DEPLOYMENT_REPOSITORY__UNIQUE_VERSION, true, false,
+        getString("_UI_DeploymentRepository_uniqueVersion_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_DeploymentRepository_uniqueVersion_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_DeploymentRepository_type"), PomPackage.Literals.DEPLOYMENT_REPOSITORY__UNIQUE_VERSION, true, false, //$NON-NLS-1$
         false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -94,9 +94,9 @@ public class DeploymentRepositoryItemProvider extends ItemProviderAdapter implem
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_DeploymentRepository_id_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_DeploymentRepository_id_feature",
-            "_UI_DeploymentRepository_type"), PomPackage.Literals.DEPLOYMENT_REPOSITORY__ID, true, false, false,
+        getString("_UI_DeploymentRepository_id_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_DeploymentRepository_id_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_DeploymentRepository_type"), PomPackage.Literals.DEPLOYMENT_REPOSITORY__ID, true, false, false, //$NON-NLS-1$
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -109,9 +109,9 @@ public class DeploymentRepositoryItemProvider extends ItemProviderAdapter implem
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_DeploymentRepository_name_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_DeploymentRepository_name_feature",
-            "_UI_DeploymentRepository_type"), PomPackage.Literals.DEPLOYMENT_REPOSITORY__NAME, true, false, false,
+        getString("_UI_DeploymentRepository_name_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_DeploymentRepository_name_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_DeploymentRepository_type"), PomPackage.Literals.DEPLOYMENT_REPOSITORY__NAME, true, false, false, //$NON-NLS-1$
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -124,9 +124,9 @@ public class DeploymentRepositoryItemProvider extends ItemProviderAdapter implem
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_DeploymentRepository_url_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_DeploymentRepository_url_feature",
-            "_UI_DeploymentRepository_type"), PomPackage.Literals.DEPLOYMENT_REPOSITORY__URL, true, false, false,
+        getString("_UI_DeploymentRepository_url_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_DeploymentRepository_url_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_DeploymentRepository_type"), PomPackage.Literals.DEPLOYMENT_REPOSITORY__URL, true, false, false, //$NON-NLS-1$
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -139,9 +139,9 @@ public class DeploymentRepositoryItemProvider extends ItemProviderAdapter implem
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
         getResourceLocator(),
-        getString("_UI_DeploymentRepository_layout_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_DeploymentRepository_layout_feature",
-            "_UI_DeploymentRepository_type"), PomPackage.Literals.DEPLOYMENT_REPOSITORY__LAYOUT, true, false, false,
+        getString("_UI_DeploymentRepository_layout_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_DeploymentRepository_layout_feature", //$NON-NLS-1$ //$NON-NLS-2$
+            "_UI_DeploymentRepository_type"), PomPackage.Literals.DEPLOYMENT_REPOSITORY__LAYOUT, true, false, false, //$NON-NLS-1$
         ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -152,7 +152,7 @@ public class DeploymentRepositoryItemProvider extends ItemProviderAdapter implem
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/DeploymentRepository"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/DeploymentRepository")); //$NON-NLS-1$
   }
 
   /**
@@ -163,8 +163,8 @@ public class DeploymentRepositoryItemProvider extends ItemProviderAdapter implem
   @Override
   public String getText(Object object) {
     String label = ((DeploymentRepository) object).getName();
-    return label == null || label.length() == 0 ? getString("_UI_DeploymentRepository_type")
-        : getString("_UI_DeploymentRepository_type") + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_DeploymentRepository_type") //$NON-NLS-1$
+        : getString("_UI_DeploymentRepository_type") + " " + label; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   /**

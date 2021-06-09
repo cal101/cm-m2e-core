@@ -113,7 +113,7 @@ public class MavenLaunchConfigurationListener implements ILaunchConfigurationLis
     IJavaElement javaElement = findType.getAncestor(IJavaElement.PACKAGE_FRAGMENT_ROOT);
     if(javaElement instanceof IPackageFragmentRoot) {
       IPath path = javaElement.getPath();
-      return "test".equals(path.segment(path.segmentCount() - 2));
+      return "test".equals(path.segment(path.segmentCount() - 2)); //$NON-NLS-1$
     }
 
     return true;
@@ -133,7 +133,7 @@ public class MavenLaunchConfigurationListener implements ILaunchConfigurationLis
             break;
         }
       } catch(Exception e) {
-        log.error("Could not update launch configuration", e);
+        log.error("Could not update launch configuration", e); //$NON-NLS-1$
       }
     }
   }

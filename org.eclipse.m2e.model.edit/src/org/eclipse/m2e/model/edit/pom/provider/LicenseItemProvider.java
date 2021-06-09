@@ -77,8 +77,8 @@ public class LicenseItemProvider extends ItemProviderAdapter implements IEditing
   protected void addNamePropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_License_name_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_License_name_feature", "_UI_License_type"),
+        getString("_UI_License_name_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_License_name_feature", "_UI_License_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.LICENSE__NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -90,8 +90,8 @@ public class LicenseItemProvider extends ItemProviderAdapter implements IEditing
   protected void addUrlPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_License_url_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_License_url_feature", "_UI_License_type"),
+        getString("_UI_License_url_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_License_url_feature", "_UI_License_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.LICENSE__URL, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -103,8 +103,8 @@ public class LicenseItemProvider extends ItemProviderAdapter implements IEditing
   protected void addDistributionPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_License_distribution_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_License_distribution_feature", "_UI_License_type"),
+        getString("_UI_License_distribution_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_License_distribution_feature", "_UI_License_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.LICENSE__DISTRIBUTION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
         null, null));
   }
@@ -117,8 +117,8 @@ public class LicenseItemProvider extends ItemProviderAdapter implements IEditing
   protected void addCommentsPropertyDescriptor(Object object) {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(
         ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_License_comments_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_License_comments_feature", "_UI_License_type"),
+        getString("_UI_License_comments_feature"), //$NON-NLS-1$
+        getString("_UI_PropertyDescriptor_description", "_UI_License_comments_feature", "_UI_License_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         PomPackage.Literals.LICENSE__COMMENTS, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
         null));
   }
@@ -130,7 +130,7 @@ public class LicenseItemProvider extends ItemProviderAdapter implements IEditing
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/License"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/License")); //$NON-NLS-1$
   }
 
   /**
@@ -141,7 +141,7 @@ public class LicenseItemProvider extends ItemProviderAdapter implements IEditing
   @Override
   public String getText(Object object) {
     String label = ((License) object).getName();
-    return label == null || label.length() == 0 ? getString("_UI_License_type") : getString("_UI_License_type") + " "
+    return label == null || label.length() == 0 ? getString("_UI_License_type") : getString("_UI_License_type") + " " //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         + label;
   }
 

@@ -79,9 +79,9 @@ public class ActivationItemProvider extends ItemProviderAdapter implements IEdit
         .add(createItemPropertyDescriptor(
             ((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
             getResourceLocator(),
-            getString("_UI_Activation_activeByDefault_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_Activation_activeByDefault_feature",
-                "_UI_Activation_type"), PomPackage.Literals.ACTIVATION__ACTIVE_BY_DEFAULT, true, false, false,
+            getString("_UI_Activation_activeByDefault_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_Activation_activeByDefault_feature", //$NON-NLS-1$ //$NON-NLS-2$
+                "_UI_Activation_type"), PomPackage.Literals.ACTIVATION__ACTIVE_BY_DEFAULT, true, false, false, //$NON-NLS-1$
             ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
@@ -93,8 +93,8 @@ public class ActivationItemProvider extends ItemProviderAdapter implements IEdit
   protected void addJdkPropertyDescriptor(Object object) {
     itemPropertyDescriptors
         .add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-            getResourceLocator(), getString("_UI_Activation_jdk_feature"),
-            getString("_UI_PropertyDescriptor_description", "_UI_Activation_jdk_feature", "_UI_Activation_type"),
+            getResourceLocator(), getString("_UI_Activation_jdk_feature"), //$NON-NLS-1$
+            getString("_UI_PropertyDescriptor_description", "_UI_Activation_jdk_feature", "_UI_Activation_type"), //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
             PomPackage.Literals.ACTIVATION__JDK, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null,
             null));
   }
@@ -139,7 +139,7 @@ public class ActivationItemProvider extends ItemProviderAdapter implements IEdit
    */
   @Override
   public Object getImage(Object object) {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/Activation"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/Activation")); //$NON-NLS-1$
   }
 
   /**
@@ -150,8 +150,8 @@ public class ActivationItemProvider extends ItemProviderAdapter implements IEdit
   @Override
   public String getText(Object object) {
     String label = ((Activation) object).getActiveByDefault();
-    return label == null || label.length() == 0 ? getString("_UI_Activation_type") : getString("_UI_Activation_type")
-        + " " + label;
+    return label == null || label.length() == 0 ? getString("_UI_Activation_type") : getString("_UI_Activation_type") //$NON-NLS-1$ //$NON-NLS-2$
+        + " " + label; //$NON-NLS-1$
   }
 
   /**
