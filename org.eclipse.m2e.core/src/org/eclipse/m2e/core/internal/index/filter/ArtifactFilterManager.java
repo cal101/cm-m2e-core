@@ -56,17 +56,17 @@ public class ArtifactFilterManager {
     ArrayList<IArtifactFilter> filters = new ArrayList<>();
 
     IExtensionRegistry registry = Platform.getExtensionRegistry();
-    IExtensionPoint filtersExtensionPoint = registry.getExtensionPoint(IMavenConstants.PLUGIN_ID + ".artifactFilters");
+    IExtensionPoint filtersExtensionPoint = registry.getExtensionPoint(IMavenConstants.PLUGIN_ID + ".artifactFilters"); //$NON-NLS-1$
     if(filtersExtensionPoint != null) {
       IExtension[] filtersExtensions = filtersExtensionPoint.getExtensions();
       for(IExtension extension : filtersExtensions) {
         IConfigurationElement[] elements = extension.getConfigurationElements();
         for(IConfigurationElement element : elements) {
-          if("artifactFilter".equals(element.getName())) {
+          if("artifactFilter".equals(element.getName())) { //$NON-NLS-1$
             try {
-              filters.add((IArtifactFilter) element.createExecutableExtension("class"));
+              filters.add((IArtifactFilter) element.createExecutableExtension("class")); //$NON-NLS-1$
             } catch(CoreException ex) {
-              log.warn("Could not instantiate extension", ex);
+              log.warn("Could not instantiate extension", ex); //$NON-NLS-1$
             }
           }
         }

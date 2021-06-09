@@ -61,7 +61,7 @@ public class WorkspaceStateWriter implements IMavenProjectChangedListener {
       for(IMavenProjectFacade projectFacade : projectManager.getProjects()) {
         IProject project = projectFacade.getProject();
         if(!project.isAccessible()) {
-          log.debug("Project registry contains closed project {}", project);
+          log.debug("Project registry contains closed project {}", project); //$NON-NLS-1$
           // this is actually a bug somewhere in registry refresh logic, closed projects should not be there
           continue;
         }
@@ -95,28 +95,28 @@ public class WorkspaceStateWriter implements IMavenProjectChangedListener {
             if(extension != null) {
               String classifier = artifact.getClassifier();
               if(classifier == null) {
-                classifier = "";
+                classifier = ""; //$NON-NLS-1$
               }
               state.putArtifact(outputLocation.getLocation().toFile(), artifact.getGroupId(), artifact.getArtifactId(),
                   extension, classifier, artifact.getVersion());
             } else {
-              log.warn("Could not determine project {} main artifact extension.", project);
+              log.warn("Could not determine project {} main artifact extension.", project); //$NON-NLS-1$
             }
           }
           // assume test output location gets attached as classified=tests
           IResource testOutputLocation = root.findMember(projectFacade.getTestOutputLocation());
-          if(!"pom".equals(projectFacade.getPackaging()) && testOutputLocation != null && testOutputLocation.exists()) {
+          if(!"pom".equals(projectFacade.getPackaging()) && testOutputLocation != null && testOutputLocation.exists()) { //$NON-NLS-1$
             state.putArtifact(testOutputLocation.getLocation().toFile(), artifact.getGroupId(),
-                artifact.getArtifactId(), "jar", "tests", artifact.getVersion());
+                artifact.getArtifactId(), "jar", "tests", artifact.getVersion()); //$NON-NLS-1$ //$NON-NLS-2$
           }
         } catch(CoreException ex) {
-          log.error("Error writing workspace state file", ex);
+          log.error("Error writing workspace state file", ex); //$NON-NLS-1$
         }
       }
 
       state.store(projectManager.getWorkspaceStateFile());
     } catch(IOException ex) {
-      log.error("Error writing workspace state file", ex);
+      log.error("Error writing workspace state file", ex); //$NON-NLS-1$
     }
   }
 

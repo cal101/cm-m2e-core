@@ -59,7 +59,7 @@ public class ProjectConfigurationElementSorter {
   public ProjectConfigurationElementSorter(Collection<String> configuratorIds,
       Map<String, IConfigurationElement> configurators) throws CycleDetectedException {
 
-    Assert.isNotNull(configurators, "configuratorConfigElements parameter can not be null");
+    Assert.isNotNull(configurators, "configuratorConfigElements parameter can not be null"); //$NON-NLS-1$
 
     //DAG including required and optional configurators
     DAG fullDag = new DAG();
@@ -81,11 +81,11 @@ public class ProjectConfigurationElementSorter {
         continue;
       }
       //Add edge for configurators this configurator should run after
-      String[] runsAfter = safeSplit(configurator.getAttribute("runsAfter"));
+      String[] runsAfter = safeSplit(configurator.getAttribute("runsAfter")); //$NON-NLS-1$
 
       //fallback to legacy secondaryTo attribute
       if(runsAfter == null) {
-        String secondaryTo = configurator.getAttribute("secondaryTo");
+        String secondaryTo = configurator.getAttribute("secondaryTo"); //$NON-NLS-1$
         if(secondaryTo != null) {
           runsAfter = new String[] {secondaryTo};
         }
@@ -98,7 +98,7 @@ public class ProjectConfigurationElementSorter {
           if(id.isEmpty()) {
             continue;
           }
-          boolean isRequired = !id.endsWith("?");
+          boolean isRequired = !id.endsWith("?"); //$NON-NLS-1$
           String predecessorId = sanitize(id);
           if(isRequired) {
             requirementsDag.addEdge(key, predecessorId);
@@ -118,14 +118,14 @@ public class ProjectConfigurationElementSorter {
 
       //Add edges for configurators this configurator should run before
 
-      String[] runsBefore = safeSplit(configurator.getAttribute("runsBefore"));
+      String[] runsBefore = safeSplit(configurator.getAttribute("runsBefore")); //$NON-NLS-1$
       if(runsBefore != null) {
         for(String id : runsBefore) {
           id = id.trim();
           if(id.isEmpty()) {
             continue;
           }
-          boolean isRequired = id.endsWith("*");
+          boolean isRequired = id.endsWith("*"); //$NON-NLS-1$
           String successorId = sanitize(id);
           if(isRequired) {
             requirementsDag.addEdge(successorId, key);
@@ -217,11 +217,11 @@ public class ProjectConfigurationElementSorter {
   }
 
   private static String sanitize(String id) {
-    return (id.endsWith("?") || id.endsWith("*")) ? id.substring(0, id.length() - 1) : id;
+    return (id.endsWith("?") || id.endsWith("*")) ? id.substring(0, id.length() - 1) : id; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   private static String[] safeSplit(String value) {
-    return value == null ? null : value.split(",");
+    return value == null ? null : value.split(","); //$NON-NLS-1$
   }
 
   /**
@@ -280,7 +280,7 @@ public class ProjectConfigurationElementSorter {
   }
 
   public String toString() {
-    return "ProjectConfigurationElementSorter [" + getSortedConfigurators() + "]";
+    return "ProjectConfigurationElementSorter [" + getSortedConfigurators() + "]"; //$NON-NLS-1$ //$NON-NLS-2$
   }
 
 }

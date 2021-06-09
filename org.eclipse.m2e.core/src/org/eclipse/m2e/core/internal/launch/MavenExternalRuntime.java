@@ -245,7 +245,7 @@ public class MavenExternalRuntime extends AbstractMavenRuntime {
       }
       if(zip != null) {
         try {
-          String suffix = "";
+          String suffix = ""; //$NON-NLS-1$
           ZipEntry zipEntry = zip.getEntry("META-INF/maven/org.apache.maven/maven-core/pom.properties"); //$NON-NLS-1$
           if(zipEntry != null) {
             Properties pomProperties = new Properties();
@@ -262,7 +262,7 @@ public class MavenExternalRuntime extends AbstractMavenRuntime {
       }
     } catch(Exception e) {
       // most likely a bad location, but who knows
-      log.error("Could not parse classwords configuration file", e);
+      log.error("Could not parse classwords configuration file", e); //$NON-NLS-1$
     }
 
     return Messages.MavenExternalRuntime_unknown;

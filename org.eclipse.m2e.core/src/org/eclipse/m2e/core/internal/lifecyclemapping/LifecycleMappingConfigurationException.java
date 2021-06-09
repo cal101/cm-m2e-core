@@ -31,7 +31,7 @@ public class LifecycleMappingConfigurationException extends RuntimeException {
   }
 
   public LifecycleMappingConfigurationException(String message, Throwable cause) {
-    super(message + " Cause: " + cause.getMessage(), cause);
+    super(message + " Cause: " + cause.getMessage(), cause); //$NON-NLS-1$
   }
 
   public LifecycleMappingConfigurationException(Throwable cause) {

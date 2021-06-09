@@ -167,7 +167,7 @@ public class ProjectConfigurationManager implements IProjectConfigurationManager
     if(project != null) {
       projects.add(project);
       long importTime = System.currentTimeMillis() - t11;
-      log.debug("Imported project {} ({}/{}) in {} ms", project.getName(), ++i, total, importTime);
+      log.debug("Imported project {} ({}/{}) in {} ms", project.getName(), ++i, total, importTime); //$NON-NLS-1$
     }
     }
 
@@ -176,7 +176,7 @@ public class ProjectConfigurationManager implements IProjectConfigurationManager
     configureNewMavenProjects(projects, progress.newChild(90));
 
     long t2 = System.currentTimeMillis();
-    log.info("Imported and configured {} project(s) in {} sec", total, ((t2 - t1) / 1000));
+    log.info("Imported and configured {} project(s) in {} sec", total, ((t2 - t1) / 1000)); //$NON-NLS-1$
 
     return result;
    }, monitor);
@@ -187,7 +187,7 @@ public class ProjectConfigurationManager implements IProjectConfigurationManager
     try {
       resource.setHidden(true);
     } catch(Exception ex) {
-      log.error("Failed to hide resource: "
+      log.error("Failed to hide resource: " //$NON-NLS-1$
           + (resource.getLocation() == null ? resource.getName() : resource.getLocation().toOSString()), ex);
     }
   }
@@ -239,7 +239,7 @@ public class ProjectConfigurationManager implements IProjectConfigurationManager
         try {
           physicalParentProject.refreshLocal(IResource.DEPTH_ONE, monitor);
         } catch(Exception e) {
-          log.error("Failed to refresh " + physicalParentProject.getName(), e);
+          log.error("Failed to refresh " + physicalParentProject.getName(), e); //$NON-NLS-1$
         } finally {
           refreshedProjects.add(physicalParentProject);
         }
@@ -495,7 +495,7 @@ public class ProjectConfigurationManager implements IProjectConfigurationManager
     // Configure project file encoding
     final MavenProject mavenProject = request.getMavenProject();
     Properties mavenProperties = mavenProject.getProperties();
-    String sourceEncoding = mavenProperties.getProperty("project.build.sourceEncoding");
+    String sourceEncoding = mavenProperties.getProperty("project.build.sourceEncoding"); //$NON-NLS-1$
     log.debug("Setting encoding for project {}: {}", project.getName(), sourceEncoding); //$NON-NLS-1$
     project.setDefaultCharset(sourceEncoding, monitor);
 
@@ -920,7 +920,7 @@ public class ProjectConfigurationManager implements IProjectConfigurationManager
 
       public Set<MavenProjectInfo> collectProjects(Collection<MavenProjectInfo> projects) {
         for(MavenProjectInfo projectInfo : projects) {
-          log.info("Collecting project info " + projectInfo);
+          log.info("Collecting project info " + projectInfo); //$NON-NLS-1$
           add(projectInfo);
           collectProjects(projectInfo.getProjects());
         }
@@ -981,12 +981,12 @@ public class ProjectConfigurationManager implements IProjectConfigurationManager
 
     IProject project = root.getProject(projectName);
     if(project.exists()) {
-      log.error("Project " + projectName + " already exists");
+      log.error("Project " + projectName + " already exists"); //$NON-NLS-1$ //$NON-NLS-2$
       return null;
     }
 
     if(projectDir.equals(root.getLocation().toFile())) {
-      log.error("Can't create project " + projectName + " at Workspace folder");
+      log.error("Can't create project " + projectName + " at Workspace folder"); //$NON-NLS-1$ //$NON-NLS-2$
       return null;
     }
 

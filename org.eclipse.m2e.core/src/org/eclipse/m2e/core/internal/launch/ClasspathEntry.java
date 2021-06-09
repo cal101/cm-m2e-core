@@ -21,13 +21,13 @@ package org.eclipse.m2e.core.internal.launch;
 public abstract class ClasspathEntry {
   public String toExternalForm() {
     if(this instanceof ProjectClasspathEntry) {
-      return "P/" + ((ProjectClasspathEntry) this).getProject();
+      return "P/" + ((ProjectClasspathEntry) this).getProject(); //$NON-NLS-1$
     }
     throw new IllegalArgumentException();
   }
 
   public static ClasspathEntry fromExternalForm(String str) {
-    if(str.startsWith("P/")) {
+    if(str.startsWith("P/")) { //$NON-NLS-1$
       return new ProjectClasspathEntry(str.substring(2));
     }
     return null;

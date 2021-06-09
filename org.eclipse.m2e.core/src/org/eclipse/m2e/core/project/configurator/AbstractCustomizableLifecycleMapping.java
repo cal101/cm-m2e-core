@@ -44,7 +44,7 @@ public abstract class AbstractCustomizableLifecycleMapping extends AbstractLifec
 
   public Map<MojoExecutionKey, List<AbstractBuildParticipant>> getBuildParticipants(IMavenProjectFacade projectFacade,
       IProgressMonitor monitor) throws CoreException {
-    log.debug("Build participants for {}", projectFacade.getMavenProject());
+    log.debug("Build participants for {}", projectFacade.getMavenProject()); //$NON-NLS-1$
     Map<MojoExecutionKey, List<AbstractBuildParticipant>> result = new LinkedHashMap<>();
 
     Map<MojoExecutionKey, List<IPluginExecutionMetadata>> mapping = projectFacade.getMojoExecutionMapping();
@@ -56,14 +56,14 @@ public abstract class AbstractCustomizableLifecycleMapping extends AbstractLifec
     if(mojoExecutions != null) { // null if execution plan could not be calculated
       for(MojoExecution mojoExecution : mojoExecutions) {
         MojoExecutionKey mojoExecutionKey = new MojoExecutionKey(mojoExecution);
-        log.debug("Mojo execution key: {}", mojoExecutionKey);
+        log.debug("Mojo execution key: {}", mojoExecutionKey); //$NON-NLS-1$
         List<IPluginExecutionMetadata> executionMetadatas = mapping.get(mojoExecutionKey);
         List<AbstractBuildParticipant> executionMappings = new ArrayList<>();
         if(executionMetadatas != null) {
           for(IPluginExecutionMetadata executionMetadata : executionMetadatas) {
             switch(executionMetadata.getAction()) {
               case execute:
-                log.debug("\tAction: {}", executionMetadata.getAction());
+                log.debug("\tAction: {}", executionMetadata.getAction()); //$NON-NLS-1$
                 executionMappings.add(LifecycleMappingFactory.createMojoExecutionBuildParicipant(
                     projectFacade.getMojoExecution(mojoExecutionKey, monitor), executionMetadata));
                 break;
@@ -71,25 +71,25 @@ public abstract class AbstractCustomizableLifecycleMapping extends AbstractLifec
                 String configuratorId = LifecycleMappingFactory.getProjectConfiguratorId(executionMetadata);
                 AbstractProjectConfigurator configurator = configurators.get(configuratorId);
                 if(configurator == null) {
-                  log.debug("\t\tProject configurator with id {} was not found", configuratorId);
+                  log.debug("\t\tProject configurator with id {} was not found", configuratorId); //$NON-NLS-1$
                   break;
                 }
                 AbstractBuildParticipant buildParticipant = configurator.getBuildParticipant(projectFacade,
                     projectFacade.getMojoExecution(mojoExecutionKey, monitor), executionMetadata);
                 if(buildParticipant != null) {
-                  log.debug("\tAction: {}", executionMetadata.getAction());
-                  log.debug("\t\tProject configurator : id={} class={}", configuratorId, configurator.getClass()
+                  log.debug("\tAction: {}", executionMetadata.getAction()); //$NON-NLS-1$
+                  log.debug("\t\tProject configurator : id={} class={}", configuratorId, configurator.getClass() //$NON-NLS-1$
                       .getName());
-                  log.debug("\t\tBuild participant: {}", buildParticipant.getClass().getName());
+                  log.debug("\t\tBuild participant: {}", buildParticipant.getClass().getName()); //$NON-NLS-1$
                   executionMappings.add(buildParticipant);
                 }
                 break;
               case ignore:
               case error:
-                log.debug("\tAction: {}", executionMetadata.getAction());
+                log.debug("\tAction: {}", executionMetadata.getAction()); //$NON-NLS-1$
                 break;
               default:
-                throw new IllegalArgumentException("Missing handling for action=" + executionMetadata.getAction());
+                throw new IllegalArgumentException("Missing handling for action=" + executionMetadata.getAction()); //$NON-NLS-1$
             }
           }
         }

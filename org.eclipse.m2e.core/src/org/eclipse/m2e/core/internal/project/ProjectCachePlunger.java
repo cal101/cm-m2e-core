@@ -74,7 +74,7 @@ abstract class ProjectCachePlunger<Key> {
       }
       if(!keyProjects.containsKey(cacheKey)) {
         flush(cacheKey);
-        log.debug("Flushed cache entry for {}", cacheKey);
+        log.debug("Flushed cache entry for {}", cacheKey); //$NON-NLS-1$
       }
     }
 

@@ -100,7 +100,7 @@ public class MavenEmbeddedRuntime extends AbstractMavenRuntime {
     collectExtensions(collector, monitor);
     for(String entry : CLASSPATH) {
       // https://issues.sonatype.org/browse/MNGECLIPSE-2507
-      if(!entry.contains("plexus-build-api")) {
+      if(!entry.contains("plexus-build-api")) { //$NON-NLS-1$
         collector.addArchiveEntry(entry);
       }
     }
@@ -114,25 +114,25 @@ public class MavenEmbeddedRuntime extends AbstractMavenRuntime {
 
       Set<Bundle> bundles = new LinkedHashSet<>();
       // find and add more bundles
-      for(String sname : new String[] {"org.eclipse.m2e.maven.runtime.slf4j.simple", "javax.inject"}) {
+      for(String sname : new String[] {"org.eclipse.m2e.maven.runtime.slf4j.simple", "javax.inject"}) { //$NON-NLS-1$ //$NON-NLS-2$
         Bundle dependency = Bundles.findDependencyBundle(mavenRuntimeBundle, sname);
         if(dependency != null) {
           bundles.add(dependency);
         } else {
           log.warn(
-              "Could not find OSGi bundle with symbolic name ''{}'' required to launch embedded maven runtime in external process",
+              "Could not find OSGi bundle with symbolic name ''{}'' required to launch embedded maven runtime in external process", //$NON-NLS-1$
               sname);
         }
       }
 
       // find bundles by exported packages
-      for(String pname : new String[] {"org.slf4j", "org.slf4j.helpers", "org.slf4j.spi"}) {
+      for(String pname : new String[] {"org.slf4j", "org.slf4j.helpers", "org.slf4j.spi"}) { //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
         Bundle dependency = Bundles.findDependencyBundleByPackage(mavenRuntimeBundle, pname);
         if(dependency != null) {
           bundles.add(dependency);
         } else {
           log.warn(
-              "Could not find OSGi bundle exporting package ''{}'' required to launch embedded maven runtime in external process",
+              "Could not find OSGi bundle exporting package ''{}'' required to launch embedded maven runtime in external process", //$NON-NLS-1$
               pname);
         }
       }
@@ -176,7 +176,7 @@ public class MavenEmbeddedRuntime extends AbstractMavenRuntime {
 
     if(embedder != null) {
       StringBuilder sb = new StringBuilder();
-      sb.append(getVersion(embedder)); //$NON-NLS-1$
+      sb.append(getVersion(embedder));
       String version = embedder.getHeaders().get(Constants.BUNDLE_VERSION);
       sb.append('/').append(version);
       return sb.toString();
@@ -193,14 +193,14 @@ public class MavenEmbeddedRuntime extends AbstractMavenRuntime {
     try {
       String mavenCoreJarPath = null;
       for(String path : CLASSPATH) {
-        if(path.contains("maven-core")) {
+        if(path.contains("maven-core")) { //$NON-NLS-1$
           mavenCoreJarPath = path;
           break;
         }
       }
 
       if(mavenCoreJarPath == null) {
-        throw new RuntimeException("Could not find maven core jar file");
+        throw new RuntimeException("Could not find maven core jar file"); //$NON-NLS-1$
       }
 
       Properties pomProperties = new Properties();
@@ -232,7 +232,7 @@ public class MavenEmbeddedRuntime extends AbstractMavenRuntime {
       }
 
     } catch(Exception e) {
-      log.warn("Could not determine embedded maven version", e);
+      log.warn("Could not determine embedded maven version", e); //$NON-NLS-1$
     }
 
     return Messages.MavenEmbeddedRuntime_unknown;

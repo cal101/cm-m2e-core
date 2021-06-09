@@ -51,13 +51,13 @@ public class MavenProjectFacade implements IMavenProjectFacade, Serializable {
 
   private static final long serialVersionUID = -3648172776786224087L;
 
-  private static final String CTX_EXECUTION_PLANS = MavenProjectFacade.class.getName() + "/executionPlans";
+  private static final String CTX_EXECUTION_PLANS = MavenProjectFacade.class.getName() + "/executionPlans"; //$NON-NLS-1$
 
-  private static final String CTX_SETUP_EXECUTIONS = MavenProjectFacade.class.getName() + "/setupExecutions";
+  private static final String CTX_SETUP_EXECUTIONS = MavenProjectFacade.class.getName() + "/setupExecutions"; //$NON-NLS-1$
 
-  public static final String PROP_LIFECYCLE_MAPPING = MavenProjectFacade.class.getName() + "/lifecycleMapping";
+  public static final String PROP_LIFECYCLE_MAPPING = MavenProjectFacade.class.getName() + "/lifecycleMapping"; //$NON-NLS-1$
 
-  public static final String PROP_CONFIGURATORS = MavenProjectFacade.class.getName() + "/configurators";
+  public static final String PROP_CONFIGURATORS = MavenProjectFacade.class.getName() + "/configurators"; //$NON-NLS-1$
 
   private final ProjectRegistryManager manager;
 
@@ -351,7 +351,7 @@ public class MavenProjectFacade implements IMavenProjectFacade, Serializable {
 
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append(getProject().toString()).append(": ").append(getArtifactKey().toString());
+    sb.append(getProject().toString()).append(": ").append(getArtifactKey().toString()); //$NON-NLS-1$
     return sb.toString();
   }
 

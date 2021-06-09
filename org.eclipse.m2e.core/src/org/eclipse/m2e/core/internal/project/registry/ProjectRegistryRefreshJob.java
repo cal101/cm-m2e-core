@@ -158,7 +158,7 @@ public class ProjectRegistryRefreshJob extends Job implements IResourceChangeLis
     } catch(CoreException ex) {
       log.error(ex.getMessage(), ex);
     } catch(OperationCanceledException ex) {
-      log.info("{} was canceled", getClass().getName());
+      log.info("{} was canceled", getClass().getName()); //$NON-NLS-1$
     } catch(StaleMutableProjectRegistryException e) {
       synchronized(this.queue) {
         // must preserve order of requests here

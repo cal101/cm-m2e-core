@@ -33,7 +33,7 @@ import org.eclipse.m2e.core.embedder.ILocalRepositoryListener;
 @Singleton
 public class EclipseRepositoryListener extends AbstractRepositoryListener implements RepositoryListener {
 
-  public static final String ROLE_HINT = "EclipseRepositoryListener";
+  public static final String ROLE_HINT = "EclipseRepositoryListener"; //$NON-NLS-1$
 
   public void artifactInstalled(RepositoryEvent event) {
     notifyListeners(event);

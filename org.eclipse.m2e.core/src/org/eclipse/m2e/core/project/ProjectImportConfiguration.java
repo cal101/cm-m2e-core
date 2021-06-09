@@ -109,7 +109,7 @@ public class ProjectImportConfiguration {
 
   private static final String cleanProjectNameComponent(String value, boolean quote) {
     // remove property placeholders
-    value = value.replaceAll("\\$\\{[^\\}]++\\}", ""); //$NON-NLS-1$ $NON-NLS-2$
+    value = value.replaceAll("\\$\\{[^\\}]++\\}", ""); //$NON-NLS-1$ //$NON-NLS-2$ $NON-NLS-2$
     if(quote) {
       value = Matcher.quoteReplacement(value);
     }
@@ -142,7 +142,7 @@ public class ProjectImportConfiguration {
     // check if project already exists
     if(workspace.getRoot().getProject(projectName).exists()) {
       return new Status(IStatus.ERROR, IMavenConstants.PLUGIN_ID, 0,
-          NLS.bind(Messages.importProjectExists, projectName), null); //$NON-NLS-1$
+          NLS.bind(Messages.importProjectExists, projectName), null);
     }
 
     return Status.OK_STATUS;

@@ -139,13 +139,13 @@ public class MavenRuntimeManagerImpl {
         sb.append(name);
         if(!runtime.isLegacy()) {
           Preferences runtimeNode = getRuntimePreferences(name, true);
-          runtimeNode.put("type", getRuntimeType(runtime));
-          runtimeNode.put("location", runtime.getLocation());
+          runtimeNode.put("type", getRuntimeType(runtime)); //$NON-NLS-1$
+          runtimeNode.put("location", runtime.getLocation()); //$NON-NLS-1$
           String extensions = encodeClasspath(runtime.getExtensions());
           if(extensions != null) {
-            runtimeNode.put("extensions", extensions);
+            runtimeNode.put("extensions", extensions); //$NON-NLS-1$
           } else {
-            runtimeNode.remove("extensions");
+            runtimeNode.remove("extensions"); //$NON-NLS-1$
           }
         }
       }
@@ -204,7 +204,7 @@ public class MavenRuntimeManagerImpl {
       return null;
     }
     List<ClasspathEntry> result = new ArrayList<>();
-    for(String entry : string.split("\\|")) {
+    for(String entry : string.split("\\|")) { //$NON-NLS-1$
       ClasspathEntry decoded = ClasspathEntry.fromExternalForm(entry);
       if(decoded != null) {
         result.add(decoded);
@@ -236,15 +236,15 @@ public class MavenRuntimeManagerImpl {
   }
 
   private AbstractMavenRuntime createRuntime(String name, Preferences preferences) {
-    String location = preferences.get("location", null);
-    String type = preferences.get("type", EXTERNAL);
+    String location = preferences.get("location", null); //$NON-NLS-1$
+    String type = preferences.get("type", EXTERNAL); //$NON-NLS-1$
     AbstractMavenRuntime runtime;
     if(WORKSPACE.equals(type)) {
       runtime = new MavenWorkspaceRuntime(name);
     } else {
       runtime = new MavenExternalRuntime(name, location);
     }
-    runtime.setExtensions(decodeClasspath(preferences.get("extensions", null)));
+    runtime.setExtensions(decodeClasspath(preferences.get("extensions", null))); //$NON-NLS-1$
     return runtime;
   }
 

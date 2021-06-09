@@ -65,7 +65,7 @@ public class MavenConfigurationImpl implements IMavenConfiguration, IPreferenceC
       return false;
     }
     try {
-      return preferenceNode.nodeExists("");
+      return preferenceNode.nodeExists(""); //$NON-NLS-1$
     } catch(BackingStoreException ex) {
       log.error(ex.getMessage(), ex);
       return false;
@@ -189,7 +189,7 @@ public class MavenConfigurationImpl implements IMavenConfiguration, IPreferenceC
       try {
         listener.mavenConfigurationChange(mavenEvent);
       } catch(Exception e) {
-        log.error("Could not deliver maven configuration change event", e);
+        log.error("Could not deliver maven configuration change event", e); //$NON-NLS-1$
       }
     }
   }
@@ -280,7 +280,7 @@ public class MavenConfigurationImpl implements IMavenConfiguration, IPreferenceC
         || ArtifactRepositoryPolicy.CHECKSUM_POLICY_IGNORE.equals(checksumPolicy)) {//will simply be ignored
       preferencesLookup[0].put(MavenPreferenceConstants.P_GLOBAL_CHECKSUM_POLICY, checksumPolicy);
     } else {
-      throw new IllegalArgumentException(checksumPolicy + " is not a valid checksum policy");
+      throw new IllegalArgumentException(checksumPolicy + " is not a valid checksum policy"); //$NON-NLS-1$
     }
   }
 

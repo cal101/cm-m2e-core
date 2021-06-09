@@ -96,7 +96,7 @@ public class SourceLocationHelper {
   }
 
   public static SourceLocation findLocation(MavenProject mavenProject, MojoExecutionKey mojoExecutionKey) {
-    Plugin plugin = mavenProject.getPlugin(mojoExecutionKey.getGroupId() + ":" + mojoExecutionKey.getArtifactId());
+    Plugin plugin = mavenProject.getPlugin(mojoExecutionKey.getGroupId() + ":" + mojoExecutionKey.getArtifactId()); //$NON-NLS-1$
 
     InputLocation inputLocation = plugin != null ? plugin.getLocation(SELF) : null;
     if(inputLocation == null || inputLocation.getLineNumber() < 0) {
@@ -189,8 +189,8 @@ public class SourceLocationHelper {
     if(origMgmt != null) {
       for(org.apache.maven.model.Dependency dependency : origMgmt.getDependencies()) {
 
-        if("import".equals(dependency.getScope()) && "pom".equals(dependency.getType())) {
-          String importId = dependency.getGroupId() + ":" + dependency.getArtifactId() + ":" + dependency.getVersion();
+        if("import".equals(dependency.getScope()) && "pom".equals(dependency.getType())) { //$NON-NLS-1$ //$NON-NLS-2$
+          String importId = dependency.getGroupId() + ":" + dependency.getArtifactId() + ":" + dependency.getVersion(); //$NON-NLS-1$ //$NON-NLS-2$
           if(depId.equals(importId)) {
             return dependency;
           }

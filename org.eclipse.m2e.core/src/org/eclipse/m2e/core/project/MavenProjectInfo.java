@@ -137,7 +137,7 @@ public class MavenProjectInfo {
     if(i == null) {
       projects.put(key, info);
     } else {
-      log.error("Project info " + this + " already has a child project info with key '" + key + "'"); //$NON-NLS-3$
+      log.error("Project info " + this + " already has a child project info with key '" + key + "'");  //$NON-NLS-1$ //$NON-NLS-2$//$NON-NLS-3$
       for(String string : info.getProfiles()) {
         i.addProfile(string);
       }

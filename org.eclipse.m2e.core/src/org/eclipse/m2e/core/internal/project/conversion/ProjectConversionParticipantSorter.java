@@ -68,7 +68,7 @@ public class ProjectConversionParticipantSorter {
       throws CycleDetectedException, DuplicateConversionParticipantException {
 
     if(converters == null) {
-      throw new IllegalArgumentException("converters parameter can not be null");
+      throw new IllegalArgumentException("converters parameter can not be null"); //$NON-NLS-1$
     }
 
     if(converters.isEmpty()) {

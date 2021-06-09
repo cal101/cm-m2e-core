@@ -25,9 +25,9 @@ import org.eclipse.core.runtime.IExecutableExtension;
 public abstract class AbstractWorkspaceClassifierResolver
     implements IWorkspaceClassifierResolver, IExecutableExtension {
 
-  private static final String ATTR_ID = "id";
+  private static final String ATTR_ID = "id"; //$NON-NLS-1$
 
-  private static final String ATTR_NAME = "name";
+  private static final String ATTR_NAME = "name"; //$NON-NLS-1$
 
   private String id;
 

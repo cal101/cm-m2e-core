@@ -21,7 +21,7 @@ public class StringSearchExpression implements SearchExpression {
 
   public StringSearchExpression(String expression) {
     if(expression == null || expression.trim().length() == 0) {
-      throw new RuntimeException("The expression cannot be empty!");
+      throw new RuntimeException("The expression cannot be empty!"); //$NON-NLS-1$
     }
     this.expression = expression;
   }

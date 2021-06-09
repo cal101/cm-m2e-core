@@ -132,11 +132,11 @@ public class ProjectRegistryManager {
 
   public static final String ARTIFACT_TYPE_JAVADOC = "javadoc"; //$NON-NLS-1$
 
-  public static final String LIFECYCLE_DEFAULT = "deploy";
+  public static final String LIFECYCLE_DEFAULT = "deploy"; //$NON-NLS-1$
 
-  public static final String LIFECYCLE_CLEAN = "clean";
+  public static final String LIFECYCLE_CLEAN = "clean"; //$NON-NLS-1$
 
-  public static final String LIFECYCLE_SITE = "site";
+  public static final String LIFECYCLE_SITE = "site"; //$NON-NLS-1$
 
   /**
    * Path of project metadata files, relative to the project. These files are used to determine if project dependencies
@@ -146,7 +146,7 @@ public class ProjectRegistryManager {
       new Path("pom.xml"), // //$NON-NLS-1$
       new Path(".settings/" + IMavenConstants.PLUGIN_ID + ".prefs")); // dirty trick! //$NON-NLS-1$ //$NON-NLS-2$
 
-  private static final String CTX_MAVENPROJECTS = ProjectRegistryManager.class.getName() + "/mavenProjects";
+  private static final String CTX_MAVENPROJECTS = ProjectRegistryManager.class.getName() + "/mavenProjects"; //$NON-NLS-1$
 
   private final ProjectRegistry projectRegistry;
 
@@ -216,7 +216,7 @@ public class ProjectRegistryManager {
         List<Throwable> exceptions = executionResult.getExceptions();
         if(exceptions != null) {
           for(Throwable ex : exceptions) {
-            String msg = "Failed to read Maven project: " + ex.getMessage();
+            String msg = "Failed to read Maven project: " + ex.getMessage(); //$NON-NLS-1$
             log.error(msg, ex);
           }
         }
@@ -354,7 +354,7 @@ public class ProjectRegistryManager {
         refresh.addAll(newState.getVersionedDependents(MavenCapability.createMavenArtifactImport(baseArtifact), true));
       }
       if(!refresh.isEmpty()) {
-        log.debug("Automatic refresh. artifact={}/{}. projects={}", baseArtifact, artifact, refresh);
+        log.debug("Automatic refresh. artifact={}/{}. projects={}", baseArtifact, artifact, refresh); //$NON-NLS-1$
         context.forcePomFiles(refresh);
       }
     };
@@ -835,7 +835,7 @@ public class ProjectRegistryManager {
     Map<File, MavenExecutionResult> results = readProjectsWithDependencies(projectRegistry,
         Collections.singletonList(pomFile), resolverConfiguration, monitor);
     if(results.size() != 1) {
-      throw new IllegalStateException("Results should contain one entry.");
+      throw new IllegalStateException("Results should contain one entry."); //$NON-NLS-1$
     }
     MavenExecutionResult result = results.values().iterator().next();
     MavenProject mavenProject = result.getProject();
@@ -1212,7 +1212,7 @@ public class ProjectRegistryManager {
       org.eclipse.core.filesystem.IFileStore fileStore = EFS.getStore(fileLocation);
       return fileStore.toLocalFile(EFS.CACHE, null);
     } catch(CoreException ex) {
-      log.warn("Failed to create local file representation of " + file);
+      log.warn("Failed to create local file representation of " + file); //$NON-NLS-1$
       return null;
     }
   }

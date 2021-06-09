@@ -57,7 +57,7 @@ public class ProjectLifecycleMappingConfiguration {
   }
 
   public String getMavenText() {
-    return relpath + " artifactId=" + mavenProject.getArtifactId() + " packaging=" + mavenProject.getPackaging();
+    return relpath + " artifactId=" + mavenProject.getArtifactId() + " packaging=" + mavenProject.getPackaging(); //$NON-NLS-1$ //$NON-NLS-2$
   }
 
   public MavenProject getMavenProject() {

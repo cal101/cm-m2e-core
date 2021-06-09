@@ -86,7 +86,7 @@ public class AetherClientResourceFetcher implements ResourceFetcher {
 
   @Deprecated
   public void retrieve(String name, File targetFile) throws IOException, FileNotFoundException {
-    String url = baseUrl + "/" + name;
+    String url = baseUrl + "/" + name; //$NON-NLS-1$
     try (Response response = aetherClient.get(url);
         InputStream is = response.getInputStream();
         OutputStream os = new BufferedOutputStream(new FileOutputStream(targetFile))) {
@@ -102,7 +102,7 @@ public class AetherClientResourceFetcher implements ResourceFetcher {
   }
 
   public InputStream retrieve(String name) throws IOException, FileNotFoundException {
-    String url = baseUrl + "/" + name;
+    String url = baseUrl + "/" + name; //$NON-NLS-1$
     Response response = aetherClient.get(url);
 
     return response.getInputStream();

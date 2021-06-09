@@ -312,7 +312,7 @@ public class MavenImpl implements IMaven, IMavenConfigurationChangeListener {
       return new FilterRepositorySystemSession(session, request.isUpdateSnapshots() ? null : updatePolicy);
     } catch(CoreException ex) {
       log.error(ex.getMessage(), ex);
-      throw new IllegalStateException("Could not look up Maven embedder", ex);
+      throw new IllegalStateException("Could not look up Maven embedder", ex); //$NON-NLS-1$
     }
   }
 
@@ -464,7 +464,7 @@ public class MavenImpl implements IMaven, IMavenConfigurationChangeListener {
       try {
         settings = lookup(SettingsBuilder.class).build(request).getEffectiveSettings();
       } catch(SettingsBuildingException ex) {
-        String msg = "Could not read settings.xml, assuming default values";
+        String msg = "Could not read settings.xml, assuming default values"; //$NON-NLS-1$
         log.error(msg, ex);
         /*
          * NOTE: This method provides input for various other core functions, just bailing out would make m2e highly
@@ -730,7 +730,7 @@ public class MavenImpl implements IMaven, IMavenConfigurationChangeListener {
         return parent;
       }
     } catch(ProjectBuildingException ex) {
-      log.error("Could not read parent project", ex);
+      log.error("Could not read parent project", ex); //$NON-NLS-1$
     }
 
     return null;
@@ -1129,7 +1129,7 @@ public class MavenImpl implements IMaven, IMavenConfigurationChangeListener {
     try {
       repositories.add(0, lookup(RepositorySystem.class).createDefaultRemoteRepository());
     } catch(InvalidRepositoryException ex) {
-      log.error("Unexpected exception", ex);
+      log.error("Unexpected exception", ex); //$NON-NLS-1$
     }
   }
 
@@ -1315,7 +1315,7 @@ public class MavenImpl implements IMaven, IMavenConfigurationChangeListener {
     try {
       realm = classWorld.getRealm(MAVEN_CORE_REALM_ID);
     } catch(NoSuchRealmException e) {
-      throw new PlexusContainerException("Could not lookup required class realm", e);
+      throw new PlexusContainerException("Could not lookup required class realm", e); //$NON-NLS-1$
     }
     final ContainerConfiguration mavenCoreCC = new DefaultContainerConfiguration() //
         .setClassWorld(classWorld) //

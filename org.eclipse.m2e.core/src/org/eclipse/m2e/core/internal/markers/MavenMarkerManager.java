@@ -112,7 +112,7 @@ public class MavenMarkerManager implements IMavenMarkerManager {
         marker.setAttribute(IMarker.TRANSIENT, isTransient);
 
         marker.setAttribute(IMarker.LINE_NUMBER, lineNumber);
-        log.debug("Created marker '{}' on resource '{}'.", message, resource.getFullPath());
+        log.debug("Created marker '{}' on resource '{}'.", message, resource.getFullPath()); //$NON-NLS-1$
       }
     } catch(CoreException ex) {
       log.error("Unable to add marker; " + ex.toString(), ex); //$NON-NLS-1$
@@ -164,7 +164,7 @@ public class MavenMarkerManager implements IMavenMarkerManager {
   private String getErrorMessage(Throwable ex) {
     StringBuilder message = new StringBuilder();
     if(ex.getMessage() != null) {
-      message.append(ex.getMessage()).append("\n\n");
+      message.append(ex.getMessage()).append("\n\n"); //$NON-NLS-1$
     }
     message.append(Throwables.getStackTraceAsString(ex));
     return message.toString();
@@ -292,16 +292,16 @@ public class MavenMarkerManager implements IMavenMarkerManager {
       CoreException cex = (CoreException) cause;
       IStatus status = cex.getStatus();
       if(status != null) {
-        addMarker(resource, type, status.getMessage(), 1, IMarker.SEVERITY_ERROR, false /*isTransient*/); //$NON-NLS-1$
+        addMarker(resource, type, status.getMessage(), 1, IMarker.SEVERITY_ERROR, false /*isTransient*/);
         IStatus[] children = status.getChildren();
         if(children != null) {
           for(IStatus childStatus : children) {
-            addMarker(resource, type, childStatus.getMessage(), 1, IMarker.SEVERITY_ERROR, false /*isTransient*/); //$NON-NLS-1$
+            addMarker(resource, type, childStatus.getMessage(), 1, IMarker.SEVERITY_ERROR, false /*isTransient*/);
           }
         }
       }
     } else {
-      addMarker(resource, type, cause.getMessage(), 1, IMarker.SEVERITY_ERROR, false /*isTransient*/); //$NON-NLS-1$
+      addMarker(resource, type, cause.getMessage(), 1, IMarker.SEVERITY_ERROR, false /*isTransient*/);
     }
   }
 

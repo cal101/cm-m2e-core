@@ -54,7 +54,7 @@ public abstract class AbstractMavenRuntime implements MavenRuntime {
   static {
     VersionRange supportedVersion;
     try {
-      supportedVersion = VersionRange.createFromVersionSpec("[3.0,)");
+      supportedVersion = VersionRange.createFromVersionSpec("[3.0,)"); //$NON-NLS-1$
     } catch(InvalidVersionSpecificationException ex) {
       supportedVersion = null;
     }

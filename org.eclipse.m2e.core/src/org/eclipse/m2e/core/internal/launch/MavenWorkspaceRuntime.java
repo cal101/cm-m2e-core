@@ -123,7 +123,7 @@ public class MavenWorkspaceRuntime extends AbstractMavenRuntime {
         ArtifactKey artifactKey = facade.getArtifactKey();
         if(getDistributionArtifactKey().getGroupId().equals(artifactKey.getGroupId()) //
             && getDistributionArtifactKey().getArtifactId().equals(artifactKey.getArtifactId())) {
-          File loggingConfigurationDirectory = new File(facade.getPomFile().getParentFile(), "src/conf/logging");
+          File loggingConfigurationDirectory = new File(facade.getPomFile().getParentFile(), "src/conf/logging"); //$NON-NLS-1$
           if(loggingConfigurationDirectory.exists()) {
             collector.addArchiveEntry(loggingConfigurationDirectory.getAbsolutePath());
           }

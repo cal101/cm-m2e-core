@@ -85,7 +85,7 @@ public class LifecycleMappingConfiguration implements ILifecycleMappingConfigura
         return;
       }
     } catch(CoreException ex) {
-      log.warn("Could not persist build lifecycle mapping configuration for {}.", facade.toString(), ex);
+      log.warn("Could not persist build lifecycle mapping configuration for {}.", facade.toString(), ex); //$NON-NLS-1$
       return;
     }
 
@@ -103,7 +103,7 @@ public class LifecycleMappingConfiguration implements ILifecycleMappingConfigura
         IOUtil.close(oos);
       }
     } catch(IOException ex) {
-      log.warn("Could not persist build lifecycle mapping configuration for {}.", project.toString(), ex);
+      log.warn("Could not persist build lifecycle mapping configuration for {}.", project.toString(), ex); //$NON-NLS-1$
     }
   }
 
@@ -138,7 +138,7 @@ public class LifecycleMappingConfiguration implements ILifecycleMappingConfigura
 
   private static File getConfigurationFile(IProject project) {
     File stateLocationDir = MavenPluginActivator.getDefault().getStateLocation().toFile();
-    File configFile = new File(stateLocationDir, project.getName() + ".lifecyclemapping");
+    File configFile = new File(stateLocationDir, project.getName() + ".lifecyclemapping"); //$NON-NLS-1$
     return configFile;
   }
 
@@ -155,7 +155,7 @@ public class LifecycleMappingConfiguration implements ILifecycleMappingConfigura
         IOUtil.close(ois);
       }
     } catch(ClassNotFoundException ex) {
-      log.warn("Could not read persistent build lifecycle mapping configuration for {}.", facade.toString(), ex);
+      log.warn("Could not read persistent build lifecycle mapping configuration for {}.", facade.toString(), ex); //$NON-NLS-1$
     } catch(IOException ex) {
       //log.warn("Could not read persistent build lifecycle mapping configuration for {}.", facade.toString(), ex);
       remove(facade.getProject());

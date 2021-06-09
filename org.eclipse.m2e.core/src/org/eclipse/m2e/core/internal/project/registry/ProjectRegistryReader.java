@@ -102,7 +102,7 @@ public class ProjectRegistryReader {
         };
         return (ProjectRegistry) is.readObject();
       } catch(Exception ex) {
-        log.error("Can't read workspace state", ex);
+        log.error("Can't read workspace state", ex); //$NON-NLS-1$
       } finally {
         IOUtil.close(is);
       }
@@ -171,7 +171,7 @@ public class ProjectRegistryReader {
         os.writeObject(state);
       }
     } catch(Exception ex) {
-      log.error("Can't write workspace state", ex);
+      log.error("Can't write workspace state", ex); //$NON-NLS-1$
     } finally {
       IOUtil.close(os);
     }

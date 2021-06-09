@@ -88,9 +88,9 @@ public class SourceLocation {
 
   @Override
   public String toString() {
-    String s = lineNumber + "," + columnStart + "-" + columnEnd + ":" + resourcePath;
+    String s = lineNumber + "," + columnStart + "-" + columnEnd + ":" + resourcePath; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
     if(linkedLocation != null) {
-      s += "->" + linkedLocation.toString();
+      s += "->" + linkedLocation.toString(); //$NON-NLS-1$
     }
     return s;
   }

@@ -102,12 +102,12 @@ public class MojoExecutionKey implements Serializable {
   }
 
   public String getKeyString() {
-    return groupId + ":" + artifactId + ":" + version + ":" + goal + ":" + executionId + ":" + lifecyclePhase;
+    return groupId + ":" + artifactId + ":" + version + ":" + goal + ":" + executionId + ":" + lifecyclePhase; //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
   }
 
   public String toString() {
-    return groupId + ":" + artifactId + ":" + version + ":" + goal + " (execution: " + executionId + ", phase: "
-        + lifecyclePhase + ")";
+    return groupId + ":" + artifactId + ":" + version + ":" + goal + " (execution: " + executionId + ", phase: " //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$ //$NON-NLS-5$
+        + lifecyclePhase + ")"; //$NON-NLS-1$
   }
 
   public boolean match(MojoExecution mojoExecution) {

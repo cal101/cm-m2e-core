@@ -38,7 +38,7 @@ class EclipseLogger implements Logger {
 
   public void debug(String msg, Throwable t) {
     if(isDebugEnabled()) {
-      log.debug(msg + " " + t.getMessage(), t);
+      log.debug(msg + " " + t.getMessage(), t); //$NON-NLS-1$
     }
   }
 
@@ -50,7 +50,7 @@ class EclipseLogger implements Logger {
 
   public void info(String msg, Throwable t) {
     if(isInfoEnabled()) {
-      log.info(msg + " " + t.getMessage(), t);
+      log.info(msg + " " + t.getMessage(), t); //$NON-NLS-1$
     }
   }
 
@@ -62,7 +62,7 @@ class EclipseLogger implements Logger {
 
   public void warn(String msg, Throwable t) {
     if(isWarnEnabled()) {
-      log.warn(msg + " " + t.getMessage(), t);
+      log.warn(msg + " " + t.getMessage(), t); //$NON-NLS-1$
     }
   }
 
@@ -74,7 +74,7 @@ class EclipseLogger implements Logger {
 
   public void fatalError(String msg, Throwable t) {
     if(isFatalErrorEnabled()) {
-      log.error(msg + " " + t.getMessage(), t);
+      log.error(msg + " " + t.getMessage(), t); //$NON-NLS-1$
     }
   }
 
@@ -86,7 +86,7 @@ class EclipseLogger implements Logger {
 
   public void error(String msg, Throwable t) {
     if(isErrorEnabled()) {
-      log.error(msg + " " + t.getMessage(), t);
+      log.error(msg + " " + t.getMessage(), t); //$NON-NLS-1$
     }
   }
 

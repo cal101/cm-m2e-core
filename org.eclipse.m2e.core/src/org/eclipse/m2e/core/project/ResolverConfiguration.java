@@ -89,10 +89,10 @@ public class ResolverConfiguration implements Serializable {
   private static List<String> parseProfiles(String profilesAsText, boolean status) {
     List<String> profiles;
     if(profilesAsText != null && profilesAsText.trim().length() > 0) {
-      String[] profilesArray = profilesAsText.split("[,\\s\\|]");
+      String[] profilesArray = profilesAsText.split("[,\\s\\|]"); //$NON-NLS-1$
       profiles = new ArrayList<>(profilesArray.length);
       for(String profile : profilesArray) {
-        boolean isActive = !profile.startsWith("!");
+        boolean isActive = !profile.startsWith("!"); //$NON-NLS-1$
         if(status == isActive) {
           profile = (isActive) ? profile : profile.substring(1);
           profiles.add(profile);

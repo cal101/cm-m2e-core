@@ -117,9 +117,9 @@ public class MavenProblemInfo {
     while(e != null) {
       if(e.getMessage() != null && message.indexOf(e.getMessage()) < 0) {
         if(message.length() > 0) {
-          message.append(": ");
+          message.append(": "); //$NON-NLS-1$
         }
-        message.append(e.getClass().getSimpleName()).append(": ").append(e.getMessage());
+        message.append(e.getClass().getSimpleName()).append(": ").append(e.getMessage()); //$NON-NLS-1$
       }
       e = e.getCause();
     }

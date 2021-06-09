@@ -41,7 +41,7 @@ public class MarkerUtils {
     BundleContext context = MavenPluginActivator.getDefault().getBundleContext();
     ServiceReference<IMarkerLocationService> ref = context.getServiceReference(IMarkerLocationService.class);
     if(ref == null) {
-      log.warn("Could not find OSGI service for " + IMarkerLocationService.class.getName());
+      log.warn("Could not find OSGI service for " + IMarkerLocationService.class.getName()); //$NON-NLS-1$
       return;
     }
     IMarkerLocationService service = context.getService(ref);
@@ -59,7 +59,7 @@ public class MarkerUtils {
     BundleContext context = MavenPluginActivator.getDefault().getBundleContext();
     ServiceReference<IEditorMarkerService> ref = context.getServiceReference(IEditorMarkerService.class);
     if(ref == null) {
-      log.warn("Could not find OSGI service for " + IEditorMarkerService.class.getName());
+      log.warn("Could not find OSGI service for " + IEditorMarkerService.class.getName()); //$NON-NLS-1$
       return;
     }
     IEditorMarkerService service = context.getService(ref);

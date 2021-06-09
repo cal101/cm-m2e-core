@@ -57,7 +57,7 @@ import org.eclipse.m2e.core.project.conversion.IProjectConversionManager;
  */
 public class ProjectConversionManager implements IProjectConversionManager {
 
-  private static final String CONVERSION_PARTICIPANTS_EXTENSION_POINT = "org.eclipse.m2e.core.projectConversionParticipants";
+  private static final String CONVERSION_PARTICIPANTS_EXTENSION_POINT = "org.eclipse.m2e.core.projectConversionParticipants"; //$NON-NLS-1$
 
   private static final Logger log = LoggerFactory.getLogger(ProjectConversionManager.class);
 
@@ -65,7 +65,7 @@ public class ProjectConversionManager implements IProjectConversionManager {
 
   private static IProjectConversionEnabler[] enablers;
 
-  private static final String CONVERSION_ENABLER_EXTENSION_POINT = "org.eclipse.m2e.core.conversionEnabler";
+  private static final String CONVERSION_ENABLER_EXTENSION_POINT = "org.eclipse.m2e.core.conversionEnabler"; //$NON-NLS-1$
 
   private static List<AbstractProjectConversionParticipant> lookupConversionParticipants(IProject project) {
     List<AbstractProjectConversionParticipant> participants = new ArrayList<>();
@@ -78,17 +78,17 @@ public class ProjectConversionManager implements IProjectConversionManager {
       for(IExtension extension : archetypesExtensions) {
         IConfigurationElement[] elements = extension.getConfigurationElements();
         for(IConfigurationElement element : elements) {
-          if("projectConversionParticipant".equals(element.getName())) {
+          if("projectConversionParticipant".equals(element.getName())) { //$NON-NLS-1$
             try {
-              if(project.hasNature(element.getAttribute("nature"))) {
+              if(project.hasNature(element.getAttribute("nature"))) { //$NON-NLS-1$
                 AbstractProjectConversionParticipant projectConversionParticipant = (AbstractProjectConversionParticipant) element
-                    .createExecutableExtension("class");
+                    .createExecutableExtension("class"); //$NON-NLS-1$
                 participants.add(projectConversionParticipant);
               }
             } catch(CoreException ex) {
-              log.debug("Can not load IProjectConversionParticipant", ex);
+              log.debug("Can not load IProjectConversionParticipant", ex); //$NON-NLS-1$
             }
-          } else if("conversionParticipantConfiguration".equals(element.getName())) {
+          } else if("conversionParticipantConfiguration".equals(element.getName())) { //$NON-NLS-1$
             setRestrictedPackagings(restrictedPackagings, element);
           }
         }
@@ -108,11 +108,11 @@ public class ProjectConversionManager implements IProjectConversionManager {
 
   private static void setRestrictedPackagings(Map<String, Set<String>> restrictedPackagings,
       IConfigurationElement element) {
-    String pid = element.getAttribute("conversionParticipantId");
-    String packagesAsString = element.getAttribute("compatiblePackagings");
+    String pid = element.getAttribute("conversionParticipantId"); //$NON-NLS-1$
+    String packagesAsString = element.getAttribute("compatiblePackagings"); //$NON-NLS-1$
     if(pid != null && packagesAsString != null) {
       try {
-        String[] packagingsArray = packagesAsString.split(",");
+        String[] packagingsArray = packagesAsString.split(","); //$NON-NLS-1$
         Set<String> packagings = new HashSet<>(packagingsArray.length);
         for(String packaging : packagingsArray) {
           String p = packaging.trim();
@@ -130,7 +130,7 @@ public class ProjectConversionManager implements IProjectConversionManager {
         allPackages.addAll(packagings);
 
       } catch(Exception e) {
-        log.debug("Cannot parse restricted packagings ", e);
+        log.debug("Cannot parse restricted packagings ", e); //$NON-NLS-1$
       }
     }
   }
@@ -184,8 +184,8 @@ public class ProjectConversionManager implements IProjectConversionManager {
     Comparator<IConfigurationElement> c = (o1, o2) -> {
       String o1String, o2String;
       int o1int, o2int;
-      o1String = o1.getAttribute("weight");
-      o2String = o2.getAttribute("weight");
+      o1String = o1.getAttribute("weight"); //$NON-NLS-1$
+      o2String = o2.getAttribute("weight"); //$NON-NLS-1$
       try {
         o1int = Integer.parseInt(o1String);
       } catch(NumberFormatException nfe1) {
@@ -204,11 +204,11 @@ public class ProjectConversionManager implements IProjectConversionManager {
     while(i.hasNext()) {
       try {
         IConfigurationElement element = i.next();
-        retList.add((IProjectConversionEnabler) element.createExecutableExtension("class"));
+        retList.add((IProjectConversionEnabler) element.createExecutableExtension("class")); //$NON-NLS-1$
         if(log.isDebugEnabled()) {
-          String id = element.getAttribute("id");
-          String sWeight = element.getAttribute("weight");
-          log.debug("Project conversion enabler found - id: {}, weight: {}", id, sWeight);
+          String id = element.getAttribute("id"); //$NON-NLS-1$
+          String sWeight = element.getAttribute("weight"); //$NON-NLS-1$
+          log.debug("Project conversion enabler found - id: {}, weight: {}", id, sWeight); //$NON-NLS-1$
         }
       } catch(CoreException ce) {
         log.error(ce.getMessage(), ce);
@@ -231,10 +231,10 @@ public class ProjectConversionManager implements IProjectConversionManager {
     }
     if(log.isDebugEnabled()) {
       if(result != null)
-        log.debug("Project conversion enabler found for project: {} - Class: {} ", project.getName(), result.getClass()
+        log.debug("Project conversion enabler found for project: {} - Class: {} ", project.getName(), result.getClass() //$NON-NLS-1$
             .getName());
       else
-        log.debug("Project conversion enabler not found for project: {}", project.getName());
+        log.debug("Project conversion enabler not found for project: {}", project.getName()); //$NON-NLS-1$
     }
     return result;
   }

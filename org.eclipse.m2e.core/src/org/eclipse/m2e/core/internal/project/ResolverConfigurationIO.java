@@ -60,15 +60,15 @@ public class ResolverConfigurationIO {
   /**
    * Lifecycle mapping id configured for the project explicitly.
    */
-  private static final String P_LIFECYCLE_MAPPING_ID = "lifecycleMappingId";
+  private static final String P_LIFECYCLE_MAPPING_ID = "lifecycleMappingId"; //$NON-NLS-1$
 
-  private static final String P_PROPERTIES = "properties";
+  private static final String P_PROPERTIES = "properties"; //$NON-NLS-1$
 
-  private static final String PROPERTIES_KV_SEPARATOR = ">";
+  private static final String PROPERTIES_KV_SEPARATOR = ">"; //$NON-NLS-1$
 
-  private static final String PROPERTIES_SEPARATOR = "|";
+  private static final String PROPERTIES_SEPARATOR = "|"; //$NON-NLS-1$
 
-  private static final String ENCODING = "UTF-8";
+  private static final String ENCODING = "UTF-8"; //$NON-NLS-1$
 
   /**
    * Current configuration version value. See {@link #P_VERSION}
@@ -101,7 +101,7 @@ public class ResolverConfigurationIO {
         projectNode.flush();
         return true;
       } catch(BackingStoreException ex) {
-        log.error("Failed to save resolver configuration", ex);
+        log.error("Failed to save resolver configuration", ex); //$NON-NLS-1$
       }
     }
 
@@ -138,7 +138,7 @@ public class ResolverConfigurationIO {
   private static Properties stringAsProperties(String properties) {
     Properties p = new Properties();
     if(properties != null) {
-      String[] entries = properties.split("\\" + PROPERTIES_SEPARATOR);
+      String[] entries = properties.split("\\" + PROPERTIES_SEPARATOR); //$NON-NLS-1$
       Stream.of(entries).forEach(e -> convert(e, p));
     }
     return p;
@@ -156,13 +156,13 @@ public class ResolverConfigurationIO {
 
   private static String encodeEntry(Entry<Object, Object> e) {
     String key = e.getKey().toString();
-    String value = e.getValue() == null ? "" : e.getValue().toString();
+    String value = e.getValue() == null ? "" : e.getValue().toString(); //$NON-NLS-1$
     return urlEncode(key) + PROPERTIES_KV_SEPARATOR + urlEncode(value);
   }
 
   private static String urlEncode(String string) {
     if(string == null) {
-      return "";
+      return ""; //$NON-NLS-1$
     }
     try {
       return URLEncoder.encode(string, ENCODING);
@@ -173,7 +173,7 @@ public class ResolverConfigurationIO {
 
   private static String urlDecode(String string) {
     if(string == null) {
-      return "";
+      return ""; //$NON-NLS-1$
     }
     try {
       return URLDecoder.decode(string, ENCODING);

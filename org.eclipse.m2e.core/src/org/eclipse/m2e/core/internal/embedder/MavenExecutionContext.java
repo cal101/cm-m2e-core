@@ -51,11 +51,11 @@ public class MavenExecutionContext implements IMavenExecutionContext {
 
   private static final String CTX_PREFIX = MavenExecutionContext.class.getName();
 
-  private static final String CTX_LOCALREPOSITORY = CTX_PREFIX + "/localRepository";
+  private static final String CTX_LOCALREPOSITORY = CTX_PREFIX + "/localRepository"; //$NON-NLS-1$
 
-  private static final String CTX_MAVENSESSION = CTX_PREFIX + "/mavenSession";
+  private static final String CTX_MAVENSESSION = CTX_PREFIX + "/mavenSession"; //$NON-NLS-1$
 
-  private static final String CTX_REPOSITORYSESSION = CTX_PREFIX + "/repositorySession";
+  private static final String CTX_REPOSITORYSESSION = CTX_PREFIX + "/repositorySession"; //$NON-NLS-1$
 
   private static final ThreadLocal<Deque<MavenExecutionContext>> threadLocal = new ThreadLocal<>();
 

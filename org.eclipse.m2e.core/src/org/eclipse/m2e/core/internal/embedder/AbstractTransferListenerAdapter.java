@@ -72,7 +72,7 @@ abstract class AbstractTransferListenerAdapter {
   }
 
   protected void transferStarted(String artifactUrl) {
-    log.info(NLS.bind("Downloading {0}", artifactUrl));
+    log.info(NLS.bind("Downloading {0}", artifactUrl)); //$NON-NLS-1$
     // monitor.beginTask("0% "+e.getWagon().getRepository()+"/"+e.getResource().getName(), IProgressMonitor.UNKNOWN);
     monitor.subTask(NLS.bind(Messages.AbstractTransferListenerAdapter_4, artifactUrl));
   }
@@ -94,9 +94,9 @@ abstract class AbstractTransferListenerAdapter {
       sb.append('/');
       formatBytes(total, sb);
       if(total > 0) {
-        sb.append(" (");
+        sb.append(" ("); //$NON-NLS-1$
         sb.append(100L * complete / total);
-        sb.append("%)");
+        sb.append("%)"); //$NON-NLS-1$
       }
     }
     sb.append(' ');
@@ -105,7 +105,7 @@ abstract class AbstractTransferListenerAdapter {
   }
 
   protected void transferCompleted(String artifactUrl) {
-    log.info(NLS.bind("Downloaded {0}", artifactUrl));
+    log.info(NLS.bind("Downloaded {0}", artifactUrl)); //$NON-NLS-1$
 
     // monitor.subTask("100% "+e.getWagon().getRepository()+"/"+e.getResource().getName());
     monitor.subTask(""); //$NON-NLS-1$
@@ -113,7 +113,7 @@ abstract class AbstractTransferListenerAdapter {
   }
 
   protected void transferError(String artifactUrl, Exception exception) {
-    log.error(NLS.bind("Unable to download {0} : {1}", artifactUrl, exception));
+    log.error(NLS.bind("Unable to download {0} : {1}", artifactUrl, exception)); //$NON-NLS-1$
     monitor.subTask(NLS.bind(Messages.AbstractTransferListenerAdapter_subtask, artifactUrl));
     progressMap.remove(artifactUrl);
   }

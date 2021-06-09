@@ -36,11 +36,11 @@ import org.eclipse.m2e.core.project.configurator.ProjectConfigurationRequest;
 public class InvalidLifecycleMapping extends AbstractLifecycleMapping {
 
   public String getId() {
-    return "invalid";
+    return "invalid"; //$NON-NLS-1$
   }
 
   public String getName() {
-    return "invalid";
+    return "invalid"; //$NON-NLS-1$
   }
 
   public void configure(ProjectConfigurationRequest request, IProgressMonitor monitor) {

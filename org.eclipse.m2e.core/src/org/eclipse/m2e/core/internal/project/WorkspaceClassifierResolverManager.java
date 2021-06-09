@@ -39,7 +39,7 @@ public class WorkspaceClassifierResolverManager implements IWorkspaceClassifierR
 
   protected static final Logger log = LoggerFactory.getLogger(WorkspaceClassifierResolverManager.class);
 
-  private static final String EXTENSION_WORKSPACE_CLASSIFIER_RESOLVERS = "org.eclipse.m2e.core.workspaceClassifierResolvers";
+  private static final String EXTENSION_WORKSPACE_CLASSIFIER_RESOLVERS = "org.eclipse.m2e.core.workspaceClassifierResolvers"; //$NON-NLS-1$
 
   private volatile List<IWorkspaceClassifierResolver> classifierResolvers;
 
@@ -49,7 +49,7 @@ public class WorkspaceClassifierResolverManager implements IWorkspaceClassifierR
       for(IWorkspaceClassifierResolver resolver : getResolvers()) {
         IPath res = resolver.resolveClassifier(project, classifier);
         if(res != null) {
-          log.info("Resolving {} with classifier {} to {}", project, classifier, res);
+          log.info("Resolving {} with classifier {} to {}", project, classifier, res); //$NON-NLS-1$
           return res;
         }
       }
@@ -86,9 +86,9 @@ public class WorkspaceClassifierResolverManager implements IWorkspaceClassifierR
       for(IExtension extension : ccpExtensions) {
         for(IConfigurationElement element : extension.getConfigurationElements()) {
           try {
-            resolvers.add((IWorkspaceClassifierResolver) element.createExecutableExtension("class"));
+            resolvers.add((IWorkspaceClassifierResolver) element.createExecutableExtension("class")); //$NON-NLS-1$
           } catch(CoreException ex) {
-            log.error("Cannot instantiate IWorkspaceClassifierResolver", ex);
+            log.error("Cannot instantiate IWorkspaceClassifierResolver", ex); //$NON-NLS-1$
           }
         }
       }

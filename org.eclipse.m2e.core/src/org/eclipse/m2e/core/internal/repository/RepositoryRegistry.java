@@ -101,7 +101,7 @@ public class RepositoryRegistry implements IRepositoryRegistry, IMavenProjectCha
     try {
       localUrl = localBasedir.toURL().toExternalForm();
     } catch(MalformedURLException ex) {
-      log.error("Could not parse local repository path", ex);
+      log.error("Could not parse local repository path", ex); //$NON-NLS-1$
       localUrl = "file://" + localBasedir.getAbsolutePath(); //$NON-NLS-1$
     }
 

@@ -31,7 +31,7 @@ public interface MavenPreferenceConstants {
   // public static final String P_CHECK_LATEST_PLUGIN_VERSION = PREFIX+"checkLatestPluginVersion";
 
   /** String */
-  String P_GLOBAL_CHECKSUM_POLICY = PREFIX + "globalChecksumPolicy";
+  String P_GLOBAL_CHECKSUM_POLICY = PREFIX + "globalChecksumPolicy"; //$NON-NLS-1$
 
   /** boolean */
   String P_OFFLINE = PREFIX + "offline"; //$NON-NLS-1$
@@ -116,7 +116,7 @@ public interface MavenPreferenceConstants {
   /**
    * @since 1.5
    **/
-  String PROBLEM_PREFIX = PREFIX + "problem.";
+  String PROBLEM_PREFIX = PREFIX + "problem."; //$NON-NLS-1$
 
   /**
    * Valid values : ignore, warning or error
@@ -178,6 +178,6 @@ public interface MavenPreferenceConstants {
    *
    * @since 1.15
    */
-  String P_ENABLE_SNAPSHOT_ARCHETYPES = "enableSnapshotArchetypes";
+  String P_ENABLE_SNAPSHOT_ARCHETYPES = "enableSnapshotArchetypes"; //$NON-NLS-1$
 
 }

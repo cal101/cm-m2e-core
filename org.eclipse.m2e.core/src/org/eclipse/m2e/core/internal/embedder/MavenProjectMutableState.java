@@ -23,7 +23,7 @@ import org.apache.maven.project.MavenProject;
 
 public class MavenProjectMutableState {
 
-  private static final String CTX_SNAPSHOT = MavenProjectMutableState.class.getName() + "/SNAPSHOT";
+  private static final String CTX_SNAPSHOT = MavenProjectMutableState.class.getName() + "/SNAPSHOT"; //$NON-NLS-1$
 
   private List<String> compileSourceRoots;
 

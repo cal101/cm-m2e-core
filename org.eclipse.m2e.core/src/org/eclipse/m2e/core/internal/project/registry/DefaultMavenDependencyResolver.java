@@ -119,7 +119,7 @@ public class DefaultMavenDependencyResolver extends AbstractMavenDependencyResol
       DependencyManagement dependencyManagement = mavenProject.getOriginalModel().getDependencyManagement();
       if(dependencyManagement != null) {
         for(org.apache.maven.model.Dependency managedDep : dependencyManagement.getDependencies()) {
-          if("pom".equals(managedDep.getType()) && "import".equals(managedDep.getScope()) && managedDep.getVersion() != null) { //$NON-NLS-1$ $NON-NLS-2$
+          if("pom".equals(managedDep.getType()) && "import".equals(managedDep.getScope()) && managedDep.getVersion() != null) { //$NON-NLS-1$ //$NON-NLS-2$ $NON-NLS-2$
             ArtifactKey dependencyKey = new ArtifactKey(managedDep.getGroupId(), managedDep.getArtifactId(),
                 managedDep.getVersion(), null);
             requirements.add(MavenRequiredCapability.createMavenArtifactImport(dependencyKey));
