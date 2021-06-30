@@ -58,11 +58,13 @@ public class RepositoryViewLabelProvider extends LabelProvider implements IStyle
   /* (non-Javadoc)
    * @see org.eclipse.jface.viewers.BaseLabelProvider#dispose()
    */
+  @Override
   public void dispose() {
     italicFont.dispose();
     super.dispose();
   }
 
+  @Override
   public String getText(Object obj) {
     if(obj instanceof IMavenRepositoryNode) {
       return ((IMavenRepositoryNode) obj).getName();
@@ -70,6 +72,7 @@ public class RepositoryViewLabelProvider extends LabelProvider implements IStyle
     return obj.toString();
   }
 
+  @Override
   public Image getImage(Object obj) {
     if(obj instanceof IMavenRepositoryNode) {
       return ((IMavenRepositoryNode) obj).getImage();
@@ -77,10 +80,12 @@ public class RepositoryViewLabelProvider extends LabelProvider implements IStyle
     return PlatformUI.getWorkbench().getSharedImages().getImage(ISharedImages.IMG_OBJ_ELEMENT);
   }
 
+  @Override
   public Color getBackground(Object element) {
     return null;
   }
 
+  @Override
   public Color getForeground(Object element) {
     if(element instanceof RepositoryNode && !((RepositoryNode) element).isEnabledIndex()) {
         return Display.getDefault().getSystemColor(SWT.COLOR_DARK_GRAY);
@@ -88,6 +93,7 @@ public class RepositoryViewLabelProvider extends LabelProvider implements IStyle
     return null;
   }
 
+  @Override
   public Font getFont(Object element) {
     if(element instanceof IMavenRepositoryNode) {
       boolean updating = ((IMavenRepositoryNode) element).isUpdating();
@@ -96,6 +102,7 @@ public class RepositoryViewLabelProvider extends LabelProvider implements IStyle
     return null;
   }
 
+  @Override
   public StyledString getStyledText(Object element) {
     return new StyledString(getText(element));
   }
