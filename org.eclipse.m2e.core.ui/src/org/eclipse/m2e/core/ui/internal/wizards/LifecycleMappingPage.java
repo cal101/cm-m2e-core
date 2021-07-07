@@ -143,6 +143,7 @@ public class LifecycleMappingPage extends WizardPage {
    *
    * @param parent
    */
+  @Override
   public void createControl(Composite parent) {
     Composite container = new Composite(parent, SWT.NULL);
 
@@ -279,12 +280,15 @@ public class LifecycleMappingPage extends WizardPage {
 
     treeViewer.setContentProvider(new ITreeContentProvider() {
 
+      @Override
       public void dispose() {
       }
 
+      @Override
       public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
       }
 
+      @Override
       public Object[] getElements(Object inputElement) {
         if(inputElement instanceof LifecycleMappingDiscoveryRequest) {
           Map<ILifecycleMappingRequirement, List<ILifecycleMappingLabelProvider>> packagings = new HashMap<>();
@@ -304,6 +308,7 @@ public class LifecycleMappingPage extends WizardPage {
                 }
                 val.add(new ILifecycleMappingLabelProvider() {
 
+                  @Override
                   public String getMavenText() {
                     String executionId = null;
                     if(requirement instanceof MojoExecutionMappingRequirement) {
@@ -323,14 +328,17 @@ public class LifecycleMappingPage extends WizardPage {
                     return null;
                   }
 
+                  @Override
                   public boolean isError(LifecycleMappingDiscoveryRequest mappingConfiguration) {
                     return !mappingConfiguration.isRequirementSatisfied(getKey());
                   }
 
+                  @Override
                   public ILifecycleMappingRequirement getKey() {
                     return requirement;
                   }
 
+                  @Override
                   @SuppressWarnings("synthetic-access")
                   public Collection<MavenProject> getProjects() {
                     MavenProject mavenProject;
@@ -360,6 +368,7 @@ public class LifecycleMappingPage extends WizardPage {
         return null;
       }
 
+      @Override
       public Object[] getChildren(Object parentElement) {
         if(parentElement instanceof AggregateMappingLabelProvider) {
           return ((AggregateMappingLabelProvider) parentElement).getChildren();
@@ -367,10 +376,12 @@ public class LifecycleMappingPage extends WizardPage {
         return new Object[0];
       }
 
+      @Override
       public Object getParent(Object element) {
         return null;
       }
 
+      @Override
       public boolean hasChildren(Object element) {
         Object[] children = getChildren(element);
         return children != null && children.length > 0;
@@ -379,19 +390,24 @@ public class LifecycleMappingPage extends WizardPage {
     });
     treeViewer.setLabelProvider(new ITableLabelProvider() {
 
+      @Override
       public void removeListener(ILabelProviderListener listener) {
       }
 
+      @Override
       public boolean isLabelProperty(Object element, String property) {
         return false;
       }
 
+      @Override
       public void dispose() {
       }
 
+      @Override
       public void addListener(ILabelProviderListener listener) {
       }
 
+      @Override
       @SuppressWarnings("synthetic-access")
       public String getColumnText(Object element, int columnIndex) {
         if(element instanceof ILifecycleMappingLabelProvider) {
@@ -423,6 +439,7 @@ public class LifecycleMappingPage extends WizardPage {
         return null;
       }
 
+      @Override
       @SuppressWarnings("synthetic-access")
       public Image getColumnImage(Object element, int columnIndex) {
         if(columnIndex != 0) {
@@ -469,6 +486,7 @@ public class LifecycleMappingPage extends WizardPage {
     });
 
     treeViewer.setComparator(new ViewerComparator() {
+      @Override
       public int compare(Viewer viewer, Object e1, Object e2) {
         if(!(e1 instanceof ILifecycleMappingLabelProvider && e2 instanceof ILifecycleMappingLabelProvider)) {
           return super.compare(viewer, e1, e2);
@@ -602,6 +620,7 @@ public class LifecycleMappingPage extends WizardPage {
     }
   }
 
+  @Override
   public boolean canFlipToNextPage() {
     return true;//getNextPage() != null;
   }
